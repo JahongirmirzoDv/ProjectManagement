@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mcv_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/size_8dp"
+    android:layout_marginTop="@dimen/size_4dp"
+    app:cardCornerRadius="@dimen/size_8dp"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cons2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/size_10dp">
+
+        <ImageView
+            android:id="@+id/imgImportance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="@dimen/size_12dp"
+            android:paddingBottom="@dimen/size_8dp"
+            android:src="@drawable/ic_file_text_red"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlSymmetry" />
+
+        <ImageView
+            android:id="@+id/imgStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/size_8dp"
+            app:layout_constraintStart_toEndOf="@id/imgImportance"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_group_465" />
+
+        <TextView
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:maxWidth="150sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:id="@+id/imgStatus_title"
+            android:text="sdfgvbhjk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/size_8dp"
+            app:layout_constraintStart_toEndOf="@id/imgStatus"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/ll_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/size_8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:background="#F4F5F7"
+                android:id="@+id/iv_date"
+                android:layout_width="@dimen/size_20dp"
+                android:layout_height="@dimen/size_20dp"
+                android:paddingEnd="@dimen/size_4dp"
+                android:src="@drawable/ic_time"
+                app:layout_constraintRight_toLeftOf="@id/tvDate"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:background="#F4F5F7"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/size_20dp"
+                android:gravity="center"
+                android:textSize="@dimen/text_13sp"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:ignore="MissingConstraints"
+                tools:text=" 23-25 apr." />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier_bottom_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="imgStatus,imgImportance,ll_date,imgStatus_title" />
+        
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barrier_bottom_head"
+            tools:text="Yangi kadrlarni o'qitish" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_13sp"
+            app:layout_constraintEnd_toEndOf="@id/tvTitle"
+            app:layout_constraintStart_toStartOf="@id/tvTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            tools:text="Ertaga kadrlar bo'limiga borish va bo'lim boshlig'i bilan treningni tayyorlash" />
+
+        <ImageView
+            android:id="@+id/img3"
+            android:layout_width="@dimen/size_20dp"
+            android:layout_height="@dimen/size_20dp"
+            android:layout_marginTop="@dimen/size_4dp"
+            android:src="@drawable/ic_user"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvTitle"
+            app:layout_constraintTop_toBottomOf="@id/tv_description" />
+
+        <TextView
+            android:id="@+id/tvFullName"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_4dp"
+            android:layout_marginEnd="@dimen/size_4dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@id/img3"
+            app:layout_constraintEnd_toStartOf="@id/img4"
+            app:layout_constraintStart_toEndOf="@id/img3"
+            app:layout_constraintTop_toTopOf="@id/img3"
+            tools:text="Xusnora Komolova" />
+
+        <ImageView
+            android:id="@+id/img4"
+            android:layout_width="@dimen/size_15dp"
+            android:layout_height="@dimen/size_15dp"
+            android:layout_marginEnd="@dimen/size_4dp"
+            android:src="@drawable/ic_file_paperclip_in_chat"
+            app:layout_constraintBottom_toBottomOf="@id/tvCommetCount"
+            app:layout_constraintEnd_toStartOf="@id/tvFileCount"
+            app:layout_constraintTop_toTopOf="@id/tvCommetCount" />
+
+        <TextView
+            android:id="@+id/tvFileCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/size_8dp"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvCommetCount"
+            app:layout_constraintEnd_toStartOf="@id/img5"
+            app:layout_constraintTop_toTopOf="@id/tvCommetCount"
+            tools:text="2" />
+
+        <ImageView
+            android:id="@+id/img5"
+            android:layout_width="@dimen/size_15dp"
+            android:layout_height="@dimen/size_15dp"
+            android:layout_marginEnd="@dimen/size_4dp"
+            android:src="@drawable/ic_vector"
+            app:layout_constraintBottom_toBottomOf="@id/tvCommetCount"
+            app:layout_constraintEnd_toStartOf="@id/tvCommetCount"
+            app:layout_constraintTop_toTopOf="@id/tvCommetCount" />
+
+        <TextView
+            android:id="@+id/tvCommetCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@id/img3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/img3"
+            tools:text="15" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

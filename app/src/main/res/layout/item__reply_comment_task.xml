@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_8sdp">
+
+    <View
+        android:layout_width="@dimen/_2sdp"
+        android:layout_height="0dp"
+        android:background="@color/colorGrey"
+        app:layout_constraintBottom_toBottomOf="@id/replyCommentText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imageReplierAvatar" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageReplierAvatar"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:src="@drawable/avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/commentReplierFullName"
+        style="@style/TextSmallSemiBold"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:textColor="@color/sub_hint_text_color"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/replyCommentedDate"
+        app:layout_constraintStart_toEndOf="@+id/imageReplierAvatar"
+        app:layout_constraintTop_toTopOf="@id/imageReplierAvatar"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="Ilhom Ibragimov" />
+
+    <ImageView
+        android:id="@+id/replyIcon"
+        android:layout_width="@dimen/_13sdp"
+        android:layout_height="@dimen/_13sdp"
+        android:layout_marginStart="@dimen/_3sdp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_reply_message"
+        app:layout_constraintBottom_toBottomOf="@id/commentReplierFullName"
+        app:layout_constraintStart_toEndOf="@id/commentReplierFullName"
+        app:layout_constraintTop_toTopOf="@id/commentReplierFullName" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/commentAskerFullName"
+        style="@style/TextSmallSemiBold"
+        android:layout_width="@dimen/size_0dp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:maxLines="1"
+        android:textColor="@color/sub_hint_text_color"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/commentReplierFullName"
+        app:layout_constraintEnd_toStartOf="@id/replyButton"
+        app:layout_constraintStart_toEndOf="@+id/replyIcon"
+        app:layout_constraintTop_toTopOf="@id/commentReplierFullName"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="Ilhom Ibragimov" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/replyCommentedDate"
+        style="@style/TextSmallSemiBold"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:textColor="@color/hintColor"
+        android:textSize="@dimen/_9ssp"
+        app:layout_constraintBottom_toBottomOf="@id/imageReplierAvatar"
+        app:layout_constraintStart_toStartOf="@id/commentReplierFullName"
+        app:layout_constraintTop_toBottomOf="@+id/commentReplierFullName"
+        tools:text="30 sentabr 2021, 23:37" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/replyButton"
+        style="@style/TextSmall"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:text="Reply"
+        android:textColor="@color/sub_hint_text_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imageReplierAvatar" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/replyCommentText"
+        style="@style/TextSmall"
+        android:layout_width="@dimen/size_0dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        app:layout_constraintEnd_toEndOf="@id/replyButton"
+        app:layout_constraintStart_toStartOf="@id/imageReplierAvatar"
+        app:layout_constraintTop_toBottomOf="@+id/imageReplierAvatar"
+        tools:text="Asssalom alaykum, yaxshimisizlar. Hamma sog' omon nima gaplar endi. Kimda qanday yangilik bor" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

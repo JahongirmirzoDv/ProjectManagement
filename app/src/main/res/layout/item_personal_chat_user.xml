@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.chauthai.swipereveallayout.SwipeRevealLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_swRl"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:dragEdge="right"
+    app:mode="same_level">
+
+    <FrameLayout
+        android:id="@+id/foregroundLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/delete_back_color">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/buttonDelete"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_delete_red"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textDelete"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/delete_chat"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/buttonDelete"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frontLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_65sdp"
+            android:background="?attr/selectableItemBackground">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardGroupImage"
+                android:layout_width="@dimen/size_60dp"
+                android:layout_height="@dimen/size_60dp"
+                android:layout_marginStart="@dimen/size_20dp"
+                android:backgroundTint="@color/orange"
+                app:cardCornerRadius="@dimen/size_30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/img_person"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_user"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/txt_default_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_24sdp"
+                    android:textStyle="bold"
+                    tools:text="F" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/txt_username"
+                style="@style/MyTextViewStyleBlack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_20dp"
+                android:layout_marginTop="@dimen/size_15dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/inter_semibold"
+                android:lines="1"
+                android:singleLine="true"
+                android:textSize="@dimen/text_15sp"
+                app:layout_constraintEnd_toStartOf="@+id/txt_date"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toRightOf="@+id/cardGroupImage"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cardGroupImage"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Sardor Tojiboyev" />
+
+            <TextView
+                android:id="@+id/txt_date"
+                style="@style/MyTextViewStyleDarkBlue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_20dp"
+                android:layout_marginTop="@dimen/size_15dp"
+                android:layout_marginRight="@dimen/size_20dp"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="@dimen/text_12sp"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintLeft_toRightOf="@+id/cardGroupImage"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="14.04.2021" />
+
+            <TextView
+                android:id="@+id/txt_unread_count"
+                style="@style/MyTextViewStyleWhite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_5dp"
+                android:layout_marginEnd="@dimen/size_20dp"
+                android:background="@drawable/circle_background"
+                android:backgroundTint="#0496FF"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:minEms="2"
+                android:padding="@dimen/size_4dp"
+                android:textSize="@dimen/text_12sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_date"
+                tools:text="12" />
+
+
+            <ImageView
+                android:id="@+id/img_read_unread"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_5dp"
+                android:layout_marginEnd="@dimen/size_20dp"
+                android:src="@drawable/ic_read_message_s"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_date" />
+
+            <TextView
+                android:id="@+id/txt_last_message"
+                style="@style/MyTextViewStyleDarkBlue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_5dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/inter_regular"
+                android:lines="1"
+                android:textSize="@dimen/text_14sp"
+                app:layout_constraintEnd_toEndOf="@+id/txt_username"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toRightOf="@+id/cardGroupImage"
+                app:layout_constraintRight_toLeftOf="@id/txt_unread_count"
+                app:layout_constraintStart_toStartOf="@+id/txt_username"
+                app:layout_constraintTop_toBottomOf="@+id/txt_username"
+                tools:text="Salom yaxshimisiz?" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:background="@color/colorDividerChat"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+</com.chauthai.swipereveallayout.SwipeRevealLayout>
+
+

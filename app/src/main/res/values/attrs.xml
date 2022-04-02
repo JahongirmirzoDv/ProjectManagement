@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ArcProgressIndicator">
+        <attr name="value" format="integer" />
+        <attr name="min_value" format="integer" />
+        <attr name="max_value" format="integer" />
+        <attr name="sections_count" format="integer" />
+        <attr name="is_sections_divided" format="boolean" />
+        <attr name="is_percent_values" format="boolean" />
+        <attr name="is_highlight_current_section_enabled" format="boolean" />
+        <attr name="sections_color" format="color" />
+        <attr name="highlighted_section_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="SmallMonthView">
+        <attr name="days" format="integer" />
+        <attr name="first_day" format="integer" />
+        <attr name="monthName" format="string" />
+    </declare-styleable>
+
+</resources>

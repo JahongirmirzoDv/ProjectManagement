@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.screens.home_activity.quick_ideas_box.QuickIdeasBoxesFragment">
+
+    <RelativeLayout
+        android:id="@+id/mainBox"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_69sdp"
+        android:layout_margin="@dimen/_4sdp"
+        android:background="@drawable/background_yellow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgStar"
+            android:layout_width="@dimen/size_30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/size_16dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_star_black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/size_8dp"
+            android:layout_toEndOf="@id/imgStar"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTitle"
+                style="@style/TextLargeInterBold"
+                android:layout_width="match_parent"
+                android:text="@string/idea_box" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/space"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_2sdp"
+        app:layout_constraintTop_toBottomOf="@id/mainBox" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/quickIdeasBoxList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/space"
+        tools:itemCount="6"
+        tools:listitem="@layout/item_box_ideas" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/btn_add_folder"
+        style="@style/TextSmallAddButtonTextStyle"
+        android:text="@string/create_papka"
+        android:visibility="gone"
+        app:drawableTint="@color/text_color"
+        app:layout_constraintBottom_toTopOf="@+id/addIdeaBtn"
+        app:layout_constraintEnd_toEndOf="@+id/fab_add_folder_idea"
+        tools:visibility="visible" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/addIdeaBtn"
+        style="@style/TextSmallAddButtonTextStyle"
+        android:text="@string/idea_qo_shish"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/fab_add_folder_idea"
+        app:layout_constraintEnd_toEndOf="@+id/fab_add_folder_idea"
+        tools:visibility="visible" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_folder_idea"
+        style="@style/FabButtonStyle"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:tint="@null" />
+
+    <include
+        android:id="@+id/create_quick_idea_box_progress_bar"
+        layout="@layout/layout_loader"
+        android:visibility="gone" />
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_error"
+        android:layout_width="@dimen/size_0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/size_24dp"
+        android:gravity="center"
+        android:text="@string/idea_box_error"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

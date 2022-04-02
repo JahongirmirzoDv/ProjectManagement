@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/colorWhiteSoft"
+    tools:context=".presentation.ui.screens.home_activity.adding.create_goal.CreateGoalFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnusedAttribute">
+
+        <RelativeLayout
+            android:id="@+id/rlTop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:contentDescription="@string/app_name"
+                android:focusable="true"
+                android:src="@drawable/ic_back_button_cross" />
+
+            <!-- <TextView
+                 style="@style/MyTextViewStyleBlack"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_centerInParent="true"
+                 android:fontFamily="@font/inter_bold"
+                 android:text="Taktik reja"
+                 android:textSize="@dimen/_16ssp" />
+
+             <ImageView
+                 android:id="@+id/ivEdit"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentEnd="true"
+                 android:layout_centerVertical="true"
+                 android:layout_marginEnd="@dimen/_12sdp"
+                 android:background="?attr/selectableItemBackgroundBorderless"
+                 android:clickable="true"
+                 android:contentDescription="@string/app_name"
+                 android:focusable="true"
+                 android:src="@drawable/ic_circle_edit" />-->
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/CreateToolbarTitleStyle"
+                android:layout_alignParentStart="true"
+                android:text="@string/tactic_plan" />
+
+            <ImageView
+                android:id="@+id/ivEdit"
+                style="@style/CreateTickImageStyle"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_circle_edit" />
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScroll"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTitle"
+                style="@style/CreateScreensEditTextStyle"
+                android:drawableEnd="@drawable/ic_help"
+                android:enabled="false"
+                android:hint="@string/plan_text"
+                android:inputType="textMultiLine|textCapSentences"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDescription"
+                style="@style/CreateScreensEditTextStyle"
+                android:drawableEnd="@drawable/ic_help"
+                android:enabled="false"
+                android:hint="@string/definition"
+                android:inputType="textMultiLine|textCapSentences"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etTitle" />
+
+            <View
+                android:id="@+id/statusLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_0dp"
+                android:layout_marginTop="@dimen/size_16dp"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/tvStatusTitle"
+                app:layout_constraintTop_toBottomOf="@id/etDescription" />
+
+
+            <ProgressBar
+                android:id="@+id/pbLoadingStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/size_24dp"
+                app:layout_constraintBottom_toBottomOf="@id/statusLayout"
+                app:layout_constraintEnd_toEndOf="@id/statusLayout"
+                app:layout_constraintTop_toTopOf="@id/statusLayout" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvStatusTitle"
+                style="@style/CreateScreensFieldTitle"
+                android:layout_margin="@dimen/size_24dp"
+                android:paddingBottom="@dimen/size_24dp"
+                android:text="@string/status_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/statusLayout" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvStatus"
+                style="@style/TextMedium"
+                android:layout_marginEnd="@dimen/size_24dp"
+                android:textColor="@color/colorGreySoft"
+                app:layout_constraintBaseline_toBaselineOf="@id/tvStatusTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Bajarilmoqda" />
+
+            <View
+                android:id="@+id/yearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_0dp"
+                android:layout_marginTop="@dimen/size_16dp"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/tvYearTitle"
+                app:layout_constraintTop_toBottomOf="@id/statusLayout" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvYearTitle"
+                style="@style/TextMedium"
+                android:layout_margin="@dimen/size_24dp"
+                android:drawableStart="@drawable/ic_calendar_in_create_project"
+                android:drawablePadding="@dimen/size_8dp"
+                android:paddingBottom="@dimen/size_24dp"
+                android:text="@string/year"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/yearLayout" />
+
+            <Spinner
+                android:id="@+id/spYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/size_24dp"
+                android:dropDownWidth="wrap_content"
+                android:enabled="false"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="end"
+                android:spinnerMode="dropdown"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvYearTitle"
+                tools:text="2021-06-11" />
+
+            <View
+                android:id="@+id/monthLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_0dp"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/tvMonthTitle"
+                app:layout_constraintTop_toBottomOf="@id/yearLayout" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvMonthTitle"
+                style="@style/TextMedium"
+                android:layout_marginHorizontal="@dimen/size_24dp"
+                android:drawablePadding="@dimen/size_8dp"
+                android:paddingBottom="@dimen/size_24dp"
+                android:text="@string/month"
+                app:drawableStartCompat="@drawable/ic_calendar_in_create_project"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/monthLayout" />
+
+            <Spinner
+                android:id="@+id/spMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/size_24dp"
+                android:dropDownWidth="wrap_content"
+                android:enabled="false"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="end"
+                android:spinnerMode="dropdown"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvMonthTitle"
+                tools:text="2021-06-11" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnToTask"
+                style="@style/GeneralBlueButtonStyle"
+                android:layout_width="@dimen/size_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="@dimen/size_2dp"
+                android:paddingVertical="@dimen/size_16dp"
+                android:text="@string/transform_to_task"
+                app:backgroundTint="@color/blue"
+                app:layout_constraintBottom_toTopOf="@id/btnDelete"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/monthLayout"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDelete"
+                style="@style/GeneralRedButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/size_24dp"
+                android:background="@android:color/transparent"
+                android:text="@string/delete"
+                android:textColor="@color/color_red_dialog"
+                app:backgroundTint="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

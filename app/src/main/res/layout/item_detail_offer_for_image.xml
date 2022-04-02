@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/iv_offer"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_200sdp"
+    android:layout_margin="@dimen/_12sdp"
+    android:padding="@dimen/_2sdp"
+    android:background="@drawable/back_radius_natural_light"
+    android:elevation="@dimen/_6sdp" />

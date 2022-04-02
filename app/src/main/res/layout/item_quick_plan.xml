@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhiteSoft">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv1_root"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="@dimen/size_8dp"
+        app:cardElevation="@dimen/size_0dp"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_root"
+            android:background="@color/colorWhiteSoft"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:id="@+id/chb_is_done"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginVertical="@dimen/_3sdp"
+                android:layout_marginStart="@dimen/size_24dp"
+                android:buttonTint="@color/blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text=" " />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="@dimen/size_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_8dp"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintEnd_toStartOf="@id/img_is_task"
+                app:layout_constraintStart_toEndOf="@id/chb_is_done"
+                app:layout_constraintTop_toTopOf="@+id/btn_add_child"
+                tools:text="@string/create_meeting_str" />
+
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="@dimen/_8sdp"
+                android:id="@+id/img_is_task"
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="@dimen/_12sdp"
+                app:cardElevation="0dp"
+                android:layout_marginRight="@dimen/_10sdp"
+                app:cardBackgroundColor="@color/back_task_msg"
+                app:layout_constraintBottom_toBottomOf="@id/chb_is_done"
+                app:layout_constraintRight_toLeftOf="@id/btn_add_child"
+                app:layout_constraintTop_toTopOf="@id/chb_is_done" />
+
+            <ImageView
+                android:id="@+id/btn_add_child"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_add_plus"
+                android:padding="@dimen/_1sdp"
+                app:layout_constraintBottom_toBottomOf="@id/chb_is_done"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/chb_is_done" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="tv_title, chb_is_done, btn_add_child" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_children"
+                android:layout_width="@dimen/size_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/barrier" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/ll_create"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/size_2dp"
+                android:background="@color/white"
+                android:visibility="gone"
+                app:cardCornerRadius="@dimen/size_8dp"
+                app:cardElevation="@dimen/size_0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_children">
+
+                <LinearLayout
+                    android:id="@+id/ll_create_nm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:visibility="visible"
+                    android:gravity="center_vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rv_children">
+
+                    <CheckBox
+                        android:id="@+id/chb_is_done_new"
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginVertical="@dimen/size_8dp"
+                        android:layout_marginStart="@dimen/size_40dp"
+                        android:buttonTint="@color/blue"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text=" " />
+
+                    <EditText
+                        android:id="@+id/et_quick_plan"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/enter_plan_text"
+                        android:paddingHorizontal="@dimen/_2sdp"
+                        android:paddingVertical="@dimen/_2sdp" />
+
+                    <ImageView
+                        android:id="@+id/iv_create"
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerInside"
+                        android:padding="@dimen/_4sdp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_unread_message" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <View
+        android:id="@+id/line_space"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_5sdp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/cv1_root" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

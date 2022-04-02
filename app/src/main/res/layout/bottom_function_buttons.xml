@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_add"
+        style="@style/FabButtonStyle"
+        android:contentDescription="@string/app_name"
+        app:backgroundTint="@color/fab_button_elevation_color"
+        app:borderWidth="0.7dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/blue" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/btn_add_worker"
+        style="@style/TextSmallAddButtonTextStyle"
+        android:text="@string/add_worker"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/btn_add"
+        app:layout_constraintEnd_toEndOf="@+id/btn_add" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/btn_add_position"
+        style="@style/TextSmallAddButtonTextStyle"
+        android:text="@string/add_position"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/btn_add_worker"
+        app:layout_constraintEnd_toEndOf="@+id/btn_add" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/btn_add_department"
+        style="@style/TextSmallAddButtonTextStyle"
+        android:text="@string/add_section"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/btn_add_position"
+        app:layout_constraintEnd_toEndOf="@+id/btn_add"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

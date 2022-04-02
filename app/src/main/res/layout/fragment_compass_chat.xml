@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.screens.home_activity.chat.compass.CompassChatFragment">
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        style="@style/DefImageViewStyle"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_160sdp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_dev_productivity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/info_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center"
+        android:maxLines="2"
+        android:text="@string/error_message"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11ssp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintWidth_percent="0.6" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/reques_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="Iltimos boshqa sahifaga kirib ko'ring"
+        android:textColor="@color/colorGreySoft"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/info_text"
+        app:layout_constraintWidth_percent="0.7" />
+
+
+    <!--    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_chat_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingBottom="@dimen/size_10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/btn_add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/btn_add"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/size_100dp"
+            android:layout_marginBottom="@dimen/size_10dp"
+            android:background="@drawable/background_create_chat"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintWidth_percent="0.9">
+
+            <ImageView
+                android:layout_width="@dimen/size_30dp"
+                android:layout_height="@dimen/size_30dp"
+                android:src="@drawable/ic_create_chat" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_50dp"
+                android:layout_marginTop="@dimen/size_10dp"
+                android:layout_marginRight="@dimen/size_50dp"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:text="@string/click_for_creating_chat"
+                android:textColor="@color/colorGreySoft"
+                android:textSize="@dimen/text_14sp" />
+        </LinearLayout>-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

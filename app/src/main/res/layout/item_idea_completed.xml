@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/item_idea_completed"
+    android:layout_margin="@dimen/_10sdp"
+    app:cardCornerRadius="@dimen/_5sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="@color/colorWhiteSoft">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardPersonImage"
+            android:layout_width="@dimen/size_48dp"
+            android:layout_height="@dimen/size_48dp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:cardCornerRadius="@dimen/size_30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ideaCreator"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_user" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/ideaTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:fontFamily="@font/inter_semibold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintStart_toEndOf="@id/cardPersonImage"
+            app:layout_constraintTop_toTopOf="@id/cardPersonImage"
+            tools:text="Idea nomi" />
+
+        <TextView
+            android:id="@+id/ideaDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@id/ideaTitle"
+            app:layout_constraintStart_toEndOf="@id/ideaTitle"
+            app:layout_constraintTop_toTopOf="@id/ideaTitle"
+            tools:text="27.07.2021" />
+
+
+        <TextView
+            android:id="@+id/ideaScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:drawableStart="@drawable/ic_star"
+            android:drawablePadding="@dimen/_5sdp"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@id/ideaStar"
+            app:layout_constraintStart_toEndOf="@+id/cardPersonImage"
+            app:layout_constraintTop_toBottomOf="@id/ideaDate"
+            tools:text="15 ball" />
+
+        <TextView
+            android:id="@+id/ideaStar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_star"
+            android:drawablePadding="@dimen/_5sdp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/ideaScore"
+            app:layout_constraintEnd_toStartOf="@id/ideaCommentCount"
+            app:layout_constraintStart_toEndOf="@+id/ideaScore"
+            app:layout_constraintTop_toTopOf="@id/ideaScore"
+            tools:text="3/100" />
+
+
+        <TextView
+            android:id="@+id/ideaCommentCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_vector_black"
+            android:drawablePadding="@dimen/_5sdp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/ideaScore"
+            app:layout_constraintEnd_toStartOf="@+id/ideaValue"
+            app:layout_constraintStart_toEndOf="@+id/ideaStar"
+            app:layout_constraintTop_toTopOf="@id/ideaScore"
+            tools:text="21" />
+
+
+        <TextView
+            android:id="@+id/ideaValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_dollar"
+            android:drawablePadding="@dimen/_5sdp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/ideaScore"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ideaCommentCount"
+            app:layout_constraintTop_toTopOf="@id/ideaScore"
+            tools:text="50000 so'm" />
+
+
+        <TextView
+            android:id="@+id/ideaStartDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/_5sdp"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="@dimen/_5sdp"
+            app:layout_constraintStart_toStartOf="@id/ideaScore"
+            app:layout_constraintTop_toBottomOf="@+id/ideaScore"
+            tools:text="18.03.2021"
+            app:drawableStartCompat="@drawable/ic_start_date" />
+
+        <TextView
+            android:id="@+id/ideaCompletedDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/_5sdp"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="@dimen/_5sdp"
+            app:layout_constraintStart_toEndOf="@id/ideaStartDate"
+            app:layout_constraintTop_toBottomOf="@+id/ideaScore"
+            tools:text="18.03.2021"
+            app:drawableStartCompat="@drawable/ic_flag_completed" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

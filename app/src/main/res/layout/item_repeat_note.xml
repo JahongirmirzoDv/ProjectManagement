@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_once"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:fontFamily="@font/inter_regular"
+        android:padding="@dimen/size_16dp"
+        android:text="@string/once"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_16sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_0.5dp"
+        android:layout_marginHorizontal="@dimen/size_8dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <TextView
+        android:id="@+id/every_day"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:fontFamily="@font/inter_regular"
+        android:padding="@dimen/size_16dp"
+        android:text="@string/every_day"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_16sp" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_0.5dp"
+        android:layout_marginHorizontal="@dimen/size_8dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <TextView
+        android:id="@+id/every_week"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:fontFamily="@font/inter_regular"
+        android:padding="@dimen/size_16dp"
+        android:text="@string/every_week"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_16sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_0.5dp"
+        android:layout_marginHorizontal="@dimen/size_8dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <TextView
+        android:id="@+id/every_month"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:fontFamily="@font/inter_regular"
+        android:padding="@dimen/size_16dp"
+        android:text="@string/every_month"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_16sp" />
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_0.5dp"
+        android:layout_marginHorizontal="@dimen/size_8dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <TextView
+        android:id="@+id/every_year"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:fontFamily="@font/inter_regular"
+        android:padding="@dimen/size_16dp"
+        android:text="@string/every_year"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_16sp" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

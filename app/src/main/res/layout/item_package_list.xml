@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcv_parent"
+        style="@style/DefCardViewStyle"
+        android:layout_width="@dimen/size_0dp"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        android:layout_marginVertical="@dimen/_3sdp"
+        app:cardCornerRadius="@dimen/size_8dp"
+        app:cardElevation="@dimen/_3sdp"
+        app:layout_constraintDimensionRatio="0:0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_bg">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/activeText"
+                style="@style/TextSmall"
+                android:layout_margin="@dimen/_10sdp"
+                android:drawableStart="@drawable/inactive_status"
+                android:drawablePadding="@dimen/_5sdp"
+                android:text="@string/waiting_text"
+                android:textColor="@color/company_registration_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/title"
+                style="@style/TextLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="@string/next_package"
+                android:textColor="@color/company_registration_color"
+                android:textSize="@dimen/_18ssp"
+                app:fontFamily="@font/poppins_regular"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/activeText" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/unlimProDeadline"
+                style="@style/TextSmall"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:drawableStart="@drawable/ic_time_circle"
+                android:drawablePadding="@dimen/_5sdp"
+                android:text="@string/unlim_pro_package_deadline"
+                android:textColor="@color/company_registration_color"
+                app:layout_constraintEnd_toEndOf="@+id/title"
+                app:layout_constraintStart_toStartOf="@+id/title"
+                app:layout_constraintTop_toBottomOf="@id/title" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/unlimProStaffLimit"
+                style="@style/TextSmall"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:drawableStart="@drawable/ic_staff"
+                android:drawablePadding="@dimen/_5sdp"
+                android:text="@string/limit_staffs"
+                android:textColor="@color/company_registration_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/title"
+                app:layout_constraintStart_toStartOf="@+id/title"
+                app:layout_constraintTop_toBottomOf="@id/unlimProDeadline" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

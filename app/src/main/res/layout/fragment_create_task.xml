@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhiteSoft"
+    tools:context=".presentation.ui.screens.home_activity.adding.create_task.CreateTaskFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imgBackButton"
+                style="@style/DefImageViewStyle"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_back_button_cross" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/CreateToolbarTitleStyle"
+                android:layout_alignParentStart="true"
+                android:text="@string/create_task" />
+
+            <ImageView
+                android:id="@+id/createTaskBlueButton"
+                style="@style/CreateTickImageStyle"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_checedk_in_create_project" />
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScroll"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/_10sdp">
+
+
+            <HorizontalScrollView
+                android:id="@+id/scrollFirst"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_2sdp"
+                android:orientation="horizontal"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_5sdp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_performer"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/hintPerformer"
+                                style="@style/TextSmall"
+                                android:text="@string/hint_performer_2"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/personPerformerImageView"
+                                style="@style/DefImageViewStyle"
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:contentDescription="@string/app_name"
+                                android:src="@drawable/ic_adding_person"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/hintPerformer"
+                                app:layout_constraintStart_toStartOf="@+id/hintPerformer"
+                                app:layout_constraintTop_toBottomOf="@id/hintPerformer" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_master"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_marginStart="@dimen/_7sdp"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/hintMaster"
+                                style="@style/TextSmall"
+                                android:text="@string/tv_master_2"
+                                android:textSize="@dimen/_11ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/personMasterImageView"
+                                style="@style/DefImageViewStyle"
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:contentDescription="@string/app_name"
+                                android:src="@drawable/ic_adding_person"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/hintMaster"
+                                app:layout_constraintStart_toStartOf="@+id/hintMaster"
+                                app:layout_constraintTop_toBottomOf="@id/hintMaster" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/status_btn"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_marginStart="@dimen/_7sdp"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/hintStatus"
+                                style="@style/TextSmall"
+                                android:text="@string/status_text"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/statusImage"
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:contentDescription="@string/app_name"
+                                android:src="@drawable/ic_new_status"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/hintStatus"
+                                app:layout_constraintStart_toStartOf="@+id/hintStatus"
+                                app:layout_constraintTop_toBottomOf="@id/hintStatus" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_owner"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_marginStart="@dimen/_7sdp"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/hintAuthor"
+                                style="@style/TextSmall"
+                                android:text="@string/author"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/personAuthorImageView"
+                                style="@style/DefImageViewStyle"
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:contentDescription="@string/app_name"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/hintAuthor"
+                                app:layout_constraintStart_toStartOf="@+id/hintAuthor"
+                                app:layout_constraintTop_toBottomOf="@id/hintAuthor" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTaskName"
+                style="@style/CreateScreensEditTextStyle"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:drawableEnd="@drawable/ic_help"
+                android:hint="@string/task_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/scrollFirst" />
+
+
+            <LinearLayout
+                android:id="@+id/taskDeadlineLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/etTaskName">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/taskBeginningTimeLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/imgBeginingTime"
+                        style="@style/CreateScreensDateImageIconStyle"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:contentDescription="@string/app_name"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_calendar_new_version" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBegingTimeTitle"
+                        style="@style/CreateScreensTimeTitleStyle"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:text="@string/begining_date"
+                        app:layout_constraintBottom_toBottomOf="@+id/imgBeginingTime"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/imgBeginingTime"
+                        app:layout_constraintTop_toTopOf="@+id/imgBeginingTime" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBeginningTime"
+                        style="@style/CreateScreensTextTime"
+                        android:hint="@string/date_format"
+                        app:layout_constraintStart_toStartOf="@+id/imgBeginingTime"
+                        app:layout_constraintTop_toBottomOf="@+id/imgBeginingTime" />
+
+                    <View
+                        android:id="@+id/viewId1"
+                        android:layout_width="@dimen/_1sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:background="@color/underLine"
+                        app:layout_constraintBottom_toBottomOf="@id/tvBeginningTime"
+                        app:layout_constraintStart_toEndOf="@id/tvBeginningTime"
+                        app:layout_constraintTop_toTopOf="@id/tvBeginningTime" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBeginTime"
+                        style="@style/CreateScreensTextTime"
+                        android:layout_marginTop="0dp"
+                        android:hint="@string/time_format"
+                        app:layout_constraintBottom_toBottomOf="@+id/viewId1"
+                        app:layout_constraintStart_toEndOf="@+id/viewId1"
+                        app:layout_constraintTop_toTopOf="@+id/viewId1" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/view7"
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="@dimen/_15sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:background="@color/colorGrey" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/taskEndingTimeLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/imgEndingTime"
+                        style="@style/CreateScreensDateImageIconStyle"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:contentDescription="@string/app_name"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_calendar_new_version" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvEndingTimeTitle"
+                        style="@style/CreateScreensTimeTitleStyle"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="@string/ending_time"
+                        app:layout_constraintBottom_toBottomOf="@+id/imgEndingTime"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/imgEndingTime"
+                        app:layout_constraintTop_toTopOf="@+id/imgEndingTime" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvEndingTime"
+                        style="@style/CreateScreensTextTime"
+                        android:layout_marginStart="0dp"
+                        android:hint="@string/date_format"
+                        app:layout_constraintStart_toStartOf="@+id/imgEndingTime"
+                        app:layout_constraintTop_toBottomOf="@+id/imgEndingTime" />
+
+                    <View
+                        android:id="@+id/viewId2"
+                        android:layout_width="@dimen/_1sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:background="@color/underLine"
+                        app:layout_constraintBottom_toBottomOf="@id/tvEndingTime"
+                        app:layout_constraintStart_toEndOf="@id/tvEndingTime"
+                        app:layout_constraintTop_toTopOf="@id/tvEndingTime" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvEndTime"
+                        style="@style/CreateScreensTextTime"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/background_radus_4dp"
+                        android:hint="@string/time_format"
+                        app:layout_constraintBottom_toBottomOf="@+id/viewId2"
+                        app:layout_constraintStart_toEndOf="@+id/viewId2"
+                        app:layout_constraintTop_toTopOf="@+id/viewId2" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:id="@+id/iv_time_edit_rule"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvEndTime"
+                    app:layout_constraintStart_toEndOf="@+id/tvEndTime"
+                    app:layout_constraintTop_toTopOf="@+id/tvEndingTimeTitle"
+                    app:srcCompat="@drawable/push_pin_icon" />
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:id="@+id/scrollSecond"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/taskDeadlineLayout">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_2sdp"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_5sdp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/_90sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/hintObservers"
+                                style="@style/TextSmall"
+                                android:text="@string/observers"
+                                android:textSize="@dimen/_10ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/addObserverPerson"
+                                style="@style/DefImageViewStyle"
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:contentDescription="@string/app_name"
+                                android:src="@drawable/ic_adding_person"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/hintObservers"
+                                app:layout_constraintStart_toStartOf="@+id/hintObservers"
+                                app:layout_constraintTop_toBottomOf="@id/hintObservers" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/observerCount"
+                                android:layout_width="@dimen/_18sdp"
+                                android:layout_height="@dimen/_18sdp"
+                                android:layout_marginStart="@dimen/_30sdp"
+                                android:layout_marginTop="@dimen/_30sdp"
+                                android:background="@drawable/round_person_blue_bg"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_8ssp"
+                                android:visibility="gone"
+                                app:layout_constraintBottom_toBottomOf="@id/addObserverPerson"
+                                app:layout_constraintEnd_toEndOf="@id/addObserverPerson"
+                                app:layout_constraintStart_toStartOf="@+id/addObserverPerson"
+                                app:layout_constraintTop_toTopOf="@+id/addObserverPerson"
+                                tools:text="10" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_files"
+                        android:layout_width="@dimen/_90sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_marginStart="@dimen/_7sdp"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/hintFiles"
+                                style="@style/TextSmall"
+                                android:text="@string/files"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/fileCount"
+                                style="@style/TextMedium"
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:background="@drawable/round_files_bg"
+                                android:contentDescription="@string/app_name"
+                                android:gravity="center"
+                                android:textColor="@color/blue"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/hintFiles"
+                                app:layout_constraintStart_toStartOf="@+id/hintFiles"
+                                app:layout_constraintTop_toBottomOf="@id/hintFiles"
+                                tools:text="0" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/_90sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_marginStart="@dimen/_7sdp"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/importanceLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/hintImportance"
+                                style="@style/TextSmall"
+                                android:gravity="center"
+                                android:text="@string/title_importance2"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <LinearLayout
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:background="@drawable/round_files_bg"
+                                android:gravity="center"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/hintImportance">
+
+                                <ImageView
+                                    android:id="@+id/importanceIcon"
+                                    android:layout_width="@dimen/_16sdp"
+                                    android:layout_height="@dimen/_16sdp"
+                                    android:contentDescription="@string/app_name"
+                                    android:src="@drawable/ic_file_text_yellow"
+                                    app:layout_constraintBottom_toBottomOf="parent" />
+                            </LinearLayout>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </LinearLayout>
+
+
+            </HorizontalScrollView>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/linkingLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/size_12dp"
+                app:layout_constraintTop_toBottomOf="@+id/scrollSecond">
+
+
+                <LinearLayout
+                    android:id="@+id/projectSpinnerLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/background_spinner"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_13sdp"
+                    android:paddingTop="@dimen/_6sdp"
+                    android:paddingEnd="@dimen/_13sdp"
+                    android:paddingBottom="@dimen/_6sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.85">
+
+                    <ImageView
+                        android:id="@+id/spinnerPackageIcon"
+                        android:layout_width="@dimen/_18sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_briefcase" />
+
+                    <Spinner
+                        android:id="@+id/spinner"
+                        style="@style/MyTextViewStyleBlack"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:dropDownWidth="wrap_content"
+                        android:gravity="center"
+                        android:spinnerMode="dropdown" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/taskFolderSpinnerLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/background_spinner"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_13sdp"
+                    android:paddingTop="@dimen/_6sdp"
+                    android:paddingEnd="@dimen/_13sdp"
+                    android:paddingBottom="@dimen/_6sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/projectSpinnerLayout"
+                    app:layout_constraintWidth_percent="0.85">
+
+                    <ImageView
+                        android:id="@+id/spinnerTaskFolderIcon"
+                        android:layout_width="@dimen/_18sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_folder_grey" />
+
+                    <Spinner
+                        android:id="@+id/spinnerTaskFolder"
+                        style="@style/MyTextViewStyleBlack"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:dropDownWidth="wrap_content"
+                        android:gravity="center"
+                        android:spinnerMode="dropdown" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/repeatLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@color/white"
+                android:paddingVertical="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/linkingLayout">
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/repeatTitle"
+                    style="@style/CreateScreensFieldTitle"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:letterSpacing="0"
+                    android:text="@string/repetition_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/repeatText"
+                    style="@style/TextMedium"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_marginEnd="@dimen/size_8dp"
+                    android:gravity="end"
+                    android:lines="1"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/repeatTitle"
+                    app:layout_constraintEnd_toStartOf="@+id/repeatAdd"
+                    app:layout_constraintStart_toEndOf="@id/repeatTitle"
+                    app:layout_constraintTop_toTopOf="@+id/repeatTitle"
+                    tools:text="@string/once" />
+
+                <ImageView
+                    android:id="@+id/repeatAdd"
+                    style="@style/DefImageViewStyle"
+                    android:layout_marginEnd="@dimen/_32sdp"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/repeatText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/repeatText"
+                    app:srcCompat="@drawable/ic_forvard_in_other" />
+
+                <ProgressBar
+                    android:id="@+id/pbLoadingRepetitions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/size_24dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/showCalendarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingVertical="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/repeatLayout">
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/showCalendarTitle"
+                    style="@style/CreateScreensFieldTitle"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:letterSpacing="0"
+                    android:text="@string/show_calendar_task"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/swShowCalendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="28dp"
+                    android:checked="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/repeatTypeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_56sdp"
+                android:background="@color/white"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/showCalendarLayout">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/repeatTypeTitle"
+                    style="@style/CreateScreensFieldTitle"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:letterSpacing="0"
+                    android:text="@string/repeat_type"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/repeatTypeText"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/size_8dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:gravity="end"
+                    android:hint="@string/no"
+                    android:lines="1"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/repeatTypeTitle"
+                    app:layout_constraintEnd_toStartOf="@+id/repeatTypeAdd"
+                    app:layout_constraintStart_toEndOf="@id/repeatTypeTitle"
+                    app:layout_constraintTop_toTopOf="@+id/repeatTypeTitle"
+                    tools:text="Hafta kuniga qarab" />
+
+                <ImageView
+                    android:id="@+id/repeatTypeAdd"
+                    style="@style/DefImageViewStyle"
+                    android:layout_marginEnd="@dimen/_24sdp"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/repeatTypeText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/repeatTypeText"
+                    app:srcCompat="@drawable/ic_arrow_right" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/reminderDateLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_56sdp"
+                android:background="@color/white"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/repeatTypeLayout">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/reminderDateTitle"
+                    style="@style/CreateScreensFieldTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="@string/last_reminder_date"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/reminderDateText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/size_8dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/reminderDateTitle"
+                    app:layout_constraintEnd_toStartOf="@+id/reminderDateAdd"
+                    app:layout_constraintTop_toTopOf="@+id/reminderDateTitle"
+                    tools:text="31.12.2021" />
+
+                <ImageView
+                    android:id="@+id/reminderDateAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_24sdp"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/reminderDateText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/reminderDateText"
+                    app:srcCompat="@drawable/ic_arrow_right" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTaskUpload"
+                style="@style/GeneralBlueButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:padding="@dimen/size_16dp"
+                android:text="@string/save"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reminderDateLayout" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <include
+        android:id="@+id/progress_layout"
+        layout="@layout/layout_loader"
+        android:visibility="gone" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

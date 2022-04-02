@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /** Created by San'atbek Ullixo'jayev on 03.06.21 9:39 2021
+  ~ Last modified 03.06.21 9:39 **/
+  -->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <corners android:radius="@dimen/size_8dp" />
+    <solid android:color="@color/colorWhiteSoft" />
+
+
+</shape>

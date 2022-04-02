@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F5F7"
+    tools:context=".presentation.ui.screens.home_activity.others.goal_map.CreateGoalMapFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/addGoalsMapLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_140dp"
+        android:layout_margin="@dimen/size_20dp"
+        android:background="@drawable/background_create_chat"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14">
+
+        <ImageView
+            android:id="@+id/addPlus"
+            style="@style/DefImageViewStyle"
+            android:layout_width="@dimen/size_30dp"
+            android:layout_height="@dimen/size_30dp"
+            android:layout_marginTop="52dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_add_plus"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/app_bar_label_create_goal_map"
+            android:textColor="#364F6B"
+            android:textSize="@dimen/text_15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addPlus" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView14"
+        style="@style/TextSmallSemiBold"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/app_bar_label_goal_map"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerGoalMap"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addGoalsMapLayout"
+        tools:listitem="@layout/item_goal_map" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_add"
+        style="@style/FabButtonStyle"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:tint="@null" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/btn_add_project"
+        style="@style/TextSmallAddButtonTextStyle"
+        android:text="@string/project"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/btn_add_goal"
+        app:layout_constraintEnd_toEndOf="@+id/btn_add"
+        tools:visibility="visible" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/btn_add_goal"
+        style="@style/TextSmallAddButtonTextStyle"
+        android:text="@string/goal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/addMapBtn"
+        app:layout_constraintEnd_toEndOf="@+id/btn_add"
+        tools:visibility="visible" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/addMapBtn"
+        style="@style/TextSmallAddButtonTextStyle"
+        android:text="@string/map"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/btn_add"
+        app:layout_constraintEnd_toEndOf="@+id/btn_add"
+        tools:visibility="visible" />
+
+
+    <include
+        android:id="@+id/progress_layout"
+        layout="@layout/layout_loader"
+        android:visibility="gone" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

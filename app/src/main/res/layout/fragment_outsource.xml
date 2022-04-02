@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.ui.screens.home_activity.workers.outsource.OutsourceFragment">
+
+
+    <TextView
+        android:id="@+id/txt_empty_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:fontFamily="@font/inter_regular"
+        android:gravity="center"
+        android:text="@string/not_available_outsource_workers"
+        android:textColor="@color/colorGreySoft"
+        android:textSize="@dimen/_12sdp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_team"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:itemCount="10"
+        tools:listitem="@layout/item_team_workers"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+    <include
+        android:id="@+id/progress_bar"
+        layout="@layout/layout_loader"
+        android:visibility="gone" />
+
+
+</FrameLayout>

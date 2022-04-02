@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <solid android:color="@color/background_layout" />
+    <stroke
+        android:width="1.5dp"
+        android:color="@color/company_icon_field_stroke_color"
+        android:dashWidth="@dimen/size_8dp"
+        android:dashGap="@dimen/size_8dp" />
+    <corners android:radius="@dimen/size_8dp" />
+
+</shape>

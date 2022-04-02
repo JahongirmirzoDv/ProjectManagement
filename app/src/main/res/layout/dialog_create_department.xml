@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/fab_margin"
+    android:backgroundTint="@color/white"
+    app:cardCornerRadius="@dimen/_14sdp"
+    tools:context=".presentation.ui.dialogs.home_activity.workers.structure.CreateDepartmentDialog">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/size_10dp">
+
+        <ImageView
+            android:id="@+id/btn_cancel"
+            android:layout_width="@dimen/_26sdp"
+            android:layout_height="@dimen/_26sdp"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_cancel_d_c"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_title"
+            style="@style/MyTextViewStyleBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size_20dp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="@string/add_department__"
+            android:textSize="@dimen/text_22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_title_department"
+            style="@style/TextTitleStyle"
+            android:layout_marginTop="16dp"
+            android:text="@string/title_name__"
+            app:layout_constraintStart_toStartOf="@+id/txt_title"
+            app:layout_constraintTop_toBottomOf="@+id/txt_title" />
+
+
+        <TextView
+            android:id="@+id/txt_title_accept_department"
+            style="@style/TextTitleStyle"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/accept_department_title_dialog"
+            app:layout_constraintStart_toStartOf="@+id/txt_title"
+            app:layout_constraintTop_toBottomOf="@+id/et_name" />
+
+
+        <RelativeLayout
+            android:id="@+id/spn_departments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_20dp"
+            android:layout_marginTop="@dimen/size_8dp"
+            android:layout_marginEnd="@dimen/size_20dp"
+            android:background="@drawable/back_spn_corner_2"
+            android:orientation="horizontal"
+            android:padding="@dimen/_4sdp"
+            app:layout_constraintTop_toBottomOf="@id/txt_title_accept_department">
+
+            <Spinner
+                android:id="@+id/spinner_departments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:spinnerMode="dropdown" />
+
+            <ImageView
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:padding="@dimen/size_8dp"
+                android:src="@drawable/arrow_power_spinner_library"
+                app:tint="@color/hint_text_color" />
+        </RelativeLayout>
+
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_20dp"
+            android:layout_marginTop="@dimen/size_8dp"
+            android:layout_marginEnd="@dimen/size_20dp"
+            android:background="@drawable/background_et_name"
+            android:ems="10"
+            android:hint="@string/enter_name__"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.388"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_title_department"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/btn_yes"
+            style="@style/MySaveBtnTextView"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_17sdp"
+            android:layout_marginBottom="@dimen/size_20dp"
+            android:text="@string/save_d_company"
+            app:cornerRadius="@dimen/size_7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_no"
+            app:layout_constraintTop_toBottomOf="@+id/spn_departments"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/btn_no"
+            style="@style/MyCancelBtnTextView"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_17sdp"
+            android:elevation="0dp"
+            android:text="@string/cancel__"
+            app:cornerRadius="@dimen/size_7dp"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_yes"
+            app:layout_constraintEnd_toStartOf="@+id/btn_yes"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btn_yes" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.viewmodels.home_activity.error.ErrorFragment">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_160sdp"
+        android:layout_marginBottom="@dimen/_50sdp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_dev_productivity"
+        app:layout_constraintBottom_toTopOf="@+id/back_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/info_text"
+        style="@style/TextSmallSemiBold"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center"
+        android:maxLines="2"
+        android:text="@string/message_in_repairing"
+        app:fontFamily="@font/inter_bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/reques_text"
+        style="@style/TextSmallSemiBold"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center"
+        android:text="@string/message2_in_repairing"
+        android:textColor="@color/colorGreySoft"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/info_text" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/back_btn"
+        style="@style/GeneralBlueButtonStyle"
+        android:layout_width="0dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/transparent"
+        android:text="@string/back_move"
+        android:textColor="@color/blue"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

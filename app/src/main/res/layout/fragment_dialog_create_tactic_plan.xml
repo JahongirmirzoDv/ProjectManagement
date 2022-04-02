@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/size_16dp"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size_24dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/add_tactic_plan"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_16dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/tactic_plan"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_14sp"
+            app:layout_constraintEnd_toEndOf="@id/tv_title"
+            app:layout_constraintStart_toStartOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_name"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_6dp"
+            app:cardBackgroundColor="#F4F5F7"
+            app:cardCornerRadius="@dimen/size_8dp"
+            app:cardElevation="@dimen/size_0dp"
+            app:contentPaddingBottom="@dimen/size_8dp"
+            app:contentPaddingTop="@dimen/size_8dp"
+            app:layout_constraintEnd_toEndOf="@id/tv_title"
+            app:layout_constraintStart_toStartOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            app:strokeColor="#A5A9B8"
+            app:strokeWidth="@dimen/size_1dp">
+
+            <EditText
+                android:id="@+id/et_tactic_plan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_16dp"
+                android:layout_marginVertical="@dimen/size_8dp"
+                android:background="@android:color/transparent"
+                android:hint="@string/enter_tactic_plan"
+                android:textColor="@color/black"
+                android:textColorHint="#A5A9B8" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tv_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_16dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/year"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_14sp"
+            app:layout_constraintStart_toStartOf="@id/cv_name"
+            app:layout_constraintTop_toBottomOf="@id/cv_name" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_year"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_6dp"
+            android:layout_marginEnd="@dimen/size_8dp"
+            app:cardBackgroundColor="#F4F5F7"
+            app:cardCornerRadius="@dimen/size_8dp"
+            app:cardElevation="@dimen/size_0dp"
+            app:contentPaddingBottom="@dimen/size_8dp"
+            app:contentPaddingTop="@dimen/size_8dp"
+            app:layout_constraintEnd_toStartOf="@id/cv_month"
+            app:layout_constraintStart_toStartOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_year"
+            app:strokeColor="#A5A9B8"
+            app:strokeWidth="@dimen/size_1dp">
+
+            <Spinner
+                android:id="@+id/sp_year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tv_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/month"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_year"
+            app:layout_constraintStart_toStartOf="@id/cv_month" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_month"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_8dp"
+            android:layout_marginTop="@dimen/size_6dp"
+            app:cardBackgroundColor="#F4F5F7"
+            app:cardCornerRadius="@dimen/size_8dp"
+            app:cardElevation="@dimen/size_0dp"
+            app:contentPaddingBottom="@dimen/size_8dp"
+            app:contentPaddingTop="@dimen/size_8dp"
+            app:layout_constraintEnd_toEndOf="@id/tv_title"
+            app:layout_constraintStart_toEndOf="@id/cv_year"
+            app:layout_constraintTop_toBottomOf="@id/tv_year"
+            app:strokeColor="#A5A9B8"
+            app:strokeWidth="@dimen/size_1dp">
+
+            <Spinner
+                android:id="@+id/sp_month"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_8dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/status_text"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_14sp"
+            app:layout_constraintEnd_toEndOf="@id/tv_title"
+            app:layout_constraintStart_toStartOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/cv_year" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_status"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_6dp"
+            app:cardBackgroundColor="#F4F5F7"
+            app:cardCornerRadius="@dimen/size_8dp"
+            app:cardElevation="@dimen/size_0dp"
+            app:contentPaddingBottom="@dimen/size_8dp"
+            app:contentPaddingTop="@dimen/size_8dp"
+            app:layout_constraintEnd_toEndOf="@id/tv_title"
+            app:layout_constraintStart_toStartOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_status"
+            app:strokeColor="#A5A9B8"
+            app:strokeWidth="@dimen/size_1dp">
+
+            <Spinner
+                android:id="@+id/sp_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <ProgressBar
+            android:id="@+id/pb_loading_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/cv_status"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/cv_status" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_submit"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_48dp"
+            android:layout_marginBottom="@dimen/size_24dp"
+            android:paddingVertical="@dimen/size_16dp"
+            android:text="@string/add"
+            app:backgroundTint="@color/blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/tv_title"
+            app:layout_constraintStart_toStartOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/cv_status" />
+
+        <RelativeLayout
+            android:id="@+id/rl_loading"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_0dp"
+            android:background="#80000000"
+            android:elevation="@dimen/size_9dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ProgressBar
+                android:id="@+id/pb_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:indeterminateTint="@color/white" />
+
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

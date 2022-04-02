@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/itemUndoneIdea"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_10sdp"
+    app:cardCornerRadius="@dimen/_5sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhiteSoft"
+        android:paddingBottom="@dimen/_5sdp">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardPersonImage"
+            android:layout_width="@dimen/size_48dp"
+            android:layout_height="@dimen/size_48dp"
+            android:layout_marginStart="@dimen/size_20dp"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:cardCornerRadius="@dimen/size_30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ideaCreator"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_user" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/ideaTitle"
+            style="@style/TextMediumSemiBold"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintStart_toEndOf="@id/cardPersonImage"
+            app:layout_constraintTop_toTopOf="@id/cardPersonImage"
+            tools:text="Idea nomi" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/ideaDate"
+            style="@style/TextSmall"
+            android:layout_marginStart="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="@id/ideaTitle"
+            app:layout_constraintStart_toEndOf="@id/ideaTitle"
+            app:layout_constraintTop_toTopOf="@id/ideaTitle"
+            tools:text="27.07.2021" />
+
+        <ImageButton
+            android:id="@+id/btnMore"
+            style="@style/DefImageViewStyle"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_more_button"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/ideaTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ideaTitle" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/ideaDescription"
+            style="@style/TextSmall"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:maxLines="2"
+            android:textColor="@color/sub_hint_text_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/ideaTitle"
+            app:layout_constraintTop_toBottomOf="@id/ideaTitle"
+            tools:text="ghkjdl  ffj lksdjf lsa fj fj l;ass fj" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

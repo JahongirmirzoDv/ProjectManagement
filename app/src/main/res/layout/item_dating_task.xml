@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/size_8dp"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/size_20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/size_20dp" />
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_8dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_dating"
+        app:layout_constraintStart_toStartOf="@id/gl_start"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_id"
+        android:layout_width="@dimen/size_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_16dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/inter_regular"
+        android:lines="1"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/gl_end"
+        app:layout_constraintStart_toEndOf="@id/iv_icon"
+        app:layout_constraintTop_toTopOf="@id/iv_icon"
+        tools:text="Uchrashuv #1" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="@dimen/size_0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/size_4dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/inter_regular"
+        android:lines="1"
+        android:textSize="@dimen/text_14sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@id/gl_end"
+        app:layout_constraintStart_toStartOf="@id/tv_id"
+        app:layout_constraintTop_toBottomOf="@id/tv_id"
+        tools:text="Xon saroy masalasida majlis" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:drawablePadding="@dimen/size_4dp"
+        android:fontFamily="@font/inter_regular"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_14sp"
+        app:drawableStartCompat="@drawable/ic_calendar"
+        app:drawableTint="@color/meeting_icon_color"
+        app:layout_constraintEnd_toStartOf="@id/tv_person_title"
+        app:layout_constraintStart_toStartOf="@id/tv_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        tools:text="06.08.2021 | 14:50" />
+
+    <TextView
+        android:id="@+id/tv_person_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_12dp"
+        android:layout_marginEnd="@dimen/size_4dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/inter_regular"
+        android:gravity="end"
+        android:lines="1"
+        android:text="Kim bilan:"
+        android:textSize="@dimen/text_12sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_time"
+        app:layout_constraintEnd_toStartOf="@id/tv_person_value"
+        app:layout_constraintStart_toEndOf="@id/tv_time" />
+
+    <TextView
+        android:id="@+id/tv_person_value"
+        android:layout_width="@dimen/size_0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_regular"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_14sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_time"
+        app:layout_constraintEnd_toEndOf="@id/gl_end"
+        app:layout_constraintStart_toEndOf="@id/tv_person_title"
+        tools:text="Muhammadiyor Abdullayev" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_divider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="tv_time, tv_person_title, tv_person_value" />
+
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="@dimen/size_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_4dp"
+        android:layout_marginBottom="@dimen/size_8dp"
+        android:drawablePadding="@dimen/size_4dp"
+        android:fontFamily="@font/inter_regular"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_14sp"
+        app:drawableStartCompat="@drawable/ic_location"
+        app:drawableTint="@color/meeting_icon_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/gl_end"
+        app:layout_constraintStart_toStartOf="@id/tv_time"
+        app:layout_constraintTop_toBottomOf="@id/barrier_divider"
+        tools:text="PCG Bosh ofisi" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_8sdp"
+    android:background="@drawable/back_black_radius_half"
+    android:padding="@dimen/_6sdp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_user"
+        android:layout_width="@dimen/_32sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:src="@drawable/ic_baseline_account_circle_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_username"
+        style="@style/TextMedium"
+        android:layout_marginVertical="0dp"
+        android:layout_marginStart="@dimen/_4sdp"
+        app:layout_constraintStart_toEndOf="@id/iv_user"
+        app:layout_constraintTop_toTopOf="@id/iv_user"
+        tools:text="Ibrahim Gulymamov" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_position"
+        style="@style/TextSmall"
+        android:layout_marginVertical="0dp"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:textColor="@color/hintColor"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_user"
+        app:layout_constraintStart_toEndOf="@id/iv_user"
+        tools:text="Biznes egasi" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btn_remove"
+        style="@style/DefImageViewStyle"
+        android:layout_width="@dimen/_16sdp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="@dimen/_6sdp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_back_button_cross"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".presentation.ui.screens.home_activity.quick_plans.QuickPlansFragment">
+
+    <View
+        android:id="@+id/v_to_top"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/srl_refresh"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_to_top"
+        android:layout_width="@dimen/size_16dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_back_in_arrow"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/v_to_top"
+        app:layout_constraintStart_toStartOf="@+id/ll_date"
+        app:layout_constraintTop_toBottomOf="@+id/ll_state"
+        app:tint="@color/blue" />
+
+
+    <ImageView
+        android:id="@+id/iv_calendar_select"
+        style="@style/DefImageViewStyle"
+        android:layout_marginEnd="@dimen/size_24dp"
+        android:background="@drawable/background_spinner"
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/size_8dp"
+        android:src="@drawable/ic_calendar"
+        app:layout_constraintBottom_toBottomOf="@id/ll_date"
+        app:layout_constraintEnd_toStartOf="@id/ll_state"
+        app:layout_constraintStart_toEndOf="@id/ll_date"
+        app:layout_constraintTop_toTopOf="@id/ll_date" />
+
+    <LinearLayout
+        android:id="@+id/ll_date"
+        android:layout_width="@dimen/size_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size_16dp"
+        android:layout_marginTop="@dimen/size_16dp"
+        android:background="@drawable/background_spinner"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/size_8dp"
+        android:paddingBottom="@dimen/size_8dp"
+        app:layout_constraintEnd_toStartOf="@id/iv_calendar_select"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_date"
+            style="@style/MyTextViewStyleBlack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="@dimen/size_8dp"
+            android:dropDownWidth="wrap_content"
+            android:ellipsize="marquee"
+            android:gravity="start"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_state"
+        android:layout_width="@dimen/size_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size_16dp"
+        android:layout_marginTop="@dimen/size_16dp"
+        android:background="@drawable/background_spinner"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/size_8dp"
+        android:paddingBottom="@dimen/size_8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_calendar_select"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_state"
+            style="@style/MyTextViewStyleBlack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="@dimen/size_8dp"
+            android:dropDownWidth="wrap_content"
+            android:ellipsize="marquee"
+            android:gravity="start"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true" />
+    </LinearLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_empty"
+        android:layout_width="@dimen/size_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="@dimen/size_12dp"
+        android:gravity="center"
+        android:text="@string/there_is_not_plans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/srl_refresh" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/srl_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_0dp"
+        android:layout_marginHorizontal="@dimen/size_12dp"
+        android:layout_marginTop="@dimen/size_24dp"
+        app:layout_constraintBottom_toTopOf="@id/ll_create"
+        app:layout_constraintTop_toBottomOf="@id/ll_date">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_quick_plans"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_quick_plan_day" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_error"
+        style="@style/TextSmall"
+        android:layout_width="0dp"
+        android:layout_marginHorizontal="@dimen/size_24dp"
+        android:gravity="center"
+        android:text="@string/xatolik"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/srl_refresh" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_retry"
+        style="@style/ButtonDefStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_24dp"
+        android:text="@string/retry"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_error" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_1dp"
+        android:background="@color/colorGrey"
+        app:layout_constraintBottom_toTopOf="@id/ll_create" />
+
+    <LinearLayout
+        android:id="@+id/ll_create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_quick_plan"
+            style="@style/EditTextDefStyle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="@string/input_plan_meaning"
+            android:paddingHorizontal="@dimen/size_16dp"
+            android:paddingVertical="@dimen/_12sdp" />
+
+        <ImageView
+            android:id="@+id/iv_calendar"
+            style="@style/DefImageViewStyle"
+            android:layout_gravity="center"
+            android:contentDescription="@string/app_name"
+            android:padding="@dimen/size_16dp"
+            android:src="@drawable/ic_calendar"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_create"
+            style="@style/DefImageViewStyle"
+            android:layout_gravity="center"
+            android:contentDescription="@string/app_name"
+            android:padding="@dimen/size_16dp"
+            android:src="@drawable/ic_unread_message" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

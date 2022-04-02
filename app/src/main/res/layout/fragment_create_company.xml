@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_linear"
+        app:layout_constraintTop_toBottomOf="@id/app_bar">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_name_company"
+                style="@style/TextSmallSemiBold"
+                android:layout_marginStart="@dimen/_17sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="@string/enter_your_company" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_name_company"
+                style="@style/CompanyEditTextStyle"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@drawable/background_et_create_company"
+                android:hint="@string/name_company" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_direction_company"
+                style="@style/TextSmallSemiBold"
+                android:layout_marginStart="@dimen/_17sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="@string/direction_company" />
+
+            <LinearLayout
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:background="@drawable/background_et_create_company"
+                android:layout_marginHorizontal="@dimen/_17sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp">
+                <Spinner
+                    android:spinnerMode="dropdown"
+                    android:id="@+id/algorithm1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"                  />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/_15sdp"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:background="@drawable/background_et_create_company"
+                android:layout_marginHorizontal="@dimen/_17sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp">
+                <Spinner
+                    android:spinnerMode="dropdown"
+                    android:id="@+id/algorithm2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:id="@+id/et_direction_company"-->
+<!--                style="@style/CompanyEditTextStyle"-->
+<!--                android:layout_marginTop="@dimen/_8sdp"-->
+<!--                android:background="@drawable/background_et_create_company"-->
+<!--                android:hint="@string/direction" />-->
+
+<!--                        <androidx.appcompat.widget.AppCompatTextView-->
+<!--                            android:id="@+id/txt_short_username"-->
+<!--                            style="@style/TextSmallSemiBold"-->
+<!--                            android:layout_marginStart="@dimen/_17sdp"-->
+<!--                            android:layout_marginTop="16dp"-->
+<!--                            android:text="@string/short_username" />-->
+
+<!--                        <com.google.android.material.textfield.TextInputEditText-->
+<!--                            android:id="@+id/et_short_username"-->
+<!--                            style="@style/CompanyEditTextStyle"-->
+<!--                            android:layout_marginTop="@dimen/_8sdp"-->
+<!--                            android:background="@drawable/background_et_create_company"-->
+<!--                            android:hint="@string/short_username" />-->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_email_company"
+                style="@style/TextSmallSemiBold"
+                android:layout_marginStart="@dimen/_17sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="@string/email_address" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_email_company"
+                style="@style/CompanyEditTextStyle"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@drawable/background_et_create_company"
+                android:hint="@string/email" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_image_name"
+                style="@style/TextSmallSemiBold"
+                android:layout_marginStart="@dimen/_17sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:text="@string/choose_image" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/btn_image"
+                style="@style/ChooseFileButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@drawable/background_create_chat"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="@dimen/size_30dp"
+                    android:layout_height="@dimen/size_30dp"
+                    android:src="@drawable/ic_create_company_file" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="@string/choose_image"
+                    android:textSize="@dimen/text_14sp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <ImageView
+                android:id="@+id/iv_company"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@drawable/background_create_chat"
+                android:scaleType="centerCrop"
+                android:visibility="gone" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottom_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_back"
+            style="@style/ButtonDefStyle"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:outlineSpotShadowColor="@color/white"
+            android:text="@string/back"
+            android:textColor="@color/black" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_save"
+            style="@style/ButtonDefStyle"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_17sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:layout_weight="1"
+            android:text="@string/save"
+            app:cornerRadius="@dimen/size_7dp" />
+
+
+    </LinearLayout>
+
+
+    <!--<ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />-->
+
+
+    <include
+        android:id="@+id/progress_layout"
+        layout="@layout/layout_loader"
+        android:visibility="gone" />
+</androidx.constraintlayout.widget.ConstraintLayout>

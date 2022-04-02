@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/itemProject"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/size_8dp"
+    android:background="@color/white">
+
+
+    <ImageView
+        android:id="@+id/imgBriefcase"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_13sdp"
+        android:src="@drawable/ic_briefcase_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardImportance"
+        android:layout_width="@dimen/_4sdp"
+        android:layout_height="@dimen/_4sdp"
+        app:cardBackgroundColor="@color/yellow"
+        app:cardCornerRadius="@dimen/_3sdp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgBriefcase"
+        app:layout_constraintRight_toRightOf="@+id/imgBriefcase"
+        app:layout_constraintTop_toTopOf="@+id/imgBriefcase"
+        app:layout_constraintVertical_bias="0.85" />
+
+    <TextView
+        android:id="@+id/tvUnReadMessage"
+        style="@style/MyTextViewStyleWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_4sdp"
+        android:background="@drawable/circle_background"
+        android:backgroundTint="#0496FF"
+        android:fontFamily="@font/inter_regular"
+        android:gravity="center"
+        android:minEms="2"
+        android:padding="@dimen/_5sdp"
+        android:textSize="@dimen/_11ssp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/imgProjectStatus"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toRightOf="@+id/imgBriefcase"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="12" />
+
+    <TextView
+        android:id="@+id/tvProjectName"
+        style="@style/MyTextViewStyleBlack"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_18sdp"
+        android:fontFamily="@font/inter_semibold"
+        android:maxLines="1"
+        android:text="Klub orgsxemasini tuzib chiqish"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintLeft_toRightOf="@+id/imgBriefcase"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/imgProjectStatus"
+        android:layout_width="@dimen/_8sdp"
+        android:layout_height="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:src="@drawable/ic_wait"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvProjectName"
+        app:layout_constraintTop_toBottomOf="@+id/tvProjectName"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tvProjectId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_3sdp"
+        android:fontFamily="@font/inter_regular"
+        android:textColor="@color/disabled_color"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgProjectStatus"
+        app:layout_constraintLeft_toRightOf="@+id/imgProjectStatus"
+        app:layout_constraintTop_toTopOf="@+id/imgProjectStatus"
+        tools:text="#2243" />
+
+    <TextView
+        android:id="@+id/tvTo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_3sdp"
+        android:fontFamily="@font/inter_semibold"
+        android:text="@string/to"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgProjectStatus"
+        app:layout_constraintLeft_toRightOf="@+id/tvProjectId"
+        app:layout_constraintTop_toTopOf="@+id/imgProjectStatus" />
+
+    <TextView
+        android:id="@+id/tvProjectEndingTime"
+        android:layout_width="@dimen/_65sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_3sdp"
+        android:background="#2DEF476F"
+        android:fontFamily="@font/inter_regular"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="#EF476F"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgProjectStatus"
+        app:layout_constraintStart_toEndOf="@+id/tvTo"
+        app:layout_constraintTop_toTopOf="@+id/imgProjectStatus"
+        tools:text="08-01-2020" />
+
+    <TextView
+        android:id="@+id/tvJav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_3sdp"
+        android:fontFamily="@font/inter_semibold"
+        android:text="Jav:"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgProjectStatus"
+        app:layout_constraintStart_toEndOf="@+id/tvProjectEndingTime"
+        app:layout_constraintTop_toTopOf="@+id/imgProjectStatus" />
+
+    <TextView
+        android:id="@+id/tvProjectResponsible"
+        android:layout_width="@dimen/_65sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_3sdp"
+        android:ellipsize="end"
+        android:fontFamily="@font/inter_regular"
+        android:singleLine="true"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgProjectStatus"
+        app:layout_constraintStart_toEndOf="@+id/tvJav"
+        app:layout_constraintTop_toTopOf="@+id/imgProjectStatus"
+        tools:text="Ibrohim Gulyamov" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

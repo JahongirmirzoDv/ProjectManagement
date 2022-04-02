@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cons1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/size_8dp"
+    android:background="#F4F5F7">
+
+    <RelativeLayout
+        android:id="@+id/rl_main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/MyTextViewStyleDarkBlue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/size_20dp"
+            android:layout_marginTop="@dimen/size_12dp"
+            android:layout_marginEnd="@dimen/size_40dp"
+            android:layout_marginBottom="@dimen/size_12dp"
+            android:fontFamily="@font/inter_semibold"
+            android:textSize="@dimen/text_16sp"
+            tools:ignore="MissingConstraints"
+            tools:text="2021" />
+
+        <ImageView
+            android:id="@+id/img_drop_down"
+            android:layout_width="@dimen/size_35dp"
+            android:layout_height="@dimen/size_35dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/size_12dp"
+            android:layout_marginEnd="@dimen/size_10dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="@dimen/size_7dp"
+            android:src="@drawable/ic_chevron_up"
+            tools:ignore="ContentDescription" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_months"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/size_4dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rl_main_layout"
+        tools:listitem="@layout/item_tactic_plan_month" />
+</androidx.constraintlayout.widget.ConstraintLayout>

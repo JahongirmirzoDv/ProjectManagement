@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/consDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/E6E9EF"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDate"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/tvDate"
+            app:layout_constraintTop_toTopOf="@+id/tvDate" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/E6E9EF"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDate"
+            app:layout_constraintLeft_toRightOf="@+id/tvDate"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvDate" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvDate"
+            style="@style/MyTextViewStyleDarkBlue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_12dp"
+            android:background="@drawable/background_date_in_chat"
+            android:fontFamily="@font/inter_semibold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="12-aprel, 2021" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_message_root"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_8dp"
+        android:layout_marginTop="@dimen/size_12dp"
+        android:layout_marginBottom="@dimen/size_12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/consDate"
+        app:layout_constraintWidth_percent="0.8">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardPersonImage"
+            android:layout_width="@dimen/size_40dp"
+            android:layout_height="@dimen/size_40dp"
+            android:layout_gravity="bottom"
+            android:layout_marginEnd="@dimen/size_6dp"
+            android:backgroundTint="@color/E5E5E5"
+            android:visibility="visible"
+            app:cardCornerRadius="@dimen/size_20dp"
+            app:cardElevation="0dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgPersonPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_user" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_received_message">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_writer_name"
+                style="@style/TextSmallSemiBold"
+                android:layout_marginTop="@dimen/_3sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Ergashev Farhod" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_message_content"
+                style="@style/TextSmall"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_writer_name"
+                tools:text="Assalomaleykum aka yaxshimisiz ishlar bn charchamay yuribsizlarmi " />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_message_time"
+                style="@style/TextSmall"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_message_content"
+                tools:text="23:15" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

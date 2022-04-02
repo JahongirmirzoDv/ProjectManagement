@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.screens.home_activity.adding.create_task.CreateTaskFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:elevation="2dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/iv_back_button"
+                style="@style/DefImageViewStyle"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_back_button_cross" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/CreateToolbarTitleStyle"
+                android:layout_alignParentStart="true"
+                android:text="@string/note" />
+
+            <ImageView
+                android:id="@+id/btn_note_edit"
+                style="@style/CreateTickImageStyle"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_circle_edit" />
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_bar_layout">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/view_1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_15sdp"
+                android:background="@color/colorWhiteSoft"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/taskMasterLayout" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_note_title"
+                style="@style/CreateScreensEditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_marginTop="0dp"
+                android:drawableEnd="@drawable/ic_help"
+                android:hint="@string/name_note"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view_3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_2sdp"
+                android:background="@color/colorWhiteSoft"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_note_title" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_note_description"
+                style="@style/CreateScreensEditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:hint="@string/enter_comment"
+                android:paddingVertical="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_3" />
+
+            <View
+                android:id="@+id/view_2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_18sdp"
+                android:background="@color/colorWhiteSoft"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etTaskDescription" />
+
+            <LinearLayout
+                android:id="@+id/projectDeadlineLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/view20">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/projectBeginningTimeLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBegingTimeTitle"
+                        style="@style/CreateScreensTimeTitleStyle"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:text="@string/reminder_time"
+                        app:layout_constraintBottom_toBottomOf="@+id/imgBeginingTime"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/imgBeginingTime" />
+
+                    <ImageView
+                        android:id="@+id/imgBeginingTime"
+                        style="@style/CreateScreensDateImageIconStyle"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:contentDescription="@string/app_name"
+                        app:layout_constraintStart_toEndOf="@id/tvBegingTimeTitle"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_calendar_in_create_project" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvNoteDate"
+                        style="@style/CreateScreensTextTime"
+                        android:hint="@string/date_format"
+                        android:textColorHint="@color/hint_text_color"
+                        app:layout_constraintBottom_toBottomOf="@id/tvBegingTimeTitle"
+                        app:layout_constraintStart_toEndOf="@+id/imgBeginingTime"
+                        app:layout_constraintTop_toTopOf="@+id/tvBegingTimeTitle" />
+
+                    <TimePicker
+                        android:id="@+id/tpNoteTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:descendantFocusability="blocksDescendants"
+                        android:focusable="false"
+                        android:numbersTextColor="@color/black"
+                        android:theme="@style/TimePickerStyle"
+                        android:timePickerMode="spinner"
+                        app:layout_constraintTop_toBottomOf="@id/imgBeginingTime" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_6"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp"
+                android:background="@color/colorWhiteSoft"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/taskMasterLayout" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/repeatLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingVertical="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@+id/goalDeadlineLayout">
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/repeatTitle"
+                    style="@style/CreateScreensFieldTitle"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:letterSpacing="0"
+                    android:text="@string/repetition_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/repeatText"
+                    style="@style/TextMedium"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_marginEnd="@dimen/size_8dp"
+                    android:gravity="end"
+                    android:lines="1"
+                    android:text="@string/once"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/repeatTitle"
+                    app:layout_constraintEnd_toStartOf="@+id/repeatAdd"
+                    app:layout_constraintStart_toEndOf="@id/repeatTitle"
+                    app:layout_constraintTop_toTopOf="@+id/repeatTitle" />
+
+                <ImageView
+                    android:id="@+id/repeatAdd"
+                    style="@style/DefImageViewStyle"
+                    android:layout_marginEnd="@dimen/_32sdp"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/repeatText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/repeatText"
+                    app:srcCompat="@drawable/ic_forvard_in_other" />
+
+                <ProgressBar
+                    android:id="@+id/pbLoadingRepetitions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/size_24dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/view22_2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp"
+                android:background="@color/colorWhiteSoft"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/repeatLayout" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/repeatTypeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_56sdp"
+                android:background="@color/white"
+                android:clickable="false"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/view22_3">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/repeatTypeTitle"
+                    style="@style/CreateScreensFieldTitle"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:letterSpacing="0"
+                    android:text="@string/repeat_type"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/repeatTypeText"
+                    style="@style/TextMedium"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_marginEnd="@dimen/size_8dp"
+                    android:gravity="end"
+                    android:hint="@string/no"
+                    android:lines="1"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/repeatTypeTitle"
+                    app:layout_constraintEnd_toStartOf="@+id/repeatTypeAdd"
+                    app:layout_constraintStart_toEndOf="@id/repeatTypeTitle"
+                    app:layout_constraintTop_toTopOf="@+id/repeatTypeTitle" />
+
+                <ImageView
+                    android:id="@+id/repeatTypeAdd"
+                    style="@style/DefImageViewStyle"
+                    android:layout_marginEnd="@dimen/_32sdp"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/repeatTypeText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/repeatTypeText"
+                    app:srcCompat="@drawable/ic_forvard_in_other" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/view22_4"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp"
+                android:background="@color/colorWhiteSoft"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/repeatLayout" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/reminderDateLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_56sdp"
+                android:background="@color/white"
+                android:clickable="false"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/view22_5">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/reminderDateTitle"
+                    style="@style/CreateScreensFieldTitle"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:contentDescription="@string/app_name"
+                    android:letterSpacing="0"
+                    android:text="@string/last_reminder"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/reminderDateText"
+                    style="@style/TextMedium"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_marginEnd="@dimen/size_8dp"
+                    android:gravity="end"
+                    android:lines="1"
+                    android:text="@string/always"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/reminderDateTitle"
+                    app:layout_constraintEnd_toStartOf="@+id/reminderDateAdd"
+                    app:layout_constraintStart_toEndOf="@id/reminderDateTitle"
+                    app:layout_constraintTop_toTopOf="@+id/reminderDateTitle" />
+
+                <ImageView
+                    android:id="@+id/reminderDateAdd"
+                    style="@style/DefImageViewStyle"
+                    android:layout_marginEnd="@dimen/_32sdp"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/reminderDateText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/reminderDateText"
+                    app:srcCompat="@drawable/ic_forvard_in_other" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <View
+                android:id="@+id/view22_5"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp"
+                android:background="@color/colorWhiteSoft"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reminderLayout" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/reminderLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/view22_4">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/reminderTitle"
+                    style="@style/CreateScreensFieldTitle"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:letterSpacing="0"
+                    android:text="@string/note"
+                    app:layout_constraintBottom_toBottomOf="@id/reminderAdd"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/reminderAdd" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/reminderAdd"
+                    style="@style/DefImageViewStyle"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_32sdp"
+                    android:clickable="false"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_add_green" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_reminder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    app:layout_constraintStart_toStartOf="@id/reminderTitle"
+                    app:layout_constraintTop_toBottomOf="@id/reminderAdd"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_reminder_note" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/view22_6"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp"
+                android:background="@color/colorWhiteSoft"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reminderDateLayout" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_note_create_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:backgroundTint="@color/blue"
+                android:padding="@dimen/size_16dp"
+                android:text="@string/save"
+                android:visibility="gone" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_note_delete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:backgroundTint="@color/count_text_color_red"
+                android:padding="@dimen/size_16dp"
+                android:text="@string/delete"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/create_note_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/_6sdp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

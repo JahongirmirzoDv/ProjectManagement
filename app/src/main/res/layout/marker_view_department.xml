@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_marker_view"
+    android:elevation="@dimen/size_6dp">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_regular"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/size_16dp"
+        android:paddingVertical="@dimen/size_8dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_12sp"
+        tools:text="My title" />
+
+</RelativeLayout>

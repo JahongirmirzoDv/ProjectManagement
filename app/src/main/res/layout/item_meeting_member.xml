@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/size_8dp"
+    android:layout_marginTop="@dimen/size_8dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_user"
+        android:layout_width="@dimen/size_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size_6dp"
+        app:cardBackgroundColor="#06D6A0"
+        app:cardCornerRadius="@dimen/size_8dp"
+        app:cardElevation="@dimen/size_0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/cv_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/project_done2"
+        app:strokeWidth="@dimen/size_1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_profile"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_margin="@dimen/size_16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="@dimen/size_0dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_16dp"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="@color/black"
+                android:textColorHint="#A5A9B8"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintBottom_toTopOf="@id/tvModerator"
+                app:layout_constraintEnd_toStartOf="@id/checked_members"
+                app:layout_constraintStart_toEndOf="@id/iv_profile"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Farhod Olimov" />
+
+            <TextView
+                android:id="@+id/tvModerator"
+                android:layout_width="@dimen/size_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_16dp"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="@color/black"
+                android:textColorHint="#A5A9B8"
+                android:textSize="10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/checked_members"
+                app:layout_constraintStart_toEndOf="@id/iv_profile"
+               app:layout_constraintTop_toBottomOf="@id/tv_name"
+                android:text="Moderator" />
+
+            <CheckBox
+
+                android:id="@+id/checked_members"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginRight="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/iv_state"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"/>
+
+            <ImageView
+                android:id="@+id/iv_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/size_16dp"
+                android:src="@drawable/ic_member_rejected"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_description"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size_0dp"
+        android:layout_marginEnd="@dimen/size_6dp"
+        app:cardCornerRadius="@dimen/size_8dp"
+        app:cardElevation="@dimen/size_0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/cv_user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cv_user"
+        app:strokeColor="#A5A9B8"
+        app:strokeWidth="@dimen/size_1dp">
+
+        <ImageView
+            android:id="@+id/iv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingHorizontal="@dimen/size_24dp"
+            android:src="@drawable/ic_member_description" />
+
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

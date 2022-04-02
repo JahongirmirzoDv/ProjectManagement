@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhiteSoft"
+    android:orientation="vertical"
+    tools:context=".presentation.ui.screens.home_activity.payment.PaymentStaffConfigurationFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/balance_mcv_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:layout_marginVertical="@dimen/_3sdp"
+            app:cardCornerRadius="@dimen/size_8dp"
+            app:cardElevation="@dimen/_3sdp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_title"
+                    style="@style/TextSmall"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_marginHorizontal="@dimen/_11sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/company_balance"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/tv_company_balance"
+                    style="@style/GreenTextStyle"
+                    android:layout_marginTop="@dimen/size_8dp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:text="$ 0"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tariffTitle"
+            style="@style/TextSmall"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_marginHorizontal="@dimen/_11sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="@string/tariff_plans"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/balance_mcv_parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tariffPlansList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_10sdp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/tariffTitle"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_tariff_plan" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mcv_parent"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:layout_marginVertical="@dimen/_3sdp"
+            app:cardCornerRadius="@dimen/size_8dp"
+            app:cardElevation="@dimen/_3sdp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tariffPlansList">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_stuffs_title"
+                    style="@style/TextSmall"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_marginHorizontal="@dimen/_11sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/input_compant_staffs_count"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tv_company_staff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginHorizontal="@dimen/size_16dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/back_black_staff_count_bg"
+                    android:fontFamily="@font/inter_regular"
+                    android:gravity="center"
+                    android:hint="@string/staff_count"
+                    android:inputType="number"
+                    android:minWidth="@dimen/_50sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:textSize="@dimen/_9ssp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_stuffs_title" />
+
+
+                <com.warkiz.widget.IndicatorSeekBar
+                    android:id="@+id/stuffsSeekbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    app:isb_indicator_color="@color/thumb_color"
+                    app:isb_indicator_text_color="@color/black"
+                    app:isb_only_thumb_draggable="false"
+                    app:isb_progress="0"
+                    app:isb_seek_smoothly="false"
+                    app:isb_show_indicator="none"
+                    app:isb_show_tick_marks_type="oval"
+                    app:isb_show_tick_texts="true"
+                    app:isb_thumb_color="@color/colorDarkBlue"
+                    app:isb_thumb_drawable="@drawable/thumb_drawable_bg"
+                    app:isb_thumb_size="@dimen/_18sdp"
+                    app:isb_tick_marks_color="@color/black"
+                    app:isb_tick_marks_size="@dimen/_5sdp"
+                    app:isb_tick_texts_array="@array/staff_count"
+                    app:isb_tick_texts_color="@color/black"
+                    app:isb_tick_texts_size="@dimen/_11ssp"
+                    app:isb_ticks_count="7"
+                    app:isb_track_background_color="@color/thumb_color"
+                    app:isb_track_background_size="@dimen/_5sdp"
+                    app:isb_track_progress_color="@color/colorDarkBlue"
+                    app:isb_track_progress_size="@dimen/_5sdp"
+                    app:isb_track_rounded_corners="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_company_staff" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_duration_title"
+                    style="@style/TextSmall"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_marginHorizontal="@dimen/_11sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/duration_working"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/stuffsSeekbar" />
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tv_company_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginHorizontal="@dimen/size_16dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/back_black_staff_count_bg"
+                    android:fontFamily="@font/inter_regular"
+                    android:gravity="center"
+                    android:hint="Muddat"
+                    android:inputType="number"
+                    android:minWidth="@dimen/_50sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:textSize="@dimen/_9ssp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_duration_title" />
+
+
+                <com.warkiz.widget.IndicatorSeekBar
+                    android:id="@+id/durationSeekbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    app:isb_only_thumb_draggable="false"
+                    app:isb_progress="0"
+                    app:isb_seek_smoothly="false"
+                    app:isb_show_indicator="none"
+                    app:isb_show_tick_marks_type="oval"
+                    app:isb_show_tick_texts="true"
+                    app:isb_thumb_color="@color/colorDarkBlue"
+                    app:isb_thumb_drawable="@drawable/thumb_drawable_bg"
+                    app:isb_thumb_size="@dimen/_18sdp"
+                    app:isb_tick_marks_color="@color/black"
+                    app:isb_tick_marks_size="@dimen/_5sdp"
+                    app:isb_tick_texts_array="@array/duration_years"
+                    app:isb_tick_texts_color="@color/black"
+                    app:isb_tick_texts_size="@dimen/_11ssp"
+                    app:isb_ticks_count="4"
+                    app:isb_track_background_color="@color/colorDarkBlue"
+                    app:isb_track_background_size="@dimen/_5sdp"
+                    app:isb_track_progress_color="@color/thumb_color"
+                    app:isb_track_progress_size="@dimen/_5sdp"
+                    app:isb_track_rounded_corners="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_company_duration" />
+
+
+                <View
+                    android:id="@+id/line_dash"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_height="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:background="@drawable/line_dash"
+                    app:layout_constraintEnd_toEndOf="@id/tv_duration_title"
+                    app:layout_constraintStart_toStartOf="@id/tv_duration_title"
+                    app:layout_constraintTop_toBottomOf="@id/durationSeekbar" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/check"
+                    style="@style/TextSmall"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_marginHorizontal="@dimen/_11sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/check_paper"
+                    android:textSize="@dimen/_15ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/line_dash" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/stuffs"
+                    style="@style/TextSmall"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@string/staff_count"
+                    android:textColor="@color/company_registration_color"
+                    android:textSize="@dimen/_15ssp"
+                    app:layout_constraintStart_toStartOf="@+id/check"
+                    app:layout_constraintTop_toBottomOf="@id/check" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/size_0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.55" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/stuffs_value"
+                    style="@style/TextLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_regular"
+                    android:textColor="@color/company_registration_color"
+                    android:textSize="@dimen/_20ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/stuffs"
+                    app:layout_constraintStart_toEndOf="@+id/guideline"
+                    app:layout_constraintTop_toTopOf="@+id/stuffs"
+                    tools:text="50" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/durations"
+                    style="@style/TextSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@string/duration"
+                    android:textColor="@color/company_registration_color"
+                    android:textSize="@dimen/_15ssp"
+                    app:layout_constraintStart_toStartOf="@+id/check"
+                    app:layout_constraintTop_toBottomOf="@id/stuffs" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/duration_value"
+                    style="@style/TextSmall"
+                    android:textColor="@color/company_registration_color"
+                    android:textSize="@dimen/_20ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/durations"
+                    app:layout_constraintStart_toEndOf="@+id/guideline"
+                    app:layout_constraintTop_toTopOf="@+id/durations"
+                    tools:text="1 yil" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/amount"
+                    style="@style/TextSmall"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:text="@string/package_cost_title"
+                    android:textColor="@color/company_registration_color"
+                    android:textSize="@dimen/_15ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/check"
+                    app:layout_constraintTop_toBottomOf="@id/durations" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/cost_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="@string/cost_value"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/_20ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/amount"
+                    app:layout_constraintStart_toEndOf="@+id/guideline"
+                    app:layout_constraintTop_toTopOf="@+id/amount"
+                    tools:text="$ 300" />
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:visibility="visible" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_filling_balance"
+            style="@style/GeneralBlueButtonStyle"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/fill_balance"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mcv_parent" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_confirm"
+            style="@style/GeneralBlueButtonStyle"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:text="@string/confirm"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_filling_balance" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

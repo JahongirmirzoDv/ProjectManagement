@@ -1,0 +1,965 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context=".presentation.ui.screens.home_activity.adding.create_meeting.CreateMeetingFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imgBackButton"
+                style="@style/DefImageViewStyle"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_back_button_cross" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/CreateToolbarTitleStyle"
+                android:layout_alignParentStart="true"
+                android:text="@string/app_bar_create_meeting" />
+
+            <ImageView
+                android:id="@+id/createMeetingBlueButton"
+                style="@style/CreateTickImageStyle"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_checedk_in_create_project" />
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv_root"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhiteSoft"
+            android:paddingBottom="@dimen/_50sdp">
+
+            <HorizontalScrollView
+                android:id="@+id/sv_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_2sdp"
+                android:orientation="horizontal"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_5sdp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_author"
+                        android:layout_width="@dimen/_90sdp"
+                        android:layout_height="@dimen/_90sdp"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_title_author"
+                                style="@style/TextSmall"
+                                android:text="Muallif"
+                                android:textSize="@dimen/_11ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/iv_author"
+                                style="@style/DefImageViewStyle"
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:background="@null"
+                                android:clickable="false"
+                                android:contentDescription="@string/app_name"
+                                android:focusable="false"
+                                android:src="@drawable/ic_adding_person"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/tv_title_author"
+                                app:layout_constraintStart_toStartOf="@+id/tv_title_author"
+                                app:layout_constraintTop_toBottomOf="@id/tv_title_author" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_files"
+                        android:layout_width="@dimen/_90sdp"
+                        android:layout_height="@dimen/_90sdp"
+                        android:layout_marginStart="@dimen/_7sdp"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_title_files_count"
+                                style="@style/TextSmall"
+                                android:text="@string/files"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_files_count"
+                                style="@style/TextMedium"
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:background="@drawable/round_files_bg"
+                                android:contentDescription="@string/app_name"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="@color/blue"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/tv_title_files_count"
+                                app:layout_constraintStart_toStartOf="@+id/tv_title_files_count"
+                                app:layout_constraintTop_toBottomOf="@id/tv_title_files_count" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_importance"
+                        android:layout_width="@dimen/_90sdp"
+                        android:layout_height="@dimen/_90sdp"
+                        android:layout_marginStart="@dimen/_7sdp"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_title_importance"
+                                style="@style/TextSmall"
+                                android:gravity="center"
+                                android:text="@string/title_importance2"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <LinearLayout
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:background="@drawable/round_files_bg"
+                                android:gravity="center"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tv_title_importance">
+
+                                <ImageView
+                                    android:id="@+id/iv_importance"
+                                    android:layout_width="@dimen/_16sdp"
+                                    android:layout_height="@dimen/_16sdp"
+                                    android:contentDescription="@string/app_name"
+                                    android:src="@drawable/ic_file_text_yellow"
+                                    app:layout_constraintBottom_toBottomOf="parent" />
+                            </LinearLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/title_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_3dp"
+                android:background="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sv_top">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_meeting_title"
+                    style="@style/CreateScreensEditTextStyle"
+                    android:layout_marginTop="0dp"
+                    android:drawableEnd="@drawable/ic_help"
+                    android:hint="@string/meeting_name"
+                    android:inputType="textMultiLine|textCapSentences"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/divider_title_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/colorWhiteSoft"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_meeting_title" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/description_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_description"
+                    style="@style/CreateScreensEditTextStyle"
+                    android:layout_marginTop="0dp"
+                    android:hint="@string/meeting_description_hint"
+                    android:inputType="textMultiLine|textCapSentences"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/divider_description_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/colorWhiteSoft"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_description" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/date_time_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/description_layout">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/start_date_time_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingBottom="@dimen/_16sdp">
+
+                    <ImageView
+                        android:id="@+id/iv_start_date_time"
+                        style="@style/CreateScreensDateImageIconStyle"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:contentDescription="@string/app_name"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_calendar_new_version" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_title_start_date_time"
+                        style="@style/CreateScreensTimeTitleStyle"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="@string/begining_date"
+                        android:textColor="@color/colorGreySoft"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_start_date_time"
+                        app:layout_constraintStart_toEndOf="@+id/iv_start_date_time"
+                        app:layout_constraintTop_toTopOf="@+id/iv_start_date_time" />
+
+                    <TextView
+                        android:id="@+id/tv_start_date"
+                        style="@style/CreateScreensTextTime"
+                        android:layout_marginStart="@dimen/size_0dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:hint="@string/date_format"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="@+id/iv_start_date_time"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_start_date_time" />
+
+                    <View
+                        android:id="@+id/divider_start_date_time"
+                        android:layout_width="@dimen/size_1dp"
+                        android:layout_height="@dimen/size_0dp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:background="@color/underLine"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_start_date"
+                        app:layout_constraintStart_toEndOf="@id/tv_start_date"
+                        app:layout_constraintTop_toTopOf="@id/tv_start_date" />
+
+                    <TextView
+                        android:id="@+id/tv_start_time"
+                        style="@style/CreateScreensTextTime"
+                        android:layout_marginTop="0dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:hint="@string/time_format"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="@+id/divider_start_date_time"
+                        app:layout_constraintStart_toEndOf="@+id/divider_start_date_time"
+                        app:layout_constraintTop_toTopOf="@+id/divider_start_date_time" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/divider_start_end_layout"
+                    android:layout_width="@dimen/_1ssp"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="@dimen/size_8dp"
+                    android:layout_marginStart="@dimen/size_1dp"
+                    android:background="@color/colorWhiteSoft" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/end_date_time_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/inter_regular"
+                    android:paddingBottom="@dimen/_16sdp">
+
+                    <ImageView
+                        android:id="@+id/iv_end_date_time"
+                        style="@style/CreateScreensDateImageIconStyle"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:contentDescription="@string/app_name"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_calendar_new_version" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_title_end_date_time"
+                        style="@style/CreateScreensTimeTitleStyle"
+                        android:fontFamily="@font/inter_regular"
+                        android:letterSpacing="0"
+                        android:text="@string/ending_time"
+                        android:textColor="@color/colorGreySoft"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_end_date_time"
+                        app:layout_constraintStart_toEndOf="@+id/iv_end_date_time"
+                        app:layout_constraintTop_toTopOf="@+id/iv_end_date_time" />
+
+                    <TextView
+                        android:id="@+id/tv_end_date"
+                        style="@style/CreateScreensTextTime"
+                        android:layout_marginStart="@dimen/size_0dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:hint="@string/date_format"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="@+id/iv_end_date_time"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_end_date_time" />
+
+                    <View
+                        android:id="@+id/divider_end_date_time"
+                        android:layout_width="@dimen/_1sdp"
+                        android:layout_height="@dimen/size_0dp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:background="@color/underLine"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_end_date"
+                        app:layout_constraintStart_toEndOf="@id/tv_end_date"
+                        app:layout_constraintTop_toTopOf="@id/tv_end_date" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_end_time"
+                        style="@style/CreateScreensTextTime"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/background_radus_4dp"
+                        android:hint="@string/time_format"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="@+id/divider_end_date_time"
+                        app:layout_constraintStart_toEndOf="@+id/divider_end_date_time"
+                        app:layout_constraintTop_toTopOf="@+id/divider_end_date_time" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:id="@+id/iv_pin_date_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_end_time"
+                    app:layout_constraintStart_toEndOf="@+id/tv_end_time"
+                    app:layout_constraintTop_toTopOf="@+id/tv_title_end_date_time"
+                    app:srcCompat="@drawable/push_pin_icon" />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/address_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/date_time_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_address"
+                    style="@style/CreateScreensEditTextStyle"
+                    android:layout_marginTop="0dp"
+                    android:hint="@string/hint_address"
+                    android:inputType="textMultiLine|textCapSentences"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--                <TextView-->
+                <!--                    android:id="@+id/tv_address_title"-->
+                <!--                    style="@style/TextSmallSemiBold"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_marginHorizontal="@dimen/size_24dp"-->
+                <!--                    android:layout_marginTop="@dimen/size_24dp"-->
+                <!--                    android:fontFamily="@font/inter_regular"-->
+                <!--                    android:text="@string/meeting_place"-->
+                <!--                    android:textColor="@color/black"-->
+                <!--                    android:textStyle="bold"-->
+                <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+                <!--                <com.google.android.material.card.MaterialCardView-->
+                <!--                    android:id="@+id/cv_address"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginHorizontal="@dimen/size_24dp"-->
+                <!--                    android:layout_marginTop="@dimen/size_8dp"-->
+                <!--                    android:layout_marginBottom="@dimen/size_24dp"-->
+                <!--                    app:cardBackgroundColor="#F4F5F7"-->
+                <!--                    app:cardCornerRadius="@dimen/size_8dp"-->
+                <!--                    app:cardElevation="@dimen/size_0dp"-->
+                <!--                    app:contentPaddingBottom="@dimen/size_4dp"-->
+                <!--                    app:contentPaddingTop="@dimen/size_4dp"-->
+                <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--                    app:layout_constraintTop_toBottomOf="@id/tv_address_title">-->
+
+                <!--                    <com.google.android.material.textfield.TextInputEditText-->
+                <!--                        android:id="@+id/et_address"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_marginHorizontal="@dimen/size_16dp"-->
+                <!--                        android:layout_marginVertical="@dimen/size_8dp"-->
+                <!--                        android:background="@android:color/transparent"-->
+                <!--                        android:fontFamily="@font/inter_regular"-->
+                <!--                        android:hint="@string/hint_meeting_place"-->
+                <!--                        android:textColor="@color/black"-->
+                <!--                        android:textColorHint="#A5A9B8"-->
+                <!--                        android:textSize="@dimen/_12ssp" />-->
+
+                <!--                </com.google.android.material.card.MaterialCardView>-->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/divider_address"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_5sdp"
+                android:background="@color/colorWhiteSoft"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/address_layout" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/participants_layout"
+                style="@style/CreateScreensMembersLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:backgroundTint="@color/white"
+                android:paddingBottom="@dimen/_16sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider_address">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_title_participants"
+                    style="@style/CreateScreensMemberTextStyle"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:text="Qatnashuvchilar"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_arrow_participants"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_title_participants"
+                    app:layout_constraintEnd_toStartOf="@id/iv_add_participant"
+                    app:layout_constraintTop_toTopOf="@+id/tv_title_participants"
+                    app:srcCompat="@drawable/ic_chevron_up" />
+
+                <ImageView
+                    android:id="@+id/iv_add_participant"
+                    style="@style/CreateScreensAddButton"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_title_participants"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_title_participants"
+                    app:srcCompat="@drawable/ic_add_plus_with_circle" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_participants"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_add_participant"
+                    tools:listitem="@layout/item_participants" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/divider_participants"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_5sdp"
+                android:background="@color/colorWhiteSoft"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/participants_layout" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/problems_layout"
+                style="@style/CreateScreensMembersLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:backgroundTint="@color/white"
+                android:paddingBottom="@dimen/_16sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider_participants">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_title_problems"
+                    style="@style/CreateScreensMemberTextStyle"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/size_8dp"
+                    android:text="Ko'rib chiqilgan masalalar"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/iv_add_problem"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_add_problem"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/size_8dp"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_title_problems"
+                    app:layout_constraintEnd_toStartOf="@id/tv_problems_count"
+                    app:layout_constraintTop_toTopOf="@+id/tv_title_problems"
+                    app:srcCompat="@drawable/ic_add_plus" />
+
+                <TextView
+                    android:id="@+id/tv_problems_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/size_8dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="0"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_arrow_problems"
+                    app:layout_constraintEnd_toStartOf="@id/iv_arrow_problems"
+                    app:layout_constraintTop_toTopOf="@id/iv_arrow_problems" />
+
+                <ImageView
+                    android:id="@+id/iv_arrow_problems"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_24sdp"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_title_problems"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_title_problems"
+                    app:srcCompat="@drawable/ic_arrow_right" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_problems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_add_problem"
+                    tools:listitem="@layout/item_meeting_problem" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/comment_layout"
+                style="@style/CreateScreensMembersLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:visibility="gone"
+                android:backgroundTint="@color/white"
+                android:paddingBottom="@dimen/_16sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/problems_layout">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_title_comments"
+                    style="@style/CreateScreensMemberTextStyle"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/size_8dp"
+                    android:text="Komentariyalar"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/iv_add_comment"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_add_comment"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/size_8dp"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_title_comments"
+                    app:layout_constraintEnd_toStartOf="@id/tv_comments_count"
+                    app:layout_constraintTop_toTopOf="@+id/tv_title_comments"
+                    app:srcCompat="@drawable/ic_add_plus" />
+
+                <TextView
+                    android:id="@+id/tv_comments_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/size_8dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="0"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_arrow_comments"
+                    app:layout_constraintEnd_toStartOf="@id/iv_arrow_comments"
+                    app:layout_constraintTop_toTopOf="@id/iv_arrow_comments" />
+
+                <ImageView
+                    android:id="@+id/iv_arrow_comments"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_24sdp"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_title_comments"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_title_comments"
+                    app:srcCompat="@drawable/ic_arrow_right" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_comments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_add_comment"
+                    tools:listitem="@layout/item_meeting_problem" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/repeat_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingVertical="@dimen/_13sdp"
+                app:layout_constraintTop_toBottomOf="@+id/comment_layout">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_title_repeat"
+                    style="@style/CreateScreensFieldTitle"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="@string/repetition"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_repeat_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/size_8dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_title_repeat"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_arrow_repeat"
+                    app:layout_constraintTop_toTopOf="@+id/tv_title_repeat"
+                    tools:text="Bir marta" />
+
+                <ImageView
+                    android:id="@+id/iv_arrow_repeat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_24sdp"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_repeat_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_repeat_text"
+                    app:srcCompat="@drawable/ic_arrow_right" />
+
+                <ProgressBar
+                    android:id="@+id/pb_loading_repetitions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/size_24dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/repeatTypeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_56sdp"
+                android:background="@color/white"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/repeat_layout">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/repeatTypeTitle"
+                    style="@style/CreateScreensFieldTitle"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:letterSpacing="0"
+                    android:text="@string/repeat_type"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/repeatTypeText"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/size_8dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:gravity="end"
+                    android:hint="@string/no"
+                    android:lines="1"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/repeatTypeTitle"
+                    app:layout_constraintEnd_toStartOf="@+id/repeatTypeAdd"
+                    app:layout_constraintStart_toEndOf="@id/repeatTypeTitle"
+                    app:layout_constraintTop_toTopOf="@+id/repeatTypeTitle"
+                    tools:text="Hafta kuniga qarab" />
+
+                <ImageView
+                    android:id="@+id/repeatTypeAdd"
+                    style="@style/DefImageViewStyle"
+                    android:layout_marginEnd="@dimen/_24sdp"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/repeatTypeText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/repeatTypeText"
+                    app:srcCompat="@drawable/ic_arrow_right" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/reminder_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingVertical="@dimen/_13sdp"
+                app:layout_constraintTop_toBottomOf="@+id/reminder_date_layout">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_title_reminder"
+                    style="@style/CreateScreensFieldTitle"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="@string/reminding"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_reminder_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/size_8dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:textSize="@dimen/_12ssp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_title_reminder"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_arrow_reminder"
+                    app:layout_constraintTop_toTopOf="@+id/tv_title_reminder"
+                    tools:text="5 daqiqa oldin" />
+
+                <ImageView
+                    android:id="@+id/iv_arrow_reminder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_24sdp"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_reminder_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_reminder_text"
+                    app:srcCompat="@drawable/ic_arrow_right" />
+
+                <ImageView
+                    android:id="@+id/iv_add_reminder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/size_8dp"
+                    android:padding="@dimen/size_8dp"
+                    android:src="@drawable/ic_add_plus"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_arrow_reminder"
+                    app:layout_constraintEnd_toStartOf="@id/iv_arrow_reminder"
+                    app:layout_constraintTop_toTopOf="@id/iv_arrow_reminder" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_reminders"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/size_10dp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title_reminder"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_reminder_note" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/reminder_date_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingVertical="@dimen/_13sdp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/repeatTypeLayout">
+
+                <TextView
+                    android:id="@+id/tv_title_reminder_date"
+                    style="@style/CreateScreensFieldTitle"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Oxirgi eslatma sanasi"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_reminder_date_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/size_8dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_title_reminder_date"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_arrow_reminder_date"
+                    app:layout_constraintTop_toTopOf="@+id/tv_title_reminder_date"
+                    tools:text="31.12.2021" />
+
+                <ImageView
+                    android:id="@+id/iv_arrow_reminder_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_24sdp"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_reminder_date_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_reminder_date_text"
+                    app:srcCompat="@drawable/ic_arrow_right" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCreateMeeting"
+                style="@style/GeneralBlueButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:padding="@dimen/size_16dp"
+                android:text="@string/save"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reminder_layout" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/ll_create_discussed_topic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_discussed_topic"
+            style="@style/EditTextDefStyle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="@string/input_plan_meaning"
+            android:paddingHorizontal="@dimen/size_16dp"
+            android:paddingVertical="@dimen/_12sdp" />
+
+        <ImageView
+            android:id="@+id/iv_create_discussed_topic"
+            style="@style/DefImageViewStyle"
+            android:layout_gravity="center"
+            android:contentDescription="@string/app_name"
+            android:padding="@dimen/size_16dp"
+            android:src="@drawable/ic_unread_message" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_create_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_comment"
+            style="@style/EditTextDefStyle"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="@string/input_comment"
+            android:paddingHorizontal="@dimen/size_16dp"
+            android:paddingVertical="@dimen/_12sdp" />
+
+        <ImageView
+            android:id="@+id/iv_create_comment"
+            style="@style/DefImageViewStyle"
+            android:layout_gravity="center"
+            android:contentDescription="@string/app_name"
+            android:padding="@dimen/size_16dp"
+            android:src="@drawable/ic_unread_message" />
+    </LinearLayout>
+
+    <include
+        android:id="@+id/progress_layout"
+        layout="@layout/layout_loader"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/click_outside"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

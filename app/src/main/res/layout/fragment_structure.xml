@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context=".presentation.ui.screens.home_activity.workers.structure.StructureFragment">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/txt_empty_result"
+        style="@style/TextSmall"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:gravity="center"
+        android:text="@string/departments_staffs_not_available"
+        android:textColor="@color/sub_hint_text_color"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgDropDown"
+        android:layout_width="@dimen/size_30dp"
+        android:layout_height="@dimen/size_30dp"
+        android:layout_marginEnd="@dimen/size_20dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="@dimen/size_7dp"
+        android:src="@drawable/ic_chevron_up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <HorizontalScrollView
+        android:layout_marginTop="@dimen/_23sdp"
+        android:id="@+id/horizontal_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/_40sdp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSections"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    </HorizontalScrollView>
+
+    <include
+        android:id="@+id/progress_layout"
+        layout="@layout/layout_loader"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

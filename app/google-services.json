@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "851908959408",
+    "project_id": "tezkor-d7641",
+    "storage_bucket": "tezkor-d7641.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:851908959408:android:e0a37733d9eebee2d62f75",
+        "android_client_info": {
+          "package_name": "uz.perfectalgorithm.projects.tezkor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "851908959408-g0giabps97mjgmfjo6f8sb7g83imojk6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "uz.perfectalgorithm.projects.tezkor",
+            "certificate_hash": "aee755e1688c295f4bde210eacf89a7a5e0c9758"
+          }
+        },
+        {
+          "client_id": "851908959408-g67upsqg4u4rc2tm7fi785k0hahm4jo3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtcI29UW5_Zswc4LQpwjc61n7NliVKYuM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "851908959408-g67upsqg4u4rc2tm7fi785k0hahm4jo3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

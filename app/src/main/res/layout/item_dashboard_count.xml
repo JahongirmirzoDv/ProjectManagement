@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcv"
+        style="@style/DashboardCardsStyle"
+        android:layout_width="match_parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_title"
+        style="@style/DashboardTextStyle"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:paddingHorizontal="@dimen/size_0dp"
+        android:singleLine="true"
+        android:text="..."
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintEnd_toEndOf="@id/mcv"
+        app:layout_constraintStart_toStartOf="@id/mcv"
+        app:layout_constraintTop_toTopOf="@id/mcv"
+        tools:text="@string/dashboard_top_title_projects" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_value"
+        android:layout_width="@dimen/size_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_21sdp"
+        android:layout_marginTop="@dimen/size_10dp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:elevation="9dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="..."
+        android:textAlignment="viewStart"
+        android:textColor="#364F6B"
+        android:textFontWeight="500"
+        android:textSize="@dimen/_20ssp"
+        app:layout_constraintEnd_toEndOf="@id/mcv"
+        app:layout_constraintStart_toStartOf="@id/mcv"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:layout_constraintVertical_bias="0.0"
+        tools:targetApi="p"
+        tools:text="50" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

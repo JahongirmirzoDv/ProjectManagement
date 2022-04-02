@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/itemGoalMapLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/size_8dp"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/TextSmall"
+            android:layout_width="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/size_20dp"
+            android:layout_marginTop="@dimen/size_12dp"
+            android:layout_marginEnd="@dimen/size_40dp"
+            android:layout_marginBottom="@dimen/size_12dp"
+            tools:text="Kiruvchi vazifalar" />
+
+        <ImageView
+            android:id="@+id/imgDropDownCompany"
+            style="@style/DefImageViewStyle"
+            android:layout_width="@dimen/size_35dp"
+            android:layout_height="@dimen/size_35dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/size_12dp"
+            android:layout_marginEnd="@dimen/size_10dp"
+            android:padding="@dimen/size_7dp"
+            android:src="@drawable/mdtp_ic_chevron_right_black_24dp"
+            tools:ignore="ContentDescription" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,367 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-parcelize'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "uz.perfectalgorithm.projects.tezkor"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://maven.google.com"
+        }
+        maven { url 'https://jitpack.io' }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude("META-INF/*.kotlin_module")
+    }
+
+
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+
+    // todo
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    bundle {
+        language {
+            // Specifies that the app bundle should not support
+            // configuration APKs for language resources. These
+            // resources are instead packaged with each base and
+            // dynamic feature APK.
+            enableSplit = false
+        }
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.5.31"
+    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.compose.ui:ui-graphics:1.0.2'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    /**
+     * LiveData
+     * */
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+
+    /**
+     * Navigation
+     * **/
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+
+    /**
+     * Hilt dependencies (Add plugin and path)
+     * */
+    implementation "com.google.dagger:hilt-android:2.33-beta"
+    kapt "com.google.dagger:hilt-android-compiler:2.33-beta"
+
+    def hilt_jetpack_version = '1.0.0-alpha03'
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_jetpack_version"
+    kapt "androidx.hilt:hilt-compiler:${hilt_jetpack_version}"
+
+
+    /**
+     * REST API: Adding retrofit to the mainLayer
+     */
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2"
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
+
+    /**
+     * Gson
+     * */
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    /**
+     *   Chuck
+     * */
+    debugImplementation 'com.readystatesoftware.chuck:library:1.1.0'
+    releaseImplementation 'com.readystatesoftware.chuck:library-no-op:1.1.0'
+
+    /**
+     * ViewModelProviders
+     * */
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1"
+
+    /**
+     *  For using create viewModel object on Fragment
+     * */
+    implementation "androidx.fragment:fragment-ktx:$fragment_version"
+
+
+    /**
+     * Better Logging In Android Using Timber
+     **/
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+
+    /**
+     * Responsible UI
+     * */
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+
+    /**
+     *   Android Runtime Permission Library
+     */
+//    implementation 'com.nabinbhandari.android:permissions:3.8'
+
+    /**
+     * kotlinx.coroutines
+     */
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3"
+
+    /**
+     *   Android Runtime Permission Library
+     */
+    implementation 'com.nabinbhandari.android:permissions:3.8'
+
+    /**
+     * Paging
+     * */
+    implementation "androidx.paging:paging-runtime-ktx:3.1.0-alpha03"
+
+
+    /**
+     *  Glide
+     * */
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+
+    /**Picasso load Image lib**/
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    /**
+     * GlideToVectorYou for load svg with Glide
+     * */
+    implementation 'com.github.corouteam:GlideToVectorYou:v2.0.0'
+
+    /**
+     * Circle Image lib
+     **/
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+
+    /**
+     *  Local
+     */
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    /**
+     * Material design
+     * */
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'com.romandanylyk:pageindicatorview:1.0.3'
+    implementation 'com.github.santalu:mask-edittext:1.1.1'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
+    implementation 'com.github.GoodieBag:Pinview:v1.4'
+
+    /**
+     *  ImagePicker
+     */
+    implementation 'com.github.dhaval2404:imagepicker:1.8'
+    implementation 'com.github.florent37:inline-activity-result-kotlin:1.0.4'
+
+    /**
+     * DatePicker
+     */
+    implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
+    implementation 'com.tbuonomo:dotsindicator:4.2'
+
+    /***
+     * Spinner
+     * **/
+    implementation "com.github.skydoves:powerspinner:1.1.7"
+
+
+    /***
+     * Compressor
+     * **/
+    implementation 'id.zelory:compressor:3.0.1'
+
+    /***
+     * Calendar
+     * **/
+    implementation 'joda-time:joda-time:2.10.10'
+
+    /***
+     * Room
+     * **/
+    def room_version = "2.3.0"
+    implementation "androidx.room:room-ktx:$room_version"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+    /**
+     * MPAndroidChart
+     */
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    /**
+     * Firebase
+     * **/
+    implementation platform('com.google.firebase:firebase-bom:29.0.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx:20.0.0'
+    implementation 'com.google.firebase:firebase-core:20.0.0'
+    implementation 'com.google.firebase:firebase-messaging-ktx:23.0.0'
+    implementation 'com.google.firebase:firebase-crashlytics:18.2.4'
+
+    /**
+     * FlexBoxLayout & FlexBoxLayoutManager
+     */
+    implementation 'com.google.android.flexbox:flexbox:3.0.0'
+    /**
+     * multidex
+     * **/
+    implementation 'com.android.support:multidex:1.0.3'
+
+    /**
+     * Rating bars
+     * */
+    implementation 'com.github.ome450901:SimpleRatingBar:1.5.1'
+
+    /**
+     * Expandable TextView
+     * **/
+    implementation 'io.github.glailton.expandabletextview:expandabletextview:1.0.1'
+
+    /**
+     * Pin Entry
+     * */
+    implementation('com.alimuzaffar.lib:pinentryedittext:2.0.6') {
+        exclude group: 'androidx.appcompat', module: 'appcompat'
+    }
+
+    implementation 'com.github.BeppiMenozzi:TriStateToggleButton:1.1.4'
+
+    implementation 'com.github.rohankandwal:indicatorseekbar:v2.1.4'
+
+    /**
+     * DraggableView
+     * **/
+
+    implementation 'com.github.hyuwah:DraggableView:1.0.0'
+
+    /**
+     * SwiperRevealLayout
+     * */
+    implementation 'com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.1'
+
+    /**
+     * SwiperRevealLayout
+     * */
+    implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
+
+    /**
+     * Photo view
+     * */
+    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+
+
+    implementation 'net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:1.0.0'
+    /**
+     * Currency Edit Text
+     * */
+    implementation 'com.wajahatkarim3.EasyMoney-Widgets:EasyMoney-Widgets:1.0.0'
+
+    /**
+     * CountryCodePicker
+     * */
+    implementation 'com.github.gbksoft:GBKCountryCodePicker:v1.0.0'
+
+    /**
+     * Chucker Interceptor
+     **/
+    implementation "com.github.chuckerteam.chucker:library-no-op:3.4.0"
+
+    /**
+     * CardFlipView
+     **/
+
+    implementation 'com.wajahatkarim3.EasyFlipView:EasyFlipView:3.0.0'
+
+    /**
+     * SpinkKit
+     * **/
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+
+    /**
+     * Tooltip
+     */
+    implementation "com.github.skydoves:balloon:1.2.9"
+
+    /**
+     * StickyDraggableView
+     */
+    implementation 'com.github.shivthepro:stickydragview:0.0.1'
+    implementation 'com.google.android.gms:play-services-auth:19.2.0'
+    //noinspection DuplicatePlatformClasses
+    implementation 'com.google.apis:google-api-services-calendar:v3-rev260-1.23.0' exclude module: 'httpclient'
+    implementation 'com.google.api-client:google-api-client-android:1.23.0' exclude module: 'httpclient'
+    implementation 'com.google.http-client:google-http-client-gson:1.23.0' exclude module: 'httpclient'
+    implementation 'com.google.android.gms:play-services-identity:17.0.1'
+
+    //google calendar
+    implementation 'com.google.api-client:google-api-client:1.33.0'
+}

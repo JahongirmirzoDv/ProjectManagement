@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/calendar_navigation"
+    app:startDestination="@id/month_navigation">
+    <fragment
+        android:id="@+id/month_navigation"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.calendar.month.MonthHolderFragment"
+        android:label="@string/monthly"
+        tools:layout="@layout/fragment_months_holder">
+
+        <argument
+            android:name="DAY_CODE"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="staff_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_month_navigation_to_day_navigation"
+            app:destination="@id/day_navigation" />
+        <action
+            android:id="@+id/action_month_navigation_to_week_navigation"
+            app:destination="@id/week_navigation" />
+    </fragment>
+    <fragment
+        android:id="@+id/week_navigation"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.calendar.week.WeekHolderFragment"
+        android:label="@string/week"
+        tools:layout="@layout/fragment_week_holder">
+        <action
+            android:id="@+id/action_week_navigation_to_day_navigation"
+            app:destination="@id/day_navigation" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/day_navigation"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.calendar.day.DayHolderFragment"
+        android:label="@string/day"
+        tools:layout="@layout/fragment_day_holderr" />
+
+    <fragment
+        android:id="@+id/year_navigation"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.calendar.year.YearHolderFragment"
+        android:label="@string/yearly"
+        tools:layout="@layout/fragment_year_holder">
+        <action
+            android:id="@+id/to_monthNavigation"
+            app:destination="@id/month_navigation" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/handledErrorDialogFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.dialogs.others.error_handling.HandledErrorDialogFragment"
+        android:label="">
+
+        <action
+            android:id="@+id/to_paymentStaffConfigurationFragment"
+            app:destination="@id/paymentStaffConfigurationFragment" />
+    </dialog>
+
+</navigation>

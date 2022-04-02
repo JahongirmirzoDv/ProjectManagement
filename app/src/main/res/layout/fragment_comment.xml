@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.screens.home_activity.quick_ideas_box.CommentFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="1dp"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnusedAttribute">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:title="Kommentariyalar" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ideaHeaderLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/consDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/E6E9EF"
+                app:layout_constraintBottom_toBottomOf="@+id/idea_create_date"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/idea_create_date"
+                app:layout_constraintTop_toTopOf="@+id/idea_create_date" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/E6E9EF"
+                app:layout_constraintBottom_toBottomOf="@+id/idea_create_date"
+                app:layout_constraintLeft_toRightOf="@+id/idea_create_date"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/idea_create_date" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/idea_create_date"
+                style="@style/TextSmallSemiBold"
+                android:layout_marginTop="@dimen/size_12dp"
+                android:background="@drawable/background_date_in_chat"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="12-aprel, 2021" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/ideaOwner"
+            style="@style/TextSmallSemiBold"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/consDate"
+            tools:text="Jasurbek Kurganbaev:" />
+
+        <io.github.glailton.expandabletextview.ExpandableTextView
+            android:id="@+id/ideaDescription"
+            style="@style/TextSmall"
+            android:layout_width="0dp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:visibility="gone"
+            app:isExpanded="false"
+            app:isUnderlined="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/ideaOwner"
+            app:layout_constraintTop_toBottomOf="@id/ideaOwner"
+            expandableTextView:animDuration="500"
+            expandableTextView:collapsedLines="1"
+            expandableTextView:readLessText="Qisqacha"
+            expandableTextView:readMoreText="Batafsil"
+            expandableTextView:textMode="line"
+            tools:text="123456789012345" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/ideaDescriptionTextView"
+            style="@style/TextSmall"
+            android:layout_width="0dp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:isExpanded="false"
+            app:isUnderlined="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/ideaOwner"
+            app:layout_constraintTop_toBottomOf="@id/ideaOwner"
+            tools:text="123456789012345" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvComments"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/cl_reply_message"
+        app:layout_constraintTop_toBottomOf="@+id/ideaHeaderLayout"
+        tools:listitem="@layout/item_idea_comment_received" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_reply_message"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_50dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/cl_send">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/colorGreySoft"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/img_reply_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_reply_message"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/btn_cancel_reply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="14dp"
+            android:contentDescription="@string/app_name"
+            android:rotation="45"
+            android:src="@drawable/ic_add_plus"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/colorGreySoft" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_reply_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="14dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@string/example_reply_message"
+            android:textColor="@color/colorGreySoft"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_cancel_reply"
+            app:layout_constraintStart_toEndOf="@+id/img_reply_edit"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/E6E9EF"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/size_8dp"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/inter_regular"
+            android:hint="@string/enter_message_content"
+            android:paddingStart="@dimen/size_20dp"
+            android:paddingTop="@dimen/size_18dp"
+            android:paddingBottom="@dimen/size_18dp"
+            android:textColorHint="@color/disabled_color"
+            android:textSize="@dimen/text_15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/imgSendMessage"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="Autofill,RtlSymmetry,TextFields" />
+
+
+        <ImageView
+            android:id="@+id/imgSendMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:focusable="true"
+            android:padding="@dimen/size_8dp"
+            android:src="@drawable/ic_send_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ProgressBar
+        android:id="@+id/comment_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

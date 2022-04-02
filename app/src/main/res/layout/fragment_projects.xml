@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.screens.home_activity.tasks.project.ProjectsFragment">
+
+    <!--    DON'T REMOVE IT-->
+    <!--    I WILL FIX BUG: SwipeRefreshLayout using with DragBoardView-->
+    <!--    -->
+    <!--    by farrukh_kh-->
+
+    <!--    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout-->
+    <!--        android:id="@+id/srl_refresh"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent">-->
+
+    <uz.perfectalgorithm.projects.tezkor.utils.views.drag_board_view.view.DragBoardView
+        android:id="@+id/drag_board_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
+
+    <ProgressBar
+        android:id="@+id/pb_loading_change_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/size_24dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_error"
+        android:layout_width="@dimen/size_0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/size_24dp"
+        android:gravity="center"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/empty_project_list"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_project"
+        style="@style/FabButtonStyle"
+        android:contentDescription="@string/app_name"
+        app:backgroundTint="@color/fab_button_elevation_color"
+        app:borderWidth="0.7dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/blue" />
+
+    <!--  <com.google.android.material.floatingactionbutton.FloatingActionButton
+          android:id="@+id/fab_add_project"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="@dimen/size_16dp"
+          android:src="@drawable/ic_add_plus"
+          app:backgroundTint="@color/white"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:tint="@color/blue" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>

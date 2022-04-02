@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootL"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/size_16dp"
+    android:layout_marginTop="@dimen/size_12dp"
+    android:layout_marginEnd="@dimen/size_16dp"
+    android:background="@drawable/background_color_gray_radius_8dp"
+    android:padding="@dimen/size_5dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardPersonImage"
+        android:layout_width="@dimen/size_35dp"
+        android:layout_height="@dimen/size_35dp"
+        android:layout_marginStart="@dimen/size_20dp"
+        app:cardCornerRadius="@dimen/size_30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/participant_image_avatar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_user" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tvPersonName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_20dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/inter_regular"
+        android:maxLines="1"
+        android:text="Sardor Tojiyev"
+        android:textSize="@dimen/text_15sp"
+        app:layout_constraintBottom_toTopOf="@id/tvModerator"
+        app:layout_constraintEnd_toStartOf="@+id/checked_members"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@+id/cardPersonImage"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cardPersonImage"
+        app:layout_constraintTop_toTopOf="@+id/cardPersonImage"
+        tools:ignore="HardcodedText,UnknownIdInLayout" />
+    <TextView
+        android:id="@+id/tvModerator"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_20dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/inter_regular"
+        android:maxLines="1"
+        android:text="Moderator"
+        android:visibility="gone"
+        android:textSize="@dimen/size_12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardPersonImage"
+        app:layout_constraintEnd_toStartOf="@+id/checked_members"
+        app:layout_constraintLeft_toRightOf="@+id/cardPersonImage"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPersonName"
+        app:layout_constraintStart_toEndOf="@+id/cardPersonImage"
+        tools:ignore="HardcodedText,UnknownIdInLayout" />
+
+    <CheckBox
+
+        android:id="@+id/checked_members"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/imgDelete"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"/>
+
+    <ImageView
+        android:id="@+id/imgDelete"
+        android:layout_width="@dimen/size_35dp"
+        android:layout_height="@dimen/size_35dp"
+        android:layout_marginEnd="@dimen/size_15dp"
+        android:padding="@dimen/size_10dp"
+        android:src="@drawable/ic_back_button_cross_grey"
+        app:layout_constraintBottom_toBottomOf="@+id/cardPersonImage"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cardPersonImage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

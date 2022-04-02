@@ -1,0 +1,941 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhiteSoft"
+    tools:context=".presentation.ui.screens.home_activity.adding.create_goal.CreateGoalFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnusedAttribute">
+
+        <RelativeLayout
+            android:id="@+id/rlGoal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imgBackButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:contentDescription="@string/app_name"
+                android:focusable="true"
+                android:src="@drawable/ic_back_button_cross" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/CreateToolbarTitleStyle"
+                android:layout_alignParentStart="true"
+                android:text="@string/goal" />
+
+            <ImageView
+                android:id="@+id/createGoalBlueButton"
+                style="@style/CreateTickImageStyle"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_checedk_in_create_project"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv_root"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/_50sdp">
+
+            <View
+                android:id="@+id/view18"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_18sdp"
+                android:background="@color/colorWhiteSoft"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etGoalName"
+                style="@style/CreateScreensEditTextStyle"
+                android:drawableEnd="@drawable/ic_help"
+                android:hint="@string/goal_name"
+                android:inputType="textMultiLine|textCapSentences"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etGoalDescription"
+                style="@style/CreateScreensEditTextStyle"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:hint="@string/input_definition"
+                android:inputType="textMultiLine|textCapSentences"
+                android:paddingTop="@dimen/_25sdp"
+                android:paddingBottom="@dimen/_25sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etGoalName" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/goalPerformerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@color/white"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etGoalDescription">
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvPerformer"
+                    style="@style/CreateScreensTitleStyle"
+                    android:text="@string/hint_performer"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/goalLeft1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.25" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/avatarPerformer"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    app:cardCornerRadius="@dimen/_30sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvPerformer"
+                    app:layout_constraintEnd_toStartOf="@+id/goalNamePerformer"
+                    app:layout_constraintStart_toEndOf="@+id/goalLeft1"
+                    app:layout_constraintTop_toTopOf="@+id/tvPerformer">
+
+                    <ImageView
+                        android:id="@+id/goalPerformerImageAvatar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_user" />
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/goalNamePerformer"
+                    style="@style/CreateScreensHintTextStyle"
+                    android:hint="@string/select_performer"
+                    app:layout_constraintBottom_toBottomOf="@+id/avatarPerformer"
+                    app:layout_constraintEnd_toStartOf="@+id/addPerformer"
+                    app:layout_constraintStart_toEndOf="@+id/avatarPerformer"
+                    app:layout_constraintTop_toTopOf="@+id/avatarPerformer" />
+
+                <ImageView
+                    android:id="@+id/addPerformer"
+                    style="@style/CreateScreensCrossIconStyle"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/goalNamePerformer"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/goalNamePerformer"
+                    app:srcCompat="@drawable/ic_back_button_cross_grey" />
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.7dp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@color/colorDarkBlue"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/avatarPerformer" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/goalMasterLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/_16sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/goalPerformerLayout">
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvMaster"
+                    style="@style/CreateScreensTitleStyle"
+                    android:text="@string/tv_master"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/goalLeft2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.25" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/avatarMaster"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    app:cardCornerRadius="@dimen/_30sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvMaster"
+                    app:layout_constraintEnd_toStartOf="@+id/goalNameMaster"
+                    app:layout_constraintStart_toEndOf="@+id/goalLeft2"
+                    app:layout_constraintTop_toTopOf="@+id/tvMaster">
+
+                    <ImageView
+                        android:id="@+id/goalMasterImageAvatar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_user" />
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/goalNameMaster"
+                    style="@style/CreateScreensHintTextStyle"
+                    android:hint="@string/select_master"
+                    app:layout_constraintBottom_toBottomOf="@+id/avatarMaster"
+                    app:layout_constraintEnd_toStartOf="@+id/addMaster"
+                    app:layout_constraintStart_toEndOf="@+id/avatarMaster"
+                    app:layout_constraintTop_toTopOf="@+id/avatarMaster"
+                    app:layout_constraintVertical_bias="0.541"
+                    app:layout_constraintWidth_percent="0.5" />
+
+                <ImageView
+                    android:id="@+id/addMaster"
+                    style="@style/CreateScreensCrossIconStyle"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/goalNameMaster"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/goalNameMaster"
+                    app:srcCompat="@drawable/ic_back_button_cross_grey" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/view20"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@color/colorWhiteSoft"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/goalMasterLayout" />
+
+            <LinearLayout
+                android:id="@+id/goalDeadlineLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/view20">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/goalBeginningTimeLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/imgBeginingTime"
+                        style="@style/CreateScreensDateImageIconStyle"
+                        android:contentDescription="@string/app_name"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_calendar_in_create_project" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBegingTimeTitle"
+                        style="@style/CreateScreensTimeTitleStyle"
+                        android:text="@string/begining_date"
+                        app:layout_constraintBottom_toBottomOf="@+id/imgBeginingTime"
+                        app:layout_constraintStart_toEndOf="@+id/imgBeginingTime"
+                        app:layout_constraintTop_toTopOf="@+id/imgBeginingTime" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBeginningTime"
+                        style="@style/CreateScreensTextTime"
+                        android:hint="@string/date_format"
+                        app:layout_constraintStart_toStartOf="@+id/imgBeginingTime"
+                        app:layout_constraintTop_toBottomOf="@+id/imgBeginingTime" />
+
+                    <View
+                        android:id="@+id/viewId1"
+                        android:layout_width="@dimen/_1sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:background="@color/underLine"
+                        app:layout_constraintBottom_toBottomOf="@id/tvBeginningTime"
+                        app:layout_constraintStart_toEndOf="@id/tvBeginningTime"
+                        app:layout_constraintTop_toTopOf="@id/tvBeginningTime" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvBeginTime"
+                        style="@style/CreateScreensTextTime"
+                        android:layout_marginTop="0dp"
+                        android:hint="@string/time_format"
+                        app:layout_constraintBottom_toBottomOf="@+id/viewId1"
+                        app:layout_constraintStart_toEndOf="@+id/viewId1"
+                        app:layout_constraintTop_toTopOf="@+id/viewId1" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/view7"
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:background="@color/underLine" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/goalEndingTimeLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <!--<ImageView
+                        android:id="@+id/imgEndingTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginTop="@dimen/_24sdp"
+                        android:contentDescription="@string/app_name"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_calendar_in_create_project" />
+
+                    <TextView
+                        android:id="@+id/tvEndingTimeTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Tugatish vaqti:"
+                        android:textSize="@dimen/_11ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imgEndingTime"
+                        app:layout_constraintStart_toEndOf="@+id/imgEndingTime"
+                        app:layout_constraintTop_toTopOf="@+id/imgEndingTime" />
+
+                    <TextView
+                        android:id="@+id/tvEndingTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/inter_regular"
+                        android:hint="yyyy-mm-dd"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        app:layout_constraintStart_toStartOf="@+id/imgEndingTime"
+                        app:layout_constraintTop_toBottomOf="@+id/imgEndingTime" />
+
+                    <View
+                        android:id="@+id/viewId2"
+                        android:layout_width="@dimen/size_1dp"
+                        android:layout_height="@dimen/size_20dp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:background="@color/underLine"
+                        app:layout_constraintBottom_toBottomOf="@id/tvEndingTime"
+                        app:layout_constraintStart_toEndOf="@id/tvEndingTime"
+                        app:layout_constraintTop_toTopOf="@id/tvEndingTime" />
+
+                    <TextView
+                        android:id="@+id/tvEndTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:background="@drawable/background_radus_4dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:hint="hh:mm"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/viewId2"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/viewId2"
+                        app:layout_constraintTop_toTopOf="@+id/viewId2" />-->
+
+                    <ImageView
+                        android:id="@+id/imgEndingTime"
+                        style="@style/CreateScreensDateImageIconStyle"
+                        android:contentDescription="@string/app_name"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_calendar_in_create_project" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvEndingTimeTitle"
+                        style="@style/CreateScreensTimeTitleStyle"
+                        android:letterSpacing="0"
+                        android:text="@string/ending_time"
+                        app:layout_constraintBottom_toBottomOf="@+id/imgEndingTime"
+                        app:layout_constraintStart_toEndOf="@+id/imgEndingTime"
+                        app:layout_constraintTop_toTopOf="@+id/imgEndingTime" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvEndingTime"
+                        style="@style/CreateScreensTextTime"
+                        android:hint="@string/date_format"
+                        app:layout_constraintStart_toStartOf="@+id/imgEndingTime"
+                        app:layout_constraintTop_toBottomOf="@+id/imgEndingTime" />
+
+                    <View
+                        android:id="@+id/viewId2"
+                        android:layout_width="@dimen/_1sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:background="@color/underLine"
+                        app:layout_constraintBottom_toBottomOf="@id/tvEndingTime"
+                        app:layout_constraintStart_toEndOf="@id/tvEndingTime"
+                        app:layout_constraintTop_toTopOf="@id/tvEndingTime" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvEndTime"
+                        style="@style/CreateScreensTextTime"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/background_radus_4dp"
+                        android:hint="@string/time_format"
+                        app:layout_constraintBottom_toBottomOf="@+id/viewId2"
+                        app:layout_constraintStart_toEndOf="@+id/viewId2"
+                        app:layout_constraintTop_toTopOf="@+id/viewId2" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:id="@+id/iv_time_edit_rule"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvEndTime"
+                    app:layout_constraintStart_toEndOf="@+id/tvEndTime"
+                    app:layout_constraintTop_toTopOf="@+id/tvEndingTimeTitle"
+                    app:srcCompat="@drawable/push_pin_icon" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view21"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@color/colorWhiteSoft"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/goalDeadlineLayout" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/fileLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@color/white"
+                android:paddingVertical="@dimen/_13sdp"
+                app:layout_constraintTop_toBottomOf="@+id/goalDeadlineLayout"
+                tools:layout_editor_absoluteX="0dp">
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/fileTitle"
+                    style="@style/CreateScreensFieldTitle"
+                    android:text="@string/files"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/fileIcon"
+                    style="@style/DefImageViewStyle"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/fileTitle"
+                    app:layout_constraintEnd_toStartOf="@+id/fileCount"
+                    app:layout_constraintHorizontal_bias="0.91"
+                    app:layout_constraintStart_toEndOf="@+id/fileTitle"
+                    app:layout_constraintTop_toTopOf="@+id/fileTitle"
+                    app:srcCompat="@drawable/ic_file_count_or_select" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/fileCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_32sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/fileIcon"
+                    app:layout_constraintEnd_toStartOf="@+id/fileAdd"
+                    app:layout_constraintTop_toTopOf="@+id/fileIcon"
+                    tools:text="0" />
+
+
+                <ImageView
+                    android:id="@+id/fileAdd"
+                    style="@style/CreateScreensAddButton"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/fileCount"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/fileCount"
+                    app:srcCompat="@drawable/ic_add_plus_with_circle" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvFiles"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_24dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@id/fileTitle"
+                    tools:listitem="@layout/item_edit_file_other" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/view22"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@color/colorWhiteSoft"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fileLayout" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/linkingGoalToMapLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/_12sdp"
+                app:layout_constraintTop_toBottomOf="@+id/statusLayout">
+
+                <!--   <TextView
+                       android:id="@+id/linkToMapTitle"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_marginStart="@dimen/_24sdp"
+                       android:layout_marginTop="@dimen/_30sdp"
+                       android:fontFamily="@font/inter_regular"
+                       android:text="@string/linking_to_goal"
+                       android:textColor="@color/black"
+                       android:textSize="@dimen/_12ssp"
+                       android:textStyle="bold"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toTopOf="parent" />
+
+                   <LinearLayout
+                       android:id="@+id/spinnerContainer"
+                       android:layout_width="0dp"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="@dimen/_5sdp"
+                       android:background="@drawable/background_spinner"
+                       android:orientation="horizontal"
+                       android:paddingLeft="@dimen/_15sdp"
+                       android:paddingTop="@dimen/_8sdp"
+                       android:paddingBottom="@dimen/_8sdp"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toBottomOf="@id/linkToMapTitle"
+                       app:layout_constraintWidth_percent="0.85">
+
+                       <ImageView
+                           android:layout_width="@dimen/_18sdp"
+                           android:layout_height="@dimen/_18sdp"
+                           android:layout_gravity="center_vertical"
+                           android:contentDescription="@string/app_name"
+                           android:src="@drawable/ic_file" />
+
+                       <Spinner
+                           android:id="@+id/spinnerGoalFolder"
+                           style="@style/MyTextViewStyleBlack"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="center_vertical"
+                           android:layout_marginStart="@dimen/_3sdp"
+                           android:layout_marginEnd="@dimen/_3sdp"
+                           android:layout_weight="1"
+                           android:dropDownWidth="wrap_content"
+                           android:enabled="false"
+                           android:fontFamily="@font/inter_regular"
+                           android:gravity="center"
+                           android:spinnerMode="dropdown" />
+
+                   </LinearLayout>-->
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/linkToMapTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_24sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:text="@string/linking_to_goal"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/spinnerContainer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/background_spinner"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingTop="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_8sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/linkToMapTitle"
+                    app:layout_constraintWidth_percent="0.85">
+
+                    <ImageView
+                        android:layout_width="@dimen/_18sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_file" />
+
+                    <Spinner
+                        android:id="@+id/spinnerGoalFolder"
+                        style="@style/MyTextViewStyleBlack"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:layout_weight="1"
+                        android:dropDownWidth="wrap_content"
+                        android:gravity="center"
+                        android:spinnerMode="dropdown" />
+
+                </LinearLayout>
+
+                <ProgressBar
+                    android:id="@+id/pbLoadingFolders"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/spinnerContainer"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/spinnerContainer" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/view23"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@color/colorWhiteSoft"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linkingGoalToMapLayout" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/statusLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_56sdp"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/view22">
+
+                <!--<TextView
+                    android:id="@+id/statusTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_24sdp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="@string/status_text"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/statusAdd"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginEnd="24dp"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/statusTitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/statusTitle" />
+-->
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/statusTitle"
+                    style="@style/CreateScreensFieldTitle"
+                    android:text="@string/status_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/statusAdd"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginEnd="24dp"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/statusTitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/statusTitle"
+                    tools:src="@drawable/ic_new" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvStatusTitle"
+                    style="@style/CreateScreensFieldTitle"
+                    android:layout_marginHorizontal="@dimen/size_16dp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/statusTitle"
+                    app:layout_constraintEnd_toStartOf="@id/statusAdd"
+                    tools:text="Yangi" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/view24"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@color/colorWhiteSoft"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/statusLayout" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/participantsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/_14sdp"
+                app:layout_constraintTop_toBottomOf="@+id/linkingGoalToMapLayout">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/goalParticipantLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:background="@color/white"
+                    android:backgroundTint="@color/colorWhiteSoft"
+                    android:paddingBottom="@dimen/_14sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/participantsTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_22sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Ishtirokchilar"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageViewPart"
+                        android:layout_width="@dimen/_18sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:contentDescription="@string/app_name"
+                        app:layout_constraintBottom_toBottomOf="@+id/participantsTitle"
+                        app:layout_constraintEnd_toStartOf="@id/participantsAdd"
+                        app:layout_constraintTop_toTopOf="@+id/participantsTitle"
+                        app:srcCompat="@drawable/ic_chevron_up" />
+
+                    <ImageView
+                        android:id="@+id/participantsAdd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_24sdp"
+                        android:background="?android:selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:contentDescription="@string/app_name"
+                        android:focusable="true"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/participantsTitle"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/participantsTitle"
+                        app:srcCompat="@drawable/ic_add_plus_with_circle" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/participantRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/participantsAdd"
+                        tools:listitem="@layout/item_participants" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/goalObserversLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@color/white"
+                    android:backgroundTint="@color/colorWhiteSoft"
+                    android:paddingBottom="@dimen/_10sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/goalParticipantLayout">
+
+                    <TextView
+                        android:id="@+id/observersTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_22sdp"
+                        android:layout_marginTop="@dimen/_18sdp"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Kuzatuvchilar"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imgDropDownOb"
+                        android:layout_width="@dimen/_18sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:contentDescription="@string/app_name"
+                        app:layout_constraintBottom_toBottomOf="@+id/observersTitle"
+                        app:layout_constraintEnd_toStartOf="@id/observersAdd"
+                        app:layout_constraintTop_toTopOf="@+id/observersTitle"
+                        app:srcCompat="@drawable/ic_chevron_up" />
+
+                    <ImageView
+                        android:id="@+id/observersAdd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_22sdp"
+                        android:background="?android:selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:contentDescription="@string/app_name"
+                        android:focusable="true"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/observersTitle"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/observersTitle"
+                        app:srcCompat="@drawable/ic_add_plus_with_circle" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerObserve"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/observersAdd"
+                        tools:listitem="@layout/item_participants" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/goalFunctionalGroupLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:background="@color/white"
+                    android:backgroundTint="@color/colorWhiteSoft"
+                    android:paddingBottom="@dimen/_14sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/goalObserversLayout">
+
+                    <TextView
+                        android:id="@+id/functionalGroupTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_22sdp"
+                        android:layout_marginTop="@dimen/_18sdp"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Funktsional guruh"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imgDropDownFun"
+                        android:layout_width="@dimen/_18sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:clickable="true"
+                        android:contentDescription="@string/app_name"
+                        android:focusable="true"
+                        app:layout_constraintBottom_toBottomOf="@+id/functionalGroupTitle"
+                        app:layout_constraintEnd_toStartOf="@id/functionalGroupAdd"
+                        app:layout_constraintTop_toTopOf="@+id/functionalGroupTitle"
+                        app:srcCompat="@drawable/ic_chevron_up" />
+
+                    <ImageView
+                        android:id="@+id/functionalGroupAdd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_22sdp"
+                        android:contentDescription="@string/app_name"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/functionalGroupTitle"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/functionalGroupTitle"
+                        app:srcCompat="@drawable/ic_add_plus_with_circle" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/functionalRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/functionalGroupAdd"
+                        tools:listitem="@layout/item_participants" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnUpload"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_14sdp"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:layout_marginEnd="@dimen/_14sdp"
+                android:fontFamily="@font/inter_regular"
+                android:padding="@dimen/_14sdp"
+                android:text="@string/delete"
+                android:textAllCaps="false"
+                app:backgroundTint="@color/project_done2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/participantsLayout" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/create_goal_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

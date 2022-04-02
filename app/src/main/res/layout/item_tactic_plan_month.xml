@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginVertical="@dimen/size_4dp"
+        android:layout_marginStart="@dimen/size_8dp"
+        android:minHeight="@dimen/size_300dp"
+        app:cardCornerRadius="@dimen/size_8dp"
+        app:cardElevation="@dimen/size_4dp"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="@dimen/size_8dp"
+        app:layout_constraintBottom_toBottomOf="@id/drag_board_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/colorGreySoft"
+        app:strokeWidth="@dimen/size_1dp">
+
+        <com.wdullaer.materialdatetimepicker.VerticalTextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="bottom|center"
+            android:textAllCaps="true"
+            android:textSize="@dimen/text_16sp"
+            tools:text="Yanvar" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <uz.perfectalgorithm.projects.tezkor.utils.views.drag_board_view.view.DragBoardView
+        android:id="@+id/drag_board_view"
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        app:layout_constraintStart_toEndOf="@id/mcv_title"
+        app:layout_constraintTop_toTopOf="@id/mcv_title" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/entry_navigation"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.entry_activity.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_chooseCompanyFragment"
+            app:destination="@id/chooseCompanyFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_resetPasswordFragment"
+            app:destination="@id/resetPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.entry_activity.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_introFragment"
+            app:destination="@id/introFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_chooseCompanyFragment"
+            app:destination="@id/chooseCompanyFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/introFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.entry_activity.intro.IntroFragment"
+        android:label="fragment_intro"
+        tools:layout="@layout/fragment_intro">
+        <action
+            android:id="@+id/action_introFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/introFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseCompanyFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.entry_activity.choose_company.ChooseCompanyFragment"
+        android:label="fragment_choose_company"
+        tools:layout="@layout/fragment_choose_company">
+        <action
+            android:id="@+id/action_chooseCompanyFragment_to_createCompanyFragment"
+            app:destination="@id/createCompanyFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createCompanyFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.entry_activity.company.CreateCompanyFragment"
+        android:label="Kompaniya Yaratish"
+        tools:layout="@layout/fragment_create_company">
+        <action
+            android:id="@+id/action_createCompanyFragment_to_chooseCompanyFragment"
+            app:destination="@id/chooseCompanyFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/verificationFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.entry_activity.verification.VerificationFragment"
+        android:label="Tasdiqlash"
+        tools:layout="@layout/fragment_verification">
+        <action
+            android:id="@+id/action_verificationFragment_to_chooseCompanyFragment"
+            app:destination="@id/chooseCompanyFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_verificationFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.entry_activity.registration.RegistrationFragment"
+        android:label="Registratsiya"
+        tools:layout="@layout/fragment_registration_owner">
+        <action
+            android:id="@+id/action_registrationFragment_to_verificationFragment"
+            app:destination="@id/verificationFragment" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/handledErrorDialogFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.dialogs.others.error_handling.HandledErrorDialogFragment"
+        android:label="" />
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.entry_activity.reset_password.ResetPasswordFragment"
+        android:label=""
+        tools:layout="@layout/fragment_reset_password">
+        <action
+            android:id="@+id/action_resetPasswordFragment_to_verificationFragment"
+            app:destination="@id/verificationFragment" />
+    </fragment>
+
+</navigation>

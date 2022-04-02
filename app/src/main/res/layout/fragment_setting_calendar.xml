@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/account_1"
+        style="@style/DefaultLayoutStyle"
+        android:layout_width="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/image2"
+            style="@style/OthersImageIconStyle"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_person" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/goalMap"
+            style="@style/OtherScreenTextStyle"
+            android:layout_toEndOf="@id/image2"
+            tools:text="aaaaaa@google.com" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="@dimen/size_5dp"
+            android:contentDescription="@string/todo"
+            android:padding="@dimen/size_15dp"
+            android:src="@drawable/ic_forvard_in_other" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/account_2"
+        style="@style/DefaultLayoutStyle"
+        android:layout_width="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/account_1">
+
+        <ImageView
+            android:id="@+id/image3"
+            style="@style/OthersImageIconStyle"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_person" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/goalMap2"
+            style="@style/OtherScreenTextStyle"
+            android:layout_toEndOf="@id/image3"
+             />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="@dimen/size_5dp"
+            android:contentDescription="@string/todo"
+            android:padding="@dimen/size_15dp"
+            android:src="@drawable/ic_forvard_in_other" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

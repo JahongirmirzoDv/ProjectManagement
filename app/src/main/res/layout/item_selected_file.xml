@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_file_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/size_10dp"
+        android:layout_marginStart="@dimen/size_20dp"
+        android:src="@drawable/ic_selected_file"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_file_type"
+        android:layout_width="@dimen/size_0dp"
+        android:layout_height="@dimen/size_0dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/inter_regular"
+        android:gravity="center"
+        android:lines="1"
+        android:padding="@dimen/size_2dp"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_8sp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_file_icon"
+        app:layout_constraintEnd_toEndOf="@id/iv_file_icon"
+        app:layout_constraintStart_toStartOf="@id/iv_file_icon"
+        app:layout_constraintTop_toTopOf="@id/iv_file_icon"
+        tools:text="pdf" />
+
+    <TextView
+        android:id="@+id/tv_file_name"
+        style="@style/MyTextViewStyleBlack"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size_20dp"
+        android:paddingVertical="@dimen/size_4dp"
+        android:width="@dimen/size_0dp"
+        android:fontFamily="@font/inter_semibold"
+        android:textSize="@dimen/text_15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_file_icon"
+        app:layout_constraintEnd_toStartOf="@id/iv_action"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@+id/iv_file_icon"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_file_icon"
+        app:layout_constraintTop_toTopOf="@+id/iv_file_icon"
+        tools:text="@tools:sample/lorem" />
+
+    <ImageView
+        android:id="@+id/iv_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/size_20dp"
+        android:src="@drawable/ic_download_file"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/pb_downloading"
+        android:layout_width="@dimen/size_16dp"
+        android:layout_height="@dimen/size_16dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/iv_action"
+        app:layout_constraintEnd_toEndOf="@id/iv_action"
+        app:layout_constraintStart_toStartOf="@id/iv_action"
+        app:layout_constraintTop_toTopOf="@id/iv_action" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.7dp"
+        android:background="@color/colorDividerChat"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

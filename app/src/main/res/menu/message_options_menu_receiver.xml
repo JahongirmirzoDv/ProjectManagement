@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/reply_message_xd"
+        android:title="@string/reply_message_text" />
+
+    <item
+        android:id="@+id/set_to_task_message_xd"
+        android:title="@string/set_to_task_string" />
+
+    <item
+        android:id="@+id/set_to_meeting_message_xd"
+        android:title="@string/set_to_meeting_string" />
+
+    <item
+        android:id="@+id/set_to_note_message_xd"
+        android:title="@string/set_to_note_string" />
+
+    <!--  <item
+          android:id="@+id/select_message_xd"
+          android:title="@string/select_message" />
+  -->
+
+</menu>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/consItemChat"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/size_80dp"
+    android:background="?attr/selectableItemBackground"
+    android:focusable="true">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardGroupImage"
+        android:layout_width="@dimen/size_60dp"
+        android:layout_height="@dimen/size_60dp"
+        android:layout_marginStart="@dimen/size_20dp"
+        app:cardCornerRadius="@dimen/size_30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/channelImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_user"
+            tools:src="@drawable/ic_channels" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <TextView
+        android:id="@+id/tvChannelName"
+        style="@style/MyTextViewStyleBlack"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_20dp"
+        android:layout_marginTop="@dimen/size_15dp"
+        android:fontFamily="@font/inter_semibold"
+        android:textSize="@dimen/text_15sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvLastPostCommand"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@+id/cardGroupImage"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cardGroupImage"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Sardor Tojiyev" />
+
+    <TextView
+        android:id="@+id/tvLastPostCommand"
+        style="@style/MyTextViewStyleDarkBlue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/size_20dp"
+        android:layout_marginTop="@dimen/size_15dp"
+        android:layout_marginRight="@dimen/size_20dp"
+        android:fontFamily="@font/inter_regular"
+        android:textSize="@dimen/text_12sp"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toRightOf="@+id/cardGroupImage"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="14.04.2021" />
+
+    <TextView
+        android:id="@+id/tvUnReadMessage"
+        style="@style/MyTextViewStyleWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/size_20dp"
+        android:layout_marginTop="@dimen/size_5dp"
+        android:layout_marginRight="@dimen/size_20dp"
+        android:background="@drawable/circle_background"
+        android:backgroundTint="#0496FF"
+        android:fontFamily="@font/inter_regular"
+        android:gravity="center"
+        android:minEms="2"
+        android:padding="@dimen/size_4dp"
+        android:textSize="@dimen/text_12sp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toRightOf="@+id/cardGroupImage"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLastPostCommand"
+        tools:text="12" />
+
+    <TextView
+        android:id="@+id/tvCommands"
+        style="@style/MyTextViewStyleDarkBlue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/size_20dp"
+        android:layout_marginTop="@dimen/size_5dp"
+        android:layout_marginRight="@dimen/size_20dp"
+        android:fontFamily="@font/inter_regular"
+        android:textSize="@dimen/text_14sp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@+id/cardGroupImage"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChannelName"
+        tools:text="Salom yaxshimisiz?" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.7dp"
+        android:background="@color/colorDividerChat"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

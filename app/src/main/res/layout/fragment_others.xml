@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4f5f7"
+    tools:context=".presentation.ui.screens.home_activity.others.OthersFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPersonImage"
+                    android:layout_width="@dimen/size_70dp"
+                    android:layout_height="@dimen/size_70dp"
+                    android:layout_margin="@dimen/size_20dp"
+                    app:cardCornerRadius="@dimen/size_35dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/img_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/ic_user" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txt_profile_name"
+                    style="@style/MyTextViewStyleBlack"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/size_20dp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:textSize="@dimen/text_20sp"
+                    app:layout_constraintLeft_toRightOf="@+id/cardPersonImage"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="HardcodedText"
+                    tools:text="Ibrohim Gulyamov" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txt_profile_email"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_20dp"
+                    android:layout_marginRight="@dimen/size_20dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:textColor="#A5A9B8"
+                    android:textSize="@dimen/text_14sp"
+                    app:layout_constraintLeft_toRightOf="@+id/cardPersonImage"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_profile_name"
+                    tools:ignore="HardcodedText"
+                    tools:text="ibrohimgulyamov@gmail.com" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txt_pass_to_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_20dp"
+                    android:layout_marginRight="@dimen/size_20dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="@string/pass_to_profile"
+                    android:textColor="#0496FF"
+                    android:textSize="@dimen/text_14sp"
+                    app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_24"
+                    app:drawableRightCompat="@drawable/ic_baseline_arrow_forward_24"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toRightOf="@+id/cardPersonImage"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_profile_email" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constPassToProfile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/size_20dp"
+                    android:background="@drawable/background_pass_to_profile"
+                    android:backgroundTint="@color/yellow"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_pass_to_profile"
+                    tools:ignore="UnusedAttribute">
+
+                    <ImageView
+                        android:id="@+id/imgCorona"
+                        android:layout_width="@dimen/_28sdp"
+                        android:layout_height="@dimen/_23sdp"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:layout_marginBottom="@dimen/_12sdp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/ic_corona"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/inter_semibold"
+                        android:text="@string/capacity_building"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@+id/imgCorona"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_28sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/ic_forward_to_profile"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--<RelativeLayout
+                android:id="@+id/relSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_20dp"
+                android:background="@color/white"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constPassToProfile">
+
+                <ImageView
+                    android:layout_width="@dimen/size_30dp"
+                    android:layout_height="@dimen/size_30dp"
+                    android:layout_marginStart="@dimen/size_20dp"
+                    android:layout_marginLeft="@dimen/size_20dp"
+                    android:layout_marginTop="@dimen/size_12dp"
+                    android:layout_marginBottom="@dimen/size_12dp"
+                    android:src="@drawable/ic_search_in_other"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    style="@style/MyTextViewStyleBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/size_70dp"
+                    android:layout_marginLeft="@dimen/size_70dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="@string/search"
+                    android:textSize="@dimen/text_14sp"
+                    tools:ignore="RelativeOverlap" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    android:layout_marginRight="@dimen/size_5dp"
+                    android:padding="@dimen/size_15dp"
+                    android:src="@drawable/ic_forvard_in_other"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>-->
+
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/tasks"-->
+<!--                style="@style/DefaultLayoutStyle"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_marginTop="@dimen/_20sdp"-->
+<!--                app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                app:layout_constraintRight_toRightOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/constPassToProfile">-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/image1"-->
+<!--                    style="@style/OthersImageIconStyle"-->
+<!--                    android:contentDescription="@string/app_name"-->
+<!--                    android:src="@drawable/ic_file_in_others" />-->
+
+<!--                <com.google.android.material.textview.MaterialTextView-->
+<!--                    style="@style/OtherScreenTextStyle"-->
+<!--                    android:layout_toEndOf="@+id/image1"-->
+<!--                    android:text="@string/tasks"-->
+<!--                    tools:ignore="RelativeOverlap" />-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:layout_marginEnd="@dimen/size_5dp"-->
+<!--                    android:padding="@dimen/size_15dp"-->
+<!--                    android:src="@drawable/ic_forvard_in_other"-->
+<!--                    tools:ignore="ContentDescription" />-->
+<!--            </RelativeLayout>-->
+
+            <RelativeLayout
+                android:id="@+id/goalMapBtn"
+                style="@style/DefaultLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_20sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constPassToProfile">
+
+                <ImageView
+                    android:id="@+id/image2"
+                    style="@style/OthersImageIconStyle"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_purpose_in_other" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/goalMap"
+                    style="@style/OtherScreenTextStyle"
+                    android:layout_toEndOf="@id/image2"
+                    android:text="@string/create_purpose"
+                    tools:ignore="RelativeOverlap" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    android:contentDescription="@string/todo"
+                    android:padding="@dimen/size_15dp"
+                    android:src="@drawable/ic_forvard_in_other" />
+            </RelativeLayout>
+
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/relEffect"-->
+<!--                style="@style/DefaultLayoutStyle"-->
+<!--                android:layout_width="match_parent"-->
+<!--                app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                app:layout_constraintRight_toRightOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/constPassToProfile">-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/image3"-->
+<!--                    style="@style/OthersImageIconStyle"-->
+<!--                    android:contentDescription="@string/app_name"-->
+<!--                    android:src="@drawable/ic_percent_in_other" />-->
+
+<!--                <com.google.android.material.textview.MaterialTextView-->
+<!--                    style="@style/OtherScreenTextStyle"-->
+<!--                    android:layout_toEndOf="@id/image3"-->
+<!--                    android:text="@string/usefull_kpi" />-->
+
+<!--                <ImageView-->
+<!--                    style="@style/ImageViewDefStyle"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:layout_marginEnd="@dimen/size_5dp"-->
+<!--                    android:contentDescription="@string/todo"-->
+<!--                    android:padding="@dimen/size_15dp"-->
+<!--                    android:src="@drawable/ic_forvard_in_other" />-->
+<!--            </RelativeLayout>-->
+
+            <RelativeLayout
+                android:id="@+id/rlDashboard"
+                style="@style/DefaultLayoutStyle"
+                android:layout_width="match_parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constPassToProfile">
+
+                <ImageView
+                    android:id="@+id/image4"
+                    style="@style/OthersImageIconStyle"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_pie_chart_in_other" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/OtherScreenTextStyle"
+                    android:layout_toEndOf="@id/image4"
+                    android:text="@string/dashboard" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    android:contentDescription="@string/todo"
+                    android:padding="@dimen/size_15dp"
+                    android:src="@drawable/ic_forvard_in_other" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/relSettings"
+                style="@style/DefaultLayoutStyle"
+                android:layout_width="match_parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constPassToProfile">
+
+                <ImageView
+                    android:id="@+id/image6"
+                    style="@style/OthersImageIconStyle"
+                    android:src="@drawable/ic_settings_in_other"
+                    tools:ignore="ContentDescription" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/OtherScreenTextStyle"
+                    android:layout_toEndOf="@id/image6"
+                    android:text="@string/settings" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    android:padding="@dimen/size_15dp"
+                    android:src="@drawable/ic_forvard_in_other"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relOfferAndComplaint"
+                style="@style/DefaultLayoutStyle"
+                android:layout_width="match_parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constPassToProfile">
+
+                <ImageView
+                    android:id="@+id/image7"
+                    style="@style/OthersImageIconStyle"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_refer_in_other" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/OtherScreenTextStyle"
+                    android:layout_toEndOf="@id/image7"
+                    android:text="@string/refer_and_complaint" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    android:padding="@dimen/size_15dp"
+                    android:src="@drawable/ic_forvard_in_other"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relSupport"
+                style="@style/DefaultLayoutStyle"
+                android:layout_width="match_parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constPassToProfile">
+
+                <ImageView
+                    android:id="@+id/image8"
+                    style="@style/OthersImageIconStyle"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_help" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/OtherScreenTextStyle"
+                    android:layout_toEndOf="@id/image8"
+                    android:text="@string/how_can_we_help" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="@dimen/size_15dp"
+                    android:src="@drawable/ic_forvard_in_other"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/swap_company"
+                style="@style/DefaultLayoutStyle"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constPassToProfile">
+
+                <ImageView
+                    android:id="@+id/image9"
+                    style="@style/OthersImageIconStyle"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_swap" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/OtherScreenTextStyle"
+                    android:layout_toEndOf="@id/image9"
+                    android:text="@string/swap_company" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="@dimen/size_15dp"
+                    android:src="@drawable/ic_forvard_in_other"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/logout"
+                style="@style/DefaultLayoutStyle"
+                android:layout_width="match_parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constPassToProfile">
+
+                <ImageView
+                    android:id="@+id/image10"
+                    style="@style/OthersImageIconStyle"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_logout" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/OtherScreenTextStyle"
+                    android:layout_toEndOf="@id/image10"
+                    android:text="@string/logout" />
+
+            </RelativeLayout>
+
+            <TextView
+                style="@style/TextSmall"
+                android:layout_marginStart="@dimen/size_20dp"
+                android:layout_marginTop="@dimen/size_8dp"
+                android:layout_marginBottom="@dimen/size_8dp"
+                android:fontFamily="@font/inter_regular"
+                android:text="@string/version_name" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!--<ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />-->
+
+
+    <include
+        android:id="@+id/progress_layout"
+        layout="@layout/layout_loader"
+        android:visibility="gone" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

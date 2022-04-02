@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.screens.entry_activity.login.LoginFragment">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        style="@style/ImageLogoStyle"
+        android:layout_marginStart="0dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_tezkor_text_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.095" />
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintBottom_toTopOf="@id/btnLogin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline">
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_title"
+                style="@style/TextLargeInterBold"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:text="@string/login"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_phone"
+                style="@style/TextSmallSemiBold"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="@string/enter_your_phone_number"
+                app:layout_constraintStart_toStartOf="@+id/txt_title"
+                app:layout_constraintTop_toBottomOf="@+id/txt_title" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <com.gbksoft.countrycodepickerlib.CountryCodePicker
+                    android:id="@+id/loginCountryCodePickerView"
+                    android:layout_width="@dimen/_110sdp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/background_received_message"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:padding="@dimen/_7sdp"
+                    android:showDividers="beginning"
+                    app:ccpDropDown_showFullCountryName="true"
+                    app:ccpDropDown_showNameCode="true"
+                    app:ccpDropDown_textColor="@color/black"
+                    app:ccp_areaCodeDetectedCountry="true"
+                    app:ccp_autoDetectCountry="true"
+                    app:ccp_autoFormatNumber="true"
+                    app:ccp_contentColor="@color/black"
+                    app:ccp_defaultNameCode="UZ"
+                    app:ccp_showArrow="true"
+                    app:ccp_showFlag="true"
+                    app:ccp_showNameCode="false"
+                    app:ccp_textGravity="LEFT"
+                    app:layout_constraintBottom_toBottomOf="@id/login_et_phone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/login_et_phone" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/login_et_phone"
+                    style="@style/RegistrationTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="0dp"
+                    android:ems="10"
+                    android:hint="@string/phone_number_"
+                    android:importantForAutofill="no"
+                    android:inputType="phone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/loginCountryCodePickerView"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_email"
+                style="@style/TextSmallSemiBold"
+                android:layout_marginTop="16dp"
+                android:text="@string/enter_your_password"
+                app:layout_constraintStart_toStartOf="@+id/txt_phone"
+                app:layout_constraintTop_toBottomOf="@+id/et_phone" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="false"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_password"
+                    style="@style/RegistrationTextStyle"
+                    android:layout_marginTop="0dp"
+                    android:ems="10"
+                    android:hint="@string/password"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvResetPassword"
+                style="@style/TextSmallSemiBold"
+                android:layout_gravity="end"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="@string/forget_password"
+                android:textColor="@drawable/color_registration_txt" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogin"
+        style="@style/GeneralBlueButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:text="@string/login_li"
+        android:paddingBottom="@dimen/_4sdp"
+        app:layout_constraintBottom_toTopOf="@id/layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_24sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/TextSmall"
+            android:layout_marginTop="0dp"
+            android:text="@string/have_not_account"
+            android:textColor="@color/black" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_registration"
+            style="@style/TextSmallSemiBold"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="0dp"
+            android:text="@string/enter_registration"
+            android:textColor="@drawable/color_registration_txt" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <!--<ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />-->
+
+    <include
+        android:id="@+id/progress_layout"
+        layout="@layout/layout_loader"
+        android:visibility="gone" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

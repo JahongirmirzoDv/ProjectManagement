@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        style="@style/ImageLogoStyle"
+        android:src="@drawable/ic_tezkor_text_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.095" />
+
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintBottom_toTopOf="@id/btnRegistration"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline"
+        app:layout_constraintVertical_bias="1.0">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:orientation="vertical">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_title"
+                style="@style/TextLargeInterBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:text="@string/enter_registration" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_phone"
+                style="@style/TextSmallSemiBold"
+                android:layout_marginBottom="8dp"
+                android:text="@string/enter_your_phone_number" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <com.gbksoft.countrycodepickerlib.CountryCodePicker
+                    android:id="@+id/countryCodePickerView"
+                    android:layout_width="@dimen/_110sdp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/background_received_message"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:showDividers="beginning"
+                    app:ccpDropDown_showFullCountryName="true"
+                    app:ccpDropDown_showNameCode="true"
+                    app:ccpDropDown_textColor="@color/black"
+                    app:ccp_areaCodeDetectedCountry="true"
+                    app:ccp_autoDetectCountry="true"
+                    app:ccp_autoFormatNumber="true"
+                    app:ccp_contentColor="@color/black"
+                    app:ccp_defaultNameCode="UZ"
+                    app:ccp_showArrow="true"
+                    app:ccp_showFlag="true"
+                    app:ccp_showNameCode="false"
+                    app:ccp_textGravity="LEFT"
+                    app:layout_constraintBottom_toBottomOf="@id/et_phone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/et_phone" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_phone"
+                    style="@style/RegistrationTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="0dp"
+                    android:ems="10"
+                    android:hint="@string/phone_number_"
+                    android:inputType="phone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/countryCodePickerView"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_username"
+                style="@style/TextSmallSemiBold"
+                android:layout_marginTop="16dp"
+                android:text="@string/enter_your_name"
+                app:layout_constraintBottom_toTopOf="@+id/et_password"
+                app:layout_constraintStart_toStartOf="@+id/txt_phone" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_username"
+                style="@style/RegistrationTextStyle"
+                android:layout_marginTop="0dp"
+                android:hint="@string/fname_vs_lname" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_password"
+                style="@style/TextSmallSemiBold"
+                android:layout_marginTop="16dp"
+                android:text="@string/enter_your_password"
+                app:layout_constraintBottom_toTopOf="@+id/et_password"
+                app:layout_constraintStart_toStartOf="@+id/txt_phone" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_password"
+                    style="@style/RegistrationTextStyle"
+                    android:layout_marginTop="0dp"
+                    android:ems="10"
+                    android:hint="@string/password"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_password_confirm"
+                style="@style/TextSmallSemiBold"
+                android:layout_marginTop="16dp"
+                android:text="@string/confirm_your_password" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/TextInputLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_password_confirm"
+                    style="@style/RegistrationTextStyle"
+                    android:layout_marginTop="0dp"
+                    android:ems="10"
+                    android:hint="@string/password"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRegistration"
+        style="@style/GeneralBlueButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:text="@string/registration"
+        app:layout_constraintBottom_toTopOf="@id/layout_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layout_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_24sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/have_account"
+            android:textColor="@color/black" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_back_system"
+            style="@style/TextSmallSemiBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="0dp"
+            android:text="@string/login_li"
+            android:textColor="@drawable/color_registration_txt" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <!-- <ProgressBar
+         android:id="@+id/progress_bar"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:visibility="gone"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+         tools:visibility="visible" />-->
+    <!-- <FrameLayout
+         android:id="@+id/progress_bar"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:background="@color/background_loader_transparent"
+         android:visibility="gone">
+
+
+         <com.github.ybq.android.spinkit.SpinKitView
+             style="@style/SpinKitView.CubeGrid"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center"
+             app:SpinKit_Color="@color/white" />
+     </FrameLayout>-->
+
+    <include
+        android:id="@+id/progress_layout"
+        layout="@layout/layout_loader"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

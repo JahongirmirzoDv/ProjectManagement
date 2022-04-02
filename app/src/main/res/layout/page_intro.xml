@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".presentation.ui.screens.entry_activity.intro.viewpager_pages.IntroPage">
+
+    <ImageView
+        android:id="@+id/img_main"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_img_business_finance_intro"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/txt_desc"
+        style="@style/TextLarge"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:gravity="center"
+        android:maxLines="2"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_main"
+        tools:text="@string/intro_desc_first" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/definition"
+        style="@style/TextSmall"
+        android:gravity="center"
+        android:maxLines="2"
+        android:textColor="@color/et_smile_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_desc"
+        tools:text="Tezkor ilovasida 100dan ortiq biznseingizni boshqarish uchun qurollar bor" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

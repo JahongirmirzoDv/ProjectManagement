@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/fab_margin"
+    android:backgroundTint="@color/white"
+    app:cardCornerRadius="@dimen/_14sdp"
+    tools:context=".presentation.ui.dialogs.chat.personal.DeleteMessageDialog">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/size_10dp">
+
+        <ImageView
+            android:id="@+id/btn_cancel"
+            android:layout_width="@dimen/size_40dp"
+            android:layout_height="@dimen/size_40dp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_cancel_d_c"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/MyTextViewStyleBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_bold"
+            android:gravity="center"
+            android:text="Guruhga qo'shish"
+            android:textSize="@dimen/text_20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_cancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btn_cancel" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_ok"
+            android:layout_width="@dimen/size_40dp"
+            android:layout_height="@dimen/size_40dp"
+            android:layout_margin="@dimen/_5sdp"
+            app:cardCornerRadius="@dimen/size_20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/img_next"
+                android:layout_width="@dimen/size_40dp"
+                android:layout_height="@dimen/size_40dp"
+                android:layout_marginEnd="@dimen/size_20dp"
+                android:background="@color/blue"
+                android:clickable="false"
+                android:focusable="true"
+                android:padding="@dimen/_7sdp"
+                android:src="@drawable/ic_check"
+                app:tint="@color/white" />
+        </androidx.cardview.widget.CardView>
+
+
+        <EditText
+            android:id="@+id/et_search"
+            style="@style/MyCustomEditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:drawableStart="@drawable/ic_search_io"
+            android:ems="10"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:hint="@string/search_staff"
+            android:inputType="textPersonName"
+            android:padding="@dimen/_8sdp"
+            android:paddingStart="@dimen/_20sdp"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintTop_toBottomOf="@+id/btn_cancel"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_workers"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_400sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/white"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_search"
+            tools:itemCount="10"
+            tools:listitem="@layout/item_team_workers_group_chat" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

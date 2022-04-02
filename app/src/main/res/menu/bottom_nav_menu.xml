@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_chat"
+        android:icon="@drawable/selector_bottom_icon_chat"
+        android:title="@string/chat" />
+
+    <item
+        android:id="@+id/navigation_calendar"
+        android:icon="@drawable/selector_bottom_icon_calendar"
+        android:title="@string/calendar" />
+
+    <item
+        android:id="@+id/navigation_task"
+        android:icon="@drawable/selector_bottom_icon_task"
+        android:title="@string/tasks" />
+    <item
+        android:id="@+id/navigation_meeting"
+        android:icon="@drawable/selector_bottom_icon_meeting"
+        android:title="@string/meeting" />
+    <item
+        android:id="@+id/navigation_workers"
+        android:icon="@drawable/selector_bottom_icon_worker"
+        android:title="@string/workers" />
+
+    <item
+        android:id="@+id/navigation_others"
+        android:icon="@drawable/selector_bottom_icon_dashboard"
+        android:title="@string/other" />
+
+</menu>

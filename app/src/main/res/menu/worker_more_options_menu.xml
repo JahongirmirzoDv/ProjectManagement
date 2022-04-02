@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/detail_op_staff"
+        android:icon="@drawable/ic_more_meeting_problem"
+        android:title="@string/staff_detail_page__" />
+    <item
+        android:id="@+id/edit_op_staff"
+        android:icon="@drawable/ic_edit"
+        android:title="@string/edit__" />
+
+    <item
+        android:id="@+id/delete_op_staff"
+        android:icon="@drawable/ic_delete_white_24dp"
+        android:title="@string/dismissal__" />
+
+</menu>

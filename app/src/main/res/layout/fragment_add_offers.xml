@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/E5E5E5"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/_6sdp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="@string/title_add_offer" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@id/btn_send"
+        android:layout_below="@id/app_bar">
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="@dimen/_12sdp"
+                tools:ignore="RtlSymmetry">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_offers_description_name"
+                    style="@style/TextMediumSemiBold"
+                    android:text="@string/whose_complaint" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/main_over_complaint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@drawable/background_create_chat"
+                    android:padding="@dimen/_4sdp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_complaint_user"
+                        android:layout_width="@dimen/_32sdp"
+                        android:layout_height="@dimen/_32sdp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_baseline_account_circle_24" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_over_complaint"
+                        style="@style/TextMedium"
+                        android:layout_width="match_parent"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:text="@string/nothing_choose_hint"
+                        android:textColor="@color/hintColor" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/rb_to_company"
+                    style="@style/TextMedium"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@drawable/background_create_chat"
+                    android:text="@string/over_company"
+                    android:textColor="@color/sub_hint_text_color" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/spectators_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/_8sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/participants_title"
+                    style="@style/TextMediumSemiBold"
+                    android:layout_marginStart="@dimen/_22sdp"
+                    android:layout_marginTop="@dimen/size_20dp"
+                    android:text="@string/who_needs_know"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <ImageView
+                    android:id="@+id/spectators_add"
+                    style="@style/CreateScreensAddButton"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/participants_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/participants_title"
+                    app:srcCompat="@drawable/ic_add_plus_with_circle" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_complaint_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/spectators_add"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_add_complaint_user" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="@dimen/_12sdp"
+                tools:ignore="RtlSymmetry">
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_content_complaint_name"
+                    style="@style/TextMediumSemiBold"
+                    android:text="@string/content_complaint" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_content_complaint"
+                    style="@style/EditTextDefStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:hint="@string/content_complaint_enter"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13ssp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!--     <androidx.constraintlayout.widget.ConstraintLayout
+                     android:id="@+id/file_layout"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="16dp"
+                     android:background="@color/white"
+                     android:padding="@dimen/_12sdp"
+                     app:layout_constraintTop_toBottomOf="@+id/projectDeadlineLayout">
+     -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/file_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@color/white"
+                android:paddingVertical="@dimen/_13sdp"
+                app:layout_constraintTop_toBottomOf="@+id/projectDeadlineLayout">
+
+                <!--  <androidx.appcompat.widget.AppCompatTextView
+                      android:id="@+id/file_title"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginStart="@dimen/size_24dp"
+                      android:layout_marginTop="@dimen/size_20dp"
+                      android:text="@string/files"
+                      android:textColor="@color/black"
+                      android:textSize="@dimen/text_14sp"
+                      android:textStyle="bold"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toTopOf="parent" />
+  -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/file_title"
+                    style="@style/CreateScreensFieldTitle"
+                    android:text="@string/files"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/fileIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/file_title"
+                    app:layout_constraintEnd_toStartOf="@+id/file_count"
+                    app:layout_constraintHorizontal_bias="0.91"
+                    app:layout_constraintStart_toEndOf="@+id/file_title"
+                    app:layout_constraintTop_toTopOf="@+id/file_title"
+                    app:srcCompat="@drawable/ic_file_count_or_select" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/file_count"
+                    style="@style/TextMedium"
+                    android:layout_marginEnd="32dp"
+                    android:text="@string/_0"
+                    app:layout_constraintBottom_toBottomOf="@+id/fileIcon"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_file_add"
+                    app:layout_constraintTop_toTopOf="@+id/fileIcon" />
+
+                <!--  <androidx.appcompat.widget.AppCompatImageView
+                      android:id="@+id/iv_file_add"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginEnd="@dimen/_24sdp"
+                      android:background="?attr/selectableItemBackgroundBorderless"
+                      app:layout_constraintBottom_toBottomOf="@+id/file_count"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintTop_toTopOf="@+id/file_count"
+                      app:srcCompat="@drawable/ic_add_plus_with_circle" />
+  -->
+                <ImageView
+                    android:id="@+id/iv_file_add"
+                    style="@style/CreateScreensAddButton"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/file_count"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/file_count"
+                    app:srcCompat="@drawable/ic_add_plus_with_circle" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_send"
+        style="@style/GeneralBlueButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:background="@drawable/back_button_blue"
+        android:text="@string/send_complaint"
+        android:textColor="@color/white" />
+
+    <!--<com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogin"
+        style="@style/GeneralBlueButtonStyle"
+        android:layout_width="0dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/login_li"
+        app:layout_constraintBottom_toTopOf="@id/layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />-->
+
+
+</RelativeLayout>

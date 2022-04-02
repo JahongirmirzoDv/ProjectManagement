@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/srl_refresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/sv_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/half"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/br_filters_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="ll_date, ll_goal, ll_person" />
+
+            <TextView
+                android:id="@+id/tv_empty"
+                android:layout_width="@dimen/size_0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/size_24dp"
+                android:elevation="@dimen/size_12dp"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:text="Statistik ma'lumotlar mavjud emas"
+                android:textSize="@dimen/text_16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/br_filters_bottom" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_counts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_8dp"
+                android:layout_marginTop="@dimen/_16sdp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/br_filters_bottom"
+                app:spanCount="2"
+                tools:itemCount="6"
+                tools:listitem="@layout/item_dashboard_count" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_charts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/rv_counts"
+                tools:itemCount="3"
+                tools:listitem="@layout/view_holder_pie_chart" />
+
+            <LinearLayout
+                android:id="@+id/ll_person"
+                android:layout_width="@dimen/size_0dp"
+                android:layout_height="@dimen/size_0dp"
+                android:layout_marginStart="@dimen/size_16dp"
+                android:background="@drawable/bg_dashboard_spinner"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/size_8dp"
+                android:paddingBottom="@dimen/size_8dp"
+                app:layout_constraintBottom_toBottomOf="@id/ll_date"
+                app:layout_constraintEnd_toStartOf="@id/ll_date"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ll_date">
+
+                <ImageView
+                    android:layout_width="@dimen/size_24dp"
+                    android:layout_height="@dimen/size_24dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/size_4dp"
+                    android:src="@drawable/ic_user"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_person"
+                    style="@style/MyTextViewStyleBlack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="@dimen/size_8dp"
+                    android:dropDownWidth="wrap_content"
+                    android:ellipsize="marquee"
+                    android:fontFamily="@font/inter_regular"
+                    android:gravity="start"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_date"
+                android:layout_width="@dimen/size_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_16dp"
+                android:layout_marginTop="@dimen/size_16dp"
+                android:background="@drawable/bg_dashboard_spinner"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/size_8dp"
+                android:paddingBottom="@dimen/size_8dp"
+                app:layout_constraintEnd_toStartOf="@id/ll_goal"
+                app:layout_constraintStart_toEndOf="@id/ll_person"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="@dimen/size_24dp"
+                    android:layout_height="@dimen/size_24dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/size_4dp"
+                    android:src="@drawable/ic_calendar" />
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    style="@style/MyTextViewStyleBlack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="@dimen/size_4dp"
+                    android:dropDownWidth="wrap_content"
+                    android:ellipsize="marquee"
+                    android:fontFamily="@font/inter_regular"
+                    android:gravity="start"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:spinnerMode="dropdown"
+                    tools:text="01-24 sen." />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_goal"
+                android:layout_width="@dimen/size_0dp"
+                android:layout_height="@dimen/size_0dp"
+                android:layout_marginHorizontal="@dimen/size_16dp"
+                android:background="@drawable/bg_dashboard_spinner"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/size_8dp"
+                android:paddingBottom="@dimen/size_8dp"
+                app:layout_constraintBottom_toBottomOf="@id/ll_date"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ll_date"
+                app:layout_constraintTop_toTopOf="@id/ll_date">
+
+                <ImageView
+                    android:layout_width="@dimen/size_24dp"
+                    android:layout_height="@dimen/size_24dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/size_4dp"
+                    android:src="@drawable/ic_goal_icon"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_goal"
+                    style="@style/MyTextViewStyleBlack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="@dimen/size_8dp"
+                    android:dropDownWidth="wrap_content"
+                    android:ellipsize="marquee"
+                    android:fontFamily="@font/inter_regular"
+                    android:gravity="start"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

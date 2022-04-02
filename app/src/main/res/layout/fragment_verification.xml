@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        style="@style/ImageLogoStyle"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_tezkor_text_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_edit_phone_number"
+        style="@style/TextLargeInterBold"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:text="@string/enter_sms_code"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/et_sms_code"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <com.alimuzaffar.lib.pin.PinEntryEditText
+        android:id="@+id/et_sms_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:cursorVisible="false"
+        android:digits="0123456789"
+        android:inputType="number"
+        android:maxLength="5"
+        android:textIsSelectable="false"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:pinAnimationType="fromBottom"
+        app:pinLineColors="@color/text_color"
+        app:pinLineStroke="4dp"
+        app:pinLineStrokeSelected="4dp" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_submit"
+        style="@style/GeneralBlueButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:paddingBottom="@dimen/_4sdp"
+        android:text="@string/confirm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_sms_code" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_timer"
+        style="@style/TextSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/resend_code"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_submit" />
+
+    <include
+        android:id="@+id/progress_layout"
+        layout="@layout/layout_loader"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

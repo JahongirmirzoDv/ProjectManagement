@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/get_section"
+        android:icon="@drawable/ic_more_vertical"
+        android:title="@string/sections"
+        app:showAsAction="always" />
+
+    <!--    <item-->
+    <!--        android:id="@+id/navigation_complaint"-->
+    <!--        android:icon="@drawable/ic_complaint"-->
+    <!--        android:title="@string/complaints" />-->
+
+    <!--    <item-->
+    <!--        android:id="@+id/navigation_task"-->
+    <!--        android:icon="@drawable/ic_satisfied"-->
+    <!--        android:title="@string/satisfied" />-->
+    <!--    <item-->
+    <!--        android:id="@+id/navigation_workers"-->
+    <!--        android:icon="@drawable/ic_back_cross"-->
+    <!--        android:title="@string/unsatisfied" />-->
+</menu>

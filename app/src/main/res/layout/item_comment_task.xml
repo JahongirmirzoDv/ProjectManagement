@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_5sdp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageAvatar"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:src="@drawable/avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/commentAuthorFullName"
+        style="@style/TextMediumSemiBold"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:textColor="@color/sub_hint_text_color"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/commentedDate"
+        app:layout_constraintStart_toEndOf="@+id/imageAvatar"
+        app:layout_constraintTop_toTopOf="@id/imageAvatar"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="Ilhom Ibragimov" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/commentedDate"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:textColor="@color/disabled_color"
+        android:fontFamily="@font/inter_medium"
+        android:textSize="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/imageAvatar"
+        app:layout_constraintStart_toStartOf="@id/commentAuthorFullName"
+        app:layout_constraintTop_toBottomOf="@+id/commentAuthorFullName"
+        tools:text="30 sentabr 2021, 23:37" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/replyButton"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reply"
+        android:textColor="#85A0AD"
+        android:textSize="14dp"
+        android:fontFamily="@font/poppins_regular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imageAvatar" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/commentText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:textColor="@color/black"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="14dp"
+        android:fontFamily="@font/inter_regular"
+        android:maxLines="2"
+        app:layout_constraintEnd_toEndOf="@id/replyButton"
+        app:layout_constraintStart_toStartOf="@id/imageAvatar"
+        app:layout_constraintTop_toBottomOf="@+id/imageAvatar"
+        tools:text="Asssalom alaykum, yaxshimisizlar. Hamma sog' omon nima gaplar endi. Kimda qanday yangilik bor" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/showRepliesButton"
+        style="@style/TextSmall"
+        android:layout_marginBottom="0dp"
+        android:textColor="@color/hintColor"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/imageAvatar"
+        app:layout_constraintTop_toBottomOf="@id/commentText"
+        tools:text="Hide 7 replies" />
+
+    <ImageView
+        android:id="@+id/hideButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_chevron_down_bigger"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/replyButton"
+        app:layout_constraintTop_toBottomOf="@id/commentText" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/commentReplyList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/showRepliesButton"
+        tools:listitem="@layout/item__reply_comment_task" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

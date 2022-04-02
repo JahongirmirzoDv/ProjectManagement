@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/BottomSheetDialogThemeNoFloating"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_radus_10dp">
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView15"
+        style="@style/TextLarge"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        app:fontFamily="@font/inter_bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Maqsad xaritasi qo’shish" />
+
+    <ImageView
+        android:id="@+id/buttonCancel"
+        style="@style/DefImageViewStyle"
+        android:layout_width="@dimen/_26sdp"
+        android:layout_height="@dimen/_26sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_cancel_img"
+        app:layout_constraintBottom_toBottomOf="@id/textView15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textView15" />
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView16"
+        style="@style/TextSmallSemiBold"
+        android:layout_marginTop="24dp"
+        android:text="@string/name_box"
+        app:layout_constraintStart_toStartOf="@id/textView15"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/etGoalMapName"
+        style="@style/EditTextDefStyle"
+        android:layout_width="0dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/project_edit_back"
+        android:ems="10"
+        android:hint="@string/input"
+        android:padding="@dimen/text_15sp"
+        app:layout_constraintEnd_toEndOf="@+id/buttonCancel"
+        app:layout_constraintStart_toStartOf="@+id/textView15"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCreate"
+        style="@style/GeneralBlueButtonStyle"
+        android:layout_width="0dp"
+        android:layout_marginHorizontal="@dimen/size_0dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="@string/create"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/etGoalMapName"
+        app:layout_constraintStart_toStartOf="@+id/etGoalMapName"
+        app:layout_constraintTop_toBottomOf="@id/etGoalMapName" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

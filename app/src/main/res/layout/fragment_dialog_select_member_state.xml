@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/size_16dp"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_title"
+            style="@style/TextLargeInterBold"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_margin="@dimen/size_24dp"
+            android:gravity="center"
+            android:text="@string/meeting_layout_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_title_leader"
+            style="@style/TextSmall"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_marginTop="@dimen/size_8dp"
+            android:text="@string/meeting_master"
+            app:layout_constraintEnd_toEndOf="@id/tv_title"
+            app:layout_constraintStart_toStartOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_user"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_6dp"
+            app:cardCornerRadius="@dimen/size_8dp"
+            app:cardElevation="@dimen/size_0dp"
+            app:layout_constraintEnd_toEndOf="@id/tv_title"
+            app:layout_constraintStart_toStartOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_leader"
+            app:strokeColor="#A5A9B8"
+            app:strokeWidth="@dimen/size_1dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_profile"
+                    style="@style/DefImageViewStyle"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_margin="@dimen/size_16dp"
+                    android:src="@drawable/ic_user"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_name"
+                    style="@style/TextSmall"
+                    android:layout_width="@dimen/size_0dp"
+                    android:layout_marginHorizontal="@dimen/size_16dp"
+                    android:layout_marginVertical="@dimen/size_8dp"
+                    android:textColorHint="@color/sub_hint_text_color"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/iv_profile"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Farhod Olimov" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_description"
+            style="@style/TextSmall"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_marginTop="@dimen/size_8dp"
+            android:text="Majlis izohi"
+            app:layout_constraintEnd_toEndOf="@id/tv_title"
+            app:layout_constraintStart_toStartOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/cv_user" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_description_value"
+            style="@style/TextSmall"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_marginTop="@dimen/size_8dp"
+            app:layout_constraintEnd_toEndOf="@id/tv_title"
+            app:layout_constraintStart_toStartOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_description" />
+        <LinearLayout
+            android:id="@+id/meetingDeadlineLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/tv_description_value">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/projectBeginningTimeLayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/imgBeginingTime"
+                    style="@style/CreateScreensDateImageIconStyle"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_calendar_in_create_project" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvBegingTimeTitle"
+                    style="@style/CreateScreensTimeTitleStyle"
+                    android:text="@string/begining_date"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgBeginingTime"
+                    app:layout_constraintStart_toEndOf="@+id/imgBeginingTime"
+                    app:layout_constraintTop_toTopOf="@+id/imgBeginingTime" />
+
+
+                <TextView
+                    android:id="@+id/tvStartDate"
+                    style="@style/CreateScreensTextTime"
+                    android:hint="@string/date_format"
+                    app:layout_constraintStart_toStartOf="@+id/imgBeginingTime"
+                    app:layout_constraintTop_toBottomOf="@+id/imgBeginingTime" />
+
+                <View
+                    android:id="@+id/viewId1"
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:background="@color/underLine"
+                    app:layout_constraintBottom_toBottomOf="@id/tvStartDate"
+                    app:layout_constraintStart_toEndOf="@id/tvStartDate"
+                    app:layout_constraintTop_toTopOf="@id/tvStartDate" />
+
+                <TextView
+                    android:id="@+id/tvStartTime"
+                    style="@style/CreateScreensTextTime"
+                    android:layout_marginTop="0dp"
+                    android:hint="@string/time_format"
+                    app:layout_constraintBottom_toBottomOf="@+id/viewId1"
+                    app:layout_constraintStart_toEndOf="@+id/viewId1"
+                    app:layout_constraintTop_toTopOf="@+id/viewId1" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/view7"
+                android:layout_width="@dimen/_1ssp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:background="@color/underLine" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/projectEndingTimeLayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/imgEndingTime"
+                    style="@style/CreateScreensDateImageIconStyle"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_calendar_in_create_project" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvEndingTimeTitle"
+                    style="@style/CreateScreensTimeTitleStyle"
+                    android:letterSpacing="0"
+                    android:text="@string/ending_time"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgEndingTime"
+                    app:layout_constraintStart_toEndOf="@+id/imgEndingTime"
+                    app:layout_constraintTop_toTopOf="@+id/imgEndingTime" />
+
+
+                <TextView
+                    android:id="@+id/tvEndDate"
+                    style="@style/CreateScreensTextTime"
+                    android:hint="@string/date_format"
+                    app:layout_constraintStart_toStartOf="@+id/imgEndingTime"
+                    app:layout_constraintTop_toBottomOf="@+id/imgEndingTime" />
+
+                <View
+                    android:id="@+id/viewId2"
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:background="@color/underLine"
+                    app:layout_constraintBottom_toBottomOf="@id/tvEndDate"
+                    app:layout_constraintStart_toEndOf="@id/tvEndDate"
+                    app:layout_constraintTop_toTopOf="@id/tvEndDate" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvEndTime"
+                    style="@style/CreateScreensTextTime"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/background_radus_4dp"
+                    android:hint="@string/time_format"
+                    app:layout_constraintBottom_toBottomOf="@+id/viewId2"
+                    app:layout_constraintStart_toEndOf="@+id/viewId2"
+                    app:layout_constraintTop_toTopOf="@+id/viewId2" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_accept"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="@dimen/size_0dp"
+            android:layout_marginStart="@dimen/size_8dp"
+            android:paddingVertical="@dimen/size_16dp"
+            android:text="@string/attend"
+            android:textAllCaps="false"
+            app:backgroundTint="@color/green"
+            app:cornerRadius="@dimen/_7sdp"
+            app:layout_constraintBottom_toBottomOf="@id/btn_reject"
+            app:layout_constraintEnd_toEndOf="@id/tv_title"
+            app:layout_constraintStart_toEndOf="@id/btn_reject"
+            app:layout_constraintTop_toTopOf="@id/btn_reject" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_reject"
+            style="@style/ButtonDefStyle"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_24dp"
+            android:layout_marginEnd="@dimen/size_8dp"
+            android:backgroundTint="@color/project_done2"
+            android:paddingVertical="@dimen/size_16dp"
+            android:text="@string/do_not_attend"
+            app:backgroundTint="@color/project_done2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_accept"
+            app:layout_constraintStart_toStartOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/meetingDeadlineLayout" />
+
+        <RelativeLayout
+            android:id="@+id/rl_loading"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_0dp"
+            android:background="#80000000"
+            android:elevation="@dimen/size_9dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ProgressBar
+                android:id="@+id/pb_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:indeterminateTint="@color/white" />
+
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

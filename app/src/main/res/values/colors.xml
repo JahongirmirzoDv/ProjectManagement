@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="ic_clear_color">#364F6B</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="colorDarkBlue">#354557</color>
+    <color name="colorBottomNavigation">#8A0D2457</color>
+    <color name="colorWhiteSoft">#F4F5F7</color>
+    <color name="colorDividerChat">#E6E9EF</color>
+    <color name="colorGreySoft">#A5A9B8</color>
+    <color name="colorLightGrey">#F0F3FF</color>
+    <color name="colorNeutralWhite">#EEEFF4</color>
+    <color name="yellow">#FCCA58</color>
+    <color name="orange">#FFA94D</color>
+    <color name="hintColor">#969696</color>
+    <color name="underLine">#969696</color>
+
+    <color name="disabled_color">#A5A9B8</color>
+    <color name="FCFCFC">#FCFCFC</color>
+    <color name="E6E9EF">#E6E9EF</color>
+    <color name="blue">#3C99DD</color>
+    <color name="green">#05B184</color>
+    <color name="E5E5E5">#E5E5E5</color>
+    <color name="stroke_back">#B3AFAF</color>
+    <color name="EEEEEE">#EEEEEE</color>
+    <color name="empty_color">#EEEFF4</color>
+    <color name="f2f2f2">#F2F2F2</color>
+    <color name="text_color">#474A57</color>
+    <color name="border_color">#E6E9EF</color>
+
+    <!--Bottom Navigation Chat Fragment colors-->
+
+    <!--Project Dashboards-->
+    <color name="item_project_icon_color">#0496FF</color>
+    <color name="project_status_red_color">#FF0000</color>
+    <color name="project_status_green_color">#06D6A0</color>
+    <color name="project_status_yellow_color">#FCCA58</color>
+
+    <!--Intro fragment-->
+    <color name="transparent_a">#00000000</color>
+    <color name="text_color_intro">#064979</color>
+    <color name="desc_text_color_intro">#18191F</color>
+    <color name="indicator_dot_color">#E6E9EF</color>
+    <color name="spinner_arrow_tint">#A5A9B8</color>
+    <color name="personal_page_back_color">#F4F5F7</color>
+    <color name="et_back_color_grey_light">#F4F5F7</color>
+    <color name="count_text_color">#364F6B</color>
+    <color name="icon_edit_color">#364F6B</color>
+    <color name="count_text_color_red">#EF476F</color>
+    <color name="color_red_dialog">#EF476F</color>
+    <color name="color_blue_dialog">#364F6B</color>
+
+
+    <color name="card_tint_no_checked">#039BE5</color>
+    <color name="hint_text_color">#9E9E9E</color>
+
+    <color name="natural_light">#EEEFF4</color>
+
+    <color name="selectday">#1a73e8</color>
+
+    <color name="project_new">#86C9F8</color>
+    <color name="project_in_progress">#F37291</color>
+    <color name="project_done">#00C853</color>
+    <color name="project_in_progress2">#FFD600</color>
+    <color name="project_done2">#D50000</color>
+    <color name="project_new2">#6200EA</color>
+    <color name="meeting_icon_color">#A5A9B8</color>
+
+
+    //event color
+    <color name="C668AB2">#668AB2</color>
+    <color name="CFCCA58">#FCCA58</color>
+    <color name="CEF476F">#EF476F</color>
+    <color name="C00587F">#00587F</color>
+
+
+    <!--More button delettext color-->
+    <color name="more_button_delete_color">#EF476F</color>
+    <color name="button_color">#E1E4EA</color>
+    <color name="new_green">#02C65C</color>
+
+    <color name="background_layout">#F2F8FD</color>
+    <color name="boder_payment_color">#00587F</color>
+
+    <!--IndicatorSeekbar-->
+    <color name="thumb_color">#E0F2FF</color>
+
+    <!--Send Image Dialog-->
+    <color name="dialog_back_color">#1F2D3D</color>
+    <color name="et_smile_color">#A5A9B8</color>
+    <color name="transparent_b">#1A000000</color>
+    <color name="transparent_c">#33000000</color>
+    <color name="light_blue">#1793EC</color>
+    <color name="delete_back_color">#30465F</color>
+    <color name="more_ll_back_color">#30465F</color>
+
+    <!--Splash background color-->
+    <color name="splash_bg">#0D2457</color>
+
+
+    <!--shimmer-->
+    <color name="colorGrey">#dddddd</color>
+
+
+    <color name="back_task_msg">#F3C966</color>
+    <color name="back_received_task_msg">#FAD47E</color>
+    <color name="text_task_msg">#364F6B</color>
+    <color name="transparent_color_chat">#61FFFFFF</color>
+
+    <color name="stroke_color_waiting">#A5A9B8</color>
+    <color name="stroke_color_accepted">#06D6A0</color>
+    <color name="stroke_color_rejected">#EF476F</color>
+
+    <color name="bg_color_waiting">#4DA5A9B8</color>
+    <color name="bg_color_accepted">#4D06D6A0</color>
+    <color name="bg_color_rejected">#4DEF476F</color>
+
+
+    <!--With Style TextColor-->
+    <color name="splash_buttons_text_color">#064979</color>
+    <color name="text_hint_color">#A5A9B8</color>
+    <color name="sub_hint_text_color">#474A57</color>
+    <color name="fab_button_elevation_color">#E6E9EF</color>
+
+    <!--Company registration header color-->
+    <color name="company_registration_color">#334B66</color>
+    <color name="company_icon_field_stroke_color">#90C3EE</color>
+
+    <color name="cv_active_color">#4641FF</color>
+
+
+    <color name="delete_color_dialog">#D50000</color>
+
+    <color name="snack_bar_color">#EF476F</color>
+    <color name="background_loader_transparent">#41000000</color>
+    <color name="deadline_red">#EF476F</color>
+    <color name="deadline_red_bg">#2DEF476F</color>
+    <color name="deadline_green">#00C853</color>
+    <color name="deadline_green_bg">#2E00C853</color>
+    <color name="deadline_yellow">#FF6D00</color>
+    <color name="deadline_yellow_bg">#4DFFD600</color>
+
+    <!--Main-->
+    <color name="delete_v_color">#19387A</color>
+
+    <color name="blue_bg_color">#E9F3FB</color>
+
+    //seekbar color
+    <color name="seek_bar_background">#E0F2FF</color>
+    <color name="seek_bar_progress">#2A90D9</color>
+    <color name="seek_bar_secondary_progress">#3399CC</color>
+
+
+
+</resources>

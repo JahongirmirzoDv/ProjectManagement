@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_5sdp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/itemProject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="1.5dp"
+            android:layout_height="0dp"
+            android:background="#E6E9EF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <View
+            android:id="@+id/view5"
+            android:layout_width="1.5dp"
+            android:layout_height="0dp"
+            android:background="#E6E9EF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="1.5dp"
+            android:layout_height="@dimen/size_15dp"
+            android:background="#E6E9EF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/img_project"
+            app:layout_constraintLeft_toRightOf="@+id/view3"
+            app:layout_constraintStart_toStartOf="@id/img_project" />
+
+
+        <View
+            android:id="@+id/view7"
+            android:layout_width="@dimen/size_15dp"
+            android:layout_height="1.5dp"
+            android:background="#E6E9EF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/img_project"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_briefcase_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/view7"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_project_name"
+            style="@style/TextSmall"
+            android:layout_width="0dp"
+            android:layout_marginVertical="0dp"
+            android:layout_marginStart="@dimen/_5sdp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_edit_goal"
+            app:layout_constraintStart_toEndOf="@+id/img_project"
+            app:layout_constraintTop_toTopOf="@id/img_project"
+            tools:text="@string/example_worker_name" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_task_percent"
+            style="@style/TextSmall"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:drawablePadding="@dimen/_3sdp"
+            android:textColor="@color/disabled_color"
+            app:drawableStartCompat="@drawable/ic_percent_goal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@id/txt_project_name"
+            app:layout_constraintTop_toBottomOf="@+id/txt_project_name"
+            tools:text="25%" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_task_count"
+            style="@style/TextSmall"
+            android:layout_marginStart="@dimen/size_30dp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:drawablePadding="@dimen/_3sdp"
+            app:layout_constraintBottom_toBottomOf="@id/txt_task_percent"
+            android:textColor="@color/disabled_color"
+            app:drawableStartCompat="@drawable/ic_check_square_little"
+            app:layout_constraintStart_toEndOf="@id/txt_task_percent"
+            app:layout_constraintTop_toTopOf="@id/txt_task_percent"
+            tools:text="4ta" />
+
+        <View
+            android:id="@+id/view6"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/E6E9EF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/view3" />
+
+        <ImageView
+            android:id="@+id/img_drop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:focusable="true"
+            android:src="@drawable/ic_chevron_down"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/btn_edit_goal"
+            style="@style/DefImageViewStyle"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:contentDescription="@string/app_name"
+            android:padding="@dimen/size_8dp"
+            android:src="@drawable/ic_edit"
+            app:layout_constraintBottom_toBottomOf="@id/img_drop"
+            app:layout_constraintEnd_toStartOf="@id/img_drop"
+            app:layout_constraintTop_toTopOf="@id/img_drop" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTasks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/itemProject"
+        tools:itemCount="3"
+        tools:listitem="@layout/item_goal_map_goal_project_task" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

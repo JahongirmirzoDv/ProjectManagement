@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv_name"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/_5sdp"
+    android:background="@color/white"
+    app:cardCornerRadius="@dimen/_5sdp"
+    app:cardElevation="@dimen/_2sdp"
+    app:cardUseCompatPadding="true"
+    app:layout_constraintEnd_toEndOf="@id/tv_title"
+    app:layout_constraintStart_toStartOf="@id/tv_title"
+    app:layout_constraintTop_toBottomOf="@id/tv_name"
+    app:strokeWidth="@dimen/_1sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tariffDefinition"
+            style="@style/TextSmall"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:text="@string/tariff_definition"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/featureDefinition"
+            style="@style/TextSmall"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:text="@string/feature_title"
+            android:textColor="@color/hintColor"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintStart_toStartOf="@id/tariffDefinition"
+            app:layout_constraintTop_toBottomOf="@id/tariffDefinition" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/perMoney"
+            style="@style/TextSmall"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/per_cost"
+            android:textColor="@color/company_registration_color"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/monthTitle"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/monthTitle"
+            style="@style/TextSmall"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="0dp"
+            android:padding="0dp"
+            android:text="@string/three_month"
+            android:textColor="@color/company_registration_color"
+            android:textSize="@dimen/_9ssp"
+            app:fontFamily="@font/poppins_regular"
+            app:layout_constraintBottom_toBottomOf="@+id/perMoney"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

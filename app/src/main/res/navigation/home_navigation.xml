@@ -1,0 +1,1207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_navigation"
+    app:startDestination="@id/navigation_chat">
+
+    <fragment
+        android:id="@+id/navigation_chat"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.chat.NavigationChatFragment"
+        android:label="@string/app_bar_label_chat"
+        tools:layout="@layout/fragment_navigation_chat">
+        <action
+            android:id="@+id/action_navigation_chat_to_add_workers_to_group"
+            app:destination="@id/addWorkersToGroupFragment" />
+        <action
+            android:id="@+id/action_navigation_chat_to_quickPlansFragment"
+            app:destination="@id/quickPlansFragment" />
+        <action
+            android:id="@+id/action_navigation_chat_to_quickIdeasFragment"
+            app:destination="@id/quickIdeasBoxesFragment" />
+        <action
+            android:id="@+id/action_navigation_chat_to_calendarFragment"
+            app:destination="@id/navigation_calendar" />
+        <action
+            android:id="@+id/action_navigation_chat_to_personalConversationFragment"
+            app:destination="@id/personalConversationFragment" />
+        <action
+            android:id="@+id/action_navigation_chat_to_group_ConversationFragment"
+            app:destination="@id/groupConversationFragment" />
+        <action
+            android:id="@+id/action_navigation_chat_to_compassConversationFragment2"
+            app:destination="@id/compassConversationFragment2" />
+        <action
+            android:id="@+id/action_navigation_chat_to_workerListForChatFragment"
+            app:destination="@id/workerListForChatFragment" />
+        <action
+            android:id="@+id/to_projectDetailUpdateFragment"
+            app:destination="@id/projectDetailUpdateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_workers"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.workers.WorkersFragment"
+        android:label="@string/app_bar_label_staffs"
+        tools:layout="@layout/fragment_workers">
+        <action
+            android:id="@+id/action_navigation_workers_to_createWorkerFragment"
+            app:destination="@id/createWorkerFragment" />
+        <action
+            android:id="@+id/action_navigation_workers_to_workerDetailFragment"
+            app:destination="@id/workerDetailFragment" />
+        <action
+            android:id="@+id/action_navigation_workers_to_workerCalendarFragment"
+            app:destination="@id/navigation_calendar" />
+        <action
+            android:id="@+id/action_navigation_workers_to_editContactFragment"
+            app:destination="@id/editContactFragmentX" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/quickIdeasBoxesFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.quick_ideas_box.QuickIdeasBoxesFragment"
+        android:label="@string/app_bar_label_quick_idea"
+        tools:layout="@layout/fragment_quick_ideas">
+        <action
+            android:id="@+id/action_quickIdeasFragment_to_createQuickIdeaFragment"
+            app:destination="@id/createQuickIdeaFragment" />
+        <action
+            android:id="@+id/action_quickIdeasBoxesFragment_to_quickIdeasCategoriesFragment"
+            app:destination="@id/quickIdeasCategoriesFragment" />
+        <action
+            android:id="@+id/action_quickIdeasBoxesFragment_to_personalQuickIdeaFragment"
+            app:destination="@id/personalQuickIdeaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quickPlansFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.quick_plans.QuickPlansFragment"
+        android:label="@string/app_bar_label_quick_plans"
+        tools:layout="@layout/fragment_quick_plans">
+        <action
+            android:id="@+id/to_QuickPlanDetailUpdateFragment"
+            app:destination="@id/quickPlanDetailUpdateFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createTaskFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.adding.create_task.CreateTaskFragment"
+        android:label="@string/app_bar_label_create_task"
+        tools:layout="@layout/fragment_create_task">
+        <action
+            android:id="@+id/to_selectPersonFragment"
+            app:destination="@id/selectPersonFragment" />
+        <argument
+            android:name="task_title"
+            android:defaultValue=""
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="message_id_t"
+            android:defaultValue="0"
+            app:argType="integer" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_others"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.others.OthersFragment"
+        android:label="@string/app_bar_label_others"
+        tools:layout="@layout/fragment_others">
+        <action
+            android:id="@+id/action_navigation_others_to_navigation_offers"
+            app:destination="@id/navigation_offers" />
+        <action
+            android:id="@+id/action_navigation_others_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_navigation_others_to_createGoalMapFragment"
+            app:destination="@id/createGoalMapFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_navigation_others_to_createProjectFragment"
+            app:destination="@id/createProjectFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_navigation_others_to_createTaskFragment"
+            app:destination="@id/createTaskFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_navigation_others_to_profileFragment"
+            app:destination="@id/profileFragment" />
+
+        <action
+            android:id="@+id/action_navigation_others_to_swap_company"
+            app:destination="@id/navigation_swap_company"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+        <action
+            android:id="@+id/action_navigation_others_to_errorFragment"
+            app:destination="@id/errorFragment" />
+
+        <action
+            android:id="@+id/action_navigation_others_to_navigation_settings"
+            app:destination="@id/navigation_settings" />
+        <action
+            android:id="@+id/action_navigation_others_to_companyStatusFragment"
+            app:destination="@id/companyStatusFragment" />
+        <action
+            android:id="@+id/action_navigation_others_to_ownTaskFragment"
+            app:destination="@id/ownTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createProjectFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.adding.create_project.CreateProjectFragment"
+        android:label="@string/app_bar_label_create_project"
+        tools:layout="@layout/fragment_create_project">
+        <action
+            android:id="@+id/to_selectPersonFragment"
+            app:destination="@id/selectPersonFragment" />
+        <action
+            android:id="@+id/createProjectFragment_to_createProjectFragment"
+            app:destination="@id/createProjectFragment" />
+        <action
+            android:id="@+id/createProjectFragment_to_createTaskFragment"
+            app:destination="@id/createTaskFragment" />
+        <action
+            android:id="@+id/to_selectedFilesFragment"
+            app:destination="@id/selectedFilesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_calendar"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.calendar.CalendarFragment"
+        android:label="@string/app_bar_label_calendar"
+        tools:layout="@layout/fragment_calendar" />
+
+    <include app:graph="@navigation/calendar_navigation" />
+
+    <action
+        android:id="@+id/action_navigation_calendar_to_navigation_create_task"
+        app:destination="@id/createTaskFragment" />
+    <action
+        android:id="@+id/action_navigation_calendar_to_navigation_create_meeting"
+        app:destination="@id/createMeetingFragment" />
+    <action
+        android:id="@+id/action_navigation_calendar_to_navigation_create_dating"
+        app:destination="@id/createDatingFragment" />
+    <action
+        android:id="@+id/action_navigation_calendar_to_navigation_create_note"
+        app:destination="@id/navigation_create_note" />
+
+    <action
+        android:id="@+id/action_navigation_calendar_to_navigation_detail_note"
+        app:destination="@id/navigation_detail_note" />
+
+    <action
+        android:id="@+id/to_detail_note"
+        app:destination="@id/navigation_detail_note" />
+
+    <action
+        android:id="@+id/to_taskDetailsFragment"
+        app:destination="@id/taskDetailUpdateFragment" />
+
+    <action
+        android:id="@+id/to_meetingDetailsFragment"
+        app:destination="@id/meetingDetailsFragment" />
+    <action
+        android:id="@+id/to_datingDetailsFragment"
+        app:destination="@id/datingDetailsFragment" />
+    <fragment
+        android:id="@+id/navigation_create_note"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.adding.note.CreateNoteFragment"
+        android:label="Eslatma"
+        tools:layout="@string/create_note" />
+    <fragment
+        android:id="@+id/createWorkerFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.workers.create.CreateWorkerFragment"
+        android:label="@string/app_bar_label_create_worker"
+        tools:layout="@layout/fragment_create_worker" />
+
+    <fragment
+        android:id="@+id/navigation_notification"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.notification.NotificationFragment"
+        android:label="@string/news"
+        tools:layout="@layout/fragment_notification">
+        <action
+            android:id="@+id/action_to_navigation_detail_note"
+            app:destination="@id/navigation_detail_note" />
+
+        <action
+            android:id="@+id/to_taskDetailsFragment"
+            app:destination="@id/taskDetailUpdateFragment" />
+        <action
+            android:id="@+id/to_meetingDetailsFragment"
+            app:destination="@id/meetingDetailsFragment" />
+        <action
+            android:id="@+id/to_datingDetailsFragment"
+            app:destination="@id/datingDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/structureFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.workers.structure.StructureFragment"
+        android:label="@string/app_bar_label_structure"
+        tools:layout="@layout/fragment_structure" >
+        <action
+            android:id="@+id/action_navigation_structure_to_workerDetailFragment"
+            app:destination="@id/workerDetailFragment" />
+        <action
+            android:id="@+id/action_navigation_structure_to_workerCalendarFragment"
+            app:destination="@id/navigation_calendar" />
+        <action
+            android:id="@+id/action_navigation_structure_to_editContactFragment"
+            app:destination="@id/editContactFragmentX" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_task"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.tasks.NavigationTasksFragment"
+        android:label="@string/app_bar_label_tasks"
+        tools:layout="@layout/fragment_navigation_tasks">
+        <action
+            android:id="@+id/to_deleteDialogFragment"
+            app:destination="@id/deleteDialogFragment" />
+        <action
+            android:id="@+id/action_navigation_task_to_createTaskFragment"
+            app:destination="@id/createTaskFragment" />
+        <action
+            android:id="@+id/action_navigation_task_to_createProjectFragment"
+            app:destination="@id/createProjectFragment" />
+        <action
+            android:id="@+id/to_createProjectFragment"
+            app:destination="@id/createProjectFragment" />
+        <action
+            android:id="@+id/to_createFolderDialogFragment"
+            app:destination="@id/createFolderDialogFragment" />
+
+        <action
+            android:id="@+id/to_createStatusDialogFragment"
+            app:destination="@id/createStatusDialogFragment" />
+        <action
+            android:id="@+id/to_createTacticPlanDialogFragment"
+            app:destination="@id/createTacticPlanDialogFragment" />
+        <action
+            android:id="@+id/to_createStatusDialogFragment2"
+            app:destination="@id/createStatusDialogFragment2" />
+        <action
+            android:id="@+id/to_taskDetailsFragment"
+            app:destination="@id/taskDetailUpdateFragment" />
+
+        <action
+            android:id="@+id/to_taskDetailUpdateFragment"
+            app:destination="@id/taskDetailUpdateFragment" />
+        <action
+            android:id="@+id/to_projectDetailUpdateFragment"
+            app:destination="@id/projectDetailUpdateFragment" />
+        <action
+            android:id="@+id/to_tacticPlanDetailUpdateFragment"
+            app:destination="@id/tacticPlanDetailUpdateFragment" />
+    </fragment>
+    <fragment android:id="@+id/navigation_meeting"
+        android:label="@string/meeting"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.tasks.NavigationMeetingFragment"
+        tools:layout="@layout/fragment_navigation_meeting">
+
+        <action
+            android:id="@+id/to_createMeetingFragment"
+            app:destination="@id/createMeetingFragment" />
+        <action
+            android:id="@+id/to_createDatingFragment"
+            app:destination="@id/createDatingFragment" />
+        <action
+            android:id="@+id/to_meetingDetailsFragment"
+            app:destination="@id/meetingDetailsFragment" />
+        <action
+            android:id="@+id/to_datingDetailsFragment"
+            app:destination="@id/datingDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createGoalMapFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.others.goal_map.CreateGoalMapFragment"
+        android:label="@string/app_bar_label_create_goal_map"
+        tools:layout="@layout/fragment_create_goal_map">
+        <action
+            android:id="@+id/action_createGoalMapFragment_to_createGoalFragment"
+            app:destination="@id/createGoalFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_createGoalMapFragment_to_detailGoalMapFragment"
+            app:destination="@id/detailGoalMapFragment" />
+        <action
+            android:id="@+id/action_createGoalMapFragment_to_createProjectFragment"
+            app:destination="@id/createProjectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_offers"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.others.offers.OffersFragment"
+        android:label="@string/offer_and_complaint"
+        tools:layout="@layout/fragment_offers">
+        <action
+            android:id="@+id/action_navigation_offers_to_navigation_add_offers"
+            app:destination="@id/navigation_add_offers" />
+        <action
+            android:id="@+id/action_navigation_offers_to_nav_detail_offer"
+            app:destination="@id/nav_detail_offer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_add_offers"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.others.offers.addOffers.AddOffersFragment"
+        android:label="@string/app_bar_label_add_offer"
+        tools:layout="@layout/fragment_add_offers">
+        <action
+            android:id="@+id/to_selectPersonFragment"
+            app:destination="@id/selectPersonFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/workerDetailFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.workers.worker_detail.WorkerDetailFragment"
+        android:label="@string/app_bar_label_worker_detail"
+        tools:layout="@layout/fragment_worker_detail">
+        <!--        <argument-->
+        <!--            android:name="workerData_"-->
+        <!--            app:argType="uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.workers.AllWorkersResponse$DataItem"-->
+        <!--            app:nullable="true" />-->
+        <argument
+            android:name="staffId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/to_edit_worker_fragment"
+            app:destination="@id/editWorkerFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/createGoalFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.adding.create_goal.CreateGoalFragment"
+        android:label="@string/app_bar_label_create_goal"
+        tools:layout="@layout/fragment_create_goal">
+        <action
+            android:id="@+id/to_selectPersonFragment"
+            app:destination="@id/selectPersonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_detail_offer"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.others.offers.detail.DetailOfferFragment"
+        android:label="@string/app_bar_offer_title">
+        <action
+            android:id="@+id/action_nav_detail_offer_to_navigation_add_task"
+            app:destination="@id/createTaskFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/workerCalendarFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.workers.worker_calendar.WorkerCalendarFragment"
+        android:label="@string/app_bar_worker_calendar"
+        tools:layout="@layout/fragment_worker_calendar">
+        <argument
+            android:name="workerData_Calendar__"
+            app:argType="uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.workers.AllWorkersResponse$DataItem" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/personalConversationFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.chat.personal.personal_conversation.PersonalConversationFragment"
+        android:label=""
+        tools:layout="@layout/fragment_personal_conversation">
+        <action
+            android:id="@+id/action_personalConversationFragment_to_createTaskFragment"
+            app:destination="@id/createTaskFragment" />
+
+        <action
+            android:id="@+id/action_personalConversationFragment_to_workerDetailFragment"
+            app:destination="@id/workerDetailFragment" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.dashboard.DashboardFragment"
+        android:label="@string/app_bar_label_dashboard"
+        tools:layout="@layout/fragment_dashboard">
+        <action
+            android:id="@+id/to_selectPersonDashboardFragment"
+            app:destination="@id/selectPersonDashboardFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/compassConversationFragment2"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.chat.compass.compass_conversation.CompassConversationFragment"
+        android:label="@string/app_bar_title_compass_chat"
+        tools:layout="@layout/fragment_compass_conversation" />
+    <dialog
+        android:id="@+id/createFolderDialogFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.dialogs.tasks.functional.CreateFolderDialogFragment"
+        android:label=""
+        tools:layout="@layout/fragment_dialog_create_folder">
+        <argument
+            android:name="folder"
+            app:argType="uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.task.TaskFolderListItem"
+            app:nullable="true" />
+    </dialog>
+    <fragment
+        android:id="@+id/createDatingFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.adding.create_dating.CreateDatingFragment"
+        android:label="@string/app_bar_title_create_dating"
+        tools:layout="@layout/fragment_create_dating">
+        <action
+            android:id="@+id/action_createDatingFragment_to_selectPersonFragment"
+            app:destination="@id/selectPersonFragment" />
+        <action
+            android:id="@+id/to_selectedFilesFragment"
+            app:destination="@id/selectedFilesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createMeetingFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.adding.create_meeting.CreateMeetingFragment"
+        android:label="@string/app_bar_title_create_meeting"
+        tools:layout="@layout/fragment_create_meeting">
+        <action
+            android:id="@+id/action_createMeetingFragment_to_selectPersonFragment"
+            app:destination="@id/selectPersonFragment" />
+        <action
+            android:id="@+id/createMeetingFragment_to_createProjectFragment"
+            app:destination="@id/createProjectFragment" />
+        <action
+            android:id="@+id/createMeetingFragment_to_createTaskFragment"
+            app:destination="@id/createTaskFragment" />
+        <action
+            android:id="@+id/to_selectedFilesFragment"
+            app:destination="@id/selectedFilesFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/createStatusDialogFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.dialogs.tasks.functional.CreateStatusDialogFragment"
+        android:label=""
+        tools:layout="@layout/fragment_dialog_create_status">
+        <argument
+            android:name="status"
+            app:argType="uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.task.Status"
+            app:nullable="true" />
+    </dialog>
+
+    <dialog
+        android:id="@+id/createTacticPlanDialogFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.dialogs.tasks.tactic_plan.CreateTacticPlanDialogFragment"
+        android:label=""
+        tools:layout="@layout/fragment_dialog_create_status">
+        <argument
+            android:name="yearId"
+            app:argType="integer" />
+        <argument
+            android:name="monthId"
+            app:argType="integer" />
+        <argument
+            android:name="status"
+            app:argType="uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.tactic_plan.Status"
+            app:nullable="true" />
+    </dialog>
+    <fragment
+        android:id="@+id/detailGoalMapFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.others.goal_map.detail_goal_map.DetailGoalMapFragment"
+        android:label="@string/app_bar_label_goal_map"
+        tools:layout="@layout/fragment_detail_goal_map">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_detailGoalMapFragment_to_createGoalFragment"
+            app:destination="@id/createGoalFragment" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <action
+            android:id="@+id/to_goalDetailsFragment"
+            app:destination="@id/goalDetailsFragment" />
+        <action
+            android:id="@+id/to_projectDetailsFragment"
+            app:destination="@id/projectDetailUpdateFragment" />
+        <action
+            android:id="@+id/to_taskDetailsFragment"
+            app:destination="@id/taskDetailUpdateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createQuickIdeaFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.quick_ideas_box.create_idea.CreateQuickIdeaFragment"
+        android:label="@string/app_bar_label_quick_idea"
+        tools:layout="@layout/fragment_create_quick_idea">
+        <argument
+            android:name="ideaId"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="screen"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/quickIdeasCategoriesFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.quick_ideas_box.QuickIdeasCategoriesFragment"
+        android:label="@string/app_bar_label_quick_idea"
+        tools:layout="@layout/fragment_quick_ideas_categories">
+        <!-- <action
+             android:id="@+id/action_quickIdeasCategoriesFragment_to_createQuickIdeaFragment"
+             app:destination="@id/createQuickIdeaFragment" />
+     -->
+        <action
+            android:id="@+id/action_quickIdeasCategoriesFragment_to_ratingFragment2"
+            app:destination="@id/ratingFragment2" />
+        <action
+            android:id="@+id/action_quickIdeasCategoriesFragment_to_createQuickIdeaFragment"
+            app:destination="@id/createQuickIdeaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ratingIdeasFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.quick_ideas_box.idea_categories.RatingIdeasFragment"
+        android:label="@string/app_bar_ideas_rating"
+        tools:layout="@layout/fragment_rating_ideas" />
+    <fragment
+        android:id="@+id/completedIdeasFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.quick_ideas_box.idea_categories.CompletedIdeasFragment"
+        android:label="@string/app_bar_finished_ideas"
+        tools:layout="@layout/fragment_completed_ideas" />
+    <fragment
+        android:id="@+id/undoneIdeasFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.quick_ideas_box.idea_categories.UndoneIdeasFragment"
+        android:label="@string/app_bar_tab_ideas"
+        tools:layout="@layout/fragment_undone_ideas" />
+    <fragment
+        android:id="@+id/ratingFragment2"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.quick_ideas_box.RatingFragment"
+        android:label="@string/app_bar_rating"
+        tools:layout="@layout/fragment_rating">
+        <argument
+            android:name="ideaId"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_ratingFragment2_to_commentFragment"
+            app:destination="@id/commentFragment" />
+        <argument
+            android:name="screen"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/commentFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.quick_ideas_box.CommentFragment"
+        android:label="@string/app_bar_title_comment_screen"
+        tools:layout="@layout/fragment_comment">
+        <argument
+            android:name="ideaData"
+            app:argType="uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.rating_idea.RatingIdea"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_detail_note"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.tasks.note.DetailNoteFragment"
+        android:label="@string/note_title">
+        <action
+            android:id="@+id/action_detail_note_create_note"
+            app:destination="@id/navigation_create_note" />
+    </fragment>
+    <dialog
+        android:id="@+id/createStatusDialogFragment2"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.dialogs.tasks.projects.CreateStatusDialogFragment"
+        android:label="@string/createing_status_dialog"
+        tools:layout="@layout/fragment_dialog_create_status_project">
+        <argument
+            android:name="status"
+            app:argType="uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.task.Status"
+            app:nullable="true" />
+    </dialog>
+    <fragment
+        android:id="@+id/goalDetailsFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.others.goal_map.GoalDetailUpdateFragment"
+        android:label="@string/app_bar_title_goal_detail">
+        <argument
+            android:name="goalId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/to_deleteDialogFragment"
+            app:destination="@id/deleteDialogFragment" />
+        <action
+            android:id="@+id/to_selectPersonFragment"
+            app:destination="@id/selectPersonFragment" />
+        <action
+            android:id="@+id/to_imageDetailsFragment"
+            app:destination="@id/imageDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_swap_company"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.entry_activity.choose_company.ChooseCompanyFragment"
+        android:label="@string/app_bar_title_change_company"
+        tools:layout="@layout/fragment_choose_company">
+        <action
+            android:id="@+id/action_swapCompanyFragment_to_createCompanyFragment"
+            app:destination="@id/createCompanyFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/createCompanyFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.entry_activity.company.CreateCompanyFragment"
+        android:label="@string/app_bar_title_create_company"
+        tools:layout="@layout/fragment_create_company">
+        <action
+            android:id="@+id/action_createCompanyFragment_to_swapCompanyFragment"
+            app:destination="@id/chooseCompanyFragment"
+            app:popUpTo="@id/navigation_swap_company"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.others.profile.ProfileFragment"
+        android:label="@string/profile_title"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentStaffConfigurationFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.payment.PaymentStaffConfigurationFragment"
+        android:label="@string/app_bar_title_staff_configuration"
+        tools:layout="@layout/fragment_payment_staff_configuration">
+
+        <argument
+            android:name="screenName"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_paymentStaffConfigurationFragment_to_paymentSystemFragment"
+            app:destination="@id/paymentSystemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/compassChatFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.chat.compass.CompassChatFragment"
+        android:label="@string/app_bar_title_compass_chat"
+        tools:layout="@layout/fragment_compass_chat" />
+    <fragment
+        android:id="@+id/paymentContainerFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.payment.PaymentContainerFragment"
+        android:label="@string/app_bar_payment_screen"
+        tools:layout="@layout/fragment_payment_container">
+        <action
+            android:id="@+id/action_paymentContainerFragment_to_paymentSystemFragment"
+            app:destination="@id/paymentSystemFragment" />
+        <action
+            android:id="@+id/action_paymentContainerFragment_to_paymentStaffConfigurationFragment"
+            app:destination="@id/paymentStaffConfigurationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/errorFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.viewmodels.home_activity.error.ErrorFragment"
+        android:label="@string/technic_work"
+        tools:layout="@layout/fragment_error" />
+
+    <dialog
+        android:id="@+id/deleteDialogFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.dialogs.others.DeleteDialogFragment"
+        android:label=""
+        tools:layout="@layout/fragment_dialog_delete">
+        <argument
+            android:name="type"
+            app:argType="uz.perfectalgorithm.projects.tezkor.data.sources.enums.DeleteDialogEnum" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </dialog>
+    <fragment
+        android:id="@+id/personalQuickIdeaFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.quick_ideas_box.PersonalQuickIdeaFragment"
+        android:label="@string/app_bar_title_personal_ideas"
+        tools:layout="@layout/fragment_personal_quick_idea">
+        <action
+            android:id="@+id/action_personalQuickIdeaFragment_to_createQuickIdeaFragment"
+            app:destination="@id/createQuickIdeaFragment" />
+        <action
+            android:id="@+id/action_personalQuickIdeaFragment_to_ratingFragment2"
+            app:destination="@id/ratingFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectPersonFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.others.select_person.SelectPersonFragment"
+        android:label="">
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/meetingDetailsFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.tasks.meeting.MeetingDetailUpdateFragment"
+        android:label="">
+        <argument
+            android:name="meetingId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_meetingDetailsFragment_to_deleteDialogFragment"
+            app:destination="@id/deleteDialogFragment" />
+        <action
+            android:id="@+id/to_selectPersonFragment"
+            app:destination="@id/selectPersonFragment" />
+        <action
+            android:id="@+id/to_memberDescriptionDialogFragment"
+            app:destination="@id/memberDescriptionDialogFragment" />
+        <action
+            android:id="@+id/to_selectMemberStateDialogFragment"
+            app:destination="@id/selectMemberStateDialogFragment" />
+        <action
+            android:id="@+id/to_myStateDialogFragment"
+            app:destination="@id/myStateDialogFragment" />
+        <action
+            android:id="@+id/to_imageDetailsFragment"
+            app:destination="@id/imageDetailsFragment" />
+        <action
+            android:id="@+id/meetingDetailUpdateFragment_to_createTaskFragment"
+            app:destination="@id/createTaskFragment" />
+        <action
+            android:id="@+id/meetingDetailUpdateFragment_to_createProjectFragment"
+            app:destination="@id/createProjectFragment" />
+        <action
+            android:id="@+id/to_selectedFilesFragment"
+            app:destination="@id/selectedFilesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/datingDetailsFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.tasks.dating.DatingDetailUpdateFragment"
+        android:label="">
+        <argument
+            android:name="datingId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_datingDetailsFragment_to_deleteDialogFragment"
+            app:destination="@id/deleteDialogFragment" />
+        <action
+            android:id="@+id/to_selectPersonFragment"
+            app:destination="@id/selectPersonFragment" />
+        <action
+            android:id="@+id/to_imageDetailsFragment"
+            app:destination="@id/imageDetailsFragment" />
+        <action
+            android:id="@+id/to_selectedFilesFragment"
+            app:destination="@id/selectedFilesFragment" />
+        <action
+            android:id="@+id/to_selectedPersonsFragment"
+            app:destination="@id/selectedPersonsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/taskDetailUpdateFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.tasks.functional.TaskDetailUpdateFragment"
+        android:label="">
+        <action
+            android:id="@+id/to_deleteDialogFragment"
+            app:destination="@id/deleteDialogFragment" />
+        <argument
+            android:name="taskId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/to_selectPersonFragment"
+            app:destination="@id/selectPersonFragment" />
+        <action
+            android:id="@+id/to_imageDetailsFragment"
+            app:destination="@id/imageDetailsFragment" />
+        <action
+            android:id="@+id/to_selectedFilesFragment"
+            app:destination="@id/selectedFilesFragment" />
+
+        <action
+            android:id="@+id/to_selectedPersonsFragment"
+            app:destination="@id/selectedPersonsFragment" />
+
+
+        <action
+            android:id="@+id/to_causeCommentFragment"
+            app:destination="@id/causeCommentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/projectDetailUpdateFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.tasks.project.ProjectDetailUpdateFragment"
+        android:label="">
+        <action
+            android:id="@+id/to_deleteDialogFragment"
+            app:destination="@id/deleteDialogFragment" />
+        <argument
+            android:name="projectId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/to_selectPersonFragment"
+            app:destination="@id/selectPersonFragment" />
+        <action
+            android:id="@+id/to_imageDetailsFragment"
+            app:destination="@id/imageDetailsFragment" />
+        <action
+            android:id="@+id/to_causeCommentFragment"
+            app:destination="@id/causeCommentFragment" />
+        <action
+            android:id="@+id/projectDetailUpdateFragment_to_createTaskFragment"
+            app:destination="@id/createTaskFragment" />
+        <action
+            android:id="@+id/projectDetailUpdateFragment_to_createProjectFragment"
+            app:destination="@id/createProjectFragment" />
+        <action
+            android:id="@+id/to_selectedPersonsFragment"
+            app:destination="@id/selectedPersonsFragment" />
+        <action
+            android:id="@+id/to_selectedFilesFragment"
+            app:destination="@id/selectedFilesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/workerListForChatFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.chat.workers_for_chat.WorkersForChatFragment"
+        android:label="@string/app_bar_label_staffs"
+        tools:layout="@layout/fragment_workers_for_chat">
+        <action
+            android:id="@+id/action_workerListForChatFragment_to_personalConversationFragment"
+            app:destination="@id/personalConversationFragment"
+            app:popUpTo="@id/workerListForChatFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/quickPlanDetailUpdateFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.quick_plans.QuickPlanDetailUpdateFragment"
+        android:label="">
+        <argument
+            android:name="quickPlanId"
+            app:argType="integer" />
+        <argument
+            android:name="isQuickTask"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/to_deleteDialogFragment"
+            app:destination="@id/deleteDialogFragment" />
+        <action
+            android:id="@+id/quickPlanDetailUpdateFragment_to_createTaskFragment"
+            app:destination="@id/createTaskFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_manage_users"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.manage_user.ManageUserFragment"
+        android:label="@string/manage_users" />
+
+    <fragment
+        android:id="@+id/companyBalanceFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.payment.subscreens.CompanyBalanceFragment"
+        android:label=""
+        tools:layout="@layout/fragment_company_balance" />
+    <fragment
+        android:id="@+id/paymentSystemFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.payment.PaymentSystemFragment"
+        android:label="@string/app_bar_title_staff_configuration"
+        tools:layout="@layout/fragment_payment_system">
+        <action
+            android:id="@+id/action_paymentSystemFragment_to_paymentOverPaymeFragment"
+            app:destination="@id/paymentOverPaymeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentOverPaymeFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.payment.PaymentOverPaymeFragment"
+        android:label="@string/app_bar_title_staff_configuration"
+        tools:layout="@layout/fragment_payment_over_payme">
+        <action
+            android:id="@+id/action_paymentOverPaymeFragment_to_moveToPaymeFragment"
+            app:destination="@id/moveToPaymeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/moveToPaymeFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.payment.MoveToPaymeFragment"
+        android:label=""
+        tools:layout="@layout/fragment_move_to_payme">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/companyStatusFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.payment.CompanyStatusFragment"
+        android:label="@string/app_bar_title_package"
+        tools:layout="@layout/fragment_company_status">
+        <action
+            android:id="@+id/action_companyStatusFragment_to_paymentContainerFragment"
+            app:destination="@id/paymentContainerFragment" />
+        <action
+            android:id="@+id/action_companyStatusFragment_to_paymentStaffConfigurationFragment"
+            app:destination="@id/paymentStaffConfigurationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tacticPlanDetailUpdateFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.tasks.tactic_plan.TacticPlanDetailUpdateFragment"
+        android:label="@string/app_bar_title_tactic_plan">
+        <action
+            android:id="@+id/to_deleteDialogFragment"
+            app:destination="@id/deleteDialogFragment" />
+        <action
+            android:id="@+id/tacticPlanDetailUpdateFragment_to_createTaskFragment"
+            app:destination="@id/createTaskFragment" />
+        <argument
+            android:name="tacticPlanId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.others.profile.EditProfileFragment"
+        android:label=""
+        tools:layout="@layout/fragment_edit_profile" />
+    <dialog
+        android:id="@+id/memberDescriptionDialogFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.dialogs.tasks.meeting.MemberDescriptionDialogFragment"
+        android:label="">
+        <argument
+            android:name="member"
+            app:argType="uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.meeting.MeetingMember" />
+    </dialog>
+    <dialog
+        android:id="@+id/selectMemberStateDialogFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.dialogs.tasks.meeting.SelectMemberStateDialogFragment"
+        android:label="">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+        <argument
+            android:name="startTime"
+            app:argType="string" />
+        <argument
+            android:name="endTime"
+            app:argType="string" />
+        <argument
+            android:name="leader"
+            app:argType="uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.project.PersonData"
+            app:nullable="true" />
+        <action
+            android:id="@+id/to_writeMemberDescriptionDialogFragment"
+            app:destination="@id/writeMemberDescriptionDialogFragment" />
+    </dialog>
+    <dialog
+        android:id="@+id/writeMemberDescriptionDialogFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.dialogs.tasks.meeting.WriteMemberDescriptionDialogFragment"
+        android:label="">
+        <argument
+            android:name="memberId"
+            app:argType="integer" />
+    </dialog>
+    <dialog
+        android:id="@+id/myStateDialogFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.dialogs.tasks.meeting.MyStateDialogFragment"
+        android:label="">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="startTime"
+            app:argType="string" />
+        <argument
+            android:name="endTime"
+            app:argType="string" />
+        <argument
+            android:name="leader"
+            app:argType="uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.project.PersonData"
+            app:nullable="true" />
+        <argument
+            android:name="member"
+            app:argType="uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.meeting.MeetingMember" />
+        <action
+            android:id="@+id/to_selectMemberStateDialogFragment"
+            app:destination="@id/selectMemberStateDialogFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/imageDetailsFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.others.ImageDetailsFragment"
+        android:label="">
+        <argument
+            android:name="file"
+            app:argType="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.others.detail_update.FilesItem" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editContactFragmentX"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.workers.edit_contact.EditContactFragment"
+        android:label="@string/edit_contact_data"
+        tools:layout="@layout/fragment_edit_contact">
+        <argument
+            android:name="workerId"
+            app:argType="integer" />
+
+        <!--        <argument-->
+        <!--            android:name="workerData__et"-->
+        <!--            app:argType="uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.workers.AllWorkersResponse$DataItem" />-->
+        <action
+            android:id="@+id/ecf_to_edit_worker_fragment"
+            app:destination="@id/editWorkerFragment" />
+
+    </fragment>
+
+
+    <dialog
+        android:id="@+id/handledErrorDialogFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.dialogs.others.error_handling.HandledErrorDialogFragment"
+        android:label="">
+
+        <action
+            android:id="@+id/to_paymentStaffConfigurationFragment"
+            app:destination="@id/paymentStaffConfigurationFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/ownTaskFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.others.own_tasks.OwnTaskFragment"
+        android:label="@string/own_tasks"
+        tools:layout="@layout/fragment_own_task" />
+
+
+    <fragment
+        android:id="@+id/causeCommentFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.tasks.project.causeComment.CauseCommentFragment"
+        android:label="@string/comments"
+        tools:layout="@layout/fragment_cause_comment" />
+    <fragment
+        android:id="@+id/selectPersonDashboardFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.dashboard.select_person.DashboardSelectPersonFragment"
+        android:label="SelectPersonDashboardFragment">
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addWorkersToGroupFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.chat.create_new_group.workers.AddWorkersToGroupChatFragment"
+        android:label=""
+        tools:layout="@layout/fragment_create_group_chat_add_worker">
+        <action
+            android:id="@+id/to_create_group_chat_fragment"
+            app:destination="@id/createGroupFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/createGroupFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.chat.create_new_group.create.CreateGroupChatFragment"
+        android:label=""
+        tools:layout="@layout/fragment_create_group_chat">
+
+        <action
+            android:id="@+id/action_create_group_to_group_ConversationFragment"
+            app:destination="@id/groupConversationFragment"
+            app:popUpTo="@id/addWorkersToGroupFragment"
+            app:popUpToInclusive="true" />
+
+        <argument
+            android:name="members"
+            app:argType="uz.perfectalgorithm.projects.tezkor.data.sources.local_models.chat.MembersToGroupChatData" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/groupConversationFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.chat.group.group_conversation.GroupConversationFragment"
+        android:label="fragment_group_conversation"
+        tools:layout="@layout/fragment_group_conversation">
+        <action
+            android:id="@+id/action_group_conversation_fragment_to_group_chat_detail_fragment"
+            app:destination="@id/groupChatDetailFragment" />
+        <action
+            android:id="@+id/action_groupConversationFragment_to_createTaskFragment"
+            app:destination="@id/createTaskFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/groupChatDetailFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.chat.group.group_detail.GroupChatDetailFragment"
+        android:label="fragment_group_chat_detail"
+        tools:layout="@layout/fragment_group_chat_detail" >
+        <action
+            android:id="@+id/action_groupChatDetailForChatFragment_to_personalConversationFragment"
+            app:destination="@id/personalConversationFragment"
+            app:popUpTo="@id/groupConversationFragment"
+             app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/editWorkerFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.workers.edit_worker.EditWorkerFragment"
+        android:label="fragment_edit_worker"
+        tools:layout="@layout/fragment_edit_worker">
+        <argument
+            android:name="workerData_"
+            app:argType="uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.workers.AllWorkersResponse$DataItem" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/selectedPersonsFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.others.detail_update.SelectedPersonsFragment"
+        android:label="Xodimlar"
+        tools:layout="@layout/fragment_selected_persons">
+        <argument
+            android:name="selectedPersons"
+            app:argType="uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.project.PersonData[]" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/selectedFilesFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.others.detail_update.SelectedFilesFragment"
+        android:label="Fayllar"
+        tools:layout="@layout/fragment_selected_files">
+        <argument
+            android:name="selectedFiles"
+            app:argType="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.others.detail_update.FilesItem[]" />
+        <argument
+            android:name="isEditorMode"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/to_imageDetailsFragment"
+            app:destination="@id/imageDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.others.setting.SettingFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_navigation_settings_to_languageFragment"
+            app:destination="@id/languageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/groupDetailEditFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.chat.group.group_detail.GroupDetailEditFragment"
+        android:label="fragment_group_detail_edit"
+        tools:layout="@layout/fragment_group_detail_edit" />
+    <fragment
+        android:id="@+id/languageFragment"
+        android:name="uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.others.setting.LanguageFragment"
+        android:label="fragment_language"
+        tools:layout="@layout/fragment_language" />
+
+</navigation>
