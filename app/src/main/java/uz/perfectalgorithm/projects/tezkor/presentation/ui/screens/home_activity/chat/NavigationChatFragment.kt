@@ -62,7 +62,7 @@ class NavigationChatFragment : Fragment() {
                 3 -> tab.icon = requireActivity().getDrawable(R.drawable.ic_channels)
                 4 -> tab.icon = requireActivity().getDrawable(R.drawable.ic_briefcase)
             }
-            binding.viewPager.setCurrentItem(tab.position, true)
+            binding.viewPager.setCurrentItem(tab.position, false)
         }.attach()
     }
 

@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/_25sdp"
-        android:animateLayoutChanges="true"
+        android:animateLayoutChanges="false"
         app:dotsColor="@color/blue"
         app:dotsCornerRadius="8dp"
         app:dotsSize="@dimen/_8sdp"

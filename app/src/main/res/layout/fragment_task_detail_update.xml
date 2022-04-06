@@ -5,7 +5,7 @@
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:animateLayoutChanges="true"
+    android:animateLayoutChanges="false"
     android:background="@color/colorWhiteSoft"
     tools:context=".presentation.ui.screens.home_activity.adding.create_task.CreateTaskFragment">
 

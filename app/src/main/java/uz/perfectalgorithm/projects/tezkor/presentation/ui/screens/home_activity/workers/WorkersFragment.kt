@@ -327,7 +327,7 @@ class WorkersFragment : Fragment() {
             else btnAdd.gone()
             if (viewModel.isOpenAddFunctions) {
 
-                binding.viewPager.setCurrentItem(2, true)
+                binding.viewPager.setCurrentItem(2, false)
 
                 if (viewModel.canAddDepartment) btnAddDepartment.visible()
                 if (viewModel.canAddPosition) btnAddPosition.visible()

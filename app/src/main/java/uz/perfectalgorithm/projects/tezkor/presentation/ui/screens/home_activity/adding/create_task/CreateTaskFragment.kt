@@ -125,6 +125,7 @@ class CreateTaskFragment : Fragment(), CoroutineScope {
             messageID = it.getInt("messageID")
             perform_id = it.getParcelable("personData")
         }
+
     }
 
     override fun onCreateView(
@@ -876,7 +877,6 @@ class CreateTaskFragment : Fragment(), CoroutineScope {
                     leader = createTaskViewModel.leader!!,
                     start_time = createTaskViewModel.startDate + " " + createTaskViewModel.startTime,
                     end_time = createTaskViewModel.endDate + " " + createTaskViewModel.endTime,
-//                    files = createTaskViewModel.files,
                     files = sharedViewModel.files.value,
                     project = createTaskViewModel.project,
                     parent = createTaskViewModel.parent,
@@ -900,7 +900,6 @@ class CreateTaskFragment : Fragment(), CoroutineScope {
 
     private fun syncGoogleCalendar() {
         launch {
-
             val event: Event = Event()
                 .setSummary("${createTaskViewModel.title}"?:"")
                 .setDescription("${createTaskViewModel.description}")
@@ -990,25 +989,25 @@ class CreateTaskFragment : Fragment(), CoroutineScope {
     }
 
     private fun loadSharedObservers() = with(sharedViewModel) {
-        performer.observe(viewLifecycleOwner, { performer ->
+        performer.observe(viewLifecycleOwner) { performer ->
             if (performer != null) {
                 createTaskViewModel.performer = performer.id
                 performer.image?.let { binding.personPerformerImageView.loadImageUrl(it) }
             } else {
                 binding.personPerformerImageView.setBackgroundResource(R.drawable.ic_adding_person)
             }
-        })
+        }
 
-        master.observe(viewLifecycleOwner, { master ->
+        master.observe(viewLifecycleOwner) { master ->
             createTaskViewModel.leader = master?.id
             if (master != null) {
                 master.image?.let { binding.personMasterImageView.loadImageUrl(it) }
             } else {
                 binding.personMasterImageView.setBackgroundResource(R.drawable.ic_adding_person)
             }
-        })
+        }
 
-        spectators.observe(viewLifecycleOwner, { observerList ->
+        spectators.observe(viewLifecycleOwner) { observerList ->
             createTaskViewModel.spectators = observerList?.map { it.id }
             if (observerList.isNullOrEmpty()) {
                 binding.observerCount.gone()
@@ -1023,7 +1022,7 @@ class CreateTaskFragment : Fragment(), CoroutineScope {
                     }
                 }
             }
-        })
+        }
     }
 
     override fun onResume() {

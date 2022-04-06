@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -77,8 +78,11 @@ class MonthFragment : Fragment(), CoroutineScope {
         }
     }
     private val getDayEvents = Observer<List<CalendarResponse.Event>> { it ->
-
         addEvents(it)
+//        val calendar = getCalendar()
+//        days.forEach {
+//            it.dayEvents.addAll(calendar)
+//        }
     }
 
     override fun onCreateView(
@@ -123,7 +127,7 @@ class MonthFragment : Fragment(), CoroutineScope {
                 var i = 0
                 for (event in items) {
                     i++
-//                    list.add(CalendarResponse.Event(event.end.))
+//                    list.add(CalendarResponse.Event(event.end.timeZone,event.id.toInt(),event.start.timeZone,event.summary,event.kind,event.status))
                     Log.d("calendar page $i", "getCalendar: ${event.summary}")
                 }
                 pageToken = events.nextPageToken
@@ -175,6 +179,7 @@ class MonthFragment : Fragment(), CoroutineScope {
     private fun updateDays(days: ArrayList<DayMonthly>) {
         binding.monthViewWrapper.updateDays(days, true) {
             (parentFragment as MonthHolderFragment).itemClick(it.code)
+            Toast.makeText(requireContext(), "${it.code}", Toast.LENGTH_SHORT).show()
         }
     }
 

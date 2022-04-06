@@ -15,6 +15,20 @@
     <string name="tooltiptext1">Комментарии</string>
     <string name="tooltiptext2">Ментальная карта</string>
     <string name="tooltiptext3">Открыть папку</string>
+    <string name="ab1">"Он придет вовремя"</string>
+    <string name="vaqt1">"5 минут назад"</string>
+    <string name="vaqt2">"10 минут назад"</string>
+    <string name="vaqt3">"15 минут назад"</string>
+    <string name="vaqt4">"30 минут назад"</string>
+    <string name="vaqt5">"1 час назад"</string>
+    <string name="vaqt6">"2 час назад"</string>
+    <string name="vaqt7">"3 час назад"</string>
+    <string name="vaqt8">"5 час назад"</string>
+    <string name="vaqt9">"10 час назад"</string>
+    <string name="vaqt10">"1 день назад"</string>
+    <string name="vaqt11">"2 день назад"</string>
+    <string name="vaqt12">"1 неделю назад"</string>
+    <string name="issues">Рассмотренные вопросы</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

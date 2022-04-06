@@ -31,7 +31,7 @@ class LanguageFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentLanguageBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -43,11 +43,8 @@ class LanguageFragment : Fragment() {
 
 
         binding.apply {
-
             backImage.setOnClickListener { findNavController().popBackStack() }
-
             selectLan(storage.lan?:"uz")
-
             enLanCard.setOnClickListener {
                 selectLan("en")
                 setLocale(requireActivity(), "en")
@@ -71,7 +68,6 @@ class LanguageFragment : Fragment() {
                 title.text = "Uzbek"
                 requireActivity().recreate()
             }
-
         }
     }
 

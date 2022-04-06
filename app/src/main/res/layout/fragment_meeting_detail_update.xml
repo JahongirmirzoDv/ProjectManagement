@@ -5,7 +5,7 @@
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:animateLayoutChanges="true">
+    android:animateLayoutChanges="false">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -432,48 +432,48 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-<!--                <TextView-->
-<!--                    android:id="@+id/tv_address_title"-->
-<!--                    style="@style/TextSmallSemiBold"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_marginHorizontal="@dimen/size_24dp"-->
-<!--                    android:layout_marginTop="@dimen/size_24dp"-->
-<!--                    android:fontFamily="@font/inter_regular"-->
-<!--                    android:text="@string/meeting_place"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:textStyle="bold"-->
-<!--                    app:layout_constraintTop_toTopOf="parent" />-->
+                <!--                <TextView-->
+                <!--                    android:id="@+id/tv_address_title"-->
+                <!--                    style="@style/TextSmallSemiBold"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_marginHorizontal="@dimen/size_24dp"-->
+                <!--                    android:layout_marginTop="@dimen/size_24dp"-->
+                <!--                    android:fontFamily="@font/inter_regular"-->
+                <!--                    android:text="@string/meeting_place"-->
+                <!--                    android:textColor="@color/black"-->
+                <!--                    android:textStyle="bold"-->
+                <!--                    app:layout_constraintTop_toTopOf="parent" />-->
 
-<!--                <com.google.android.material.card.MaterialCardView-->
-<!--                    android:id="@+id/cv_address"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginHorizontal="@dimen/size_24dp"-->
-<!--                    android:layout_marginTop="@dimen/size_8dp"-->
-<!--                    android:layout_marginBottom="@dimen/size_24dp"-->
-<!--                    app:cardBackgroundColor="#F4F5F7"-->
-<!--                    app:cardCornerRadius="@dimen/size_8dp"-->
-<!--                    app:cardElevation="@dimen/size_0dp"-->
-<!--                    app:contentPaddingBottom="@dimen/size_4dp"-->
-<!--                    app:contentPaddingTop="@dimen/size_4dp"-->
-<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                    app:layout_constraintTop_toBottomOf="@id/tv_address_title">-->
+                <!--                <com.google.android.material.card.MaterialCardView-->
+                <!--                    android:id="@+id/cv_address"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginHorizontal="@dimen/size_24dp"-->
+                <!--                    android:layout_marginTop="@dimen/size_8dp"-->
+                <!--                    android:layout_marginBottom="@dimen/size_24dp"-->
+                <!--                    app:cardBackgroundColor="#F4F5F7"-->
+                <!--                    app:cardCornerRadius="@dimen/size_8dp"-->
+                <!--                    app:cardElevation="@dimen/size_0dp"-->
+                <!--                    app:contentPaddingBottom="@dimen/size_4dp"-->
+                <!--                    app:contentPaddingTop="@dimen/size_4dp"-->
+                <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--                    app:layout_constraintTop_toBottomOf="@id/tv_address_title">-->
 
-<!--                    <com.google.android.material.textfield.TextInputEditText-->
-<!--                        android:id="@+id/et_address"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginHorizontal="@dimen/size_16dp"-->
-<!--                        android:layout_marginVertical="@dimen/size_8dp"-->
-<!--                        android:background="@android:color/transparent"-->
-<!--                        android:enabled="false"-->
-<!--                        android:fontFamily="@font/inter_regular"-->
-<!--                        android:hint="@string/hint_meeting_place"-->
-<!--                        android:textColor="@color/black"-->
-<!--                        android:textColorHint="#A5A9B8"-->
-<!--                        android:textSize="@dimen/_12ssp" />-->
+                <!--                    <com.google.android.material.textfield.TextInputEditText-->
+                <!--                        android:id="@+id/et_address"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_marginHorizontal="@dimen/size_16dp"-->
+                <!--                        android:layout_marginVertical="@dimen/size_8dp"-->
+                <!--                        android:background="@android:color/transparent"-->
+                <!--                        android:enabled="false"-->
+                <!--                        android:fontFamily="@font/inter_regular"-->
+                <!--                        android:hint="@string/hint_meeting_place"-->
+                <!--                        android:textColor="@color/black"-->
+                <!--                        android:textColorHint="#A5A9B8"-->
+                <!--                        android:textSize="@dimen/_12ssp" />-->
 
-<!--                </com.google.android.material.card.MaterialCardView>-->
+                <!--                </com.google.android.material.card.MaterialCardView>-->
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -785,6 +785,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/iv_add_problem"
                     tools:listitem="@layout/item_meeting_problem" />
             </androidx.constraintlayout.widget.ConstraintLayout>
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/comment_layout"
                 style="@style/CreateScreensMembersLayoutStyle"
@@ -812,10 +813,10 @@
                 <ImageView
                     android:id="@+id/iv_add_comment"
                     android:layout_width="@dimen/_20sdp"
-                    android:visibility="visible"
                     android:layout_height="@dimen/_20sdp"
                     android:layout_marginEnd="@dimen/size_8dp"
                     android:contentDescription="@string/app_name"
+                    android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="@+id/tv_title_comments"
                     app:layout_constraintEnd_toStartOf="@id/tv_comments_count"
                     app:layout_constraintTop_toTopOf="@+id/tv_title_comments"
@@ -1186,6 +1187,7 @@
             android:padding="@dimen/size_16dp"
             android:src="@drawable/ic_unread_message" />
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/ll_create_comment"
         android:layout_width="match_parent"
@@ -1213,6 +1215,7 @@
             android:padding="@dimen/size_16dp"
             android:src="@drawable/ic_unread_message" />
     </LinearLayout>
+
     <include
         android:id="@+id/progress_layout"
         layout="@layout/layout_loader"

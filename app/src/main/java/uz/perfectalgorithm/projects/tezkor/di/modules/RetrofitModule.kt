@@ -1,6 +1,7 @@
 package uz.perfectalgorithm.projects.tezkor.di.modules
 
 import android.content.Context
+import com.mocklets.pluto.PlutoInterceptor
 import com.readystatesoftware.chuck.ChuckInterceptor
 import dagger.Module
 import dagger.Provides
@@ -60,6 +61,7 @@ class RetrofitModule {
         .addInterceptor(logging)
         .cache(cache)
         .addInterceptor(provideOfflineCacheInterceptor())
+        .addInterceptor(PlutoInterceptor())
         .addInterceptor(ChuckInterceptor(context))//for seeing responses and requests from emulator
         .addInterceptor {
             val requestOld = it.request()

@@ -1,25 +1,15 @@
 package uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.others.setting
 
-import android.accounts.AccountManager
-import android.app.Activity
 import android.app.Activity.RESULT_OK
-import android.content.ContentResolver
-import android.content.ContentValues
-import android.content.IntentSender
 import android.os.Bundle
-import android.provider.CalendarContract
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.Toast
-import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.google.android.gms.auth.api.identity.BeginSignInRequest
-import com.google.android.gms.auth.api.identity.SignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -27,47 +17,19 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential
+import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecoverableAuthIOException
 import com.google.api.client.util.DateTime
+import com.google.api.services.calendar.model.*
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.*
-import timber.log.Timber
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 import uz.perfectalgorithm.projects.tezkor.R
 import uz.perfectalgorithm.projects.tezkor.data.sources.local.LocalDatabase
 import uz.perfectalgorithm.projects.tezkor.data.sources.local.LocalStorage
-import uz.perfectalgorithm.projects.tezkor.data.sources.local_models.setting.LanguageClass
 import uz.perfectalgorithm.projects.tezkor.databinding.FragmentSettingBinding
-import uz.perfectalgorithm.projects.tezkor.presentation.ui.adapters.home.others.settings.LanguageSpinnerAdapter
-import uz.perfectalgorithm.projects.tezkor.utils.coroutinescope.CoroutinesScope
-import java.util.*
-import java.util.concurrent.ExecutorService
-import java.util.concurrent.Executors
 import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
-import kotlin.math.sign
-import android.os.Build
-
-import android.annotation.SuppressLint
-import android.database.Cursor
-import android.net.Uri
-import com.google.api.services.calendar.CalendarScopes
-import uz.perfectalgorithm.projects.tezkor.data.sources.remote.Coroutines
-import androidx.core.app.ActivityCompat.startActivityForResult
-import com.google.android.gms.auth.api.identity.Identity
-import com.google.android.gms.tasks.Tasks
-
-import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecoverableAuthIOException
-
-import com.google.api.client.json.gson.GsonFactory
-
-import com.google.api.client.extensions.android.http.AndroidHttp
-import com.google.api.services.calendar.model.*
-import com.google.api.services.calendar.model.Calendar
-import kotlin.collections.ArrayList
-import com.google.api.services.calendar.model.CalendarListEntry
-
-
-
-
 
 /***
  * Abduraxmonov Abdulla 11/09/2021
@@ -115,7 +77,8 @@ class SettingFragment : Fragment(), CoroutineScope {
 
         binding.apply {
             val build =
-                GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail()
+                GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                    .requestEmail()
                     .build()
             googleSignIn = GoogleSignIn.getClient(requireContext(), build)
 
@@ -132,12 +95,15 @@ class SettingFragment : Fragment(), CoroutineScope {
         val signInIntent = googleSignIn.signInIntent
         launcher.launch(signInIntent)
     }
-//
+
+    //
     private val launcher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if (it != null) {
-                Log.e(TAG, "result code : ${it.data?.dataString}")
+//                Log.e(TAG, "result code : ${it.data?.dataString}")
+//                Log.e(TAG, "result code : ${it.resultCode}")
                 if (it.resultCode == RESULT_OK) {
+                    Toast.makeText(requireContext(), R.string.saving, Toast.LENGTH_SHORT).show()
                     val signedInAccountFromIntent =
                         GoogleSignIn.getSignedInAccountFromIntent(it.data) as Task<GoogleSignInAccount>
                     handleSignInResult(signedInAccountFromIntent)
@@ -152,11 +118,13 @@ class SettingFragment : Fragment(), CoroutineScope {
             storage.calendarID = account.email
             credential.selectedAccountName = account.account.name
             calendarID = account.email
+            Log.d("GoogleCalendarFragment", "signInResult:failed code=${account.displayName}")
 //            syncGoogleCalendar()
             getCalendar()
+//            getListCalendar()
         } catch (e: ApiException) {
             Toast.makeText(requireContext(), "exception", Toast.LENGTH_SHORT).show()
-            Log.d("GoogleCalendarFragment", "signInResult:failed code=${e.statusCode}")
+//            Log.d("GoogleCalendarFragment", "signInResult:failed code=${e.statusCode}")
         }
     }
 
@@ -165,12 +133,12 @@ class SettingFragment : Fragment(), CoroutineScope {
             var pageToken: String? = null
             do {
                 val events: Events =
-                    client.events().list(calendarID).setPageToken(pageToken).execute()
+                    client.events().list("primary").setPageToken(pageToken).execute();
                 val items = events.items
                 var i = 0
                 for (event in items) {
                     i++
-                    Log.d("calendar page $i", "getCalendar: ${event.summary}")
+//                    Log.d("calendar page $i", "getCalendar: ${event.summary} - ${event.description}")
                 }
                 pageToken = events.nextPageToken
             } while (pageToken != null)
@@ -185,19 +153,19 @@ class SettingFragment : Fragment(), CoroutineScope {
                 .setLocation("Shayxontohur tumani, Ташкент, Узбекистан")
                 .setDescription("A chance to hear more about Google's developer products.")
 
-            val startDateTime = DateTime("2022-03-24T16:00:00-07:00")
+            val startDateTime = DateTime("2022-04-24T16:00:00-07:00")
             val start = EventDateTime()
                 .setDateTime(startDateTime)
                 .setTimeZone("Asia/Tashkent")
             event.setStart(start)
 
-            val endDateTime = DateTime("2022-03-24T17:00:00-07:00")
+            val endDateTime = DateTime("2022-04-24T17:00:00-07:00")
             val end = EventDateTime()
                 .setDateTime(endDateTime)
                 .setTimeZone("Asia/Tashkent")
             event.setEnd(end)
 
-            val recurrence = arrayOf("RRULE:FREQ=DAILY","COUNT=2")
+            val recurrence = arrayOf("RRULE:FREQ=DAILY", "COUNT=2")
             event.recurrence = listOf(recurrence) as MutableList<String>
 
             val arrayList = ArrayList<EventAttendee>()
@@ -213,8 +181,8 @@ class SettingFragment : Fragment(), CoroutineScope {
 
 
             try {
-
-                val e = client.events().insert("$calendarID", event).setOauthToken(token.toString()).execute()
+                val e = client.events().insert("$calendarID", event).setOauthToken(token.toString())
+                    .execute()
                 // Do whatever you want with the Drive service
             } catch (e: UserRecoverableAuthIOException) {
                 startActivityForResult(e.intent, 1)
@@ -229,7 +197,7 @@ class SettingFragment : Fragment(), CoroutineScope {
                 client.calendarList().list().setPageToken(pageToken).execute()
             val items = calendarList.items
             for (calendarListEntry in items) {
-                Log.d("Calendar List", "getListCalendar: ${calendarListEntry.summary} ")
+//                Log.d("Calendar List", "getListCalendar: ${calendarListEntry.summary} ")
             }
             pageToken = calendarList.nextPageToken
         } while (pageToken != null)

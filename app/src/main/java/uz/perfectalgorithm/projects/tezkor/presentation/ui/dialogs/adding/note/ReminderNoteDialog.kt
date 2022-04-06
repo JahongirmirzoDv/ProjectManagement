@@ -5,6 +5,7 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.widget.SeekBar
+import uz.perfectalgorithm.projects.tezkor.R
 import uz.perfectalgorithm.projects.tezkor.databinding.ItemNoteReminderDialogBinding
 
 class ReminderNoteDialog(
@@ -44,43 +45,43 @@ class ReminderNoteDialog(
 
     private fun getReminderDate(progress: Int): Pair<String, Int> = when (progress) {
         0 -> {
-            Pair("O'z vaqtida", 0)
+            Pair(fragmentContext.getString(R.string.ab1), 0)
         }
         1 -> {
-            Pair("5 daqiqa oldin", 5)
+            Pair(fragmentContext.getString(R.string.vaqt1), 5)
         }
         2 -> {
-            Pair("10 daqiqa oldin", 10)
+            Pair(fragmentContext.getString(R.string.vaqt2), 10)
         }
         3 -> {
-            Pair("15 daqiqa oldin", 15)
+            Pair(fragmentContext.getString(R.string.vaqt3), 15)
         }
         4 -> {
-            Pair("30 daqiqa oldin", 30)
+            Pair(fragmentContext.getString(R.string.vaqt4), 30)
         }
         5 -> {
-            Pair("1 soat oldin", 60)
+            Pair(fragmentContext.getString(R.string.vaqt5), 60)
         }
         6 -> {
-            Pair("2 soat oldin", 2 * 60)
+            Pair(fragmentContext.getString(R.string.vaqt6), 2 * 60)
         }
         7 -> {
-            Pair("3 soat oldin", 3 * 60)
+            Pair(fragmentContext.getString(R.string.vaqt7), 3 * 60)
         }
         8 -> {
-            Pair("5 soat oldin", 5 * 60)
+            Pair(fragmentContext.getString(R.string.vaqt8), 5 * 60)
         }
         9 -> {
-            Pair("10 soat oldin", 10 * 60)
+            Pair(fragmentContext.getString(R.string.vaqt9), 10 * 60)
         }
         10 -> {
-            Pair("1 kun oldin", 24 * 60)
+            Pair(fragmentContext.getString(R.string.vaqt10), 24 * 60)
         }
         11 -> {
-            Pair("2 kun oldin", 2 * 24 * 60)
+            Pair(fragmentContext.getString(R.string.vaqt11), 2 * 24 * 60)
         }
         else -> {
-            Pair("1 hafta oldin", 7 * 24 * 60)
+            Pair(fragmentContext.getString(R.string.vaqt12), 7 * 24 * 60)
         }
     }
 }

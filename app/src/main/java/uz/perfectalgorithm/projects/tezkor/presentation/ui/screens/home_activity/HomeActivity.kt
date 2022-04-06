@@ -1,21 +1,23 @@
 package uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity
 
+import android.annotation.SuppressLint
+import android.app.Dialog
 import android.content.res.Configuration
 import android.content.res.Resources
 import android.os.Bundle
 import android.view.View
+import android.view.Window
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.*
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.firebase.messaging.FirebaseMessaging
 import dagger.hilt.android.AndroidEntryPoint
@@ -31,22 +33,21 @@ import uz.perfectalgorithm.projects.tezkor.presentation.ui.dialogs.chat.QuickShe
 import uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.calendar.CalendarFragment
 import uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.chat.NavigationChatFragment
 import uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.others.OthersFragment
+import uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.others.setting.LanguageFragment
 import uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.tasks.NavigationMeetingFragment
 import uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.tasks.NavigationTasksFragment
 import uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.workers.WorkersFragment
 import uz.perfectalgorithm.projects.tezkor.presentation.viewmodels.home_activity.HomeActivityViewModel
-import uz.perfectalgorithm.projects.tezkor.presentation.viewmodels.home_activity.chat.NavigationChatViewModel
 import uz.perfectalgorithm.projects.tezkor.presentation.viewmodels.home_activity.chat.company_group.CompanyGroupChatViewModel
+import uz.perfectalgorithm.projects.tezkor.utils.SharedPref
 import uz.perfectalgorithm.projects.tezkor.utils.`typealias`.EmptyBlock
 import uz.perfectalgorithm.projects.tezkor.utils.extensions.hide
 import uz.perfectalgorithm.projects.tezkor.utils.extensions.show
-import uz.perfectalgorithm.projects.tezkor.utils.gone
 import uz.perfectalgorithm.projects.tezkor.utils.keypboard.hideKeyboard
 import uz.perfectalgorithm.projects.tezkor.utils.timberLog
 import uz.perfectalgorithm.projects.tezkor.utils.views.BottomMenu
 import uz.perfectalgorithm.projects.tezkor.utils.views.OnItemMenuListener
 import uz.perfectalgorithm.projects.tezkor.utils.visible
-import uz.star.mardex.model.results.local.MessageData
 import java.util.*
 import javax.inject.Inject
 
@@ -57,6 +58,7 @@ class HomeActivity : AppCompatActivity() {
     private var _binding: ActivityHomeBinding? = null
     private val binding: ActivityHomeBinding
         get() = _binding ?: throw NullPointerException("View wasn't created")
+    private val sharedPref by lazy { SharedPref(this) }
 
     @Inject
     lateinit var sectionsDialog: SectionsDialog
@@ -97,10 +99,11 @@ class HomeActivity : AppCompatActivity() {
         _binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         FirebaseMessaging.getInstance().subscribeToTopic("all")
+        var locale = Locale(storage.lan ?: "uz")
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
-        val locale = Locale(storage.lan?:"uz")
+
         Locale.setDefault(locale)
         val resources: Resources = resources
         val config: Configuration = resources.configuration
@@ -108,8 +111,8 @@ class HomeActivity : AppCompatActivity() {
         resources.updateConfiguration(config, resources.displayMetrics)
 
         binding.apply {
-            navController.addOnDestinationChangedListener{ controller, destination, arguments ->
-                when(destination.id) {
+            navController.addOnDestinationChangedListener { controller, destination, arguments ->
+                when (destination.id) {
                     R.id.navigation_chat -> {
                         bottomNavigationView.setDefaultSelectedMenu(BottomMenu.CHAT)
                     }
@@ -140,6 +143,47 @@ class HomeActivity : AppCompatActivity() {
         loadViews()
         loadObservers()
 //        navigateFragment(intent)
+    }
+
+    @SuppressLint("ResourceAsColor")
+    private fun dialog(): Locale {
+        var locale = Locale(storage.lan ?: "uz")
+        val dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(false)
+        dialog.setContentView(R.layout.language_dialog)
+        dialog.show()
+
+        dialog.findViewById<CardView>(R.id.en_lan_card).setOnClickListener {
+            it.setBackgroundColor(R.color.tanlash)
+            sharedPref.language = true
+            LanguageFragment.setLocale(this, "en")
+            storage.lan = "en"
+            locale = Locale(storage.lan ?: "en")
+            dialog.cancel()
+            this.recreate()
+        }
+
+        dialog.findViewById<CardView>(R.id.ru_lan_card).setOnClickListener {
+            it.setBackgroundColor(R.color.tanlash)
+            sharedPref.language = true
+            LanguageFragment.setLocale(this, "ru")
+            storage.lan = "ru"
+            locale = Locale(storage.lan ?: "ru")
+            dialog.cancel()
+            this.recreate()
+        }
+
+        dialog.findViewById<CardView>(R.id.uz_lan_card).setOnClickListener {
+            it.setBackgroundColor(R.color.tanlash)
+            sharedPref.language = true
+            LanguageFragment.setLocale(this, "uz")
+            storage.lan = "uz"
+            locale = Locale(storage.lan ?: "uz")
+            dialog.cancel()
+            this.recreate()
+        }
+        return locale
     }
 
     override fun onBackPressed() {
@@ -202,12 +246,12 @@ class HomeActivity : AppCompatActivity() {
             if (chatList.isEmpty()) {
             } else {
                 viewModel.mChatList.clear()
-                viewModel.mChatList.addAll(chatList.filter { it.isChannel==viewModel.isOnlyWriteAdmin })
-                storage.selectedCompanyName = chatList[0].title?:""
+                viewModel.mChatList.addAll(chatList.filter { it.isChannel == viewModel.isOnlyWriteAdmin })
+                storage.selectedCompanyName = chatList[0].title ?: ""
             }
         }
 
-     fun changeTitle() {
+    fun changeTitle() {
         binding.toolbarCompanyName.title = storage.selectedCompanyName
     }
 
@@ -272,7 +316,8 @@ class HomeActivity : AppCompatActivity() {
                 if (itemMenu == binding.bottomNavigationView.selectedItem) return
                 var builder = NavOptions.Builder().setLaunchSingleTop(true)
                 binding.bottomNavigationView.selectedItem
-                val isC = navController.currentDestination?.parent?.findNode(itemMenu.resId) is ActivityNavigator.Destination
+                val isC =
+                    navController.currentDestination?.parent?.findNode(itemMenu.resId) is ActivityNavigator.Destination
                 if (isC) {
                     builder.setEnterAnim(R.anim.nav_default_enter_anim)
                         .setExitAnim(R.anim.nav_default_exit_anim)

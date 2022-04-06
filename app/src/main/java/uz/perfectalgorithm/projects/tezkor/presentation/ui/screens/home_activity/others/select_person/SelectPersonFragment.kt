@@ -169,7 +169,7 @@ class SelectPersonFragment : Fragment() {
             adapter = pagerAdapter
             TabLayoutMediator(binding.personSelectedTabLayout, this) { tab, position ->
                 tab.text = resources.getStringArray(R.array.tab_in_perfomer)[position]
-                setCurrentItem(tab.position, true)
+                setCurrentItem(tab.position, false)
             }.attach()
             registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
                 override fun onPageSelected(position: Int) {

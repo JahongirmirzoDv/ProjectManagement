@@ -52,7 +52,7 @@ class NavigationMeetingFragment : Fragment() {
             adapter = ViewStateMeetingDashboardAdapter(childFragmentManager, lifecycle)
             TabLayoutMediator(binding.tabLayout, this) { tab, position ->
                 tab.text = resources.getStringArray(R.array.tab_in_meeting)[position]
-                setCurrentItem(tab.position, true)
+                setCurrentItem(tab.position, false)
             }.attach()
         }
     }

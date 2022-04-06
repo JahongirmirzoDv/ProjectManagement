@@ -51,7 +51,7 @@ class NavigationTasksFragment : Fragment() {
             adapter = ViewStateTaskDashboardAdapter(childFragmentManager, lifecycle)
             TabLayoutMediator(binding.tabLayout, this) { tab, position ->
                 tab.text = resources.getStringArray(R.array.tab_in_task)[position]
-                setCurrentItem(tab.position, true)
+                setCurrentItem(tab.position, false)
             }.attach()
         }
     }

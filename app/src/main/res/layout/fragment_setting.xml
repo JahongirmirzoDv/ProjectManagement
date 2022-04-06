@@ -44,9 +44,15 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/rl_add_calendar">
 
+        <ImageView
+            android:id="@+id/image3"
+            style="@style/OthersImageIconStyle"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_baseline_language_24" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text_lan"
+            android:layout_toEndOf="@id/image3"
             style="@style/OtherScreenTextStyle"
             android:text="@string/setting_lan" />
 

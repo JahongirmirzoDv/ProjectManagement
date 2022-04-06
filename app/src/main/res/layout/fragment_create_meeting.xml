@@ -5,7 +5,7 @@
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:animateLayoutChanges="true"
+    android:animateLayoutChanges="false"
     tools:context=".presentation.ui.screens.home_activity.adding.create_meeting.CreateMeetingFragment">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -486,7 +486,7 @@
                     android:id="@+id/tv_title_participants"
                     style="@style/CreateScreensMemberTextStyle"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:text="Qatnashuvchilar"
+                    android:text="@string/error_participants"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -550,7 +550,7 @@
                     android:layout_width="@dimen/size_0dp"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginEnd="@dimen/size_8dp"
-                    android:text="Ko'rib chiqilgan masalalar"
+                    android:text="@string/issues"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toStartOf="@id/iv_add_problem"

@@ -4,10 +4,10 @@ import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -31,12 +31,14 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.note.Not
 import uz.perfectalgorithm.projects.tezkor.databinding.FragmentCreateNoteBinding
 import uz.perfectalgorithm.projects.tezkor.presentation.ui.adapters.home.adding.note.EventDeleteClickListener
 import uz.perfectalgorithm.projects.tezkor.presentation.ui.adapters.home.adding.note.NoteReminderAdapter
-import uz.perfectalgorithm.projects.tezkor.presentation.ui.dialogs.adding.note.*
+import uz.perfectalgorithm.projects.tezkor.presentation.ui.dialogs.adding.note.RadioGroupDialog
+import uz.perfectalgorithm.projects.tezkor.presentation.ui.dialogs.adding.note.ReminderNoteDialog
+import uz.perfectalgorithm.projects.tezkor.presentation.ui.dialogs.adding.note.RepeatRuleWeeklyDialog
+import uz.perfectalgorithm.projects.tezkor.presentation.ui.dialogs.adding.note.showRepeatNoteDialog
 import uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.base.BaseFragment
 import uz.perfectalgorithm.projects.tezkor.presentation.viewmodels.home_activity.adding.note.CreateNoteViewModel
 import uz.perfectalgorithm.projects.tezkor.utils.adding.isInputCompleted
 import uz.perfectalgorithm.projects.tezkor.utils.calendar.*
-import uz.perfectalgorithm.projects.tezkor.utils.calendar.Formatter
 import uz.perfectalgorithm.projects.tezkor.utils.error_handling.handleException
 import uz.perfectalgorithm.projects.tezkor.utils.error_handling.makeErrorSnack
 import uz.perfectalgorithm.projects.tezkor.utils.error_handling.makeSuccessSnack
@@ -46,9 +48,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.extensions.hideBottomMenu
 import uz.perfectalgorithm.projects.tezkor.utils.hideKeyboard
 import uz.perfectalgorithm.projects.tezkor.utils.timberLog
 import uz.perfectalgorithm.projects.tezkor.utils.visible
-import java.util.*
 import javax.inject.Inject
-import kotlin.collections.ArrayList
 import kotlin.coroutines.CoroutineContext
 import kotlin.math.pow
 
@@ -65,6 +65,7 @@ class CreateNoteFragment : BaseFragment(), EventDeleteClickListener, CoroutineSc
 
     @Inject
     lateinit var credential: GoogleAccountCredential
+
     @Inject
     lateinit var client: com.google.api.services.calendar.Calendar
 
@@ -83,6 +84,7 @@ class CreateNoteFragment : BaseFragment(), EventDeleteClickListener, CoroutineSc
     private var messageID: Int? = null
     private var startDate: String? = null
     private val job = Job()
+    private val TAG = "CreateNoteFragment"
 
 
     @Inject
@@ -120,6 +122,7 @@ class CreateNoteFragment : BaseFragment(), EventDeleteClickListener, CoroutineSc
             taskTitle = it.getString("titleTask")
             messageID = it.getInt("messageID")
         }
+//        Log.e(TAG, "onCreate: ${taskTitle} - ${messageID}")
     }
 
     override fun onCreateView(
@@ -358,27 +361,35 @@ class CreateNoteFragment : BaseFragment(), EventDeleteClickListener, CoroutineSc
 
             val event: Event = Event()
                 .setSummary(binding.etNoteTitle.text.toString())
-                .setDescription(binding.etNoteDescription.text.toString()?:"")
+                .setDescription(binding.etNoteDescription.text.toString() ?: "")
 
-            val startDateTime = com.google.api.client.util.DateTime("${noteViewModel.noteDate}T${String.format(
-                "%02d",
-                noteViewModel.noteTimeHours
-            )}:${String.format("%02d", noteViewModel.noteTimeMinutes)}:00-07:00")
+            val startDateTime = com.google.api.client.util.DateTime(
+                "${noteViewModel.noteDate}T${
+                    String.format(
+                        "%02d",
+                        noteViewModel.noteTimeHours
+                    )
+                }:${String.format("%02d", noteViewModel.noteTimeMinutes)}:00-07:00"
+            )
             val start = EventDateTime()
                 .setDateTime(startDateTime)
                 .setTimeZone("Asia/Tashkent")
             event.setStart(start)
 
-            val endDateTime = com.google.api.client.util.DateTime("${noteViewModel.noteDate}T${String.format(
-                "%02d",
-                noteViewModel.noteTimeHours
-            )}:${String.format("%02d", noteViewModel.noteTimeMinutes)}:00-07:00")
+            val endDateTime = com.google.api.client.util.DateTime(
+                "${noteViewModel.noteDate}T${
+                    String.format(
+                        "%02d",
+                        noteViewModel.noteTimeHours
+                    )
+                }:${String.format("%02d", noteViewModel.noteTimeMinutes)}:00-07:00"
+            )
             val end = EventDateTime()
                 .setDateTime(endDateTime)
                 .setTimeZone("Asia/Tashkent")
             event.setEnd(end)
 
-            val recurrence = arrayOf("RRULE:FREQ=DAILY","COUNT=2")
+            val recurrence = arrayOf("RRULE:FREQ=DAILY", "COUNT=2")
             event.recurrence = listOf(recurrence) as MutableList<String>
 
             val arrayList = ArrayList<EventAttendee>()
@@ -528,7 +539,7 @@ class CreateNoteFragment : BaseFragment(), EventDeleteClickListener, CoroutineSc
                 datePickerDialog.show()
             }
 
-            setReminder(Pair("O'z vaqtida", 0))
+            setReminder(Pair(getString(R.string.ab1), 0))
             reminderAdd.setOnClickListener {
                 ReminderNoteDialog(requireContext(), this@CreateNoteFragment::setReminder).show()
             }
@@ -691,5 +702,3 @@ class CreateNoteFragment : BaseFragment(), EventDeleteClickListener, CoroutineSc
     override val coroutineContext: CoroutineContext
         get() = job
 }
-
-

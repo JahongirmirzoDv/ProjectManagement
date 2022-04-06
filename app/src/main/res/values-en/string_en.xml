@@ -15,6 +15,8 @@
     <string name="tooltiptext1">Give feedbacks</string>
     <string name="tooltiptext2">Mind map</string>
     <string name="tooltiptext3">Open file</string>
+    <string name="issues">Issues considered</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -217,7 +219,7 @@
     <string name="_example_date_of_birth">14/12/1997</string>
     <string name="error_set_first_name">Pleas enter first Name</string>
     <string name="enter_error_text">Please enter the data in full</string>
-    <string name="enter_your_phone_number">Telefon raqamingizni kiriting</string>
+    <string name="enter_your_phone_number">Enter your phone number</string>
     <string name="enter_your_company">Enter company name</string>
     <string name="enter_your_password">Enter your password</string>
     <string name="confirm_your_password">Confirm your password</string>
@@ -308,6 +310,19 @@
     <string name="edit__">Edit</string>
     <string name="example_report_period">1 month</string>
     <string name="example_permissions">Add staff</string>
+    <string name="ab1">"It's on time"</string>
+    <string name="vaqt1">"5 daqiqa oldin"</string>
+    <string name="vaqt2">"10 minutes ago"</string>
+    <string name="vaqt3">"15 minutes ago"</string>
+    <string name="vaqt4">"30 minutes ago"</string>
+    <string name="vaqt5">"1 hours ago"</string>
+    <string name="vaqt6">"2 hours ago"</string>
+    <string name="vaqt7">"3 hours ago"</string>
+    <string name="vaqt8">"5 hours ago"</string>
+    <string name="vaqt9">"10 hours ago"</string>
+    <string name="vaqt10">"1 days ago"</string>
+    <string name="vaqt11">"2 days ago"</string>
+    <string name="vaqt12">"1 weeks ago"</string>
 
     <string name="january">January</string>
     <string name="february">February</string>

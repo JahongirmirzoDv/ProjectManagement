@@ -51,7 +51,7 @@ class QuickIdeasCategoriesFragment : Fragment() {
                 1 -> tab.text = requireContext().getString(R.string.rating)
                 2 -> tab.text = requireContext().getString(R.string.carried_out)
             }
-            binding.viewPager.setCurrentItem(tab.position, true)
+            binding.viewPager.setCurrentItem(tab.position, false)
         }.attach()
 
         binding.apply {

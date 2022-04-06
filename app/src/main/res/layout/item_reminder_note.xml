@@ -13,8 +13,7 @@
         android:textSize="@dimen/_14sdp"
         app:layout_constraintBottom_toBottomOf="@id/iv_delete_reminder"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/iv_delete_reminder"
-        tools:text="15 daqiqa oldin" />
+        app:layout_constraintTop_toTopOf="@id/iv_delete_reminder" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iv_delete_reminder"

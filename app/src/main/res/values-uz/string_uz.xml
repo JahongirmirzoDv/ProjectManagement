@@ -15,6 +15,19 @@
     <string name="tooltiptext1">Fikr bildirish</string>
     <string name="tooltiptext2">Mind map</string>
     <string name="tooltiptext3">Papka ochish</string>
+    <string name="ab1">"O\'z vaqtida"</string>
+    <string name="vaqt1">"5 daqiqa oldin"</string>
+    <string name="vaqt2">"10 daqiqa oldin"</string>
+    <string name="vaqt3">"15 daqiqa oldin"</string>
+    <string name="vaqt4">"30 daqiqa oldin"</string>
+    <string name="vaqt5">"1 soat oldin"</string>
+    <string name="vaqt6">"2 soat oldin"</string>
+    <string name="vaqt7">"3 soat oldin"</string>
+    <string name="vaqt8">"5 soat oldin"</string>
+    <string name="vaqt9">"10 soat oldin"</string>
+    <string name="vaqt10">"1 kun oldin"</string>
+    <string name="vaqt11">"2 kun oldin"</string>
+    <string name="vaqt12">"1 hafta oldin"</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -625,6 +638,7 @@
     <string name="error_reminder_time">Qancha oldin eslatishini kiriting</string>
     <string name="always">Har doim</string>
     <string name="last_reminder">Oxirgi eslatma sanasi</string>
+    <string name="issues">Ko\'rib chiqilgan masalalar</string>
 
     <string name="create_new_position">Yangi lavozim yaratish</string>
     <string name="__save_updates_title">O\'zgarishlarni saqlaysizmi</string>

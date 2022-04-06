@@ -56,7 +56,7 @@ class PaymentContainerFragment : Fragment() {
                 1 -> tab.text = requireContext().getString(R.string.stuffs)
                 2 -> tab.text = requireContext().getString(R.string.duration)
             }
-            binding.viewPager.setCurrentItem(tab.position, true)
+            binding.viewPager.setCurrentItem(tab.position, false)
         }.attach()
     }
 
