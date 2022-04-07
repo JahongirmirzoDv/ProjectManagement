@@ -34,19 +34,19 @@ class NotificationAdapter(
     override fun onBindViewHolder(holder: VH, position: Int) {
         val itemData = getItem(position)
         val dateTime = DateTime(getItem(position)?.time ?: "")
-        var anatation = "kun"
+        var anatation = R.string.day_1
         var date = Days.daysBetween(dateTime, DateTime.now()).days
         if (date == 0) {
             date = Hours.hoursBetween(dateTime, DateTime.now()).hours
-            anatation = "soat"
+            anatation = R.string.hour_1
         }
         if (date == 0) {
             date = Minutes.minutesBetween(dateTime, DateTime.now()).minutes
-            anatation = "min"
+            anatation = R.string.min_1
         }
         if (date == 0) {
             date = Seconds.secondsBetween(dateTime, DateTime.now()).seconds
-            anatation = "sekund"
+            anatation = R.string.sek_1
         }
 //        val date1 = DateTime(getItem(position)?.time ?: "")
 //        val date2 = DateTime(getItem(position)?.time ?: "")

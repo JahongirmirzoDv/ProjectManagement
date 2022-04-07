@@ -132,8 +132,10 @@ class OthersFragment : Fragment() {
     }
 
     private val logoutUser = EventObserver<Boolean> {
+        val lan = storage.lan ?: "uz"
         val firebaseToken = storage.firebaseToken
         storage.pref.edit().clear().apply()
+        storage.lan = lan
         storage.firebaseToken = firebaseToken
         startActivity(Intent(requireActivity(), EntryActivity::class.java))
         requireActivity().finish()

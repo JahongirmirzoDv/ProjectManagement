@@ -46,7 +46,6 @@ import uz.perfectalgorithm.projects.tezkor.utils.visible
 import javax.inject.Inject
 
 /***
- * Abduraxmonov Abdulla 11/09/2021
  * Bu eslatma uchun detail qismi
  */
 

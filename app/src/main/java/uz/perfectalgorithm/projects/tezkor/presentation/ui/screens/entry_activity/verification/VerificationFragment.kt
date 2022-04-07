@@ -30,7 +30,6 @@ import javax.inject.Inject
 
 
 /***
- * Abduraxmonov Abdulla 11/09/2021
  * bu Kirishdagi Ownerni smsni tasdiqlash qismi
  */
 

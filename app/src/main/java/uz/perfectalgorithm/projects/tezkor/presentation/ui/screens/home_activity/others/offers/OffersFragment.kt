@@ -27,7 +27,6 @@ import uz.perfectalgorithm.projects.tezkor.utils.livedata.EventObserver
 import uz.perfectalgorithm.projects.tezkor.utils.visible
 
 /***
- * Abduraxmonov Abdulla 11/09/2021
  * bu others qismi uchun taklif va shikoyatlar list uchun ui
  */
 

@@ -3,14 +3,16 @@ package uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.entry_activi
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.yariksoffice.lingver.Lingver
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -21,6 +23,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.local_models.dashboard.D
 import uz.perfectalgorithm.projects.tezkor.databinding.FragmentSplashBinding
 import uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.HomeActivity
 import uz.perfectalgorithm.projects.tezkor.presentation.viewmodels.entry_activity.splash.SplashViewModel
+import uz.perfectalgorithm.projects.tezkor.utils.SharedPref
 import uz.perfectalgorithm.projects.tezkor.utils.changeNavigationBarColor
 import uz.perfectalgorithm.projects.tezkor.utils.changeStatusBarColor
 import uz.perfectalgorithm.projects.tezkor.utils.error_handling.makeErrorSnack
@@ -38,6 +41,7 @@ class SplashFragment : Fragment() {
 
     @Inject
     lateinit var storage: LocalStorage
+    private val sharedPref by lazy { SharedPref(requireContext()) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -62,8 +66,8 @@ class SplashFragment : Fragment() {
         requireActivity().changeNavigationBarColor(
             resources.getColor(R.color.splash_bg).toDarkenColor()
         )
-        Handler().postDelayed(
-            Runnable {
+        Handler(Looper.getMainLooper()).postDelayed(
+            {
                 checkUser()
             }, 2000
         )
@@ -72,7 +76,11 @@ class SplashFragment : Fragment() {
     private fun checkUser() {
         if (!storage.completeIntro) {
             lifecycleScope.launchWhenResumed {
-                findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToIntroFragment())
+                if (sharedPref.language) {
+                    findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToLoginFragment())
+                }else{
+                    findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToIntroLanguageFragment())
+                }
             }
         } else if (!storage.logged) {
             findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToLoginFragment())

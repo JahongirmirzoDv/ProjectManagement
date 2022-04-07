@@ -13,25 +13,43 @@
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_create_meeting.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_create_note.xml" value="0.18" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_create_task.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_datings.xml" value="0.1" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_detail_note.xml" value="0.18" />
+        <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_favorites_select.xml" value="0.25" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_intro.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_intro_language.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_language.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_login.xml" value="0.2" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_meeting_detail_update.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_meetings.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_month.xml" value="0.1" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_months_holder.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_navigation_chat.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_notification.xml" value="0.1" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_others.xml" value="0.221025641025641" />
+        <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_outsource_select.xml" value="0.1" />
+        <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_performer_selected.xml" value="0.1" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_personal_conversation.xml" value="0.16" />
+        <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_projects.xml" value="0.1" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_quick_plan_detail_update.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_select_favorites_below.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_setting.xml" value="0.25" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_splash.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_structure.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_structure_select.xml" value="0.1" />
+        <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_tasks.xml" value="0.1" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_workers.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/item_dating_task.xml" value="0.5" />
+        <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/item_functional.xml" value="0.22" />
+        <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/item_goal_map.xml" value="0.1" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/item_language_spinner.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/item_meeting_task.xml" value="0.5" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/item_note_reminder_dialog.xml" value="0.22" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/item_reminder_note.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/language_dialog.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/project_entry.xml" value="0.67" />
+        <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/task_entry.xml" value="0.33" />
+        <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/view_drag_board.xml" value="0.1" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/menu/bottom_nav_menu.xml" value="0.22447916666666667" />
       </map>
     </option>

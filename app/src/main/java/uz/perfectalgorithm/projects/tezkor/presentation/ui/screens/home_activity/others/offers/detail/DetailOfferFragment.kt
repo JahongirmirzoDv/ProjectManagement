@@ -42,7 +42,6 @@ import uz.perfectalgorithm.projects.tezkor.utils.timberLog
 import javax.inject.Inject
 
 /***
- * Abduraxmonov Abdulla 11/09/2021
  * bu others qismi uchun taklif va shikoyatlar detail uchun ui
  */
 

@@ -42,7 +42,6 @@ import kotlin.collections.ArrayList
 
 
 /***
- * Abduraxmonov Abdulla 11/09/2021
  * bu Kalendar qismida hafta uchun ui qismi asosiy qism WeekView custom qilingan
  */
 

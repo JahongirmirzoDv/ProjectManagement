@@ -32,7 +32,6 @@ import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 
 /***
- * Abduraxmonov Abdulla 11/09/2021
  * bu others qismi uchun setting bo'limi
  * bu yerga google integratsiya qo'shish kerak
  * */

@@ -20,7 +20,6 @@ import uz.perfectalgorithm.projects.tezkor.utils.calendar.STAFF_ID
 import uz.perfectalgorithm.projects.tezkor.utils.timberLog
 
 /***
- * Abduraxmonov Abdulla 11/09/2021
  * bu Kalendar qismida oy qismi uchun viewPager ui
  */
 

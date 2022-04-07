@@ -52,7 +52,6 @@ import kotlin.collections.ArrayList
 import kotlin.math.max
 
 /***
- * Abduraxmonov Abdulla 11/09/2021
  * bu Kalendar qismida kun uchun ui qismi asosiy qism DayView custom qilingan
  */
 

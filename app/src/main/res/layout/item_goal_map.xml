@@ -25,7 +25,7 @@
             android:layout_marginTop="@dimen/size_12dp"
             android:layout_marginEnd="@dimen/size_40dp"
             android:layout_marginBottom="@dimen/size_12dp"
-            tools:text="Kiruvchi vazifalar" />
+            tools:text="@string/unwanted_tasks" />
 
         <ImageView
             android:id="@+id/imgDropDownCompany"

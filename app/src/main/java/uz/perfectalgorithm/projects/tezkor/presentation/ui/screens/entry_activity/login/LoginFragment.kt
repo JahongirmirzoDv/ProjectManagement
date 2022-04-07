@@ -41,7 +41,6 @@ import javax.inject.Inject
 
 
 /***
- * Abduraxmonov Abdulla 11/09/2021
  * bu Kirishdagi Login oynasi
  */
 
@@ -63,9 +62,6 @@ class LoginFragment : Fragment() {
         _binding = FragmentLoginBinding.inflate(layoutInflater)
         var locale = Locale(storage.lan ?: "uz")
 
-        if (!sharedPref.language) {
-            locale = dialog()
-        }
 //        Locale.setDefault(locale)
 //        val resources: Resources = resources
 //        val config: Configuration = resources.configuration
@@ -73,47 +69,6 @@ class LoginFragment : Fragment() {
 //        resources.updateConfiguration(config, resources.displayMetrics)
 
         return binding.root
-    }
-
-    @SuppressLint("ResourceAsColor")
-    private fun dialog(): Locale {
-        var locale = Locale(storage.lan ?: "uz")
-        val dialog = Dialog(requireContext())
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        dialog.setCancelable(false)
-        dialog.setContentView(R.layout.language_dialog)
-        dialog.show()
-
-        dialog.findViewById<CardView>(R.id.en_lan_card).setOnClickListener {
-            it.setBackgroundColor(R.color.tanlash)
-            sharedPref.language = true
-            LanguageFragment.setLocale(requireActivity(), "en")
-            storage.lan = "en"
-            locale = Locale(storage.lan ?: "en")
-            dialog.cancel()
-            requireActivity().recreate()
-        }
-
-        dialog.findViewById<CardView>(R.id.ru_lan_card).setOnClickListener {
-            it.setBackgroundColor(R.color.tanlash)
-            sharedPref.language = true
-            LanguageFragment.setLocale(requireActivity(), "ru")
-            storage.lan = "ru"
-            locale = Locale(storage.lan ?: "ru")
-            dialog.cancel()
-            requireActivity().recreate()
-        }
-
-        dialog.findViewById<CardView>(R.id.uz_lan_card).setOnClickListener {
-            it.setBackgroundColor(R.color.tanlash)
-            sharedPref.language = true
-            LanguageFragment.setLocale(requireActivity(), "uz")
-            storage.lan = "uz"
-            locale = Locale(storage.lan ?: "uz")
-            dialog.cancel()
-            requireActivity().recreate()
-        }
-        return locale
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

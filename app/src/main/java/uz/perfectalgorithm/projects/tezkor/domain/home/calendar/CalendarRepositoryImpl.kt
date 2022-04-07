@@ -19,7 +19,6 @@ import javax.inject.Inject
 
 
 /***
- * Abduraxmonov Abdulla 11/09/2021
  * Bu calendar qismi uchun repo qismi bu yerda optimallashtirish kerak
  * 1 context ui Layerda keladi shuni to'g'irlash kerak
  * 2 kelgan datani localga saqlashni optimallashtirish

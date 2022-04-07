@@ -18,7 +18,6 @@ import uz.perfectalgorithm.projects.tezkor.utils.calendar.WEEK_START_DATE_TIME
 import uz.perfectalgorithm.projects.tezkor.utils.calendar.seconds
 
 /***
- * Abduraxmonov Abdulla 11/09/2021
  * bu Kalendar qismida hafta qismi uchun viewPager ui
  */
 

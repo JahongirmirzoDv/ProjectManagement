@@ -37,7 +37,6 @@ import kotlin.collections.ArrayList
 import kotlin.coroutines.CoroutineContext
 
 /***
- * Abduraxmonov Abdulla 11/09/2021
  * bu Kalendar qismida oy uchun ui qismi asosiy qism MonthView va MonthViewWrapper custom qilingan
  */
 

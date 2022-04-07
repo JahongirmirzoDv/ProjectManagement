@@ -7,7 +7,6 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.notifica
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.notification.NotificationResponse
 
 /***
- * Abduraxmonov Abdulla 11/09/2021
  * Bu company qismi uchun api
  */
 

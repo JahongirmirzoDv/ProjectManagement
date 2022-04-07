@@ -88,7 +88,7 @@
         android:fontFamily="@font/inter_regular"
         android:gravity="end"
         android:lines="1"
-        android:text="Kim bilan:"
+        android:text="@string/with_whom"
         android:textSize="@dimen/text_12sp"
         android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@id/tv_time"

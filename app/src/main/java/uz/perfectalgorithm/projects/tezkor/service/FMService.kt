@@ -13,7 +13,6 @@ import javax.inject.Inject
 
 
 /***
- * Abduraxmonov Abdulla 11/09/2021
  * Bu firebasedan keladigan baza uchun service
  */
 @AndroidEntryPoint

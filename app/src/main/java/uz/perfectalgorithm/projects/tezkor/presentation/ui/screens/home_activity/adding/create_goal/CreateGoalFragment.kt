@@ -352,7 +352,7 @@ class CreateGoalFragment : Fragment() {
                         sharedViewModel.participants.value?.map { it.id.toString() }?.toSet()
                             ?: emptySet()
                 }
-                showSelectPersonFragment("Ishtirokchilarni tanlang")
+                showSelectPersonFragment(R.string.select_participants.toString())
             }
 
             cvObservers.setOnClickListener {

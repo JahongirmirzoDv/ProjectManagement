@@ -38,7 +38,6 @@ import uz.perfectalgorithm.projects.tezkor.utils.visible
 import javax.inject.Inject
 
 /***
- * Abduraxmonov Abdulla
  * bu Kirishdagi kompaniya tanlash bo'limi
  */
 

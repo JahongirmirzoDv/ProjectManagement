@@ -9,7 +9,6 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.others.o
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.others.offers.BasePostOfferResponse
 
 /***
- * Abduraxmonov Abdulla 11/09/2021
  * Bu taklif va shikoyatlar qismi uchun api
  */
 

@@ -34,7 +34,6 @@ import javax.inject.Inject
 
 
 /***
- * Abduraxmonov Abdulla
  * Bu notification fragment tepadagi qo'ng'roq  bosilganda chiqadi
  * bu yerdagi ma'lumot pagination orqali olib pageAdapterga beriladi
  */

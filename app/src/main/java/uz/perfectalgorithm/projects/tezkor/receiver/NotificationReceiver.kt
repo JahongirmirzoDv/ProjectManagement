@@ -15,7 +15,6 @@ import uz.perfectalgorithm.projects.tezkor.utils.coroutinescope.CoroutinesScope
 import javax.inject.Inject
 
 /***
- * Abduraxmonov Abdulla 11/09/2021
  * Bu notification qismi uchun reciver
  */
 

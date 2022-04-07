@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import uz.perfectalgorithm.projects.tezkor.R
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.dating.DatingListItem
 import uz.perfectalgorithm.projects.tezkor.databinding.ItemDatingTaskBinding
 import uz.perfectalgorithm.projects.tezkor.utils.`typealias`.SingleBlock
@@ -32,9 +33,9 @@ class DatingAdapter(private val onItemClick: SingleBlock<Int>) :
             root.setOnClickListener {
                 onItemClick(dating.id)
             }
-            tvId.text = "Uchrashuv #${dating.id}"
+            tvId.text = "${R.string.meeting_text} #${dating.id}"
             tvAddress.text = dating.address
-            tvPersonValue.text = dating.partnerIn ?: dating.partnerOut ?: "Noma'lum"
+            tvPersonValue.text = dating.partnerIn ?: dating.partnerOut ?: "${R.string.unknown}"
             tvTitle.text = dating.title
             tvTime.text = dating.startTime.toMeetingDate()
         }

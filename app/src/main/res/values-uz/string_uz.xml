@@ -28,6 +28,10 @@
     <string name="vaqt10">"1 kun oldin"</string>
     <string name="vaqt11">"2 kun oldin"</string>
     <string name="vaqt12">"1 hafta oldin"</string>
+    <string name="unwanted_tasks">Kiruvchi vazifalar</string>
+    <string name="lower_team">Jamoangizda lavozimi siznikidan past bo\'lgan xodimlar mavjud emas</string>
+    <string name="departments_and_staff">Bo\'limlar va xodimlar mavjud emas</string>
+    <string name="select_participants">Ishtirokchilarni tanlang</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -639,6 +643,8 @@
     <string name="always">Har doim</string>
     <string name="last_reminder">Oxirgi eslatma sanasi</string>
     <string name="issues">Ko\'rib chiqilgan masalalar</string>
+    <string name="participants">Qatnashuvchilar</string>
+    <string name="unknown">Noma\'lum</string>
 
     <string name="create_new_position">Yangi lavozim yaratish</string>
     <string name="__save_updates_title">O\'zgarishlarni saqlaysizmi</string>
@@ -658,7 +664,7 @@
     <string name="priority_text">Muhimlik darajasi</string>
     <string name="status_text">Status</string>
     <string name="connecting_to_goal">Maqsadga bog\'lash</string>
-    <string name="members">Ishtirokchilar</string>
+    <string name="members">Ishtirokchilar:</string>
     <string name="observers">Kuzatuvchilar</string>
     <string name="functional_group">Funksional guruh</string>
     <string name="minut_after">daqiqa oldin</string>
@@ -792,7 +798,13 @@
     <string name="new_password">Yangi parol kiriting</string>
     <string name="new_password_txt">Yangi parol</string>
     <string name="conti_nue">Davom etish</string>
-    <string name="with_whom">Kim bilan</string>
+    <string name="with_whom">Kim bilan:</string>
+    <string name="in_progress">Bajarilmoqda</string>
+    <string name="done_1">Bajarilgan</string>
+    <string name="day_1">kun</string>
+    <string name="hour_1">soat</string>
+    <string name="min_1">minut</string>
+    <string name="sek_1">sekund</string>
     <string name="create_tactic_plan">Taktik reja yaratish</string>
     <string name="password_restore">Parolingiz tiklandi</string>
     <string name="send">Yuborish</string>

@@ -30,7 +30,6 @@ import uz.perfectalgorithm.projects.tezkor.utils.visible
 import java.io.File
 
 /***
- * Abduraxmonov Abdulla
  * bu Kirishdagi kompaniya yaratish bo'limi
  */
 

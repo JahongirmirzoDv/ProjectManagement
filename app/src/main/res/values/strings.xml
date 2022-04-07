@@ -14,6 +14,24 @@
     <string name="tooltiptext1">Fikr bildirish</string>
     <string name="tooltiptext2">Mind map</string>
     <string name="tooltiptext3">Papka ochish</string>
+    <string name="ab1">"O\'z vaqtida"</string>
+    <string name="vaqt1">"5 daqiqa oldin"</string>
+    <string name="vaqt2">"10 daqiqa oldin"</string>
+    <string name="vaqt3">"15 daqiqa oldin"</string>
+    <string name="vaqt4">"30 daqiqa oldin"</string>
+    <string name="vaqt5">"1 soat oldin"</string>
+    <string name="vaqt6">"2 soat oldin"</string>
+    <string name="vaqt7">"3 soat oldin"</string>
+    <string name="vaqt8">"5 soat oldin"</string>
+    <string name="vaqt9">"10 soat oldin"</string>
+    <string name="vaqt10">"1 kun oldin"</string>
+    <string name="vaqt11">"2 kun oldin"</string>
+    <string name="vaqt12">"1 hafta oldin"</string>
+    <string name="participants">Qatnashuvchilar</string>
+    <string name="unknown">Noma\'lum</string>
+    <string name="lower_team">Jamoangizda lavozimi siznikidan past bo\'lgan xodimlar mavjud emas</string>
+    <string name="departments_and_staff">Bo\'limlar va xodimlar mavjud emas</string>
+    <string name="select_participants">Ishtirokchilarni tanlang</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -254,6 +272,7 @@
     <string name="example_date_of_birth">7-iyul 1999</string>
     <string name="gender__title">Jins</string>
     <string name="example_gender_">Erkak</string>
+    <string name="done_1">Bajarilgan</string>
 
     <string name="offer">Taklif</string>
     <string name="offers">Takliflar</string>
@@ -643,7 +662,7 @@
     <string name="priority_text">Muhimlik darajasi</string>
     <string name="status_text">Status</string>
     <string name="connecting_to_goal">Maqsadga bog\'lash</string>
-    <string name="members">Ishtirokchilar</string>
+    <string name="members">Ishtirokchilar:</string>
     <string name="observers">Kuzatuvchilar</string>
     <string name="functional_group">Funksional guruh</string>
     <string name="minut_after">daqiqa oldin</string>
@@ -778,7 +797,7 @@
     <string name="new_password">Yangi parol kiriting</string>
     <string name="new_password_txt">Yangi parol</string>
     <string name="conti_nue">Davom etish</string>
-    <string name="with_whom">Kim bilan</string>
+    <string name="with_whom">Kim bilan:</string>
     <string name="create_tactic_plan">Taktik reja yaratish</string>
     <string name="password_restore">Parolingiz tiklandi</string>
     <string name="send">Yuborish</string>
@@ -832,6 +851,11 @@
     <string name="creator__chat">Yaratuvchi</string>
     <string name="admin__chat">Admin</string>
     <string name="member__chat">A\'zo</string>
+    <string name="day_1">kun</string>
+    <string name="hour_1">soat</string>
+    <string name="min_1">minut</string>
+    <string name="sek_1">sekund</string>
+    <string name="unwanted_tasks">Kiruvchi vazifalar</string>
 
     <string name="being_waited">Kutilmoqda</string>
     <string name="will_add">Qatnashaman</string>
@@ -857,7 +881,7 @@
 
     <string name="add_moderator">Moderator tayinlash</string>
     <string name="remove_moderator">Moderatorlikdan olib tashlash</string>
-<!--    <string name="web_client_id">544271487991-74n4tjpuh865ih8uhflqlfho1pfq38pm.apps.googleusercontent.com</string>-->
+    <!--    <string name="web_client_id">544271487991-74n4tjpuh865ih8uhflqlfho1pfq38pm.apps.googleusercontent.com</string>-->
     <string name="server_client_id" translatable="false">851908959408-v3f9j8r9erb89v2dl82qbv2e6eabbkvi.apps.googleusercontent.com</string>
     <string name="group_edit">Tahrirlash</string>
     <string name="set_to_meeting_string">Majlisga belgilash</string>
@@ -875,6 +899,8 @@
     <string name="enter_tactic_plan">Taktik rejani kiriting</string>
     <string name="add_works">Vazifalar guruhi qo\'shish</string>
     <string name="api_key" translatable="false">AIzaSyDZhda0COA31TkFutE8EIp5EgVJSyVzK3Y</string>
-<!--    <string name="edit_works">Vazifalar guruhi qo\'shish</string>-->
+    <!--    <string name="edit_works">Vazifalar guruhi qo\'shish</string>-->
     <string name="name_">Nomi</string>
+    <string name="issues">Ko\'rib chiqilgan masalalar</string>
+    <string name="in_progress">Bajarilmoqda</string>
 </resources>

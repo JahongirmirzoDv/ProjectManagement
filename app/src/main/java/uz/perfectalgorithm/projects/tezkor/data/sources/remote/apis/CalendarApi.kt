@@ -6,7 +6,6 @@ import retrofit2.http.Path
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.calendar.CalendarResponse
 
 /***
- * Abduraxmonov Abdulla 11/09/2021
  * Bu calendar qismi uchun api
  */
 

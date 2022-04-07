@@ -18,7 +18,6 @@ import uz.perfectalgorithm.projects.tezkor.utils.calendar.DAY_CODE
 import uz.perfectalgorithm.projects.tezkor.utils.livedata.EventObserver
 
 /***
- * Abduraxmonov Abdulla 11/09/2021
  * bu Kalendar qismida yil qismi uchun viewPager ui
  */
 

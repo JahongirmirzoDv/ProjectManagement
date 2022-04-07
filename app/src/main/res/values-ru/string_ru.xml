@@ -29,6 +29,11 @@
     <string name="vaqt11">"2 день назад"</string>
     <string name="vaqt12">"1 неделю назад"</string>
     <string name="issues">Рассмотренные вопросы</string>
+    <string name="participants">Участники</string>
+    <string name="unwanted_tasks">Нежелательные задачи</string>
+    <string name="lower_team">В вашей команде нет сотрудников, чья должность ниже вашей</string>
+    <string name="departments_and_staff">Отделы и персонал недоступны</string>
+    <string name="select_participants">Выберите участников</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -76,9 +81,7 @@
     <string name="complaint">Пожаловаться</string>
     <string name="complaint_">Жалоба</string>
     <string name="post_complaint">Оставить жалобу</string>
-    <string name="complaint_for">Кому жаловаться?
-
-:</string>
+    <string name="complaint_for">Кому жаловаться?:</string>
     <string name="noone_selected">Никто не выбран</string>
     <string name="enter_complaint_content">Введите содержание жалобы</string>
     <string name="who_notified">Кто должен быть в курсе?:</string>
@@ -641,6 +644,7 @@
     <string name="error_reminder_time">Введите напоминание, как давно</string>
     <string name="always">Всегда</string>
     <string name="last_reminder">Дата последней записи</string>
+    <string name="unknown">Неизвестный</string>
 
     <string name="create_new_position">Создать новый должность</string>
     <string name="__save_updates_title">Сохранить изменения?</string>
@@ -660,7 +664,7 @@
     <string name="priority_text">Уровень значимости</string>
     <string name="status_text">Статус</string>
     <string name="connecting_to_goal">Привязать к цели</string>
-    <string name="members">Участники</string>
+    <string name="members">Участники:</string>
     <string name="observers">Наблюдатели</string>
     <string name="functional_group">Функциональная группа</string>
     <string name="minut_after">минут назад</string>
@@ -794,7 +798,13 @@
     <string name="new_password">Введите новый пароль</string>
     <string name="new_password_txt">Новый пароль</string>
     <string name="conti_nue">Продолжать</string>
-    <string name="with_whom">С кем?</string>
+    <string name="with_whom">С кем:</string>
+    <string name="in_progress">В ходе выполнения</string>
+    <string name="done_1">Сделанный</string>
+    <string name="day_1">день</string>
+    <string name="hour_1">час</string>
+    <string name="min_1">минуты</string>
+    <string name="sek_1">секунды</string>
     <string name="create_tactic_plan">Создание тактического плана</string>
     <string name="password_restore">Ваш пароль восстановлена</string>
     <string name="send">Отправлять</string>

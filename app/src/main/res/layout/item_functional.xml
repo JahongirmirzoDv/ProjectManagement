@@ -27,7 +27,7 @@
             android:fontFamily="@font/inter_semibold"
             android:textSize="@dimen/text_16sp"
             tools:ignore="MissingConstraints"
-            tools:text="Kiruvchi vazifalar" />
+            tools:text="@string/unwanted_tasks" />
 
         <ImageView
             android:id="@+id/imgDropDownCompany"

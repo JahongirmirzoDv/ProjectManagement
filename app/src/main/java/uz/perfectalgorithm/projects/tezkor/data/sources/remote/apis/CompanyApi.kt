@@ -8,7 +8,6 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.auth.Cre
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.auth.DirectionResponse
 
 /***
- * Abduraxmonov Abdulla 11/09/2021
  * Bu company qismi uchun api
  */
 

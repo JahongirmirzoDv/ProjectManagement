@@ -16,6 +16,10 @@
     <string name="tooltiptext2">Mind map</string>
     <string name="tooltiptext3">Open file</string>
     <string name="issues">Issues considered</string>
+    <string name="participants">Participants</string>
+    <string name="lower_team">There are no employees in your team whose position is lower than yours</string>
+    <string name="departments_and_staff">Departments and staff are not available</string>
+    <string name="select_participants">Select participants</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -127,6 +131,7 @@
     <string name="master_performer">Select director </string>
     <string name="taklif">Offer</string>
     <string name="example_splash_screen">Example Splash Screen</string>
+    <string name="unwanted_tasks">Unwanted tasks</string>
 
     <string-array name="quick_plans">
         <item>Daily</item>
@@ -640,6 +645,7 @@
     <string name="error_reminder_time">Enter a reminder how long ago</string>
     <string name="always">Always</string>
     <string name="last_reminder">Last reminder date</string>
+    <string name="unknown">Unknown</string>
 
     <string name="create_new_position">Create new post</string>
     <string name="__save_updates_title">Do you want to save changes?</string>
@@ -659,7 +665,7 @@
     <string name="priority_text">Iteration degree</string>
     <string name="status_text">Status</string>
     <string name="connecting_to_goal">Connect to goal</string>
-    <string name="members">Participants</string>
+    <string name="members">Participants:</string>
     <string name="observers">Viewers</string>
     <string name="functional_group">Funkctional group</string>
     <string name="minut_after">minutes before</string>
@@ -793,7 +799,7 @@
     <string name="new_password">Enter new password</string>
     <string name="new_password_txt">New password</string>
     <string name="conti_nue">Continue</string>
-    <string name="with_whom">With whom?</string>
+    <string name="with_whom">With whom:</string>
     <string name="create_tactic_plan">Create tactical plan</string>
     <string name="password_restore">Password restored</string>
     <string name="send">Send</string>
@@ -823,6 +829,12 @@
     <string name="there_is_no_own_task">Personal tasks are not available</string>
     <string name="own_tasks">Personal tasks</string>
     <string name="new_uz">New</string>
+    <string name="done_1">Done</string>
+    <string name="day_1">day</string>
+    <string name="hour_1">hour</string>
+    <string name="min_1">minute</string>
+    <string name="sek_1">seconds</string>
+    <string name="in_progress">In progress</string>
     <string name="comments">Comments</string>
     <string name="team">Team</string>
     <string name="there_is_no_worker">Currently staff are not available</string>

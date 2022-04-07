@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import uz.perfectalgorithm.projects.tezkor.R
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.meeting.MeetingListItem
 import uz.perfectalgorithm.projects.tezkor.databinding.ItemMeetingTaskBinding
 import uz.perfectalgorithm.projects.tezkor.utils.`typealias`.SingleBlock
@@ -32,7 +33,7 @@ class MeetingAdapter(private val onItemClick: SingleBlock<Int>) :
             root.setOnClickListener {
                 onItemClick(meeting.id)
             }
-            tvId.text = "Majlis #${meeting.id}"
+            tvId.text = "${R.string.meeting} #${meeting.id}"
             tvAddress.text = meeting.address
             tvLeaderValue.text = meeting.creator
             tvParticipantsValue.text = meeting.membersCount.toString()

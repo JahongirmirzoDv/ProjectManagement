@@ -255,15 +255,15 @@ class GoalDetailUpdateFragment : DetailUpdateBaseFragment<GoalDetails>() {
 
         when (data.statusString) {
             "new" -> {
-                tvStatusTitle.text = "Yangi"
+                tvStatusTitle.text = R.string.new_uz.toString()
                 statusAdd.setImageResource(R.drawable.ic_new)
             }
             "in_progress" -> {
-                tvStatusTitle.text = "Bajarilmoqda"
+                tvStatusTitle.text = R.string.in_progress.toString()
                 statusAdd.setImageResource(R.drawable.ic_play_circle)
             }
             "done" -> {
-                tvStatusTitle.text = "Bajarilgan"
+                tvStatusTitle.text = R.string.done_1.toString()
                 statusAdd.setImageResource(R.drawable.ic_check_circle)
             }
             else -> {

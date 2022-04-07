@@ -53,7 +53,6 @@ import kotlin.coroutines.CoroutineContext
 import kotlin.math.pow
 
 /***
- * Abduraxmonov Abdulla 11/09/2021
  * Bu eslatma uchun create qismi
  */
 

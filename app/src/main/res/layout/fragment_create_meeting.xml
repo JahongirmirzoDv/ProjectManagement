@@ -85,7 +85,7 @@
                             <com.google.android.material.textview.MaterialTextView
                                 android:id="@+id/tv_title_author"
                                 style="@style/TextSmall"
-                                android:text="Muallif"
+                                android:text="@string/author"
                                 android:textSize="@dimen/_11ssp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -702,7 +702,7 @@
                     app:layout_constraintBottom_toBottomOf="@+id/tv_title_repeat"
                     app:layout_constraintEnd_toStartOf="@+id/iv_arrow_repeat"
                     app:layout_constraintTop_toTopOf="@+id/tv_title_repeat"
-                    tools:text="Bir marta" />
+                    tools:text="@string/once" />
 
                 <ImageView
                     android:id="@+id/iv_arrow_repeat"
@@ -853,7 +853,7 @@
                     style="@style/CreateScreensFieldTitle"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:fontFamily="@font/inter_regular"
-                    android:text="Oxirgi eslatma sanasi"
+                    android:text="@string/last_reminder_date"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

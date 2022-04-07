@@ -44,7 +44,7 @@
         android:layout_marginTop="@dimen/size_48dp"
         android:fontFamily="@font/inter_regular"
         android:gravity="center"
-        android:text="Bo'limlar va xodimlar mavjud emas"
+        android:text="@string/departments_and_staff"
         android:textSize="@dimen/text_16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

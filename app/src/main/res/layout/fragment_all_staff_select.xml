@@ -29,7 +29,7 @@
         android:layout_marginTop="@dimen/size_24dp"
         android:fontFamily="@font/inter_regular"
         android:gravity="center"
-        android:text="Xodimlar mavjud emas"
+        android:text="@string/not_available_workers"
         android:textSize="@dimen/text_16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

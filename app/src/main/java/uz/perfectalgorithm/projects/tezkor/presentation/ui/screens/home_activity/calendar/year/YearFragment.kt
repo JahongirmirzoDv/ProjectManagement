@@ -15,7 +15,6 @@ import uz.perfectalgorithm.projects.tezkor.utils.calendar.YEAR_NAME
 import uz.perfectalgorithm.projects.tezkor.utils.timberLog
 
 /***
- * Abduraxmonov Abdulla 11/09/2021
  * bu Kalendar qismida yil uchun ui qismi asosiy qism SmallMonthView custom qilingan va yildagi
  * oylar shundan olingan
  */

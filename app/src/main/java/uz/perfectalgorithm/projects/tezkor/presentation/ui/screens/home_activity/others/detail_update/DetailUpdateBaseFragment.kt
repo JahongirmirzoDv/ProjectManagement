@@ -722,7 +722,7 @@ abstract class DetailUpdateBaseFragment<T : BaseDetails> : Fragment(), EditFileA
                 } else {
                     storage.persons = dataHolder.participants!!.map { it.id.toString() }.toSet()
                 }
-                showSelectPersonFragment("Ishtirokchilarni tanlang")
+                showSelectPersonFragment(R.string.select_participants.toString())
             }
         }
         addParticipants?.setOnClickListener {
@@ -747,7 +747,7 @@ abstract class DetailUpdateBaseFragment<T : BaseDetails> : Fragment(), EditFileA
                 } else {
                     storage.persons = dataHolder.participants!!.map { it.id.toString() }.toSet()
                 }
-                showSelectPersonFragment("Ishtirokchilarni tanlang")
+                showSelectPersonFragment(R.string.select_participants.toString())
             } else {
                 when (originalData) {
                     is ProjectDetails -> {

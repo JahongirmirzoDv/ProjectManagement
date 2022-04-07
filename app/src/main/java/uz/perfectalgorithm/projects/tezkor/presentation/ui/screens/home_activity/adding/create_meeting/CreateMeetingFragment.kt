@@ -242,7 +242,7 @@ CreateMeetingFragment : Fragment(), CoroutineScope {
             } else {
                 storage.persons = meetingDataHolder.participants!!.map { it.id.toString() }.toSet()
             }
-            showSelectPersonFragment("Ishtirokchilarni tanlang")
+            showSelectPersonFragment(R.string.select_participants.toString())
         }
 
         cvFiles.setOnClickListener {

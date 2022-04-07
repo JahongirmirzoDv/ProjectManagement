@@ -17,7 +17,6 @@ import uz.perfectalgorithm.projects.tezkor.utils.calendar.Formatter
 import uz.perfectalgorithm.projects.tezkor.utils.calendar.STAFF_ID
 
 /***
- * Abduraxmonov Abdulla 11/09/2021
  * bu Kalendar qismida day qismi uchun viewPager ui
  */
 
