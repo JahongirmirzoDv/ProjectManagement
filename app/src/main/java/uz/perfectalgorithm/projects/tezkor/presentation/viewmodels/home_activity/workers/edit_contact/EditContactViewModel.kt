@@ -20,9 +20,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.`typealias`.StateFlowWrapper
 import uz.perfectalgorithm.projects.tezkor.utils.coroutinescope.launchCoroutine
 import javax.inject.Inject
 
-/**
- * Created by Davronbek Raximjanov on 14.09.2021 15:06
- **/
+
 
 @HiltViewModel
 class EditContactViewModel @Inject constructor(

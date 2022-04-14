@@ -14,11 +14,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.extensions.setNavigationIcon
 import uz.perfectalgorithm.projects.tezkor.utils.extensions.showAppBar
 
 
-/**
- * Kurganbayev Jasurbek
- * PaymentContainerFragment to'lov tizimidagi oynalardan hisoblanadi
- * to'liq holda tayyor qilingan, design bilan ko'rib qo'yish kerak
- **/
+
 
 @AndroidEntryPoint
 class PaymentContainerFragment : Fragment() {

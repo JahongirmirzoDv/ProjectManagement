@@ -17,10 +17,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.views.drag_board_view.helper.Dr
 import uz.perfectalgorithm.projects.tezkor.utils.views.drag_board_view.model.DragItem
 import java.util.*
 
-/**
- *Created by farrukh_kh on 8/5/21 10:06 PM
- *uz.rdo.projects.projectmanagement.presentation.ui.adapters.home.tasks.projects
- **/
+
 class ProjectItemAdapter(
     context: Context,
     dragHelper: DragHelper,

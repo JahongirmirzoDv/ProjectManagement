@@ -12,9 +12,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.task.Own
 import uz.perfectalgorithm.projects.tezkor.domain.home.adding.create_task.CreateTaskRepository
 import javax.inject.Inject
 
-/**
- * Created by Jasurbek Kurganbaev on 9/24/2021 4:08 PM
- **/
+
 @HiltViewModel
 class OwnTaskViewModel @Inject constructor(
     private val taskRepository: CreateTaskRepository

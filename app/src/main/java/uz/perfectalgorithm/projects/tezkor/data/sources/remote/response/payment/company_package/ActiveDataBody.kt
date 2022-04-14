@@ -2,9 +2,7 @@ package uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.payment
 
 import com.google.gson.annotations.SerializedName
 
-/**
- * Created by Jasurbek Kurganbaev on 8/26/2021 11:28 AM
- **/
+
 data class ActiveDataBody(
 
     @field:SerializedName("staff_id")

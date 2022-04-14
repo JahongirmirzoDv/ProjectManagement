@@ -34,6 +34,31 @@
     <string name="lower_team">В вашей команде нет сотрудников, чья должность ниже вашей</string>
     <string name="departments_and_staff">Отделы и персонал недоступны</string>
     <string name="select_participants">Выберите участников</string>
+    <string name="select_image">Выберите изображение</string>
+    <string name="add_to_group">Добавить в группу</string>
+    <string name="created_toast">Создано успешно</string>
+    <string name="edited_toast">Успешно изменено</string>
+    <string name="month_">месяц</string>
+    <string name="error_employe">Количество сотрудников должно быть больше 1</string>
+    <string name="error_company">Пакет вашей компании не найден. Купить пакет</string>
+    <string name="plan">Планы</string>
+    <string name="ended">выполнена</string>
+    <string name="boshlandi">началось</string>
+    <string name="yangilandi">обновлен</string>
+
+    <string name="internet_error">Нет подключения к интернету</string>
+    <string name="registration_error">Произошла ошибка в регистрационных данных</string>
+    <string name="payment_error">Это должно быть оплачено. Произошла ошибка в платежной информации</string>
+    <string name="not_found_error">Информация, которую вы ищете, не доступна</string>
+    <string name="permission_error">У вас нет на это разрешения. Свяжитесь с вашим боссом</string>
+    <string name="server_error">Произошла ошибка при отправке запроса на сервер</string>
+    <string name="server_error_two">Произошла ошибка на сервере</string>
+    <string name="unknown_error">Произошла неизвестная ошибка. Попробуйте позже</string>
+    <string name="phone_number_error">Номер телефона или пароль неверный</string>
+    <string name="company_error">Активировать компанию. Связаться с администратором</string>
+    <string name="employe_limit_error">Лимит персонала исчерпан. Купите новый пакет.</string>
+    <string name="error_error">Произошла ошибка. Попробуйте позже</string>
+    <string name="sucsess_sucsess">Успешно завершено</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -365,6 +390,7 @@
     <string name="can_edit_position">Изменить должность</string>
     <string name="can_delete_position">Удалить должность</string>
     <string name="can_manage_calendar_of_company">Управление календарем</string>
+    <string name="permiss">Разрешения</string>
 
     <string name="add_permissions_permission_title">Добавить разрешения</string>
     <string name="example_chat_receiver">Рахимджанов Давронбек</string>
@@ -489,6 +515,18 @@
     <string name="back">Назад</string>
     <string name="back_move">Вернуться назад</string>
     <string name="edit_message_title">Изменить</string>
+    <string name="buy_new">Купить новый пакет</string>
+    <string name="wallet">Посмотреть баланс</string>
+    <string name="ta">""</string>
+    <string name="oy">""</string>
+    <string name="buy_worker">Количество сотрудников было успешно набрано</string>
+    <string name="buy_date">Термин был успешно приобретен</string>
+    <string name="chane_package">Пакет активирован</string>
+    <string name="error_notfound">Пакеты не найдены.
+        Связаться с администратором</string>
+    <string name="error_enough">Баланса компании недостаточно.
+        Пополнить счет</string>
+
 
     <string name="message_edited_result">Сообщение изменено</string>
     <string name="profile_title">Профил</string>
@@ -499,7 +537,7 @@
     <string name="payment_history">История платежей</string>
     <string name="fill_balance">Пополнить счет</string>
     <string name="add_staff">Увеличение количества сотрудников</string>
-    <string name="staff_count">Ограничение по количеству сотрудников:</string>
+    <string name="staff_count">Ограничение по \nколичеству сотрудников:</string>
     <string name="staff_real_count">Количество сотрудников</string>
     <string name="slash"> / </string>
     <string name="lifetime_text">Срок действия</string>
@@ -512,7 +550,7 @@
     <string name="duration_working">Выберите время выполнения</string>
     <string name="balance">Баланс</string>
     <string name="stuffs">Сотрудники</string>
-    <string name="duration">Срок:</string>
+    <string name="duration">Срок (месяц):</string>
     <string name="technic_work">Технические работы</string>
     <string name="app_bar_payment_screen">Панель приборов</string>
     <string name="app_bar_title_compass_chat">Общий</string>
@@ -645,6 +683,8 @@
     <string name="always">Всегда</string>
     <string name="last_reminder">Дата последней записи</string>
     <string name="unknown">Неизвестный</string>
+    <string name="error_dialog">Свяжитесь с администратором или повторите попытку позже</string>
+
 
     <string name="create_new_position">Создать новый должность</string>
     <string name="__save_updates_title">Сохранить изменения?</string>
@@ -883,7 +923,7 @@
 
     <string name="add_moderator">Назначить модератора</string>
     <string name="remove_moderator">Снятие с модерации</string>
-<!--    <string name="web_client_id">544271487991-74n4tjpuh865ih8uhflqlfho1pfq38pm.apps.googleusercontent.com</string>-->
+    <!--    <string name="web_client_id">544271487991-74n4tjpuh865ih8uhflqlfho1pfq38pm.apps.googleusercontent.com</string>-->
     <string name="group_edit">Редактировать</string>
     <string name="set_to_meeting_string">Назначение во встречу</string>
     <string name="set_to_note_string">Назначить заметку</string>

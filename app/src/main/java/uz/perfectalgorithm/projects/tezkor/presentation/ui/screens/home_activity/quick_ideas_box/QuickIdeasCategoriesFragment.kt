@@ -14,12 +14,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.extensions.showAppBar
 import uz.perfectalgorithm.projects.tezkor.utils.gone
 import uz.perfectalgorithm.projects.tezkor.utils.visible
 
-/**
- * Kurganbayev Jasurbek
- * QuickIdeasCategoriesFragment idealar 3ta kategoriyaga bo'lingan
- * bajarilgan, jarayonda(in progress), tugatilgan oynasi
- * to'liq holda tayyor qilingan, design bilan ko'rib qo'yish kerak
- **/
+
 
 class QuickIdeasCategoriesFragment : Fragment() {
     private var _binding: FragmentQuickIdeasCategoriesBinding? = null

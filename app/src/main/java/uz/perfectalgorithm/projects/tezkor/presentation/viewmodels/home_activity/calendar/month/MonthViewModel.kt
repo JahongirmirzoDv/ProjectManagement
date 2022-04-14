@@ -18,7 +18,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MonthViewModel @Inject constructor(
-    private val calendarRepository: CalendarRepository
+    var client: com.google.api.services.calendar.Calendar,
+    private val calendarRepository: CalendarRepository,
 ) :
     ViewModel() {
 

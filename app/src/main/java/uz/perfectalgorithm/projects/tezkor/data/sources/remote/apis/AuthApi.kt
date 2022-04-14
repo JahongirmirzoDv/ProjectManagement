@@ -15,9 +15,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.reset_pa
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.reset_password.VerificationNewPasswordResponse
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.save_company.UserDataWithCompanyResponse
 
-/**
- * Created by Davronbek Raximjanov on 17.06.2021 17:28
- **/
+
 
 interface AuthApi {
 

@@ -8,10 +8,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.enums.HierarchyPositions
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.project.PersonData
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.workers.structure_short.PositionStructureShort
 
-/**
- *Created by farrukh_kh on 10/31/21 10:32 AM
- *uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.workers
- **/
+
 data class AllWorkersShortResponse(
     @field:SerializedName("data")
     val data: List<AllWorkersShort>,

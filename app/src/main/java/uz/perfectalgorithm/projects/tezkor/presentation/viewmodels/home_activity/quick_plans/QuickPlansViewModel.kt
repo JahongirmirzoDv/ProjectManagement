@@ -15,9 +15,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.quick_pl
 import uz.perfectalgorithm.projects.tezkor.domain.home.quick_plan.QuickPlanRepository
 import javax.inject.Inject
 
-/**
- * Created by Jasurbek Kurganbaev on 19.06.2021 14:54
- **/
+
 @HiltViewModel
 class QuickPlansViewModel @Inject constructor(
     private val quickPlanRepository: QuickPlanRepository

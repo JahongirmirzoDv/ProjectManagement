@@ -13,9 +13,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.`typealias`.SingleBlock
 import uz.perfectalgorithm.projects.tezkor.utils.extensions.bindItem
 import uz.perfectalgorithm.projects.tezkor.utils.extensions.loadImageUrl
 
-/**
- * Created by Davronbek Raximjanov on 22.06.2021
- **/
+
 
 class ContactStructureWorkerAdapter(
     private val positionsItem: StructureResponse.PositionsItem,

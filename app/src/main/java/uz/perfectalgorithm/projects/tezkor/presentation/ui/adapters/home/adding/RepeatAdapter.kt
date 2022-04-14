@@ -7,10 +7,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.repititi
 import uz.perfectalgorithm.projects.tezkor.databinding.ItemRepeatBinding
 import uz.perfectalgorithm.projects.tezkor.utils.`typealias`.SingleBlock
 
-/**
- *Created by farrukh_kh on 8/10/21 3:02 PM
- *uz.rdo.projects.projectmanagement.presentation.ui.adapters.home.adding
- **/
+
 class RepeatAdapter(
     private val items: List<RepetitionData>,
     private val onItemClick: SingleBlock<RepetitionData>

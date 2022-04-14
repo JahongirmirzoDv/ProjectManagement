@@ -13,9 +13,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.`typealias`.StateFlowWrapper
 import uz.perfectalgorithm.projects.tezkor.utils.coroutinescope.launchCoroutine
 import javax.inject.Inject
 
-/**
- * Created by Jasurbek Kurganbaev on 19.06.2021 17:48
- **/
+
 
 @HiltViewModel
 class CreateMeetingViewModel @Inject constructor(

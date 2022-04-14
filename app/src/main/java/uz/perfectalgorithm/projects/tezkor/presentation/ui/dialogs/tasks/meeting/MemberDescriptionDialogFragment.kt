@@ -12,10 +12,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import uz.perfectalgorithm.projects.tezkor.databinding.FragmentDialogMemberDescriptionBinding
 import uz.perfectalgorithm.projects.tezkor.utils.extensions.loadImageUrl
 
-/**
- *Created by farrukh_kh on 8/30/21 9:56 PM
- *uz.rdo.projects.projectmanagement.presentation.ui.dialogs.tasks.meeting
- **/
+
 @AndroidEntryPoint
 class MemberDescriptionDialogFragment : DialogFragment() {
 

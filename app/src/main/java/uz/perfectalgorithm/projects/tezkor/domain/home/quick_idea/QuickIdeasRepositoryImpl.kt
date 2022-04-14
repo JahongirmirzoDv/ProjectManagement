@@ -14,9 +14,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.prepareImageFilePart
 import java.io.File
 import javax.inject.Inject
 
-/**
- * Created by Jasurbek Kurganbaev on 20.07.2021 15:22
- **/
+
 class QuickIdeasRepositoryImpl @Inject constructor(
     private val quickIdeasApi: QuickIdeasApi
 ) : QuickIdeasRepository {

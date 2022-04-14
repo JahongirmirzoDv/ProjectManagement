@@ -13,9 +13,7 @@ import uz.perfectalgorithm.projects.tezkor.domain.home.others.OthersRepository
 import uz.perfectalgorithm.projects.tezkor.utils.livedata.Event
 import javax.inject.Inject
 
-/**
- * Created by Davronbek Raximjanov on 21.06.2021 13:17
- **/
+
 
 @HiltViewModel
 class OthersViewModel @Inject constructor(

@@ -8,9 +8,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.request.tasks.Upd
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.request.tasks.folder.CreateFolderRequest
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.task.*
 
-/**
- * Created by Jasurbek Kurganbaev on 26.06.2021 10:39
- **/
+
 interface FunctionalTaskRepository {
 
     fun getFunctionalTaskFolderList(): Flow<Result<List<TaskFolderListItem>>>

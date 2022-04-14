@@ -885,7 +885,7 @@
                     app:layout_constraintBottom_toBottomOf="@+id/tv_title_repeat"
                     app:layout_constraintEnd_toStartOf="@+id/iv_add_repeat"
                     app:layout_constraintTop_toTopOf="@+id/tv_title_repeat"
-                    tools:text="Bir marta" />
+                    tools:text="@string/once" />
 
                 <ImageView
                     android:id="@+id/iv_add_repeat"

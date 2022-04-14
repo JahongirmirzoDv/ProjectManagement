@@ -11,10 +11,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.local_models.dashboard.D
 import uz.perfectalgorithm.projects.tezkor.domain.home.task.functional.FunctionalTaskRepository
 import javax.inject.Inject
 
-/**
- *Created by farrukh_kh on 9/8/21 2:53 PM
- *uz.rdo.projects.projectmanagement.presentation.viewmodels.home_activity.adding.create_task
- **/
+
 @HiltViewModel
 class CreateTaskDialogViewModel @Inject constructor(
     private val taskRepository: FunctionalTaskRepository

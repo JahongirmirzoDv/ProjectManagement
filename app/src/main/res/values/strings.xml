@@ -32,6 +32,24 @@
     <string name="lower_team">Jamoangizda lavozimi siznikidan past bo\'lgan xodimlar mavjud emas</string>
     <string name="departments_and_staff">Bo\'limlar va xodimlar mavjud emas</string>
     <string name="select_participants">Ishtirokchilarni tanlang</string>
+    <string name="select_image">Rasmni tanlang</string>
+    <string name="internet_error">Internet aloqasi mavjud emas</string>
+    <string name="registration_error">Ro\'yxatdan o\'tish ma\'lumotlarida xatolik ro\'y berdi</string>
+    <string name="payment_error">To\'lov qilinishi lozim. To\'lov ma\'lumotlarida xatolik ro\'y berdi</string>
+    <string name="not_found_error">Siz izlayotgan ma\'lumot mavjud emas</string>
+    <string name="permission_error">Bu amalni bajarish uchun sizda ruxsat yo\'q. Rahbaringizga murojaat qiling</string>
+    <string name="server_error">Serverga so\'rov yuborishda xatolik ro\'y berdi</string>
+    <string name="server_error_two">Serverda xatolik yuz berdi</string>
+    <string name="unknown_error">Nomalum xatolik ro\'y berdi. Birozdan so\'ng urinib ko\'ring</string>
+    <string name="phone_number_error">Telefon raqam yoki parol noto\'g\'ri</string>
+    <string name="company_error">Kompaniyani aktivlashtiring. Administrator bilan bog\'laning</string>
+    <string name="employe_limit_error">Xodimlar limiti tugadi. Yangi paket sotib oling.</string>
+    <string name="error_error">Xatolik ro\'y berdi. Birozdan so\'ng urinib ko\'ring</string>
+    <string name="sucsess_sucsess">Muvaffaqiyatli bajarildi</string>
+
+
+
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -110,6 +128,9 @@
     <string name="section_name">Bo\'lim nomi</string>
     <string name="enter_name">Nomini kiriting</string>
     <string name="created">Yaratildi</string>
+    <string name="ended">Tugadi</string>
+    <string name="boshlandi">boshlandi</string>
+    <string name="yangilandi">yangilandi</string>
     <string name="position_name">Lavozim nomi</string>
     <string name="add_officer">Xodim qo\'shish</string>
     <string name="create_password">Parol yaratish</string>
@@ -428,6 +449,7 @@
     <string name="app_bar_ideas_rating">Idealar reytingi</string>
     <string name="app_bar_create_meeting">Majlis yaratish</string>
     <string name="app_bar_create_dating">Uchrashuv yaratish</string>
+    <string name="add_to_group">Guruhga qo\'shish</string>
 
     <!--IdeaBox-->
     <string name="alert">Diqqat!</string>
@@ -449,6 +471,23 @@
     <string name="edit_message_text">O\'zgartirish</string>
     <string name="delete_message">O\'chirish</string>
     <string name="select_message">Belgilash</string>
+    <string name="created_toast">Muvaffaqqiyatli yaratildi</string>
+    <string name="edited_toast">Muvaffaqqiyatli o\'zartirildi</string>
+    <string name="permiss">Ruxsatlar</string>
+    <string name="buy_new">Yangi paket sotib olish</string>
+    <string name="wallet">Balansni ko\'rish</string>
+    <string name="ta">ta</string>
+    <string name="oy">oy</string>
+    <string name="month_">oy</string>
+    <string name="buy_worker">Xodim soni muvaffaqqiyatli sotib olindi</string>
+    <string name="buy_date">Muddat muvaffaqqiyatli sotib olindi</string>
+    <string name="chane_package">Paket aktivlashtirildi</string>
+    <string name="error_dialog">Admin bilan bog\'laning yoki birozdan so\'ng urinib ko\'ring</string>
+    <string name="error_notfound">Paketlar topilmadi. Administrator bilan bog\'laning</string>
+    <string name="error_enough">Kompaniya balansi yetarli emas.  Hisobingizni to\'ldiring</string>
+    <string name="error_employe">Xodimlar soni 1 dan katta bo\'lishi lozim</string>
+    <string name="error_company">Kompaniyangiz paketi topilmadi. Paket sotib oling</string>
+    <string name="plan">Rejalar</string>
 
     <string name="delete_messages_report">Xabar muvaffaqiyatli o\'chirildi</string>
     <string name="delete_message_title_dialog">Xabarni o\'chirish</string>
@@ -511,7 +550,7 @@
     <string name="duration_working">Ishlash muddatini tanlang</string>
     <string name="balance">Balans</string>
     <string name="stuffs">Xodimlar</string>
-    <string name="duration">Muddat:</string>
+    <string name="duration">Muddat (oy):</string>
     <string name="technic_work">Texnik ishlar</string>
     <string name="app_bar_payment_screen">Dashboard</string>
     <string name="app_bar_title_compass_chat">Umumiy</string>

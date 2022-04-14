@@ -1,5 +1,6 @@
 package uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.calendar.month
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,11 +14,15 @@ import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccoun
 import com.google.api.services.calendar.model.Events
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import org.joda.time.DateTime
 import uz.perfectalgorithm.projects.tezkor.R
-import uz.perfectalgorithm.projects.tezkor.data.sources.local.LocalDatabase
 import uz.perfectalgorithm.projects.tezkor.data.sources.local.LocalStorage
 import uz.perfectalgorithm.projects.tezkor.data.sources.local_models.calendar.DayMonthly
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.calendar.CalendarResponse
@@ -31,14 +36,10 @@ import uz.perfectalgorithm.projects.tezkor.utils.error_handling.makeErrorSnack
 import uz.perfectalgorithm.projects.tezkor.utils.extensions.hide
 import uz.perfectalgorithm.projects.tezkor.utils.extensions.show
 import uz.perfectalgorithm.projects.tezkor.utils.livedata.EventObserver
+import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
-import kotlin.collections.ArrayList
 import kotlin.coroutines.CoroutineContext
-
-/***
- * bu Kalendar qismida oy uchun ui qismi asosiy qism MonthView va MonthViewWrapper custom qilingan
- */
 
 @AndroidEntryPoint
 class MonthFragment : Fragment(), CoroutineScope {
@@ -47,6 +48,7 @@ class MonthFragment : Fragment(), CoroutineScope {
         get() = _binding ?: throw NullPointerException(
             resources.getString(R.string.null_binding)
         )
+
     @Inject
     lateinit var storage: LocalStorage
 
@@ -60,6 +62,14 @@ class MonthFragment : Fragment(), CoroutineScope {
     private var startDateCode = ""
     private var staffId = -1
     private val days = ArrayList<DayMonthly>()
+
+
+    private val _state = MutableStateFlow<ArrayList<CalendarResponse.Event>?>(null)
+    val state: StateFlow<ArrayList<CalendarResponse.Event>?>
+        get() = _state
+
+    lateinit var list: MutableSharedFlow<CalendarResponse.Event?>
+
 
     private val getProgressData = EventObserver<Boolean> { it ->
         if (it) {
@@ -77,28 +87,36 @@ class MonthFragment : Fragment(), CoroutineScope {
         }
     }
     private val getDayEvents = Observer<List<CalendarResponse.Event>> { it ->
-        addEvents(it)
-//        val calendar = getCalendar()
-//        days.forEach {
-//            it.dayEvents.addAll(calendar)
-//        }
+//        addEvents(it)
+        launch(Dispatchers.Main) {
+            state.collect {
+                it?.let { it1 -> addEvents(it1) }
+//                Log.e(TAG, "size : : ${it?.size}")
+            }
+        }
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        getCalendar()
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentMonthBinding.inflate(layoutInflater, container, false)
         startDateCode = requireArguments().getString(DAY_CODE, "")
         staffId = requireArguments().getInt(STAFF_ID)
         viewModel.getMonthDataWithoutEvents(startDateCode)
         viewModel.getMonthWithoutEvents.observe(viewLifecycleOwner, getDataObserver)
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         loadObservers()
+
         if (staffId > 0) {
 //            viewModel.getMonthEventsStaff(
 //                Formatter.getDateTimeFromCode(startDateCode),
@@ -115,24 +133,43 @@ class MonthFragment : Fragment(), CoroutineScope {
         viewModel.errorLiveData.observe(viewLifecycleOwner, getError)
     }
 
-    fun getCalendar(): List<CalendarResponse.Event> {
+    fun getCalendar() {
+        val df = SimpleDateFormat("yyyy-MM-dd", Locale.US)
+        var current_date = df.format(Calendar.getInstance().time)
         val list = ArrayList<CalendarResponse.Event>()
         launch {
             var pageToken: String? = null
-            do {
+            try {
+                list.clear()
                 val events: Events =
-                    client.events().list(storage.calendarID).setPageToken(pageToken).execute()
+                    client.events().list("primary").setPageToken(pageToken).execute()
                 val items = events.items
                 var i = 0
                 for (event in items) {
-                    i++
-//                    list.add(CalendarResponse.Event(event.end.timeZone,event.id.toInt(),event.start.timeZone,event.summary,event.kind,event.status))
-                    Log.d("calendar page $i", "getCalendar: ${event.summary}")
+                    val toString =
+                        if (event.end.dateTime != null) event.end.dateTime.toString() else current_date
+                    val toString2 =
+                        if (event.start.dateTime != null) event.start.dateTime.toString() else current_date
+//                    Log.e(TAG, "data_time: ${toString}_${toString2}_${event.summary}")
+                    val event1 = CalendarResponse.Event(
+                        if (toString.length > 10) toString.substring(0,
+                            toString.length - 10) else toString,
+                        event.sequence,
+                        if (toString2.length > 10) toString2.substring(0,
+                            toString2.length - 10) else toString2,
+                        event.summary,
+                        if (event.kind.contains("event")) "note" else "task",
+                       idLocalBase = i++
+                    )
+                    Log.e("TAG", "getCalendar: ${event1}\n")
+                    list.add(event1)
                 }
                 pageToken = events.nextPageToken
-            } while (pageToken != null)
+                _state.value = list
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
         }
-        return list
     }
 
     private fun addEvents(monthEvents: List<CalendarResponse.Event>) {
@@ -178,7 +215,18 @@ class MonthFragment : Fragment(), CoroutineScope {
     private fun updateDays(days: ArrayList<DayMonthly>) {
         binding.monthViewWrapper.updateDays(days, true) {
             (parentFragment as MonthHolderFragment).itemClick(it.code)
-            Toast.makeText(requireContext(), "${it.code}", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(requireContext(), "${it.code}", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        getCalendar()
+        launch(Dispatchers.Main) {
+            state.collect {
+                it?.let { it1 -> addEvents(it1) }
+//                Log.e(TAG, "size : : ${it?.size}")
+            }
         }
     }
 

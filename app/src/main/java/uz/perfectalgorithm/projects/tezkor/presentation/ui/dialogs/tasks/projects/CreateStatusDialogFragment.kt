@@ -26,10 +26,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.error_handling.handleCustomExce
 import uz.perfectalgorithm.projects.tezkor.utils.error_handling.handleException
 import javax.inject.Inject
 
-/**
- *Created by farrukh_kh on 8/5/21 10:42 PM
- *uz.rdo.projects.projectmanagement.presentation.ui.dialogs.tasks.projects
- **/
+
 @AndroidEntryPoint
 class CreateStatusDialogFragment : DialogFragment() {
 

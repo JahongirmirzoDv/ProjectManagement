@@ -6,9 +6,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.idea_com
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.idea_comment.PostCommentBody
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.idea_comment.PostCommentResponse
 
-/**
- * Created by Jasurbek Kurganbaev on 04.08.2021 13:35
- **/
+
 interface IdeaCommentApi {
 
     @POST("/api/v1/idea/idea-comment/")

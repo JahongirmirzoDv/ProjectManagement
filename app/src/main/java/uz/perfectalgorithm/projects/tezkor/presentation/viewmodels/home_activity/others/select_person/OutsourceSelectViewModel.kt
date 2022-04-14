@@ -13,10 +13,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.workers.
 import uz.perfectalgorithm.projects.tezkor.domain.home.workers.WorkersRepository
 import javax.inject.Inject
 
-/**
- *Created by farrukh_kh on 11/3/21 8:50 AM
- *uz.perfectalgorithm.projects.tezkor.presentation.viewmodels.home_activity.others.select_person
- **/
+
 @HiltViewModel
 class OutsourceSelectViewModel @Inject constructor(
     private val workersRepository: WorkersRepository

@@ -10,9 +10,7 @@ import uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity
 import uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.tasks.dating.DatingsFragment
 import uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.tasks.tactic_plan.TacticPlansFragment
 
-/**
- * Created by Jasurbek Kurganbaev on 25.06.2021 15:34
- **/
+
 class ViewStateMeetingDashboardAdapter(
     fragmentManager: FragmentManager,
     lifecycle: Lifecycle

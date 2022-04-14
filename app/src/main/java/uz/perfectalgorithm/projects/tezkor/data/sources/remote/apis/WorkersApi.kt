@@ -11,9 +11,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.workers.
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.workers.structure.*
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.workers.structure_short.StructureShortResponse
 
-/**
- * Created by Davronbek Raximjanov on 16.06.2021
- **/
+
 
 interface WorkersApi {
 

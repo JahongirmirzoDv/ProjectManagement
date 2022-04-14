@@ -5,10 +5,7 @@ import retrofit2.http.*
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.request.tasks.status.CreateStatusRequest
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.status.StatusResponse
 
-/**
- *Created by farrukh_kh on 7/26/21 6:16 PM
- *uz.rdo.projects.projectmanagement.data.sources.remote.apis
- **/
+
 
 interface TaskStatusApi {
 

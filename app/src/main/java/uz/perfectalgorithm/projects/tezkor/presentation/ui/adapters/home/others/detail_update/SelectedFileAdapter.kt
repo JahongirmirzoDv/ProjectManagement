@@ -15,10 +15,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.download.getExtension
 import uz.perfectalgorithm.projects.tezkor.utils.inVisible
 import uz.perfectalgorithm.projects.tezkor.utils.visible
 
-/**
- *Created by farrukh_kh on 10/25/21 9:40 AM
- *uz.perfectalgorithm.projects.tezkor.presentation.ui.adapters.home.others.detail_update
- **/
+
 class SelectedFileAdapter(
     private val itemClickListener: SelectedFileAdapterListener,
     private var isEditorMode: Boolean = false

@@ -145,7 +145,7 @@
         android:paddingStart="@dimen/size_16dp"
         android:paddingTop="@dimen/size_12dp"
         android:paddingBottom="@dimen/size_12dp"
-        android:text="Ishtirokchilar"
+        android:text="@string/partipinats"
         android:textColor="@color/colorDarkBlue"
         android:textSize="14sp"
         app:layout_constraintTop_toBottomOf="@+id/ll_main_" />

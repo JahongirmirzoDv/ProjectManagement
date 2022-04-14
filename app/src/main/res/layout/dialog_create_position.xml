@@ -150,7 +150,7 @@
             android:id="@+id/txt_title_permissions"
             style="@style/TextTitleStyle"
             android:layout_marginTop="@dimen/size_8dp"
-            android:text="Ruxsatlar"
+            android:text=""
             app:layout_constraintStart_toStartOf="@+id/txt_title"
             app:layout_constraintTop_toBottomOf="@+id/spn_departments" />
 

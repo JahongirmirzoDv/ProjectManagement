@@ -11,10 +11,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.workers.
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.workers.AllWorkersShort
 import java.io.Serializable
 
-/**
- *Created by farrukh_kh on 10/31/21 10:18 AM
- *uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.workers.structure_short
- **/
+
 data class StructureShortResponse(
     @field:SerializedName("data")
     val data: DataStructureShort? = null,

@@ -1,8 +1,6 @@
 package uz.perfectalgorithm.projects.tezkor.presentation.ui.adapters.home.tasks.functional
 
-/**
- * Created by Jasurbek Kurganbaev on 26.06.2021 10:37
- **/
+
 
 import android.view.LayoutInflater
 import android.view.View

@@ -20,6 +20,29 @@
     <string name="lower_team">There are no employees in your team whose position is lower than yours</string>
     <string name="departments_and_staff">Departments and staff are not available</string>
     <string name="select_participants">Select participants</string>
+    <string name="select_image">Select an image</string>
+    <string name="add_to_group">Add to group</string>
+    <string name="created_toast">Successfully created</string>
+    <string name="edited_toast">Successfully modified</string>
+    <string name="permiss">Permissions</string>
+    <string name="ended">completed</string>
+    <string name="boshlandi">started</string>
+    <string name="yangilandi">updated</string>
+
+    <string name="internet_error">There is no internet connection</string>
+    <string name="registration_error">An error occurred in the registration information</string>
+    <string name="payment_error">It has to be paid. An error occurred in the payment information</string>
+    <string name="not_found_error">The information you are looking for is not available</string>
+    <string name="permission_error">You do not have permission to do this. Contact your boss</string>
+    <string name="server_error">An error occurred while sending a request to the server</string>
+    <string name="server_error_two">An error occurred on the server</string>
+    <string name="unknown_error">An unknown error occurred. Try again later</string>
+    <string name="phone_number_error">Phone number or password is incorrect</string>
+    <string name="company_error">Activate the company. Contact the administrator</string>
+    <string name="employe_limit_error">The staff limit is over. Buy a new package.</string>
+    <string name="error_error">An error occurred. Try again later</string>
+    <string name="sucsess_sucsess">Successfully completed</string>
+
 
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -430,6 +453,10 @@
     <string name="app_bar_ideas_rating">Ideas rating</string>
     <string name="app_bar_create_meeting">Create counsel</string>
     <string name="app_bar_create_dating">Create meeting</string>
+    <string name="error_employe">The number of employees must be greater than 1</string>
+    <string name="error_company">Your company package was not found. Buy the package</string>
+    <string name="plan">Plans</string>
+
 
     <!--IdeaBox-->
     <string name="alert">Attention!</string>
@@ -490,6 +517,18 @@
     <string name="back">Back</string>
     <string name="back_move">Go back</string>
     <string name="edit_message_title">Edit</string>
+    <string name="buy_new">Buy a new package</string>
+    <string name="wallet">View balance</string>
+    <string name="ta">""</string>
+    <string name="oy">""</string>
+    <string name="month_">month</string>
+    <string name="buy_worker">The number of employees was successfully acquired</string>
+    <string name="buy_date">The term was successfully acquired</string>
+    <string name="chane_package">The package is activated</string>
+    <string name="error_dialog">Contact the admin or try again later</string>
+    <string name="error_notfound">Packages not found. "" Contact Administrator</string>
+    <string name="error_enough">The company balance is not enough. "" Top up your account</string>
+
 
     <string name="message_edited_result">Message edited</string>
     <string name="profile_title">Profile</string>
@@ -513,7 +552,7 @@
     <string name="duration_working">Select work time</string>
     <string name="balance">Balance</string>
     <string name="stuffs">Staff</string>
-    <string name="duration">Period:</string>
+    <string name="duration">Period (month):</string>
     <string name="technic_work">Technic works</string>
     <string name="app_bar_payment_screen">Dashboard</string>
     <string name="app_bar_title_compass_chat">General</string>

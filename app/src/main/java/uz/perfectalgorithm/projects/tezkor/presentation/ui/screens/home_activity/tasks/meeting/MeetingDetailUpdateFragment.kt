@@ -54,10 +54,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.views.setDropDownClick
 import java.io.File
 import javax.inject.Inject
 
-/**
- *Created by farrukh_kh on 8/11/21 10:51 AM
- *uz.rdo.projects.projectmanagement.presentation.ui.screens.home_activity.tasks.meeting
- **/
+
 /**
  * Majlis detail-edit oynasi
  * TODO:
@@ -485,7 +482,7 @@ class MeetingDetailUpdateFragment : DetailUpdateBaseFragment<MeetingDetails>() {
                 this@MeetingDetailUpdateFragment,
                 binding.progressLayout.progressLoader
             ) {
-                makeSuccessSnack("Muvaffaqiyatli o'zgartirildi")
+                makeSuccessSnack(R.string.edited_toast.toString())
                 deletedFiles.clear()
                 newFiles.clear()
                 dataHolder.clear()
@@ -499,7 +496,7 @@ class MeetingDetailUpdateFragment : DetailUpdateBaseFragment<MeetingDetails>() {
             }
 
             updateResponseChecked.simpleCollect(this@MeetingDetailUpdateFragment, binding.progressLayout.progressLoader) {
-                makeSuccessSnack("Muvaffaqiyatli o'zgartirildi")
+                makeSuccessSnack(R.string.edited_toast.toString())
                 changeChecked(it.id, it.participated)
                 binding.progressLayout.progressLoader.isVisible = false
             }
@@ -816,7 +813,7 @@ class MeetingDetailUpdateFragment : DetailUpdateBaseFragment<MeetingDetails>() {
     }
 
     private fun getReminderText(minutes: Int) = when {
-        minutes == 0 -> "O'z vaqtida"
+        minutes == 0 ->getString(R.string.on_time)
         minutes in 1..59 -> "$minutes daqiqa oldin"
         minutes >= 60 && minutes < 60 * 24 -> "${minutes / 60} soat oldin"
         minutes >= 60 * 24 && minutes < 60 * 24 * 7 -> "${minutes / (60 * 24)} kun oldin"

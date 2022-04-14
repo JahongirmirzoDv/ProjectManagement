@@ -11,10 +11,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.status.S
 import uz.perfectalgorithm.projects.tezkor.utils.views.drag_board_view.model.DragColumn
 import uz.perfectalgorithm.projects.tezkor.utils.views.drag_board_view.model.DragItem
 
-/**
- *Created by farrukh_kh on 8/5/21 9:57 PM
- *uz.rdo.projects.projectmanagement.data.sources.remote.response.project
- **/
+
 data class ProjectsByStatus(
     @field:SerializedName("id")
     override val id: Int,

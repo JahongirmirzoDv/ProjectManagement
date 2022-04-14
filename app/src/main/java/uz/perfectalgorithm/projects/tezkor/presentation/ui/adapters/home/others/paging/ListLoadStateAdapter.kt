@@ -8,10 +8,7 @@ import androidx.paging.LoadStateAdapter
 import androidx.recyclerview.widget.RecyclerView
 import uz.perfectalgorithm.projects.tezkor.databinding.ItemListLoadStateBinding
 
-/**
- *Created by farrukh_kh on 8/21/21 5:19 PM
- *uz.rdo.projects.projectmanagement.presentation.ui.adapters.home.others.paging
- **/
+
 class ListLoadStateAdapter(private val retry: () -> Unit) :
     LoadStateAdapter<ListLoadStateAdapter.ListLoadStateViewHolder>() {
 

@@ -27,11 +27,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.keypboard.showAlertDialog
 import uz.perfectalgorithm.projects.tezkor.utils.visible
 import javax.inject.Inject
 
-/**
- * Kurganbayev Jasurbek
- * PersonalQuickIdeaFragment shaxsiy idea oynasi
- * to'liq holda tayyor qilingan, design bilan ko'rib qo'yish kerak
- **/
+
 
 @AndroidEntryPoint
 class PersonalQuickIdeaFragment : Fragment() {

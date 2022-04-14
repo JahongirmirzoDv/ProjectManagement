@@ -15,10 +15,8 @@ import uz.perfectalgorithm.projects.tezkor.utils.`typealias`.MutableStateFlowWra
 import uz.perfectalgorithm.projects.tezkor.utils.`typealias`.StateFlowWrapper
 import javax.inject.Inject
 
-/**
- *Created by farrukh_kh on 7/13/21 4:28 PM
- *uz.rdo.projects.projectmanagement.presentation.viewmodels.home_activity.dashboard
- **/
+
+
 @HiltViewModel
 class DashboardViewModel @Inject constructor(
     private val dashboardRepository: DashboardRepository,

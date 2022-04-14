@@ -12,9 +12,7 @@ import uz.perfectalgorithm.projects.tezkor.databinding.ItemGoalMapGoalProjectBin
 import uz.perfectalgorithm.projects.tezkor.utils.`typealias`.SingleBlock
 import uz.perfectalgorithm.projects.tezkor.utils.extensions.bindItem
 
-/**
- * Created by Jasurbek Kurganbaev on 16.07.2021 16:32
- **/
+
 class MapProjectAdapter(
     private val onProjectClick: SingleBlock<Int>,
     private val onTaskClick: SingleBlock<Int>

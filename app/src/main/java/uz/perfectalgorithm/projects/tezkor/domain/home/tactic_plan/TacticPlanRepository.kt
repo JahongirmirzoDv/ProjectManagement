@@ -6,10 +6,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.request.tactic_pl
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.request.tactic_plan.UpdateTacticPlanRequest
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.tactic_plan.*
 
-/**
- *Created by farrukh_kh on 7/29/21 10:55 AM
- *uz.rdo.projects.projectmanagement.domain.home.tactic_plan
- **/
+
 interface TacticPlanRepository {
 
     suspend fun getTacticPlans(): DataWrapper<List<TacticPlan>>

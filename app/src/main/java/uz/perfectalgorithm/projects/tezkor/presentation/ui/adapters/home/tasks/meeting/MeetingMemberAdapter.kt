@@ -14,10 +14,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.extensions.loadImageUrl
 import uz.perfectalgorithm.projects.tezkor.utils.extensions.show
 import uz.perfectalgorithm.projects.tezkor.utils.gone
 
-/**
- *Created by farrukh_kh on 8/30/21 10:13 PM
- *uz.rdo.projects.projectmanagement.presentation.ui.adapters.home.tasks.meeting
- **/
+
 class MeetingMemberAdapter(
     private val onDescriptionClick: SingleBlock<MeetingMember>
 ) : ListAdapter<MeetingMember, MeetingMemberAdapter.VH>(ITEM_CALLBACK) {

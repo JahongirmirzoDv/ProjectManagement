@@ -11,10 +11,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.task.Tas
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.workers.structure_short.PositionStructureShort
 import uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.others.detail_update.BaseDetails
 
-/**
- *Created by farrukh_kh on 8/6/21 8:33 AM
- *uz.rdo.projects.projectmanagement.data.sources.remote.response.project
- **/
+
 data class ProjectDetails(
     @field:SerializedName("id")
     override val id: Int,

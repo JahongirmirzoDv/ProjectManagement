@@ -8,10 +8,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.request.dashboard
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.request.dashboard.DashboardStatisticsRequest
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.dashboard.*
 
-/**
- *Created by farrukh_kh on 9/22/21 9:51 AM
- *uz.perfectalgorithm.projects.tezkor.data.sources.remote.apis
- **/
+
 
 interface DashboardApi {
 

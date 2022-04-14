@@ -19,10 +19,7 @@ import uz.perfectalgorithm.projects.tezkor.domain.home.task.project_status.Proje
 import uz.perfectalgorithm.projects.tezkor.domain.home.task.task_status.TaskStatusRepository
 import javax.inject.Inject
 
-/**
- *Created by farrukh_kh on 8/9/21 9:11 AM
- *uz.rdo.projects.projectmanagement.presentation.viewmodels.home_activity.others
- **/
+
 @HiltViewModel
 class DeleteViewModel @Inject constructor(
     private val projectRepository: ProjectRepository,

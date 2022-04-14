@@ -5,9 +5,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.idea_comment.*
 
-/**
- * Created by Jasurbek Kurganbaev on 04.08.2021 13:42
- **/
+
 interface IdeaCommentRepository {
 
     val emptyCommentsListener: ((Boolean) -> Unit)?

@@ -72,6 +72,7 @@ class CreateGoalFragment : Fragment() {
     private var _binding: FragmentCreateGoalBinding? = null
     private val binding: FragmentCreateGoalBinding
         get() = _binding ?: throw NullPointerException("View wasn't created")
+    private val sharedPref by lazy { SharedPref(requireContext()) }
 
     private var navController: NavController? = null
 
@@ -274,7 +275,8 @@ class CreateGoalFragment : Fragment() {
                     tvBeginTime,
                     requireContext(),
                     createGoalViewModel,
-                    requireParentFragment()
+                    requireParentFragment(),
+
                 )
             }
 
@@ -611,7 +613,7 @@ class CreateGoalFragment : Fragment() {
 
     private val createGoalObserver = Observer<CreateGoalData> {
         sharedViewModel.clear()
-        makeSuccessSnack("Muvaffaqqiyatli yaratildi")
+        makeSuccessSnack(R.string.created_toast.toString())
         findNavController().navigateUp()
     }
 

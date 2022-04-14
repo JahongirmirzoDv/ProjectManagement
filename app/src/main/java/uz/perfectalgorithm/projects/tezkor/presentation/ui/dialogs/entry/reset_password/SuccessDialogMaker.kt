@@ -12,9 +12,7 @@ import uz.perfectalgorithm.projects.tezkor.databinding.SuccessDialogBinding
 import uz.perfectalgorithm.projects.tezkor.utils.`typealias`.EmptyBlock
 import uz.perfectalgorithm.projects.tezkor.utils.keypboard.showAlertDialog
 
-/**
- * Created by Jasurbek Kurganbaev on 9/21/2021 11:55 AM
- **/
+
 object SuccessDialogMaker {
     fun showSuccessDialog(
         context: Context,

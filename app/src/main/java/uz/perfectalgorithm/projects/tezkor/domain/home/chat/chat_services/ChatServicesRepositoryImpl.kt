@@ -13,9 +13,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.toBitmap
 import java.net.URL
 import javax.inject.Inject
 
-/**
- * Created by Davronbek Raximjanov on 18.08.2021
- **/
+
 
 class ChatServicesRepositoryImpl @Inject constructor(
     private val storage: LocalStorage,

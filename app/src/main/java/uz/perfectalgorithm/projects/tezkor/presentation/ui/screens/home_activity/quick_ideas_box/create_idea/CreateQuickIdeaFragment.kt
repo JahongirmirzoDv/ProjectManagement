@@ -45,11 +45,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.helper.FileHelper
 import uz.perfectalgorithm.projects.tezkor.utils.keypboard.showAlertDialog
 import java.io.File
 
-/**
- * Kurganbayev Jasurbek
- * CreateQuickIderFragment tezlor idealar yaratish oynasi oynasi
- * to'liq holda tayyor qilingan, design bilan ko'rib qo'yish kerak
- **/
+
 
 @AndroidEntryPoint
 class CreateQuickIdeaFragment : Fragment() {

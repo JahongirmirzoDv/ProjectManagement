@@ -11,10 +11,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.meeting.
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.meeting.MeetingDetails
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.meeting.MeetingListItem
 
-/**
- *Created by farrukh_kh on 7/24/21 10:03 AM
- *uz.rdo.projects.projectmanagement.data.sources.remote.apis
- **/
+
 interface MeetingApi {
 
     @Multipart

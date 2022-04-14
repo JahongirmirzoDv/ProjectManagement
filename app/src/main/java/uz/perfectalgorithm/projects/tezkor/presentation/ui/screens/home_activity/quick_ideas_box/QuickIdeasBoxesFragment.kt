@@ -179,7 +179,7 @@ class QuickIdeasBoxesFragment : Fragment() {
         quickIdeasBoxAdapter.submitList(ls)
         binding.quickIdeasBoxList.smoothScrollToPosition(ls.size - 1)
         binding.tvError.gone()
-        makeSuccessSnack("Muvaffaqqiyatli yaratildi")
+        makeSuccessSnack(R.string.created_toast.toString())
 
     }
 

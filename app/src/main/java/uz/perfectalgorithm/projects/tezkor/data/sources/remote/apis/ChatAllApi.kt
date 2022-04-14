@@ -18,9 +18,6 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.chat.per
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.chat.personal.conversation_messages.UpdateTaskMessageResponse
 import java.io.File
 
-/**
- *  *  * Created by Raximjanov Davronbek on 22.09.2021 11:10
- **/
 
 interface ChatAllApi {
 

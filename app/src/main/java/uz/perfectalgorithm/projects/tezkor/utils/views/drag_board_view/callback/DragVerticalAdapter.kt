@@ -2,10 +2,7 @@ package uz.perfectalgorithm.projects.tezkor.utils.views.drag_board_view.callback
 
 import uz.perfectalgorithm.projects.tezkor.utils.views.drag_board_view.model.DragItem
 
-/**
- *Created by farrukh_kh on 8/3/21 9:43 PM
- *uz.rdo.projects.projectmanagement.utils.views.drag_board_view.callback
- **/
+
 interface DragVerticalAdapter {
     /**
      * call if on dragItem item

@@ -23,10 +23,7 @@ import uz.perfectalgorithm.projects.tezkor.presentation.viewmodels.home_activity
 import uz.perfectalgorithm.projects.tezkor.presentation.viewmodels.home_activity.tasks.meeting.member.SelectMemberStateViewModel
 import uz.perfectalgorithm.projects.tezkor.utils.error_handling.handleException
 
-/**
- *Created by farrukh_kh on 8/31/21 1:47 PM
- *uz.rdo.projects.projectmanagement.presentation.ui.dialogs.tasks.meeting
- **/
+
 @AndroidEntryPoint
 class WriteMemberDescriptionDialogFragment : DialogFragment() {
 

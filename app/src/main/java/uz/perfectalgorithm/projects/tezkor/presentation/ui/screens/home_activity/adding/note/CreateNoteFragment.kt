@@ -126,7 +126,7 @@ class CreateNoteFragment : BaseFragment(), EventDeleteClickListener, CoroutineSc
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentCreateNoteBinding.inflate(layoutInflater)
         hideAppBar()
@@ -331,33 +331,36 @@ class CreateNoteFragment : BaseFragment(), EventDeleteClickListener, CoroutineSc
             }:${String.format("%02d", noteViewModel.noteTimeMinutes)}"
 
         if (isInputCompleted) {
-            val noteRequest = NotePostRequest(
-                startDateTime,
-                if (messageID != null) messageID else null,
-                repeatMode,
-                binding.etNoteDescription.text.toString(),
-                binding.etNoteTitle.text.toString(),
-                if (repeatMode == listRepetitionServer[2]) {
-                    repeatWeekRule
-                } else {
-                    repeatMonthRule
-                },
-                reminders = reminderList.asSequence().mapNotNull { it.minutesTime }
-                    .toMutableList(),
-                if (binding.repeatText.text != getString(R.string.once) && binding.reminderDateText.text != getString(
-                        R.string.always
-                    )
-                ) untilDateTime.toString(
-                    Formatter.SIMPLE_TIME_PATTERN
-                ) else null
-            )
-            noteViewModel.postNote(noteRequest)
+            try {
+                val noteRequest = NotePostRequest(
+                    startDateTime,
+                    if (messageID != null) messageID else null,
+                    repeatMode,
+                    binding.etNoteDescription.text.toString(),
+                    binding.etNoteTitle.text.toString(),
+                    if (repeatMode == listRepetitionServer[2]) {
+                        repeatWeekRule
+                    } else {
+                        repeatMonthRule
+                    },
+                    reminders = reminderList.asSequence().mapNotNull { it.minutesTime }
+                        .toMutableList(),
+                    if (binding.repeatText.text != getString(R.string.once) && binding.reminderDateText.text != getString(
+                            R.string.always
+                        )
+                    ) untilDateTime.toString(
+                        Formatter.SIMPLE_TIME_PATTERN
+                    ) else null
+                )
+                noteViewModel.postNote(noteRequest)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
         }
     }
 
     private fun syncGoogleCalendar() {
         launch {
-
             val event: Event = Event()
                 .setSummary(binding.etNoteTitle.text.toString())
                 .setDescription(binding.etNoteDescription.text.toString() ?: "")
@@ -405,7 +408,7 @@ class CreateNoteFragment : BaseFragment(), EventDeleteClickListener, CoroutineSc
 
             try {
 
-                val e = client.events().insert("${storage.calendarID}", event).execute()
+                client.events().insert("${storage.calendarID}", event).execute()
                 // Do whatever you want with the Drive service
             } catch (e: UserRecoverableAuthIOException) {
                 startActivityForResult(e.intent, 1)
@@ -414,7 +417,7 @@ class CreateNoteFragment : BaseFragment(), EventDeleteClickListener, CoroutineSc
     }
 
     private fun makeDestroy() {
-        makeSuccessSnack("Muvaffaqqiyatli saqlandi")
+        makeSuccessSnack(getString(R.string.created_toast))
         findNavController().previousBackStackEntry?.savedStateHandle?.set(
             "taskSuccessful",
             true
@@ -482,6 +485,19 @@ class CreateNoteFragment : BaseFragment(), EventDeleteClickListener, CoroutineSc
 
 
     private fun initView() {
+
+//        launch {
+//            do {
+//                var pageToken: String? = null
+//                val execute = client.CalendarList().list().execute()
+//                for (e in execute.items) {
+//
+//                    Log.e("calendar$e", "getCalendar: ${e.summary} - ${e.description}")
+//                }
+//                pageToken = execute.nextPageToken
+//            } while (pageToken != null)
+//        }
+
         reminderAdapter = NoteReminderAdapter(requireContext(), this)
         binding.rvReminder.adapter = reminderAdapter
         binding.rvReminder.layoutManager = LinearLayoutManager(requireContext())

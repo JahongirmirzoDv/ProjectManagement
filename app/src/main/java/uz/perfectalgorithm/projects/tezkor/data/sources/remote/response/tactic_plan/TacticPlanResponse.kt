@@ -6,10 +6,7 @@ import kotlinx.parcelize.Parcelize
 import uz.perfectalgorithm.projects.tezkor.utils.views.drag_board_view.model.DragColumn
 import uz.perfectalgorithm.projects.tezkor.utils.views.drag_board_view.model.DragItem
 
-/**
- *Created by farrukh_kh on 7/29/21 10:43 AM
- *uz.rdo.projects.projectmanagement.data.sources.remote.response.tactic_plan
- **/
+
 //data class TacticPlanResponse(
 //    @field:SerializedName("id")
 //    val id: Int,

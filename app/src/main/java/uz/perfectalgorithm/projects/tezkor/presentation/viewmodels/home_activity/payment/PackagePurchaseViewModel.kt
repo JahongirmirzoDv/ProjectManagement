@@ -15,9 +15,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.payment.
 import uz.perfectalgorithm.projects.tezkor.domain.home.payment.company_package.PackageRepository
 import javax.inject.Inject
 
-/**
- * Created by Jasurbek Kurganbaev on 8/24/2021 11:57 AM
- **/
+
 @HiltViewModel
 class PackagePurchaseViewModel @Inject constructor(
     private val packageRepository: PackageRepository

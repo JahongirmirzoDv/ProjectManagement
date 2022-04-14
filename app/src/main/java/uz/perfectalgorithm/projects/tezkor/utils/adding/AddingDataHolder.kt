@@ -17,10 +17,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.task.Tas
 import uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.others.detail_update.FilesItem
 import java.io.File
 
-/**
- *Created by farrukh_kh on 8/9/21 8:22 PM
- *uz.rdo.projects.projectmanagement.utils.adding
- **/
+
 
 /**
  * Create va Edit qismlardagi user input ni saqlash uchun holder class

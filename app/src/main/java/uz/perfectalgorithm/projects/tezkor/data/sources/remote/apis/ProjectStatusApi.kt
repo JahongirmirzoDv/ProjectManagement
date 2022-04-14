@@ -5,9 +5,6 @@ import retrofit2.http.*
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.request.tasks.status.CreateStatusRequest
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.status.StatusResponse
 
-/**
- * Created by Jasurbek Kurganbaev on 10.07.2021 11:08
- **/
 interface ProjectStatusApi {
 
     @GET("/api/v1/project/project-status/")

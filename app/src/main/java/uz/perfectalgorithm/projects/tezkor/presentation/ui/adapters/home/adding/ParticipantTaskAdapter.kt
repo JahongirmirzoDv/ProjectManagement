@@ -11,9 +11,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.`typealias`.SingleBlock
 import uz.perfectalgorithm.projects.tezkor.utils.extensions.bindItem
 import uz.perfectalgorithm.projects.tezkor.utils.extensions.loadImageUrl
 
-/**
- * Created by Jasurbek Kurganbaev on 05.07.2021 17:08
- **/
+
 class ParticipantTaskAdapter :
     ListAdapter<PersonData, ParticipantTaskAdapter.VH>(ITEM_FUNC_TASK_ITEM) {
 

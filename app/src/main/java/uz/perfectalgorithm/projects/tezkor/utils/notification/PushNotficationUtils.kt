@@ -44,8 +44,6 @@ fun Context.pushNotifyEvent(type: String, id: Int, title: String, action: String
 
 private fun getPendingIntent(context: Context, type: String, id: Int): PendingIntent {
 
-
-
     when (type) {
         "dating" -> {
             val args = bundleOf("datingId" to id)

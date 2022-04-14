@@ -2,10 +2,7 @@ package uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.quick_p
 
 import com.google.gson.annotations.SerializedName
 
-/**
- *Created by farrukh_kh on 8/18/21 11:48 AM
- *uz.rdo.projects.projectmanagement.data.sources.remote.response.quick_plan
- **/
+
 data class QuickPlan(
     @field:SerializedName("id")
     val id: Int,

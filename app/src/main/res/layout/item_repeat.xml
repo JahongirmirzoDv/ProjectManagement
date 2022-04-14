@@ -15,7 +15,7 @@
         android:textColor="@color/black"
         android:textSize="@dimen/text_16sp"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Bir marta" />
+        tools:text="@string/once" />
 
     <View
         android:id="@+id/divider1"

@@ -12,10 +12,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.request.quick_pla
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.source.QuickPlanPagingSource
 import javax.inject.Inject
 
-/**
- *Created by farrukh_kh on 8/18/21 11:56 AM
- *uz.rdo.projects.projectmanagement.domain.home.quick_plan
- **/
+
 class QuickPlanRepositoryImpl @Inject constructor(
     private val quickPlanApi: QuickPlanApi
 ) : QuickPlanRepository {

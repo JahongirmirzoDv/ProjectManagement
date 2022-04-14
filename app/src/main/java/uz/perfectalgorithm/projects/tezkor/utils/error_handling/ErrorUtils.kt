@@ -25,6 +25,7 @@ import com.google.gson.reflect.TypeToken
 import kotlinx.parcelize.Parcelize
 import retrofit2.HttpException
 import uz.perfectalgorithm.projects.tezkor.R
+import uz.perfectalgorithm.projects.tezkor.app.App
 import uz.perfectalgorithm.projects.tezkor.data.sources.enums.errors.CompanyErrorsEnum
 import uz.perfectalgorithm.projects.tezkor.data.sources.enums.errors.OtherErrorsEnum
 import uz.perfectalgorithm.projects.tezkor.data.sources.local.LocalStorage
@@ -35,54 +36,66 @@ import java.io.IOException
 import java.net.HttpURLConnection
 
 
-/**
- *Created by farrukh_kh on 9/7/21 8:58 AM
- *uz.rdo.projects.projectmanagement.utils.error_handling
- **/
 sealed class HandledError(val title: String) : Parcelable {
 
     @Parcelize
-    class ConnectionError(private val message: String = "Internet aloqasi mavjud emas") :
+    class ConnectionError(
+        private val message: String = App.instance.getString(R.string.internet_error)
+    ) :
         HandledError(message)
 
     @Parcelize
-    class AuthError(private val message: String = "Ro'yxatdan o'tish ma'lumotlarida xatolik ro'y berdi") :
+    class AuthError(
+        private val message: String = App.instance.getString(R.string.registration_error)
+    ) :
         HandledError(message)
 
     @Parcelize
-    class PaymentError(private val message: String = "To'lov qilinishi lozim. To'lov ma'lumotlarida xatolik ro'y berdi") :
+    class PaymentError(
+        private val message: String = App.instance.getString(R.string.payment_error)
+    ) :
         HandledError(message)
 
     @Parcelize
-    class NotFoundError(private val message: String = "Siz izlayotgan ma'lumot mavjud emas") :
+    class NotFoundError(
+        private val message: String = App.instance.getString(R.string.not_found_error)
+    ) :
         HandledError(message)
 
     @Parcelize
-    class PermissionError(private val message: String = "Bu amalni bajarish uchun sizda ruxsat yo'q. Rahbaringizga murojaat qiling") :
+    class PermissionError(
+        private val message: String = App.instance.getString(R.string.permission_error)
+    ) :
         HandledError(message)
 
     @Parcelize
-    class BadRequestError(private val message: String = "Serverga so'rov yuborishda xatolik ro'y berdi") :
+    class BadRequestError(
+        private val message: String = App.instance.getString(R.string.server_error)
+    ) :
         HandledError(message)
 
     @Parcelize
-    class ServerError(private val message: String = "Serverda xatolik yuz berdi") :
+    class ServerError(
+        private val message: String = App.instance.getString(R.string.server_error_two)
+    ) :
         HandledError(message)
 
     @Parcelize
-    class UnknownError(private val message: String = "Nomalum xatolik ro'y berdi. Birozdan so'ng urinib ko'ring") :
+    class UnknownError(
+        private val message: String = App.instance.getString(R.string.unknown_error)
+    ) :
         HandledError(message)
 
     @Parcelize
-    class WrongCredentialsError(private val message: String = "Telefon raqam yoki parol noto'g'ri") :
+    class WrongCredentialsError(private val message: String = App.instance.getString(R.string.phone_number_error)) :
         HandledError(message)
 
     @Parcelize
-    class ActivateCompanyError(private val message: String = "Kompaniyani aktivlashtiring. Administrator bilan bog'laning") :
+    class ActivateCompanyError(private val message: String = App.instance.getString(R.string.company_error)) :
         HandledError(message)
 
     @Parcelize
-    class StaffLimitError(private val message: String = "Xodimlar limiti tugadi. Yangi paket sotib oling.") :
+    class StaffLimitError(private val message: String = App.instance.getString(R.string.employe_limit_error)) :
         HandledError(message)
 
     @Parcelize
@@ -96,8 +109,9 @@ sealed class HandledError(val title: String) : Parcelable {
     @Parcelize
     class ParsedError(
         val error: ParsedErrorResponse,
-        private val message: String = "Xatolik ro'y berdi. Birozdan so'ng urinib ko'ring"
+        private val message: String = App.instance.getString(R.string.error_error)
     ) : HandledError(message)
+
 }
 
 fun Fragment.handleException(exception: Exception) {
@@ -234,16 +248,16 @@ fun HttpException.isStaffLimitError() = try {
     false
 }
 
-fun Fragment.makeErrorSnack(message: String = "Internet aloqasi mavjud emas") {
+fun Fragment.makeErrorSnack(message: String = App.instance.getString(R.string.internet_error)) {
     makeSnackBar(message, R.drawable.bg_error_snackbar)
 }
 
-fun Fragment.makeSuccessSnack(message: String = "Muvaffaqiyatli bajarildi") {
+fun Fragment.makeSuccessSnack(message: String = App.instance.getString(R.string.sucsess_sucsess)) {
     makeSnackBar(message, R.drawable.bg_success_snackbar)
 }
 
 fun Fragment.makeSnackBar(
-    message: String = "Internet aloqasi mavjud emas",
+    message: String = App.instance.getString(R.string.internet_error),
     @DrawableRes background: Int = R.drawable.bg_error_snackbar
 ) {
     // TODO: 9/19/21 make shadow_layer visible with anim
@@ -318,6 +332,7 @@ fun Fragment.makeSnackBar(
         }
     }
 }
+
 
 @Parcelize
 data class ParsedErrorResponse(

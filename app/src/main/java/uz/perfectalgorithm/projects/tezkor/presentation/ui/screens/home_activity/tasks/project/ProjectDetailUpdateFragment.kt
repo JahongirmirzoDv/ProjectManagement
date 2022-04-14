@@ -251,7 +251,7 @@ class ProjectDetailUpdateFragment : DetailUpdateBaseFragment<ProjectDetails>() {
                 this@ProjectDetailUpdateFragment,
                 binding.progressLayout.progressLoader
             ) {
-                makeSuccessSnack("Muvaffaqiyatli o'zgartirildi")
+                makeSuccessSnack(R.string.edited_toast.toString())
                 deletedFiles.clear()
                 newFiles.clear()
                 dataHolder.clear()

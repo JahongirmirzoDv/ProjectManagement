@@ -739,7 +739,7 @@
                         android:layout_marginStart="@dimen/_22sdp"
                         android:layout_marginTop="@dimen/_20sdp"
                         android:fontFamily="@font/inter_regular"
-                        android:text="Ishtirokchilar"
+                        android:text="@string/partipinats"
                         android:textSize="@dimen/_12ssp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"

@@ -12,9 +12,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.`typealias`.SingleBlock
 import uz.perfectalgorithm.projects.tezkor.utils.extensions.bindItem
 import uz.perfectalgorithm.projects.tezkor.utils.extensions.loadImageUrl
 
-/**
- * Created by Kurganbaev Jasurbek on 29.06.2021
- **/
+
 
 class ContactStructureLeaderAdapter(private val positionsItem: StructureResponse.PositionsItem) :
     ListAdapter<AllWorkersResponse.DataItem, ContactStructureLeaderAdapter.VH>(DIFF_CHANNEL_CALLBACK) {

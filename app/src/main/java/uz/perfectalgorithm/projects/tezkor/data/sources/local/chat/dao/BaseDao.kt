@@ -5,9 +5,6 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Update
 
-/**
- * Created by Davronbek Raximjanov on 16.07.2021
- **/
 
 interface BaseDao<T> {
     @Update

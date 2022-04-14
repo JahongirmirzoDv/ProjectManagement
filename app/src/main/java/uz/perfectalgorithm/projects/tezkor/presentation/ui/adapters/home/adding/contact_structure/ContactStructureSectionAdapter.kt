@@ -18,9 +18,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.extensions.bindItem
 import uz.perfectalgorithm.projects.tezkor.utils.gone
 import uz.perfectalgorithm.projects.tezkor.utils.visible
 
-/**
- * Created by Kurganbaev Jasurbek on 22.06.2021
- **/
+
 
 class ContactStructureSectionAdapter(/*private val onWorkerClick: SingleBlock<AllWorkersResponse.DataItem>*/) :
     ListAdapter<StructureResponse.DataItem, ContactStructureSectionAdapter.VH>(DIFF_CHANNEL_CALLBACK) {

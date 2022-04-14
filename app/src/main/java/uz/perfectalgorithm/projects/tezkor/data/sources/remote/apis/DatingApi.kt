@@ -7,10 +7,7 @@ import retrofit2.http.*
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.dating.DatingDetails
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.dating.DatingListItem
 
-/**
- *Created by farrukh_kh on 7/24/21 10:04 AM
- *uz.rdo.projects.projectmanagement.data.sources.remote.apis
- **/
+
 interface DatingApi {
 
     @Multipart

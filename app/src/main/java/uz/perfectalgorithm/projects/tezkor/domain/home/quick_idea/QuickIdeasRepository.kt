@@ -4,9 +4,7 @@ import kotlinx.coroutines.flow.Flow
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.quick_idea.*
 import java.io.File
 
-/**
- * Created by Jasurbek Kurganbaev on 20.07.2021 15:19
- **/
+
 interface QuickIdeasRepository {
 
     fun getAllQuickIdeasBoxes(): Flow<Result<GetQuickIdeasBoxesResponse>>

@@ -15,9 +15,7 @@ import uz.perfectalgorithm.projects.tezkor.domain.home.quick_idea.QuickIdeasRepo
 import java.io.File
 import javax.inject.Inject
 
-/**
- * Created by Jasurbek Kurganbaev on 23.07.2021 17:52
- **/
+
 @HiltViewModel
 class CreateQuickIdeaViewModel @Inject constructor(
     private val quickIdeasRepository: QuickIdeasRepository,

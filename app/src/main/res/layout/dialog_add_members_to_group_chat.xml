@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/inter_bold"
             android:gravity="center"
-            android:text="Guruhga qo'shish"
+            android:text="@string/add_to_group"
             android:textSize="@dimen/text_20sp"
             app:layout_constraintBottom_toBottomOf="@+id/btn_cancel"
             app:layout_constraintEnd_toEndOf="parent"

@@ -681,7 +681,7 @@
                     android:layout_width="@dimen/size_0dp"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginEnd="@dimen/size_8dp"
-                    android:text="Rejalar"
+                    android:text="@string/plan"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toStartOf="@id/iv_add_plan"
@@ -762,7 +762,7 @@
                     app:layout_constraintBottom_toBottomOf="@+id/tv_title_repeat"
                     app:layout_constraintEnd_toStartOf="@+id/iv_arrow_repeat"
                     app:layout_constraintTop_toTopOf="@+id/tv_title_repeat"
-                    tools:text="Bir marta" />
+                    tools:text="@string/once" />
 
                 <ImageView
                     android:id="@+id/iv_arrow_repeat"

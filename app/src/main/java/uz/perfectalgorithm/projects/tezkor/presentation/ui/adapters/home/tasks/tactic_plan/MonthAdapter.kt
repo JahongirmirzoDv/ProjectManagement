@@ -13,10 +13,7 @@ import uz.perfectalgorithm.projects.tezkor.databinding.ItemTacticPlanMonthBindin
 import uz.perfectalgorithm.projects.tezkor.utils.`typealias`.SingleBlock
 import uz.perfectalgorithm.projects.tezkor.utils.translateMonth
 
-/**
- *Created by farrukh_kh on 7/29/21 2:07 PM
- *uz.rdo.projects.projectmanagement.presentation.ui.adapters.home.tasks.tactic_plan
- **/
+
 class MonthAdapter(
     private val onTacticPlanClick: SingleBlock<Int>,
     private val onAddTacticPlanClick: (Int, Int, Status) -> Unit,

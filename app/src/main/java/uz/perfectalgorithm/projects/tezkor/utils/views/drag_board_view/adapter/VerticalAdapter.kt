@@ -11,10 +11,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.views.drag_board_view.callback.
 import uz.perfectalgorithm.projects.tezkor.utils.views.drag_board_view.helper.DragHelper
 import uz.perfectalgorithm.projects.tezkor.utils.views.drag_board_view.model.DragItem
 
-/**
- *Created by farrukh_kh on 8/3/21 9:47 PM
- *uz.rdo.projects.projectmanagement.utils.views.drag_board_view.adapter
- **/
+
 abstract class VerticalAdapter<VH : RecyclerView.ViewHolder?>(
     private val context: Context,
     private var dragHelper: DragHelper,

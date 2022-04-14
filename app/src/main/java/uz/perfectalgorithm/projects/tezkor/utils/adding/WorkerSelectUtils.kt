@@ -7,10 +7,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.workers.
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.workers.structure.StructureResponse
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.workers.structure_short.DepartmentStructureShort
 
-/**
- *Created by farrukh_kh on 8/26/21 11:44 AM
- *uz.rdo.projects.projectmanagement.utils.adding
- **/
+
 interface FragmentPageSelectedListener {
     fun onFragmentSelected()
 }

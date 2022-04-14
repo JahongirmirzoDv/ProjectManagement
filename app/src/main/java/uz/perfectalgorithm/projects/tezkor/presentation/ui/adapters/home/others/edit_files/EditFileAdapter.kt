@@ -16,10 +16,8 @@ import java.text.DecimalFormat
 import kotlin.math.log10
 import kotlin.math.pow
 
-/**
- *Created by farrukh_kh on 8/13/21 11:09 AM
- *uz.rdo.projects.projectmanagement.presentation.ui.adapters.home.others.edit_files
- **/
+
+
 class EditFileAdapter(private val itemClickListener: EditFileAdapterListener) :
     ListAdapter<FilesItem, RecyclerView.ViewHolder>(ITEM_CALLBACK) {
 

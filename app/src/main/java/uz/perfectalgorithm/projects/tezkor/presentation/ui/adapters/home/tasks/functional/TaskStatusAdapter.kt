@@ -29,10 +29,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.views.drag_board_view.model.Dra
 import kotlin.math.abs
 
 
-/**
- *Created by farrukh_kh on 8/5/21 2:28 PM
- *uz.rdo.projects.projectmanagement.presentation.ui.adapters.home.tasks.functional
- **/
+
 class TaskStatusAdapter(
     private val context: Context,
     private val onAddNewTask: ThreeBlock<String, Int, Int>,

@@ -13,9 +13,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.quick_id
 import uz.perfectalgorithm.projects.tezkor.domain.home.quick_idea.QuickIdeasRepository
 import javax.inject.Inject
 
-/**
- * Created by Jasurbek Kurganbaev on 27.07.2021 18:58
- **/
+
 @HiltViewModel
 class RatingIdeasViewModel @Inject constructor(
     private val quickIdeasRepository: QuickIdeasRepository,

@@ -13,9 +13,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.`typealias`.EmptyBlock
 import uz.perfectalgorithm.projects.tezkor.utils.`typealias`.SingleBlock
 import uz.perfectalgorithm.projects.tezkor.utils.extensions.bindItem
 
-/**
- * Created by Jasurbek Kurganbaev on 10/29/2021 5:01 PM
- **/
+
 class TaskReplyAdapter(
 ) : ListAdapter<TaskCommentData, TaskReplyAdapter.VH>(ITEM_ALL_FUNCTIONAL_TASK_CALLBACK) {
 

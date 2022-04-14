@@ -10,10 +10,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.project.
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.status.StatusData
 import uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.others.detail_update.BaseDetails
 
-/**
- *Created by farrukh_kh on 7/24/21 10:15 AM
- *uz.rdo.projects.projectmanagement.data.sources.remote.response.meeting
- **/
+
 data class MeetingDetails(
     @field:SerializedName("id")
     override val id: Int,

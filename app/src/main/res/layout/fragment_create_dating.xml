@@ -90,7 +90,7 @@
                             <com.google.android.material.textview.MaterialTextView
                                 android:id="@+id/tv_title_author"
                                 style="@style/TextSmall"
-                                android:text="Muallif"
+                                android:text="@string/author"
                                 android:textSize="@dimen/_11ssp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -728,7 +728,7 @@
                     style="@style/CreateScreensFieldTitle"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:fontFamily="@font/inter_regular"
-                    android:text="Takroriylik"
+                    android:text="@string/repeat_title_detail"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -744,7 +744,7 @@
                     app:layout_constraintBottom_toBottomOf="@+id/repeatTitle"
                     app:layout_constraintEnd_toStartOf="@+id/repeatAdd"
                     app:layout_constraintTop_toTopOf="@+id/repeatTitle"
-                    tools:text="Bir marta" />
+                    tools:text="@string/once" />
 
                 <ImageView
                     android:id="@+id/repeatAdd"

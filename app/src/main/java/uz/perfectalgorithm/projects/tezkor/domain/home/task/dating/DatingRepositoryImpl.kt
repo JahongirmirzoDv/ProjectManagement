@@ -17,10 +17,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.prepareImageFilePart
 import uz.perfectalgorithm.projects.tezkor.utils.timberLog
 import javax.inject.Inject
 
-/**
- *Created by farrukh_kh on 7/24/21 10:35 AM
- *uz.rdo.projects.projectmanagement.domain.home.task.dating
- **/
+
 class DatingRepositoryImpl @Inject constructor(
     private val datingApi: DatingApi
 ) : DatingRepository {

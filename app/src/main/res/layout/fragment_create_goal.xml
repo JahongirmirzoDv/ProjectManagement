@@ -605,7 +605,7 @@
                             <com.google.android.material.textview.MaterialTextView
                                 android:id="@+id/tv_title_participants"
                                 style="@style/TextSmall"
-                                android:text="Ishtirokchilar"
+                                android:text="@string/partipinats"
                                 android:textSize="@dimen/_10ssp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"

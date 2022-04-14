@@ -7,9 +7,7 @@ import uz.perfectalgorithm.projects.tezkor.app.App
 import uz.perfectalgorithm.projects.tezkor.data.sources.local.chat.dao.MessageModelDao
 import uz.perfectalgorithm.projects.tezkor.data.sources.local.chat.entity.MessageModel
 
-/**
- * Created by Davronbek Raximjanov on 16.07.2021
- **/
+
 
 @Database(entities = [MessageModel::class], version = 1)
 abstract class ConversationChatDatabase : RoomDatabase() {

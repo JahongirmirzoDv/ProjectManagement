@@ -10,9 +10,7 @@ import uz.perfectalgorithm.projects.tezkor.databinding.ItemStatusDialogBinding
 import uz.perfectalgorithm.projects.tezkor.utils.`typealias`.EmptyBlock
 import uz.perfectalgorithm.projects.tezkor.utils.hideKeyboard
 
-/**
- * Created by Jasurbek Kurganbaev on 01.07.2021 11:40
- **/
+
 object StatusDialog {
     fun showStatusDialog(
         context: Context,

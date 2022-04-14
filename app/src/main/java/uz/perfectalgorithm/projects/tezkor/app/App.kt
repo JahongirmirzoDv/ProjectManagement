@@ -11,9 +11,7 @@ import timber.log.Timber
 import uz.perfectalgorithm.projects.tezkor.BuildConfig
 import uz.perfectalgorithm.projects.tezkor.data.sources.local.LocalStorage
 
-/**
- * Created by Raximjanov Davronbek on 16-06-2021
- **/
+
 
 
 @HiltAndroidApp

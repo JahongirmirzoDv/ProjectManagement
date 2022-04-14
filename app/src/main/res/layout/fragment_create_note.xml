@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.ui.screens.home_activity.adding.create_task.CreateTaskFragment">
+    tools:context=".presentation.ui.screens.home_activity.adding.note.CreateNoteFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar_layout"

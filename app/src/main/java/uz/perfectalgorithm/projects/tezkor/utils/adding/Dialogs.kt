@@ -32,10 +32,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.setTintColor
 import uz.perfectalgorithm.projects.tezkor.utils.visible
 import java.util.*
 
-/**
- *Created by farrukh_kh on 8/10/21 4:43 PM
- *uz.rdo.projects.projectmanagement.utils.adding
- **/
+
 fun Fragment.showImportanceDialog(
     onImportanceSelected: SingleBlock<Pair<String, String>>,
 ) {

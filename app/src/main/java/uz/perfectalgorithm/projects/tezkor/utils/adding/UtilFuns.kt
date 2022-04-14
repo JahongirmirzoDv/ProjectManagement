@@ -59,10 +59,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.helper.FileHelper
 import uz.perfectalgorithm.projects.tezkor.utils.tasks.toTwoDigit
 import java.util.*
 
-/**
- *Created by farrukh_kh on 8/9/21 8:22 PM
- *uz.rdo.projects.projectmanagement.utils.adding
- **/
+
 fun Fragment.getFileFromDevice(resultLauncher: ActivityResultLauncher<Intent>) {
     Permissions.check(
         requireContext(),

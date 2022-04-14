@@ -9,9 +9,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.rating_i
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.rating_idea.RateIdeaResponse
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.rating_idea.RatingDataBody
 
-/**
- * Created by Jasurbek Kurganbaev on 31.07.2021 16:30
- **/
+
 interface RatingApi {
 
     @GET("/api/v1/idea/idea/{id}/")

@@ -12,11 +12,7 @@ import uz.perfectalgorithm.projects.tezkor.databinding.FragmentPaymentSystemBind
 import uz.perfectalgorithm.projects.tezkor.utils.extensions.hideAppBar
 import uz.perfectalgorithm.projects.tezkor.utils.extensions.showAppBar
 
-/**
- * Kurganbayev Jasurbek
- * PaymentSystemFragment oynasi
- * to'liq holda tayyor qilingan, design bilan ko'rib qo'yish kerak
- **/
+
 
 @AndroidEntryPoint
 class PaymentSystemFragment : Fragment() {

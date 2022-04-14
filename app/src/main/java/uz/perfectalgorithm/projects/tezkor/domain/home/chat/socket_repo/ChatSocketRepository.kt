@@ -9,9 +9,8 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.all_chat
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.all_chat.personal.PersonalChatMessageListResponse
 import uz.star.domvet.utils.models.response.local.ResultData
 
-/**
- * Created by Raximjanov Davronbek on 27.07.2021 19:05
- **/
+
+
 
 interface ChatSocketRepository {
 

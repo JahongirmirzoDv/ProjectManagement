@@ -15,10 +15,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.request.quick_pla
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.quick_plan.QuickPlan
 import uz.perfectalgorithm.projects.tezkor.domain.home.quick_plan.QuickPlanRepository
 
-/**
- *Created by farrukh_kh on 8/19/21 9:10 AM
- *uz.rdo.projects.projectmanagement.presentation.viewmodels.home_activity.quick_plans
- **/
+
 class QuickPlanDetailUpdateViewModel @AssistedInject constructor(
     private val quickPlanRepository: QuickPlanRepository,
     @Assisted private val quickPlanId: Int

@@ -15,9 +15,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.reset_pa
 import uz.perfectalgorithm.projects.tezkor.domain.entry.AuthRepository
 import javax.inject.Inject
 
-/**
- * Created by Jasurbek Kurganbaev on 9/18/2021 10:39 AM
- **/
+
 @HiltViewModel
 class ResetPasswordViewModel @Inject constructor(
     private val repository: AuthRepository,

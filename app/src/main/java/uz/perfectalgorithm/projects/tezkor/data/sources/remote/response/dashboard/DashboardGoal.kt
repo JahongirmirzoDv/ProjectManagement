@@ -3,10 +3,7 @@ package uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.dashboa
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-/**
- *Created by farrukh_kh on 9/22/21 10:08 AM
- *uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.dashboard
- **/
+
 
 data class DashboardGoalsResponseWrapper(
     @SerializedName("data")

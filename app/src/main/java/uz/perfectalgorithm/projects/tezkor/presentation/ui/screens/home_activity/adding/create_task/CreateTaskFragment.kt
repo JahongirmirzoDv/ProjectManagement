@@ -7,6 +7,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,7 +22,6 @@ import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential
 import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecoverableAuthIOException
 import com.google.api.services.calendar.model.Event
@@ -68,23 +68,17 @@ import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
-import kotlin.collections.ArrayList
 import kotlin.coroutines.CoroutineContext
 import kotlin.math.pow
 
 
-/***
- * Kurganbayev Jasurbek 11/09/2021
- * Bu Vazifa yartishdagi umumiy fragment
- * TODO
- * 1. O'zgarishlar tarixini
- * 2. Kommentariya yozish imkoniyati(tahririlar, o'chirish imkoniyatlari bilan birga)
- */
 @AndroidEntryPoint
 class CreateTaskFragment : Fragment(), CoroutineScope {
     private var _binding: FragmentCreateTaskBinding? = null
     private val binding: FragmentCreateTaskBinding
         get() = _binding ?: throw NullPointerException("View wasn't created")
+    private val sharedPref by lazy { SharedPref(requireContext()) }
+
 
     private var navController: NavController? = null
 
@@ -96,10 +90,13 @@ class CreateTaskFragment : Fragment(), CoroutineScope {
     private val dateTimeFormatter by lazy { DateTimeFormat.forPattern(BACKEND_DATE_TIME_FORMAT) }
     private val listRepetitionServer by lazy { resources.getStringArray(R.array.list_repeat_server) }
 
+
     @Inject
     lateinit var statusDialog: StatusDialog
+
     @Inject
     lateinit var credential: GoogleAccountCredential
+
     @Inject
     lateinit var client: com.google.api.services.calendar.Calendar
 
@@ -130,9 +127,10 @@ class CreateTaskFragment : Fragment(), CoroutineScope {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentCreateTaskBinding.inflate(layoutInflater)
+        getDateTime2()
         return binding.root
     }
 
@@ -264,8 +262,8 @@ class CreateTaskFragment : Fragment(), CoroutineScope {
     }
 
     private val createTaskObserver = Observer<TaskData> {
-        if(isQuickTask == "true") {
-            createTaskViewModel.sendToQuickTask(quickTaskID?.toInt()?:0)
+        if (isQuickTask == "true") {
+            createTaskViewModel.sendToQuickTask(quickTaskID?.toInt() ?: 0)
         }
         if (startDate != null) {
             credential.selectedAccountName = storage.googleCalendarAccountName
@@ -277,7 +275,7 @@ class CreateTaskFragment : Fragment(), CoroutineScope {
     private fun makeDestroy() {
         sharedViewModel.clear()
         addingSharedViewModel.setTaskNeedsRefresh(true)
-        makeSuccessSnack("Muvaffaqqiyatli yaratildi")
+        makeSuccessSnack(getString(R.string.created_toast))
         findNavController().previousBackStackEntry?.savedStateHandle?.set(
             "taskSuccessful",
             true
@@ -302,7 +300,6 @@ class CreateTaskFragment : Fragment(), CoroutineScope {
 
     private fun loadViews() {
 //        listRepetitionServer.addAll(resources.getStringArray(R.array.list_repeat_server))
-
 
         if (createTaskViewModel.folderList != null) {
             val spinnerArrayAdapter =
@@ -329,8 +326,6 @@ class CreateTaskFragment : Fragment(), CoroutineScope {
         }
 
         binding.apply {
-
-
             cvMaster.setOnClickListener {
                 if (sharedViewModel.master.value != null) {
                     sharedViewModel.master.value?.fullName?.let { it1 -> it.showPersonTooltip(it1) }
@@ -353,10 +348,21 @@ class CreateTaskFragment : Fragment(), CoroutineScope {
                 createTaskViewModel.title = it.toString()
             }
 
+            createTaskBlueButton.setOnClickListener {
+                tvBeginningTime.text = createTaskViewModel.startDate
+                tvBeginTime.text = createTaskViewModel.startTime
+                tvEndingTime.text = createTaskViewModel.endDate
+                tvEndTime.text = createTaskViewModel.endTime
+                createGoal()
+            }
 
-            createTaskBlueButton.setOnClickListener { createGoal() }
-
-            btnTaskUpload.setOnClickListener { createGoal() }
+            btnTaskUpload.setOnClickListener {
+                tvBeginningTime.text = createTaskViewModel.startDate
+                tvBeginTime.text = createTaskViewModel.startTime
+                tvEndingTime.text = createTaskViewModel.endDate
+                tvEndTime.text = createTaskViewModel.endTime
+                createGoal()
+            }
             imgBackButton.setOnClickListener {
                 sharedViewModel.clear()
                 findNavController().popBackStack()
@@ -414,11 +420,11 @@ class CreateTaskFragment : Fragment(), CoroutineScope {
                         p0: AdapterView<*>?,
                         p1: View?,
                         position: Int,
-                        p3: Long
+                        p3: Long,
                     ) {
-                        if (position >0)
+                        if (position > 0)
                             createTaskViewModel.project =
-                                createTaskViewModel.projectList?.get(position-1)?.id.toString()
+                                createTaskViewModel.projectList?.get(position - 1)?.id.toString()
                     }
 
                     override fun onNothingSelected(p0: AdapterView<*>?) {}
@@ -434,7 +440,7 @@ class CreateTaskFragment : Fragment(), CoroutineScope {
                         p0: AdapterView<*>?,
                         p1: View?,
                         position: Int,
-                        p3: Long
+                        p3: Long,
                     ) {
                         createTaskViewModel.folder =
                             createTaskViewModel.folderList?.get(position)?.id
@@ -453,8 +459,9 @@ class CreateTaskFragment : Fragment(), CoroutineScope {
                     tvBeginTime,
                     requireContext(),
                     createTaskViewModel,
-                    requireParentFragment()
-                )
+                    requireParentFragment(),
+
+                    )
             }
 
             taskEndingTimeLayout.setOnClickListener {
@@ -533,7 +540,7 @@ class CreateTaskFragment : Fragment(), CoroutineScope {
 
                         override fun onDenied(
                             context: Context?,
-                            deniedPermissions: ArrayList<String>?
+                            deniedPermissions: ArrayList<String>?,
                         ) {
                             makeErrorSnack("Permission Dined")
                         }
@@ -587,10 +594,29 @@ class CreateTaskFragment : Fragment(), CoroutineScope {
     private fun getDateTime() {
         binding.apply {
             val startDate = SimpleDateFormat("yyyy-MM-dd").format(Date(System.currentTimeMillis()))
-            val endDate = SimpleDateFormat("yyyy-MM-dd").format(Date(System.currentTimeMillis() + 3600 * 1000))
+            val endDate =
+                SimpleDateFormat("yyyy-MM-dd").format(Date(System.currentTimeMillis() + 3600 * 1000))
             val endTime =
                 SimpleDateFormat("HH:mm").format(Date(System.currentTimeMillis() + 3600 * 1000))
             val startTime = SimpleDateFormat("HH:mm").format(Date(System.currentTimeMillis()))
+            createTaskViewModel.startDate = startDate
+            createTaskViewModel.endDate = endDate
+            createTaskViewModel.startTime = startTime
+            createTaskViewModel.endTime = endTime
+
+            tvBeginningTime.text = createTaskViewModel.startDate
+            tvEndingTime.text = createTaskViewModel.endDate
+            tvBeginTime.text = createTaskViewModel.startTime
+            tvEndTime.text = createTaskViewModel.endTime
+        }
+    }
+
+    private fun getDateTime2() {
+        binding.apply {
+            val startDate = createTaskViewModel.startDate
+            val endDate = createTaskViewModel.endDate
+            val endTime = createTaskViewModel.endTime
+            val startTime = createTaskViewModel.startTime
             createTaskViewModel.startDate = startDate
             createTaskViewModel.endDate = endDate
             createTaskViewModel.startTime = startTime
@@ -875,8 +901,8 @@ class CreateTaskFragment : Fragment(), CoroutineScope {
                     yaqm = createTaskViewModel.yaQM,
                     performer = createTaskViewModel.performer!!,
                     leader = createTaskViewModel.leader!!,
-                    start_time = createTaskViewModel.startDate + " " + createTaskViewModel.startTime,
-                    end_time = createTaskViewModel.endDate + " " + createTaskViewModel.endTime,
+                    start_time = if (sharedPref.startTime != null) sharedPref.startTime.toString() else createTaskViewModel.startDate + " " + createTaskViewModel.startTime,
+                    end_time = if (sharedPref.endTime != null) sharedPref.endTime.toString() else createTaskViewModel.endDate + " " + createTaskViewModel.endTime,
                     files = sharedViewModel.files.value,
                     project = createTaskViewModel.project,
                     parent = createTaskViewModel.parent,
@@ -901,22 +927,24 @@ class CreateTaskFragment : Fragment(), CoroutineScope {
     private fun syncGoogleCalendar() {
         launch {
             val event: Event = Event()
-                .setSummary("${createTaskViewModel.title}"?:"")
+                .setSummary("${createTaskViewModel.title}" ?: "")
                 .setDescription("${createTaskViewModel.description}")
 
-            val startDateTime = com.google.api.client.util.DateTime("${createTaskViewModel.startDate}T${createTaskViewModel.startTime}:00-07:00")
+            val startDateTime =
+                com.google.api.client.util.DateTime("${createTaskViewModel.startDate}T${createTaskViewModel.startTime}:00-07:00")
             val start = EventDateTime()
                 .setDateTime(startDateTime)
                 .setTimeZone("Asia/Tashkent")
             event.setStart(start)
 
-            val endDateTime = com.google.api.client.util.DateTime("${createTaskViewModel.endDate}T${createTaskViewModel.endTime}:00-07:00")
+            val endDateTime =
+                com.google.api.client.util.DateTime("${createTaskViewModel.endDate}T${createTaskViewModel.endTime}:00-07:00")
             val end = EventDateTime()
                 .setDateTime(endDateTime)
                 .setTimeZone("Asia/Tashkent")
             event.setEnd(end)
 
-            val recurrence = arrayOf("RRULE:FREQ=DAILY","COUNT=2")
+            val recurrence = arrayOf("RRULE:FREQ=DAILY", "COUNT=2")
             event.recurrence = listOf(recurrence) as MutableList<String>
 
             val arrayList = ArrayList<EventAttendee>()
@@ -1028,7 +1056,14 @@ class CreateTaskFragment : Fragment(), CoroutineScope {
     override fun onResume() {
         super.onResume()
         loadSharedObservers()
+        Log.e("date", "onResume: ${sharedPref.startTime} ")
         binding.personAuthorImageView.loadImageUrl(storage.userImage)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        sharedPref.startTime = "${binding.tvBeginningTime.text} ${binding.tvBeginTime.text}"
+        sharedPref.endTime = "${binding.tvEndingTime.text} ${binding.tvEndTime.text}"
     }
 
     override fun onDestroy() {

@@ -19,9 +19,6 @@ import uz.perfectalgorithm.projects.tezkor.domain.home.others.goal_map.GoalMapRe
 import java.io.File
 import javax.inject.Inject
 
-/**
- * Created by Jasurbek Kurganbaev on 19.06.2021 17:45
- **/
 
 @HiltViewModel
 class CreateProjectViewModel @Inject constructor(

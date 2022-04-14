@@ -29,10 +29,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.adding.toUiTime
 import uz.perfectalgorithm.projects.tezkor.utils.error_handling.handleException
 import uz.perfectalgorithm.projects.tezkor.utils.extensions.loadImageUrl
 
-/**
- *Created by farrukh_kh on 8/31/21 9:29 AM
- *uz.rdo.projects.projectmanagement.presentation.ui.dialogs.tasks.meeting
- **/
+
 @AndroidEntryPoint
 class SelectMemberStateDialogFragment : DialogFragment() {
 

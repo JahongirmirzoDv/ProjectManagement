@@ -1,8 +1,6 @@
 package uz.perfectalgorithm.projects.tezkor.presentation.ui.adapters.home.others.own_task
 
-/**
- * Created by Jasurbek Kurganbaev on 9/23/2021 11:18 AM
- **/
+
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

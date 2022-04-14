@@ -21,10 +21,8 @@ import uz.perfectalgorithm.projects.tezkor.utils.views.drag_board_view.model.Dra
 import uz.perfectalgorithm.projects.tezkor.utils.views.drag_board_view.model.DragItem
 import kotlin.math.abs
 
-/**
- *Created by farrukh_kh on 8/5/21 10:05 PM
- *uz.rdo.projects.projectmanagement.presentation.ui.adapters.home.tasks.projects
- **/
+
+
 class ProjectStatusAdapter(
     private val context: Context,
     private val onAddProjectClick: () -> Unit,

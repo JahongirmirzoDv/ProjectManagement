@@ -280,6 +280,7 @@
                     style="@style/TextLarge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
                     android:fontFamily="@font/inter_regular"
                     android:textColor="@color/company_registration_color"
                     android:textSize="@dimen/_20ssp"
@@ -304,6 +305,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/duration_value"
                     style="@style/TextSmall"
+                    android:layout_marginStart="20dp"
                     android:textColor="@color/company_registration_color"
                     android:textSize="@dimen/_20ssp"
                     app:layout_constraintBottom_toBottomOf="@id/durations"
@@ -332,6 +334,7 @@
                     android:text="@string/cost_value"
                     android:textColor="@color/green"
                     android:textSize="@dimen/_20ssp"
+                    android:layout_marginStart="20dp"
                     app:layout_constraintBottom_toBottomOf="@id/amount"
                     app:layout_constraintStart_toEndOf="@+id/guideline"
                     app:layout_constraintTop_toTopOf="@+id/amount"

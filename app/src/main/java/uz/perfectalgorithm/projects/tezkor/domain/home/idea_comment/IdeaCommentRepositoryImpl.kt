@@ -16,9 +16,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.apis.IdeaCommentA
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.idea_comment.*
 import javax.inject.Inject
 
-/**
- * Created by Jasurbek Kurganbaev on 04.08.2021 14:12
- **/
+
 class IdeaCommentRepositoryImpl @Inject constructor(
     private val ideaCommentApi: IdeaCommentApi,
     private val storage: LocalStorage

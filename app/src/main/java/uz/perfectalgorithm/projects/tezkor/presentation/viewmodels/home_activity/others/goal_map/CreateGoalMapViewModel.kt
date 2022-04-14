@@ -13,9 +13,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.goal.Ite
 import uz.perfectalgorithm.projects.tezkor.domain.home.others.goal_map.GoalMapRepository
 import javax.inject.Inject
 
-/**
- * Created by Jasurbek Kurganbaev on 28.06.2021 14:20
- **/
+
 
 @HiltViewModel
 class CreateGoalMapViewModel @Inject constructor(

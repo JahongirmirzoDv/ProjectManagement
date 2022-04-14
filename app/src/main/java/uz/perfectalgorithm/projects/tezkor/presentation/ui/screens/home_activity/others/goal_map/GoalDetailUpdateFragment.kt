@@ -213,7 +213,7 @@ class GoalDetailUpdateFragment : DetailUpdateBaseFragment<GoalDetails>() {
                 this@GoalDetailUpdateFragment,
                 binding.createGoalProgressBar
             ) {
-                makeSuccessSnack("Muvaffaqiyatli o'zgartirildi")
+                makeSuccessSnack(R.string.created_toast.toString())
                 deletedFiles.clear()
                 newFiles.clear()
                 dataHolder.clear()

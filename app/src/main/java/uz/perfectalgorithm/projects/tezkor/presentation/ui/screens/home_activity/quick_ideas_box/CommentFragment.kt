@@ -32,11 +32,6 @@ import uz.perfectalgorithm.projects.tezkor.utils.hideKeyboard
 import uz.perfectalgorithm.projects.tezkor.utils.visible
 import javax.inject.Inject
 
-/**
- * Kurganbayev Jasurbek
- * CommentFragment idealarga commenttariya yozish oynasi
- * to'liq holda tayyor qilingan, design bilan ko'rib qo'yish kerak
- **/
 
 @AndroidEntryPoint
 class CommentFragment : Fragment() {

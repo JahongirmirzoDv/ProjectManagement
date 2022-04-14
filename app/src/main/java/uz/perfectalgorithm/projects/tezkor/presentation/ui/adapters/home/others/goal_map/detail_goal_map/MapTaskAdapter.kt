@@ -13,9 +13,7 @@ import uz.perfectalgorithm.projects.tezkor.databinding.ItemGoalMapGoalProjectTas
 import uz.perfectalgorithm.projects.tezkor.utils.`typealias`.SingleBlock
 import uz.perfectalgorithm.projects.tezkor.utils.extensions.bindItem
 
-/**
- * Created by Jasurbek Kurganbaev on 16.07.2021 16:32
- **/
+
 class MapTaskAdapter(private val onTaskClick: SingleBlock<Int>) :
     ListAdapter<TasksItem, MapTaskAdapter.VH>(ITEM_MAP_TASK_CALLBACK) {
 

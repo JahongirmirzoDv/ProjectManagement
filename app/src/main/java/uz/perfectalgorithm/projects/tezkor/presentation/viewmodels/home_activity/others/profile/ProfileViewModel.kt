@@ -12,9 +12,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.others.p
 import uz.perfectalgorithm.projects.tezkor.domain.home.others.OthersRepository
 import javax.inject.Inject
 
-/**
- * Created by Davronbek Raximjanov on 08.08.2021 15:16
- **/
+
 
 @HiltViewModel
 class ProfileViewModel @Inject constructor(

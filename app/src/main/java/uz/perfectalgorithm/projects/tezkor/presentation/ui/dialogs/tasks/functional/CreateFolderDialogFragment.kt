@@ -22,10 +22,6 @@ import uz.perfectalgorithm.projects.tezkor.presentation.viewmodels.home_activity
 import uz.perfectalgorithm.projects.tezkor.presentation.viewmodels.home_activity.tasks.functional.CreateFolderViewModel
 import uz.perfectalgorithm.projects.tezkor.utils.error_handling.handleException
 
-/**
- *Created by farrukh_kh on 7/24/21 3:48 PM
- *uz.rdo.projects.projectmanagement.presentation.ui.screens.home_activity.tasks.functional
- **/
 @AndroidEntryPoint
 class CreateFolderDialogFragment : DialogFragment() {
 

@@ -10,9 +10,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.chat.pro
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.project.ProjectDetails
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.project.ProjectsByStatus
 
-/**
- * Created by Jasurbek Kurganbaev on 17.06.2021 14:40
- **/
+
 
 interface
 ProjectApi {

@@ -16,9 +16,7 @@ import uz.perfectalgorithm.projects.tezkor.domain.home.others.OthersRepository
 import java.io.File
 import javax.inject.Inject
 
-/**
- * Created by Davronbek Raximjanov on 28.08.2021 15:16
- **/
+
 
 @HiltViewModel
 class EditProfileViewModel @Inject constructor(

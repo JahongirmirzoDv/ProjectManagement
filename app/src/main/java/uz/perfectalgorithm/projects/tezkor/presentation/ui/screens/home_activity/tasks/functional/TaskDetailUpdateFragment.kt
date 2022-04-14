@@ -241,7 +241,7 @@ class TaskDetailUpdateFragment :
                 this@TaskDetailUpdateFragment,
                 binding.taskProgressBar.progressLoader
             ) {
-                makeSuccessSnack("Muvaffaqiyatli o'zgartirildi")
+                makeSuccessSnack(R.string.edited_toast.toString())
                 deletedFiles.clear()
                 newFiles.clear()
                 dataHolder.clear()

@@ -10,9 +10,7 @@ import uz.perfectalgorithm.projects.tezkor.databinding.ItemGoalMapBinding
 import uz.perfectalgorithm.projects.tezkor.utils.`typealias`.SingleBlock
 import uz.perfectalgorithm.projects.tezkor.utils.extensions.bindItem
 
-/**
- * Created by Jasurbek Kurganbaev on 28.06.2021 17:13
- **/
+
 class GoalMapRVAdapter : ListAdapter<ItemGoalMapData, GoalMapRVAdapter.VH>(ITEM_GOAL_MAP_CALLBACK) {
     private var itemClickListener: SingleBlock<ItemGoalMapData>? = null
 

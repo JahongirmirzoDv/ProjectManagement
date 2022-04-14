@@ -24,11 +24,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.gone
 import uz.perfectalgorithm.projects.tezkor.utils.keypboard.showAlertDialogStuff
 
 
-/**
- * Kurganbayev Jasurbek
- * CompanyPaymentStatusFragment ViewPagerdagi page qismlardan biri
- * to'liq holda tayyor qilingan, design bilan ko'rib qo'yish kerak
- **/
+
 @AndroidEntryPoint
 class CompanyPaymentStaffFragment : Fragment() {
     private var _binding: FragmentCompanyPaymentStaffBinding? = null

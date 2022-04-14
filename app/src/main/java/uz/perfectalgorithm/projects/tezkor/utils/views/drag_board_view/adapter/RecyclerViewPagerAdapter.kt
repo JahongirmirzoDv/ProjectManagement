@@ -3,10 +3,7 @@ package uz.perfectalgorithm.projects.tezkor.utils.views.drag_board_view.adapter
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-/**
- *Created by farrukh_kh on 8/3/21 9:47 PM
- *uz.rdo.projects.projectmanagement.utils.views.drag_board_view.adapter
- **/
+
 class RecyclerViewPagerAdapter<VH : RecyclerView.ViewHolder>(
     private val viewPager: RecyclerView,
     val adapter: RecyclerView.Adapter<VH>

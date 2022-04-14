@@ -7,10 +7,8 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.request.dating.Up
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.dating.DatingDetails
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.dating.DatingListItem
 
-/**
- *Created by farrukh_kh on 7/24/21 10:22 AM
- *uz.rdo.projects.projectmanagement.domain.home.task.dating
- **/
+
+
 interface DatingRepository {
 
     suspend fun createDating(request: CreateDatingRequest): DataWrapper<Any>

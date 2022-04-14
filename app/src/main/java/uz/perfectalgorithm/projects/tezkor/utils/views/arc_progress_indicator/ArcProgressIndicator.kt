@@ -10,10 +10,7 @@ import android.widget.RelativeLayout
 import uz.perfectalgorithm.projects.tezkor.R
 
 
-/**
- *Created by farrukh_kh on 9/27/21 8:39 AM
- *uz.perfectalgorithm.projects.tezkor.utils.views.arc_progress_view
- **/
+
 class ArcProgressIndicator @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null

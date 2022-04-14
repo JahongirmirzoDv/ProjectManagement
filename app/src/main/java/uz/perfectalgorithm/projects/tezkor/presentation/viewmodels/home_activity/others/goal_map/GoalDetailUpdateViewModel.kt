@@ -17,10 +17,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.goal.Ite
 import uz.perfectalgorithm.projects.tezkor.domain.home.others.goal_map.GoalMapRepository
 import uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity.others.detail_update.DetailUpdateViewModel
 
-/**
- *Created by farrukh_kh on 8/7/21 9:26 AM
- *uz.rdo.projects.projectmanagement.presentation.viewmodels.home_activity.others.goal_map
- **/
+
 class GoalDetailUpdateViewModel @AssistedInject constructor(
     private val goalMapRepository: GoalMapRepository,
     @Assisted private val goalId: Int

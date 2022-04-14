@@ -5,9 +5,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
-/**
- * Created by Davronbek Raximjanov on 04-Nov-20
- */
 
 object Coroutines {
     fun <T : Any> ioThenMain(work: suspend (() -> T?), callback: ((T?) -> Unit)) =

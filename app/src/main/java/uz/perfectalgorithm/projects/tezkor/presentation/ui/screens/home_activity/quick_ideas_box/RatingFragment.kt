@@ -36,11 +36,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.extensions.*
 import uz.perfectalgorithm.projects.tezkor.utils.gone
 import uz.perfectalgorithm.projects.tezkor.utils.visible
 
-/**
- * Kurganbayev Jasurbek
- * RatingFragment oynasi ideani baholash oynasi
- * to'liq holda tayyor qilingan, design bilan ko'rib qo'yish kerak
- **/
+
 
 @AndroidEntryPoint
 class RatingFragment : Fragment(), FileItemClickListener {

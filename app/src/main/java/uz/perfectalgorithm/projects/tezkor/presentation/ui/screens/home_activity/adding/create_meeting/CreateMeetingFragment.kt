@@ -98,6 +98,7 @@ CreateMeetingFragment : Fragment(), CoroutineScope {
     var messageID: Int? = null
     private var startDate: String? = null
     private val job = Job()
+    private val sharedPref by lazy { SharedPref(requireContext()) }
 
     @Inject
     lateinit var storage: LocalStorage
@@ -287,7 +288,7 @@ CreateMeetingFragment : Fragment(), CoroutineScope {
         }
 
         if (meetingDataHolder.repeatString == null) {
-            setRepeat("Bir marta")
+            setRepeat(R.string.once.toString())
         }
         repeatLayout.setOnClickListener {
             showRepeatNoteDialog(this@CreateMeetingFragment::setRepeat)
@@ -333,7 +334,7 @@ CreateMeetingFragment : Fragment(), CoroutineScope {
 
         if (meetingDataHolder.reminders == null) {
             meetingDataHolder.reminders = mutableSetOf()
-            addReminder(Pair("O'z vaqtida", 0))
+            addReminder(Pair("${getString(R.string.on_time)}", 0))
         }
         ivAddReminder.setOnClickListener {
             ReminderNoteDialog(
@@ -480,8 +481,8 @@ CreateMeetingFragment : Fragment(), CoroutineScope {
                     etMeetingTitle.text.toString(),
                     if (messageID != null) messageID else null,
                     etAddress.text.toString(),
-                    meetingDataHolder.startDate?.toUiDate() + " " + meetingDataHolder.startTime?.toUiTime(),
-                    meetingDataHolder.endDate?.toUiDate() + " " + meetingDataHolder.endTime?.toUiTime(),
+                    startTime = if (sharedPref.startTime != null) sharedPref.startTime.toString() else meetingDataHolder.startDate?.toUiDate() + " " + meetingDataHolder.startTime?.toUiTime(),
+                    endTime = if (sharedPref.endTime != null) sharedPref.endTime.toString() else meetingDataHolder.endDate?.toUiDate() + " " + meetingDataHolder.endTime?.toUiTime(),
                     meetingDataHolder.files,
                     meetingDataHolder.importance!!.first,
 //                    meetingDataHolder.reminder?.first,
@@ -548,7 +549,7 @@ CreateMeetingFragment : Fragment(), CoroutineScope {
     }
 
     private fun makeDestroy() {
-        makeSuccessSnack("Muvaffaqqiyatli yaratildi")
+        makeSuccessSnack(getString(R.string.created_toast))
         findNavController().previousBackStackEntry?.savedStateHandle?.set(
             "taskSuccessful",
             true
@@ -832,6 +833,12 @@ CreateMeetingFragment : Fragment(), CoroutineScope {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onPause() {
+        super.onPause()
+        sharedPref.startTime = "${binding.tvStartDate.text} ${binding.tvStartTime.text}"
+        sharedPref.endTime = "${binding.tvEndDate.text} ${binding.tvEndTime.text}"
     }
 
     override val coroutineContext: CoroutineContext

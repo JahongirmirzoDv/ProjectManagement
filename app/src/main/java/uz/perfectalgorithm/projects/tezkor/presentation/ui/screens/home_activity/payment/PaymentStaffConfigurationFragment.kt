@@ -2,7 +2,6 @@ package uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activit
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,11 +36,6 @@ import uz.perfectalgorithm.projects.tezkor.utils.gone
 import java.math.BigDecimal
 import java.math.RoundingMode
 
-/**
- * Kurganbayev Jasurbek
- * PaymentStaffConfigurationFragment oynasi
- * to'liq holda tayyor qilingan, design bilan ko'rib qo'yish kerak
- **/
 
 @AndroidEntryPoint
 class PaymentStaffConfigurationFragment : Fragment() {
@@ -82,10 +76,11 @@ class PaymentStaffConfigurationFragment : Fragment() {
         initData()
     }
 
+    @SuppressLint("SetTextI18n")
     private fun initData() {
         binding.apply {
-            stuffsValue.text = "$stuffCount ta"
-            durationValue.text = "$duration oy"
+            stuffsValue.text = "$stuffCount ${getString(R.string.ta)}"
+            durationValue.text = "$duration ${getString(R.string.oy)}"
 
             costAmount = stuffCount * duration * 10
             binding.costValue.text =
@@ -121,17 +116,17 @@ class PaymentStaffConfigurationFragment : Fragment() {
     }
 
     private val staffObserver = Observer<AddStaffData> {
-        makeSuccessSnack("Xodim soni muvaffaqqiyatli sotib olindi")
+        makeSuccessSnack(R.string.buy_worker.toString())
         findNavController().navigateUp()
     }
 
     private val monthObserver = Observer<AddDateData> {
-        makeSuccessSnack("Muddat muvaffaqqiyatli sotib olindi")
+        makeSuccessSnack(R.string.buy_date.toString())
         findNavController().navigateUp()
     }
 
     private val packageObserver = Observer<PackagePurchaseItem> {
-        makeSuccessSnack("Paket aktivlashtirildi")
+        makeSuccessSnack(R.string.chane_package.toString())
         findNavController().navigateUp()
     }
 
@@ -147,16 +142,16 @@ class PaymentStaffConfigurationFragment : Fragment() {
                 when {
                     error.errors?.map { it.error }
                         ?.contains(PackageErrorsEnum.PRICE_LIST_NOT_FOUND.message) == true ->
-                        makeErrorSnack("Paketlar topilmadi. \nAdministrator bilan bog'laning")
+                        makeErrorSnack(getString(R.string.error_notfound))
                     error.errors?.map { it.error }
                         ?.contains(PackageErrorsEnum.LOW_BALANCE.message) == true ->
-                        makeErrorSnack("Kompaniya balansi yetarli emas. \nHisobingizni to'ldiring")
+                        makeErrorSnack(getString(R.string.error_enough))
                     error.errors?.map { it.error }
                         ?.contains(PackageErrorsEnum.STAFF_INCORRECT_COUNT.message) == true ->
-                        makeErrorSnack("Xodimlar soni 1 dan katta bo'lishi lozim")
+                        makeErrorSnack(getString(R.string.error_employe))
                     error.errors?.map { it.error }
                         ?.contains(PackageErrorsEnum.COMPANY_PACKAGE_NOT_FOUND.message) == true ->
-                        makeErrorSnack("Kompaniyangiz paketi topilmadi. Paket sotib oling")
+                        makeErrorSnack(getString(R.string.error_employe))
                     else -> handleException(throwable)
                 }
             }
@@ -286,25 +281,26 @@ class PaymentStaffConfigurationFragment : Fragment() {
             }
 
             durationSeekbar.onSeekChangeListener = object : OnSeekChangeListener {
+                @SuppressLint("SetTextI18n")
                 override fun onSeeking(seekParams: SeekParams) {
 //                    binding.durationValue.text = seekParams.tickText
 
                     when (seekParams.thumbPosition) {
                         0 -> {
                             duration = 24
-                            binding.durationValue.text = "24 oy"
+                            binding.durationValue.text = "24"
                         }
                         1 -> {
                             duration = 12
-                            binding.durationValue.text = "12 oy"
+                            binding.durationValue.text = "12"
                         }
                         2 -> {
                             duration = 6
-                            binding.durationValue.text = "6 oy"
+                            binding.durationValue.text = "6"
                         }
                         3 -> {
                             duration = 3
-                            binding.durationValue.text = "3 oy"
+                            binding.durationValue.text = "3"
                         }
 
                     }
@@ -325,8 +321,6 @@ class PaymentStaffConfigurationFragment : Fragment() {
                     }
                     binding.costValue.text =
                         getString(R.string.cost_value, costAmount.toString())
-
-
                 }
 
                 override fun onStartTrackingTouch(seekBar: IndicatorSeekBar) {}

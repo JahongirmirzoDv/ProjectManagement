@@ -28,6 +28,7 @@ import uz.perfectalgorithm.projects.tezkor.R
 import uz.perfectalgorithm.projects.tezkor.data.sources.local.LocalDatabase
 import uz.perfectalgorithm.projects.tezkor.data.sources.local.LocalStorage
 import uz.perfectalgorithm.projects.tezkor.databinding.FragmentSettingBinding
+import uz.perfectalgorithm.projects.tezkor.utils.SharedPref
 import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 
@@ -56,6 +57,7 @@ class SettingFragment : Fragment(), CoroutineScope {
     lateinit var client: com.google.api.services.calendar.Calendar
 
     private lateinit var googleSignIn: GoogleSignInClient
+    private val sharedPref by lazy { SharedPref(requireContext()) }
 
     private var calendarID = ""
     private var token: String? = null
@@ -64,7 +66,7 @@ class SettingFragment : Fragment(), CoroutineScope {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentSettingBinding.inflate(inflater, container, false)
         job = Job()
@@ -86,6 +88,7 @@ class SettingFragment : Fragment(), CoroutineScope {
 
             rlAddCalendar.setOnClickListener {
                 chooseAccount()
+                sharedPref.isTrue = true
             }
         }
     }
@@ -135,9 +138,9 @@ class SettingFragment : Fragment(), CoroutineScope {
                     client.events().list("primary").setPageToken(pageToken).execute();
                 val items = events.items
                 var i = 0
-                for (event in items) {
-                    i++
-//                    Log.d("calendar page $i", "getCalendar: ${event.summary} - ${event.description}")
+                for (e in events.items) {
+
+                    Log.d("calendar page ", "getCalendar: ${e.summary} - ${e.description}")
                 }
                 pageToken = events.nextPageToken
             } while (pageToken != null)
@@ -196,7 +199,8 @@ class SettingFragment : Fragment(), CoroutineScope {
                 client.calendarList().list().setPageToken(pageToken).execute()
             val items = calendarList.items
             for (calendarListEntry in items) {
-//                Log.d("Calendar List", "getListCalendar: ${calendarListEntry.summary} ")
+
+                Log.d("Calendar List", "getListCalendar: ${calendarListEntry.summary} ")
             }
             pageToken = calendarList.nextPageToken
         } while (pageToken != null)

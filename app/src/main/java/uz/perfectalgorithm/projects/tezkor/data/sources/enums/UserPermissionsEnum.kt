@@ -1,9 +1,6 @@
 package uz.perfectalgorithm.projects.tezkor.data.sources.enums
 
 
-/**
- * Created by Davronbek Daximjanov on 24.08.2021
- **/
 
 enum class UserPermissionsEnum(val text: String) {
     ADD_USER("can_add_user"),

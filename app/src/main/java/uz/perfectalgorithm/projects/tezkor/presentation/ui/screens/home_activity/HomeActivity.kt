@@ -1,6 +1,7 @@
 package uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activity
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.app.Dialog
 import android.content.res.Configuration
 import android.content.res.Resources
@@ -9,6 +10,7 @@ import android.view.View
 import android.view.Window
 import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -19,6 +21,13 @@ import androidx.navigation.*
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.tasks.Task
+import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential
 import com.google.firebase.messaging.FirebaseMessaging
 import dagger.hilt.android.AndroidEntryPoint
 import io.github.hyuwah.draggableviewlib.DraggableListener
@@ -67,11 +76,15 @@ class HomeActivity : AppCompatActivity() {
     lateinit var sheetDialog: QuickSheetDialogMaker
 
     @Inject
+    lateinit var credential: GoogleAccountCredential
+
+    @Inject
     lateinit var storage: LocalStorage
 
     private var lastOnBackPressed: Long = 0
 
     var listenBackClick: EmptyBlock? = null
+    private lateinit var googleSignIn: GoogleSignInClient
 
     private val homeViewModel: HomeActivityViewModel by viewModels()
     private val viewModel: CompanyGroupChatViewModel by viewModels()
@@ -102,6 +115,17 @@ class HomeActivity : AppCompatActivity() {
         var locale = Locale(storage.lan ?: "uz")
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
+        val build =
+            GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build()
+        googleSignIn = GoogleSignIn.getClient(this, build)
+
+        if (sharedPref.isTrue) {
+            val signInIntent = googleSignIn.signInIntent
+            launcher.launch(signInIntent)
+        }
 
 
         Locale.setDefault(locale)
@@ -143,6 +167,37 @@ class HomeActivity : AppCompatActivity() {
         loadViews()
         loadObservers()
 //        navigateFragment(intent)
+    }
+
+    private val launcher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            if (it != null) {
+//                Log.e(TAG, "result code : ${it.data?.dataString}")
+//                Log.e(TAG, "result code : ${it.resultCode}")
+                if (it.resultCode == Activity.RESULT_OK) {
+//                    getCalendar()
+//                    Toast.makeText(this, R.string.saving, Toast.LENGTH_SHORT).show()
+                    val signedInAccountFromIntent =
+                        GoogleSignIn.getSignedInAccountFromIntent(it.data) as Task<GoogleSignInAccount>
+                    handleSignInResult(signedInAccountFromIntent)
+                }
+            }
+        }
+
+    fun handleSignInResult(complete: Task<GoogleSignInAccount>) {
+        try {
+            val account = complete.getResult(ApiException::class.java) as GoogleSignInAccount
+            storage.googleCalendarAccountName = account.account.name
+            storage.calendarID = account.email
+            credential.selectedAccountName = account.account.name
+//            Log.d("GoogleCalendarFragment", "signInResult:failed code=${account.displayName}")
+//            syncGoogleCalendar()
+//            loadObservers()
+//            getListCalendar()
+        } catch (e: ApiException) {
+            Toast.makeText(this, "exception", Toast.LENGTH_SHORT).show()
+//            Log.d("GoogleCalendarFragment", "signInResult:failed code=${e.statusCode}")
+        }
     }
 
     @SuppressLint("ResourceAsColor")

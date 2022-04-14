@@ -21,9 +21,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.prepareImageFilePart
 import uz.perfectalgorithm.projects.tezkor.utils.timberLog
 import javax.inject.Inject
 
-/**
- * Created by Jasurbek Kurganbaev on 26.06.2021 10:39
- **/
+
 
 class FunctionalTaskRepositoryImpl @Inject constructor(
     private val taskApi: TasksApi,

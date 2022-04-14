@@ -20,7 +20,7 @@ fun timePickerDialogGoal(
     timeView: TextView,
     context: Context,
     viewModel: CreateGoalViewModel,
-    fragment: Fragment
+    fragment: Fragment,
 ) {
     val calendar = Calendar.getInstance()
     val calendarHour = calendar.get(Calendar.HOUR_OF_DAY)
@@ -53,7 +53,7 @@ fun datePickerDialogGoal(
     dateView: TextView,
     context: Context,
     viewModel: CreateGoalViewModel,
-    fragment: Fragment
+    fragment: Fragment,
 ) {
     val calendar = Calendar.getInstance()
     val calendarYear = calendar.get(Calendar.YEAR)
@@ -94,7 +94,7 @@ fun dateAndTimePickerDialogGoal(
     timeView: TextView,
     context: Context,
     viewModel: CreateGoalViewModel,
-    fragment: Fragment
+    fragment: Fragment,
 ) {
     val calendar = Calendar.getInstance()
     val calendarYear = calendar.get(Calendar.YEAR)
@@ -113,9 +113,11 @@ fun dateAndTimePickerDialogGoal(
             if (timeView.id == R.id.tvBeginTime) {
                 viewModel.startTime = SimpleDateFormat("HH:mm").format(calendar.time)
                 timeView.text = viewModel.startTime
+
             } else {
                 viewModel.endTime = SimpleDateFormat("HH:mm").format(calendar.time)
                 timeView.text = viewModel.endTime
+
             }
         },
         calendarHour,
@@ -157,7 +159,7 @@ fun timePickerDialogProject(
     timeView: TextView,
     context: Context,
     viewModel: CreateProjectViewModel,
-    fragment: Fragment
+    fragment: Fragment,
 ) {
     val calendar = Calendar.getInstance()
     val calendarHour = calendar.get(Calendar.HOUR_OF_DAY)
@@ -190,7 +192,7 @@ fun datePickerDialogProject(
     dateView: TextView,
     context: Context,
     viewModel: CreateProjectViewModel,
-    fragment: Fragment
+    fragment: Fragment,
 ) {
     val calendar = Calendar.getInstance()
     val calendarYear = calendar.get(Calendar.YEAR)
@@ -230,7 +232,7 @@ fun dateAndTimePickerDialogProject(
     timeView: TextView,
     context: Context,
     viewModel: CreateProjectViewModel,
-    fragment: Fragment
+    fragment: Fragment,
 ) {
     fragment.hideKeyboard()
     val calendar = Calendar.getInstance()
@@ -294,7 +296,7 @@ fun timePickerDialogTask(
     timeView: TextView,
     context: Context,
     viewModel: CreateTaskViewModel,
-    fragment: Fragment
+    fragment: Fragment,
 ) {
     val calendar = Calendar.getInstance()
     val calendarHour = calendar.get(Calendar.HOUR_OF_DAY)
@@ -327,7 +329,7 @@ fun datePickerDialogTask(
     dateView: TextView,
     context: Context,
     viewModel: CreateTaskViewModel,
-    fragment: Fragment
+    fragment: Fragment,
 ) {
     val calendar = Calendar.getInstance()
     val calendarYear = calendar.get(Calendar.YEAR)
@@ -368,7 +370,7 @@ fun dateAndTimePickerDialogTask(
     timeView: TextView,
     context: Context,
     viewModel: CreateTaskViewModel,
-    fragment: Fragment
+    fragment: Fragment,
 ) {
     val calendar = Calendar.getInstance()
     val calendarYear = calendar.get(Calendar.YEAR)

@@ -14,10 +14,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.extensions.show
 import uz.perfectalgorithm.projects.tezkor.utils.gone
 import uz.perfectalgorithm.projects.tezkor.utils.inVisible
 
-/**
- *Created by farrukh_kh on 10/18/21 1:56 PM
- *uz.perfectalgorithm.projects.tezkor.presentation.ui.adapters.home.tasks.meeting
- **/
+
 class DiscussedTopicAdapter(
 //    private val onDeleteLocalItem: SingleBlock<DiscussedTopic>,
     private val onMoreClick: SingleBlock<DiscussedTopic>,

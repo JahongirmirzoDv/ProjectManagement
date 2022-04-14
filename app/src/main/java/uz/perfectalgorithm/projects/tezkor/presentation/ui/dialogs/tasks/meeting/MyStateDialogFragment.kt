@@ -13,10 +13,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import uz.perfectalgorithm.projects.tezkor.R
 import uz.perfectalgorithm.projects.tezkor.databinding.FragmentDialogMyStateBinding
 
-/**
- *Created by farrukh_kh on 9/3/21 9:51 AM
- *uz.rdo.projects.projectmanagement.presentation.ui.dialogs.tasks.meeting
- **/
+
 @AndroidEntryPoint
 class MyStateDialogFragment : DialogFragment() {
 

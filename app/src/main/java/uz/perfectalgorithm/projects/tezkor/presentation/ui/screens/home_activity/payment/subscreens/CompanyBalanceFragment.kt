@@ -22,11 +22,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.gone
 import java.math.BigDecimal
 import java.math.RoundingMode
 
-/**
- * Kurganbayev Jasurbek
- * CompanyFragment ViewPagerdagi page qismlardan
- * to'liq holda tayyor qilingan, design bilan ko'rib qo'yish kerak
- **/
+
 @AndroidEntryPoint
 class CompanyBalanceFragment : Fragment() {
 

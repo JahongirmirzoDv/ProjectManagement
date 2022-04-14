@@ -5,10 +5,7 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.workers.AllWorkersResponse
 
-/**
- *Created by farrukh_kh on 9/30/21 5:14 PM
- *uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.dashboard
- **/
+
 @Parcelize
 data class DepartmentStructureBelow(
     @SerializedName("department_id")

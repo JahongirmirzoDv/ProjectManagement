@@ -12,9 +12,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.payment.
 import uz.perfectalgorithm.projects.tezkor.domain.home.payment.PaymentRepository
 import javax.inject.Inject
 
-/**
- * Created by Jasurbek Kurganbaev on 8/20/2021 5:03 PM
- **/
+
 @HiltViewModel
 class MoveToPaymeViewModel @Inject constructor(
     private val paymentRepository: PaymentRepository

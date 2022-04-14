@@ -22,10 +22,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.views.drag_board_view.model.Dra
 import uz.perfectalgorithm.projects.tezkor.utils.views.drag_board_view.model.DragItem
 import kotlin.math.abs
 
-/**
- *Created by farrukh_kh on 8/3/21 10:08 PM
- *uz.rdo.projects.projectmanagement.presentation.ui.adapters.home.tasks.tactic_plan_new
- **/
+
 class StatusAdapter(
     private val context: Context,
     private val onTacticPlanClick: SingleBlock<Int>,

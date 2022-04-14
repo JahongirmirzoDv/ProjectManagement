@@ -2,6 +2,7 @@ package uz.perfectalgorithm.projects.tezkor.presentation.ui.adapters.home.notifi
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.res.Resources
 import android.os.Build
 import android.text.Html
 import android.view.LayoutInflater
@@ -14,11 +15,10 @@ import org.joda.time.*
 import uz.perfectalgorithm.projects.tezkor.R
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.notification.NotificationResponse
 import uz.perfectalgorithm.projects.tezkor.databinding.ItemNotificationBinding
-import uz.perfectalgorithm.projects.tezkor.utils.timberLog
 
 class NotificationAdapter(
-    context: Context,
-    private val listener: NotificationItemClickListener
+    var context: Context,
+    private val listener: NotificationItemClickListener,
 ) :
     PagingDataAdapter<NotificationResponse.NotificationData, NotificationAdapter.VH>(
         diffUtil
@@ -34,19 +34,19 @@ class NotificationAdapter(
     override fun onBindViewHolder(holder: VH, position: Int) {
         val itemData = getItem(position)
         val dateTime = DateTime(getItem(position)?.time ?: "")
-        var anatation = R.string.day_1
+        var anatation = context.getString(R.string.day_1)
         var date = Days.daysBetween(dateTime, DateTime.now()).days
         if (date == 0) {
             date = Hours.hoursBetween(dateTime, DateTime.now()).hours
-            anatation = R.string.hour_1
+            anatation = context.getString(R.string.hour_1)
         }
         if (date == 0) {
             date = Minutes.minutesBetween(dateTime, DateTime.now()).minutes
-            anatation = R.string.min_1
+            anatation = context.getString(R.string.min_1)
         }
         if (date == 0) {
             date = Seconds.secondsBetween(dateTime, DateTime.now()).seconds
-            anatation = R.string.sek_1
+            anatation = context.getString(R.string.sek_1)
         }
 //        val date1 = DateTime(getItem(position)?.time ?: "")
 //        val date2 = DateTime(getItem(position)?.time ?: "")
@@ -61,12 +61,12 @@ class NotificationAdapter(
                 holder.itemNotificationBinding.ivNotification.setImageResource(R.drawable.ic_new)
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                     holder.itemNotificationBinding.ivDescription.text = Html.fromHtml(
-                        "${itemData.title} <font color=black> <b> ${changeTypeLang(itemData.type)} yaratildi </b> \t $date $anatation",
+                        "${itemData.title} <font color=black> <b> ${changeTypeLang(itemData.type)} ${context.getString(R.string.created).lowercase()} </b> \t $date $anatation",
                         HtmlCompat.FROM_HTML_MODE_LEGACY
                     )
                 } else {
                     holder.itemNotificationBinding.ivDescription.text = Html.fromHtml(
-                        "${itemData.title} <font color=black> <b> ${changeTypeLang(itemData.type)} yaratildi </b>\t $date $anatation"
+                        "${itemData.title} <font color=black> <b> ${changeTypeLang(itemData.type)} ${context.getString(R.string.created).lowercase()} </b>\t $date $anatation"
                     )
                 }
             }
@@ -74,12 +74,12 @@ class NotificationAdapter(
                 holder.itemNotificationBinding.ivNotification.setImageResource(R.drawable.ic_check_circle)
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                     holder.itemNotificationBinding.ivDescription.text = Html.fromHtml(
-                        "${itemData.title} <font color=black> <b> ${changeTypeLang(itemData.type)} tugadi </b>\t $date $anatation",
+                        "${itemData.title} <font color=black> <b> ${changeTypeLang(itemData.type)} ${context.getString(R.string.ended).lowercase()} </b>\t $date $anatation",
                         HtmlCompat.FROM_HTML_MODE_LEGACY
                     )
                 } else {
                     holder.itemNotificationBinding.ivDescription.text = Html.fromHtml(
-                        "${itemData.title} <font color=black> <b> ${changeTypeLang(itemData.type)} tugadi </b>\t $date $anatation"
+                        "${itemData.title} <font color=black> <b> ${changeTypeLang(itemData.type)} ${context.getString(R.string.ended).lowercase()} </b>\t $date $anatation"
                     )
                 }
             }
@@ -87,12 +87,12 @@ class NotificationAdapter(
                 holder.itemNotificationBinding.ivNotification.setImageResource(R.drawable.ic_play_circle)
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                     holder.itemNotificationBinding.ivDescription.text = Html.fromHtml(
-                        "${itemData.title} <font color=black> <b> ${changeTypeLang(itemData.type)} boshlandi </b>\t $date $anatation",
+                        "${itemData.title} <font color=black> <b> ${changeTypeLang(itemData.type)} ${context.getString(R.string.boshlandi).lowercase()} </b>\t $date $anatation",
                         HtmlCompat.FROM_HTML_MODE_LEGACY
                     )
                 } else {
                     holder.itemNotificationBinding.ivDescription.text = Html.fromHtml(
-                        "${itemData.title} <font color=black> <b> ${changeTypeLang(itemData.type)} boshlandi </b>\t $date $anatation"
+                        "${itemData.title} <font color=black> <b> ${changeTypeLang(itemData.type)} ${context.getString(R.string.boshlandi).lowercase()} </b>\t $date $anatation"
                     )
                 }
             }
@@ -100,12 +100,12 @@ class NotificationAdapter(
                 holder.itemNotificationBinding.ivNotification.setImageResource(R.drawable.ic_circle_edit)
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                     holder.itemNotificationBinding.ivDescription.text = Html.fromHtml(
-                        "${itemData.title} <font color=black> <b> ${changeTypeLang(itemData.type)} yangilandi </b> $date $anatation",
+                        "${itemData.title} <font color=black> <b> ${changeTypeLang(itemData.type)} ${context.getString(R.string.yangilandi).lowercase()} </b> $date $anatation",
                         HtmlCompat.FROM_HTML_MODE_LEGACY
                     )
                 } else {
                     holder.itemNotificationBinding.ivDescription.text = Html.fromHtml(
-                        "${itemData.title} <font color=black> <b> ${changeTypeLang(itemData.type)} yangilandi </b> $date $anatation"
+                        "${itemData.title} <font color=black> <b> ${changeTypeLang(itemData.type)} ${context.getString(R.string.yangilandi).lowercase()} </b> $date $anatation"
                     )
                 }
             }
@@ -117,10 +117,10 @@ class NotificationAdapter(
 
     private fun changeTypeLang(type: String): String {
         return when (type) {
-            "task" -> "vazifa"
-            "dating" -> "uchrashuv"
-            "meeting" -> "majlis"
-            "note" -> "eslatma"
+            "task" -> context.getString(R.string.task)
+            "dating" -> context.getString(R.string.dating)
+            "meeting" -> context.getString(R.string.meeting)
+            "note" -> context.getString(R.string.note)
             else -> ""
         }
     }

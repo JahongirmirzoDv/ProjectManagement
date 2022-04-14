@@ -10,10 +10,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.local_models.note.NoteRe
 import uz.perfectalgorithm.projects.tezkor.databinding.ItemReminderNoteBinding
 import uz.perfectalgorithm.projects.tezkor.utils.`typealias`.SingleBlock
 
-/**
- *Created by farrukh_kh on 10/29/21 11:39 PM
- *uz.perfectalgorithm.projects.tezkor.presentation.ui.adapters.home.others.detail_update
- **/
+
 class ReminderAdapter(
     private val onDeleteReminder: SingleBlock<NoteReminder>,
     private var isEditorMode: Boolean = false,

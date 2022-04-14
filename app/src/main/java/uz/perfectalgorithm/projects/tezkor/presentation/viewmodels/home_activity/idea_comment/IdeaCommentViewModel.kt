@@ -18,9 +18,7 @@ import uz.perfectalgorithm.projects.tezkor.domain.home.idea_comment.IdeaCommentR
 import uz.perfectalgorithm.projects.tezkor.utils.isAvailableNetwork
 import javax.inject.Inject
 
-/**
- * Created by Jasurbek Kurganbaev on 04.08.2021 14:17
- **/
+
 @HiltViewModel
 class IdeaCommentViewModel @Inject constructor(
     private val ideaCommentRepository: IdeaCommentRepository

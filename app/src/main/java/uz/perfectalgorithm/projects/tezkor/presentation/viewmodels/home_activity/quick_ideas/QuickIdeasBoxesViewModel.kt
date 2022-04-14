@@ -15,9 +15,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.task.Tas
 import uz.perfectalgorithm.projects.tezkor.domain.home.quick_idea.QuickIdeasRepository
 import javax.inject.Inject
 
-/**
- * Created by Jasurbek Kurganbaev on 19.06.2021 14:50
- **/
+
 
 @HiltViewModel
 class QuickIdeasBoxesViewModel @Inject constructor(

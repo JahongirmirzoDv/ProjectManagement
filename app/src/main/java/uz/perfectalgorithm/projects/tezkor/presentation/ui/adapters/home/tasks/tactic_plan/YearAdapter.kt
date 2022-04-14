@@ -15,10 +15,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.tactic_p
 import uz.perfectalgorithm.projects.tezkor.databinding.ItemTacticPlanYearBinding
 import uz.perfectalgorithm.projects.tezkor.utils.`typealias`.SingleBlock
 
-/**
- *Created by farrukh_kh on 7/29/21 12:11 PM
- *uz.rdo.projects.projectmanagement.presentation.ui.adapters.home.tasks.tactic_plan
- **/
+
 class YearAdapter(
     private val onTacticPlanClick: SingleBlock<Int>,
     private val onAddTacticPlanClick: (Int, Int, Status) -> Unit,

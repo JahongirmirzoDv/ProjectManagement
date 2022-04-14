@@ -49,7 +49,10 @@ import uz.perfectalgorithm.projects.tezkor.utils.adding.*
 import uz.perfectalgorithm.projects.tezkor.utils.calendar.*
 import uz.perfectalgorithm.projects.tezkor.utils.error_handling.makeErrorSnack
 import uz.perfectalgorithm.projects.tezkor.utils.error_handling.makeSuccessSnack
-import uz.perfectalgorithm.projects.tezkor.utils.extensions.*
+import uz.perfectalgorithm.projects.tezkor.utils.extensions.hide
+import uz.perfectalgorithm.projects.tezkor.utils.extensions.hideAppBar
+import uz.perfectalgorithm.projects.tezkor.utils.extensions.hideBottomMenu
+import uz.perfectalgorithm.projects.tezkor.utils.extensions.loadImageUrl
 import uz.perfectalgorithm.projects.tezkor.utils.flow.simpleCollect
 import uz.perfectalgorithm.projects.tezkor.utils.views.setDropDownClick
 import java.io.File
@@ -87,8 +90,10 @@ class CreateDatingFragment : Fragment(), CoroutineScope {
 
     @Inject
     lateinit var storage: LocalStorage
+
     @Inject
     lateinit var credential: GoogleAccountCredential
+
     @Inject
     lateinit var client: com.google.api.services.calendar.Calendar
 
@@ -240,7 +245,7 @@ class CreateDatingFragment : Fragment(), CoroutineScope {
 
         if (datingDataHolder.reminders == null) {
             datingDataHolder.reminders = mutableSetOf()
-            addReminder(Pair("O'z vaqtida", 0))
+            addReminder(Pair("${getString(R.string.on_time)}", 0))
         }
         ivAddReminder.setOnClickListener {
             ReminderNoteDialog(
@@ -249,7 +254,7 @@ class CreateDatingFragment : Fragment(), CoroutineScope {
         }
 
         if (datingDataHolder.repeatString == null) {
-            setRepeat("Bir marta")
+            setRepeat(R.string.once.toString())
         }
         repeatLayout.setOnClickListener {
             showRepeatNoteDialog(this@CreateDatingFragment::setRepeat)
@@ -296,7 +301,7 @@ class CreateDatingFragment : Fragment(), CoroutineScope {
                         if (i < 3)
                             setPartnerIn(it[i], i)
                         else {
-                            setPartnerCount(it.size-3)
+                            setPartnerCount(it.size - 3)
                             break
                         }
                     }
@@ -367,7 +372,8 @@ class CreateDatingFragment : Fragment(), CoroutineScope {
                 } else {
                     datingDataHolder.repeatMonthRule
                 },
-            ))
+            )
+            )
         }
     }
 
@@ -590,9 +596,9 @@ class CreateDatingFragment : Fragment(), CoroutineScope {
     private fun getDateTime() {
         binding.apply {
             datingDataHolder.startDate = LocalDate(System.currentTimeMillis())
-            datingDataHolder.endDate = LocalDate(System.currentTimeMillis()+3600*1000)
+            datingDataHolder.endDate = LocalDate(System.currentTimeMillis() + 3600 * 1000)
             datingDataHolder.startTime = LocalTime(System.currentTimeMillis())
-            datingDataHolder.endTime = LocalTime(System.currentTimeMillis()+3600*1000)
+            datingDataHolder.endTime = LocalTime(System.currentTimeMillis() + 3600 * 1000)
 
             tvStartDate.text = datingDataHolder.startDate.toString()
             tvEndDate.text = datingDataHolder.endDate.toString()
@@ -627,19 +633,21 @@ class CreateDatingFragment : Fragment(), CoroutineScope {
                 .setSummary(binding.etDatingDescription.text.toString())
                 .setDescription("Majlis Vaqti")
 
-            val startDateTime = com.google.api.client.util.DateTime("${datingDataHolder.startDate?.toUiDate()}T${datingDataHolder.startTime?.toUiTime()}:00-07:00")
+            val startDateTime =
+                com.google.api.client.util.DateTime("${datingDataHolder.startDate?.toUiDate()}T${datingDataHolder.startTime?.toUiTime()}:00-07:00")
             val start = EventDateTime()
                 .setDateTime(startDateTime)
                 .setTimeZone("Asia/Tashkent")
             event.setStart(start)
 
-            val endDateTime = com.google.api.client.util.DateTime("${datingDataHolder.endDate?.toUiDate()}T${datingDataHolder.endTime?.toUiTime()}:00-07:00")
+            val endDateTime =
+                com.google.api.client.util.DateTime("${datingDataHolder.endDate?.toUiDate()}T${datingDataHolder.endTime?.toUiTime()}:00-07:00")
             val end = EventDateTime()
                 .setDateTime(endDateTime)
                 .setTimeZone("Asia/Tashkent")
             event.setEnd(end)
 
-            val recurrence = arrayOf("RRULE:FREQ=DAILY","COUNT=2")
+            val recurrence = arrayOf("RRULE:FREQ=DAILY", "COUNT=2")
             event.recurrence = listOf(recurrence) as MutableList<String>
 
             val arrayList = ArrayList<EventAttendee>()

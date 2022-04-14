@@ -13,10 +13,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.extensions.loadImageUrl
 import uz.perfectalgorithm.projects.tezkor.utils.extensions.show
 import uz.perfectalgorithm.projects.tezkor.utils.gone
 
-/**
- *Created by farrukh_kh on 8/6/21 9:32 AM
- *uz.rdo.projects.projectmanagement.presentation.ui.adapters.home.tasks.projects
- **/
+
 class UserDataAdapter(
     private val onDeleteClick: SingleBlock<PersonData>? = null
 ) : ListAdapter<PersonData, UserDataAdapter.VH>(ITEM_CALLBACK) {

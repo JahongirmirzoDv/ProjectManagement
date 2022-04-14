@@ -25,11 +25,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.extensions.setNavigationIcon
 import uz.perfectalgorithm.projects.tezkor.utils.extensions.show
 import uz.perfectalgorithm.projects.tezkor.utils.gone
 
-/**
- * Kurganbayev Jasurbek
- * CompanyStatusFragment oynasi
- * to'liq holda tayyor qilingan, design bilan ko'rib qo'yish kerak
- **/
+
 @AndroidEntryPoint
 class CompanyStatusFragment : Fragment() {
 

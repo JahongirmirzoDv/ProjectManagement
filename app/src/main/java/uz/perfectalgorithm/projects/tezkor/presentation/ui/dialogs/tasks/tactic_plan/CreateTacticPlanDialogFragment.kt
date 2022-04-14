@@ -25,10 +25,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.flow.simpleCollect
 import uz.perfectalgorithm.projects.tezkor.utils.setItems
 import uz.perfectalgorithm.projects.tezkor.utils.tasks.toTwoDigit
 
-/**
- *Created by farrukh_kh on 7/29/21 2:27 PM
- *uz.rdo.projects.projectmanagement.presentation.ui.dialogs.tasks.tactic_plan
- **/
+
 @AndroidEntryPoint
 class CreateTacticPlanDialogFragment : DialogFragment() {
 

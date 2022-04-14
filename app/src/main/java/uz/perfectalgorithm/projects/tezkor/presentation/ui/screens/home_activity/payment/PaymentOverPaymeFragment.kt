@@ -24,11 +24,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.gone
 import java.text.SimpleDateFormat
 import java.util.*
 
-/**
- * Kurganbayev Jasurbek
- * PaymentOverPaymentFragment oynasi
- * to'liq holda tayyor qilingan, design bilan ko'rib qo'yish kerak
- **/
+
 
 @AndroidEntryPoint
 class PaymentOverPaymeFragment : Fragment() {

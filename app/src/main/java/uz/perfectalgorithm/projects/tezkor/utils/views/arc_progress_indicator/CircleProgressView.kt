@@ -9,10 +9,7 @@ import android.view.View
 import uz.perfectalgorithm.projects.tezkor.utils.dashboard.getTypeface
 
 
-/**
- *Created by farrukh_kh on 9/25/21 2:30 PM
- *uz.perfectalgorithm.projects.tezkor.utils.views.goal_percent_view
- **/
+
 class CircleProgressView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null

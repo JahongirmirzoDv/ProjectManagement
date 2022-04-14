@@ -21,10 +21,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.prepareImageFilePart
 import uz.perfectalgorithm.projects.tezkor.utils.timberLog
 import javax.inject.Inject
 
-/**
- *Created by farrukh_kh on 7/24/21 10:21 AM
- *uz.rdo.projects.projectmanagement.domain.home.task.meeting
- **/
+
 class MeetingRepositoryImpl @Inject constructor(
     private val meetingApi: MeetingApi
 ) : MeetingRepository {

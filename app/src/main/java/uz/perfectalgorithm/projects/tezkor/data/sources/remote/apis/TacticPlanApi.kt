@@ -7,10 +7,8 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.request.tactic_pl
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.request.tactic_plan.UpdateTacticPlanRequest
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.tactic_plan.*
 
-/**
- *Created by farrukh_kh on 7/29/21 10:40 AM
- *uz.rdo.projects.projectmanagement.data.sources.remote.apis
- **/
+
+
 interface TacticPlanApi {
 
     @GET("api/v1/tactic-plan/tactic-plan-list/")

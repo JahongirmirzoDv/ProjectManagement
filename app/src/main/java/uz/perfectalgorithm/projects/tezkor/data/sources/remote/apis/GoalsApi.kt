@@ -6,9 +6,7 @@ import retrofit2.Response
 import retrofit2.http.*
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.goal.*
 
-/**
- * Created by Jasurbek Kurganbaev on 28.06.2021 15:12
- **/
+
 interface GoalsApi {
 
     @GET("/api/v1/goal/goal-folder/")

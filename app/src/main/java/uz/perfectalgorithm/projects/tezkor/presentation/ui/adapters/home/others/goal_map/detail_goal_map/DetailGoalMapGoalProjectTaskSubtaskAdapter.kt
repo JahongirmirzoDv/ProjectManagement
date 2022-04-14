@@ -13,9 +13,7 @@ import uz.perfectalgorithm.projects.tezkor.databinding.ItemGoalMapGoalBinding
 import uz.perfectalgorithm.projects.tezkor.utils.`typealias`.SingleBlock
 import uz.perfectalgorithm.projects.tezkor.utils.extensions.bindItem
 
-/**
- * Created by Jasurbek Kurganbaev on 16.07.2021 16:26
- **/
+
 class DetailGoalMapGoalProjectTaskSubtaskAdapter(
     private val onGoalClick: SingleBlock<Int>,
     private val onProjectClick: SingleBlock<Int>,

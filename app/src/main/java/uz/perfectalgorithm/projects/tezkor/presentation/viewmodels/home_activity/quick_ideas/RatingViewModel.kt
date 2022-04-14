@@ -14,9 +14,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.rating_i
 import uz.perfectalgorithm.projects.tezkor.domain.home.rating_idea.RatingRepository
 import javax.inject.Inject
 
-/**
- * Created by Jasurbek Kurganbaev on 28.07.2021 14:40
- **/
+
 @HiltViewModel
 class RatingViewModel @Inject constructor(
     private val ratingIdeaRepository: RatingRepository

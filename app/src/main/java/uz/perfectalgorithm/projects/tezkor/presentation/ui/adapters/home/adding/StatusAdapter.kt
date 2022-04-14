@@ -7,10 +7,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.status.S
 import uz.perfectalgorithm.projects.tezkor.databinding.ItemStatusBinding
 import uz.perfectalgorithm.projects.tezkor.utils.`typealias`.SingleBlock
 
-/**
- *Created by farrukh_kh on 8/12/21 2:10 PM
- *uz.rdo.projects.projectmanagement.presentation.ui.adapters.home.adding
- **/
+
 class StatusAdapter(
     private val items: List<StatusData>,
     private val onItemClick: SingleBlock<StatusData>

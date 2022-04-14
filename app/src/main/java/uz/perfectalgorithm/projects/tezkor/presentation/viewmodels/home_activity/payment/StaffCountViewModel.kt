@@ -14,9 +14,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.payment.
 import uz.perfectalgorithm.projects.tezkor.domain.home.payment.company_package.PackageRepository
 import javax.inject.Inject
 
-/**
- * Created by Jasurbek Kurganbaev on 06.08.2021 16:51
- **/
+
 @HiltViewModel
 class StaffCountViewModel @Inject constructor(
     private val packageRepository: PackageRepository

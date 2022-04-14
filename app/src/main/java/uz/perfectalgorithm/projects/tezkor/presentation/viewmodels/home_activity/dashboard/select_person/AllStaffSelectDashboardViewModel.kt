@@ -13,10 +13,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.dashboar
 import uz.perfectalgorithm.projects.tezkor.domain.home.dashboard.DashboardRepository
 import javax.inject.Inject
 
-/**
- *Created by farrukh_kh on 8/25/21 10:44 AM
- *uz.rdo.projects.projectmanagement.presentation.viewmodels.home_activity.others.adding_helpers
- **/
+
 @HiltViewModel
 class AllStaffSelectDashboardViewModel @Inject constructor(
     private val repository: DashboardRepository

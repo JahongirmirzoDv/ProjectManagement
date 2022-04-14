@@ -21,11 +21,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.error_handling.makeErrorSnack
 import uz.perfectalgorithm.projects.tezkor.utils.extensions.show
 import uz.perfectalgorithm.projects.tezkor.utils.gone
 
-/**
- * Kurganbayev Jasurbek
- * MoveToPaymentFragment oynasi
- * to'liq holda tayyor qilingan, design bilan ko'rib qo'yish kerak
- **/
+
 @AndroidEntryPoint
 class MoveToPaymeFragment : Fragment() {
 

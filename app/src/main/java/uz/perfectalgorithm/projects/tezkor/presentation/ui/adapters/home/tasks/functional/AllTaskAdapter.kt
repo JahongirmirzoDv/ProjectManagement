@@ -15,9 +15,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.tasks.toUiDate
 import uz.perfectalgorithm.projects.tezkor.utils.visible
 import java.util.*
 
-/**
- * Created by Jasurbek Kurganbaev on 26.06.2021 15:15
- **/
+
 class AllTaskAdapter(
     private val onTaskClick: (Int) -> Unit
 ) : ListAdapter<FolderItem, AllTaskAdapter.VH>(ITEM_ALL_FUNCTIONAL_TASK_CALLBACK) {

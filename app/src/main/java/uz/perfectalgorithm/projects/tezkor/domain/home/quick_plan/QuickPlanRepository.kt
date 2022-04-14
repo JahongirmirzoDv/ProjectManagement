@@ -7,10 +7,7 @@ import uz.perfectalgorithm.projects.tezkor.data.sources.remote.request.quick_pla
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.request.quick_plan.UpdateQuickPlanRequest
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.quick_plan.QuickPlan
 
-/**
- *Created by farrukh_kh on 8/18/21 11:55 AM
- *uz.rdo.projects.projectmanagement.domain.home.quick_plan
- **/
+
 interface QuickPlanRepository {
     /**
      * ushbu repo dagi barcha funksiyalar QuickPlanApi dagilar

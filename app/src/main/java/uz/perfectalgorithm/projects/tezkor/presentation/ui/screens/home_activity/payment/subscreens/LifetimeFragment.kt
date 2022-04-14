@@ -20,11 +20,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.extensions.show
 import uz.perfectalgorithm.projects.tezkor.utils.gone
 
 
-/**
- * Kurganbayev Jasurbek
- * LifetimeFragment ViewPagerdagi page qismlardan
- * to'liq holda tayyor qilingan, design bilan ko'rib qo'yish kerak
- **/
+
 @AndroidEntryPoint
 class LifetimeFragment : Fragment() {
 

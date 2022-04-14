@@ -11,10 +11,7 @@ import uz.perfectalgorithm.projects.tezkor.databinding.ItemMeetingTaskBinding
 import uz.perfectalgorithm.projects.tezkor.utils.`typealias`.SingleBlock
 import uz.perfectalgorithm.projects.tezkor.utils.tasks.toMeetingDate
 
-/**
- *Created by farrukh_kh on 7/24/21 10:55 AM
- *uz.rdo.projects.projectmanagement.presentation.ui.adapters.home.tasks.meeting
- **/
+
 class MeetingAdapter(private val onItemClick: SingleBlock<Int>) :
     ListAdapter<MeetingListItem, MeetingAdapter.VH>(ITEM_CALLBACK) {
 

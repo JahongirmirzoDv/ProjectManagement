@@ -13,10 +13,7 @@ import uz.perfectalgorithm.projects.tezkor.utils.`typealias`.StateFlowWrapper
 import uz.perfectalgorithm.projects.tezkor.utils.coroutinescope.launchCoroutine
 import javax.inject.Inject
 
-/**
- *Created by farrukh_kh on 8/9/21 6:11 PM
- *uz.rdo.projects.projectmanagement.presentation.viewmodels.home_activity.adding.create_dating
- **/
+
 @HiltViewModel
 class CreateDatingViewModel @Inject constructor(
     private val datingRepository: DatingRepository,

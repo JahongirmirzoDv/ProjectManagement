@@ -93,6 +93,7 @@ class CreateProjectFragment : Fragment() {
     private val discussedTopicAdapter by lazy { DiscussedTopicAdapter(::onDiscussedTopicMoreClick) }
     private val listRepetitionServer by lazy { resources.getStringArray(R.array.list_repeat_server) }
     private val dateTimeFormatter by lazy { DateTimeFormat.forPattern(BACKEND_DATE_TIME_FORMAT) }
+    private val sharedPref by lazy { SharedPref(requireContext()) }
 
     @Inject
     lateinit var importanceDialog: ImportanceDialog
@@ -206,7 +207,7 @@ class CreateProjectFragment : Fragment() {
     private val createProjectObserver = Observer<CreateProjectData> {
         sharedViewModel.clear()
         addingSharedViewModel.setProjectNeedsRefresh(true)
-        makeSuccessSnack("Muvaffaqqiyatli yaratildi")
+        makeSuccessSnack(R.string.created_toast.toString())
         findNavController().navigateUp()
     }
 
@@ -348,7 +349,7 @@ class CreateProjectFragment : Fragment() {
                 )
             }
 
-            setRepeat("Bir marta")
+            setRepeat(R.string.once.toString())
             repeatLayout.setOnClickListener {
                 showRepeatNoteDialog(this@CreateProjectFragment::setRepeat)
             }
@@ -392,7 +393,7 @@ class CreateProjectFragment : Fragment() {
                     requireContext(),
                     createProjectViewModel,
                     requireParentFragment()
-                )
+                ,)
             }
 
             endDateTimeLayout.setOnClickListener {
@@ -804,8 +805,8 @@ class CreateProjectFragment : Fragment() {
                     createProjectViewModel.title!!,
                     createProjectViewModel.performer!!,
                     createProjectViewModel.leader!!,
-                    createProjectViewModel.startDate + " " + createProjectViewModel.startTime,
-                    createProjectViewModel.endDate + " " + createProjectViewModel.endTime,
+                    start_time = if (sharedPref.startTime != null) sharedPref.startTime.toString() else createProjectViewModel.startDate + " " + createProjectViewModel.startTime,
+                    end_time = if (sharedPref.endTime != null) sharedPref.endTime.toString() else createProjectViewModel.endDate + " " + createProjectViewModel.endTime,
                     createProjectViewModel.files,
                     createProjectViewModel.goal!!,
                     createProjectViewModel.importance!!.first,
@@ -896,6 +897,12 @@ class CreateProjectFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         loadSharedObservers()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        sharedPref.startTime = "${binding.tvStartDate.text} ${binding.tvStartTime.text}"
+        sharedPref.endTime = "${binding.tvEndDate.text} ${binding.tvEndTime.text}"
     }
 
     override fun onDestroyView() {

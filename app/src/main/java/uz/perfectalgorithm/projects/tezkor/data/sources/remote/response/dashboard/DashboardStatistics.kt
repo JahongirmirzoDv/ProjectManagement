@@ -3,10 +3,7 @@ package uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.dashboa
 import com.google.gson.annotations.SerializedName
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.workers.AllWorkersResponse
 
-/**
- *Created by farrukh_kh on 9/22/21 9:53 AM
- *uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.dashboard
- **/
+
 data class StatisticsResponseWrapper(
     @SerializedName("data")
     val data: DashboardStatistics
