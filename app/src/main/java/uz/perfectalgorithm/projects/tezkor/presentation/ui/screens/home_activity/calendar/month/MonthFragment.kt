@@ -45,9 +45,7 @@ import kotlin.coroutines.CoroutineContext
 class MonthFragment : Fragment(), CoroutineScope {
     private var _binding: FragmentMonthBinding? = null
     private val binding: FragmentMonthBinding
-        get() = _binding ?: throw NullPointerException(
-            resources.getString(R.string.null_binding)
-        )
+        get() =  _binding!!
 
     @Inject
     lateinit var storage: LocalStorage
@@ -98,7 +96,6 @@ class MonthFragment : Fragment(), CoroutineScope {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        getCalendar()
     }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -109,7 +106,7 @@ class MonthFragment : Fragment(), CoroutineScope {
         staffId = requireArguments().getInt(STAFF_ID)
         viewModel.getMonthDataWithoutEvents(startDateCode)
         viewModel.getMonthWithoutEvents.observe(viewLifecycleOwner, getDataObserver)
-
+        getCalendar()
         return binding.root
     }
 
@@ -203,9 +200,10 @@ class MonthFragment : Fragment(), CoroutineScope {
         days.filter { dayEvents.keys.contains(it.code) }.forEach {
             it.dayEvents = dayEvents[it.code]!!
         }
-        updateDays(days)
+        if (_binding != null){
+            updateDays(days)
+        }
     }
-
 
     private val getDataObserver = EventObserver<List<DayMonthly>> {
         days.addAll(it)
@@ -213,9 +211,11 @@ class MonthFragment : Fragment(), CoroutineScope {
     }
 
     private fun updateDays(days: ArrayList<DayMonthly>) {
-        binding.monthViewWrapper.updateDays(days, true) {
-            (parentFragment as MonthHolderFragment).itemClick(it.code)
+        if (_binding != null){
+            binding.monthViewWrapper.updateDays(days, true) {
+                (parentFragment as MonthHolderFragment).itemClick(it.code)
 //            Toast.makeText(requireContext(), "${it.code}", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -232,6 +232,11 @@ class MonthFragment : Fragment(), CoroutineScope {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        _binding = null
+    }
+
+    override fun onPause() {
+        super.onPause()
         _binding = null
     }
 

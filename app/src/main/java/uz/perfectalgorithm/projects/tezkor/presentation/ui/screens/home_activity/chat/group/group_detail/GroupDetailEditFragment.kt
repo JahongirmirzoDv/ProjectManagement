@@ -2,21 +2,19 @@ package uz.perfectalgorithm.projects.tezkor.presentation.ui.screens.home_activit
 
 import android.app.Activity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.doOnTextChanged
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.github.dhaval2404.imagepicker.ImagePicker
 import dagger.hilt.android.AndroidEntryPoint
 import uz.perfectalgorithm.projects.tezkor.R
-import uz.perfectalgorithm.projects.tezkor.databinding.FragmentGroupChatDetailBinding
 import uz.perfectalgorithm.projects.tezkor.databinding.FragmentGroupDetailEditBinding
 import uz.perfectalgorithm.projects.tezkor.presentation.viewmodels.home_activity.chat.group.group_chat_detail.GroupChatDetailViewModel
 import uz.perfectalgorithm.projects.tezkor.utils.extensions.loadImageUrlUniversal
-import uz.perfectalgorithm.projects.tezkor.utils.gone
-import uz.perfectalgorithm.projects.tezkor.utils.visible
 import java.io.File
 
 @AndroidEntryPoint
@@ -43,7 +41,7 @@ class GroupDetailEditFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         _binding = FragmentGroupDetailEditBinding.inflate(layoutInflater)
         return binding.root
@@ -61,8 +59,18 @@ class GroupDetailEditFragment : Fragment() {
                 imgGroup.loadImageUrlUniversal(image)
             } else {
                 imgGroup.visibility = View.GONE
-                textImage.text = if (title.isNotEmpty() && title.length>3) title.substring(0,2) else title[0].toString()
+                textImage.text = if (title.isNotEmpty() && title.length > 3) title.substring(0,
+                    2) else title[0].toString()
             }
+
+            edtGroupTitle.doOnTextChanged { text, start, before, count ->
+                if (text.toString() != "") {
+                    if (text.toString() != title) {
+                        binding.btnSave.setImageResource(R.drawable.ic_check_create)
+                    } else binding.btnSave.setImageResource(R.drawable.ic_check)
+                }
+            }
+
 
             addImage.setOnClickListener {
                 selectImage()
@@ -84,7 +92,6 @@ class GroupDetailEditFragment : Fragment() {
             }
         }
     }
-
 
 
     private fun selectImage() {

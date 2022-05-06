@@ -114,8 +114,7 @@ class CreateQuickIdeaFragment : Fragment() {
             etIdeaName.setText(quickIdea.title)
             etIdeaDescription.setText(quickIdea.description)
             createQuickIdeaViewModel.ideaBox = quickIdea.folder
-            fileCount.text = quickIdea.files?.size.toString()
-
+            fileCount.text = quickIdea.files?.size.toString().ifEmpty { "0" }
         }
     }
 

@@ -45,7 +45,7 @@ class WorkersFragment : Fragment() {
     private val viewModel: WorkersViewModel by activityViewModels()
 
     private lateinit var searchWorkersAdapter: SearchWorkersAdapter
-    private lateinit var dialogDepartment: CreateDepartmentDialog
+    private  var dialogDepartment: CreateDepartmentDialog?= null
     private lateinit var dialogPosition: CreatePositionDialog
 
     private var checkedWorker: AllWorkersResponse.DataItem? = null
@@ -69,6 +69,7 @@ class WorkersFragment : Fragment() {
         viewModel.getDepartmentListData()
         viewModel.getUserPermissionsList()
         viewModel.getAllWorkers()
+
     }
 
     private fun loadViews() {
@@ -135,9 +136,9 @@ class WorkersFragment : Fragment() {
                             requireActivity(),
                             it1
                         )
-                    dialogDepartment.show()
+                    dialogDepartment!!.show()
 
-                    dialogDepartment.saveClickListener { title, parentId ->
+                    dialogDepartment!!.saveClickListener { title, parentId ->
                         viewModel.createDepartment(title, parentId)
                     }
                 }
@@ -272,12 +273,12 @@ class WorkersFragment : Fragment() {
 
     private val createDepartmentObserver = Observer<CreateDepartmentResponse.DepartmentData> {
         makeSuccessSnack(getString(R.string.department_created__success))
-        dialogDepartment.dismiss()
+        dialogDepartment?.cancel()
     }
 
     private val createPositionObserver = Observer<CreatePositionResponse.PositionData> {
         makeSuccessSnack(getString(R.string.position_created_success))
-        dialogPosition.dismiss()
+        dialogPosition.cancel()
     }
 
     private val departmentsObserver =

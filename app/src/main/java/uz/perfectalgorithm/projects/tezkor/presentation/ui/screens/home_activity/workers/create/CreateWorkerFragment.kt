@@ -59,6 +59,7 @@ class CreateWorkerFragment : Fragment(), DatePickerDialog.OnDateSetListener {
 
     private var booleanImage = false
     private var isOutsource = false
+    private var imgDrop = true
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -83,6 +84,17 @@ class CreateWorkerFragment : Fragment(), DatePickerDialog.OnDateSetListener {
                 findNavController().popBackStack()
             }
 
+            imgDropDown.setOnClickListener {
+                if (imgDrop){
+                    imgDrop = false
+                    rvChosenPositions.visibility = View.VISIBLE
+                    imgDropDown.setImageResource(R.drawable.ic_chevron_down)
+                }else {
+                    imgDrop = true
+                    rvChosenPositions.visibility = View.GONE
+                    imgDropDown.setImageResource(R.drawable.ic_chevron_up)
+                }
+            }
             imgProfile.setOnClickListener {
                 selectImage()
             }
