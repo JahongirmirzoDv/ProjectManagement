@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
+import uz.perfectalgorithm.projects.tezkor.R
 import uz.perfectalgorithm.projects.tezkor.data.sources.local.LocalStorage
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.quick_idea.QuickIdeaData
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.quick_idea.RatingIdeaData
@@ -75,7 +76,7 @@ class UndoneIdeasFragment : Fragment() {
     }
 
     private val deleteIdeaObserver = Observer<QuickIdeaData> { ideaData ->
-        makeSuccessSnack("Muvaffaqqiyatli o'chirildi")
+        makeSuccessSnack(getString(R.string.successfuly_deleted))
         val ls = undoneIdeasAdapter.currentList.toMutableList()
         val pos = ls.indexOfFirst { ideaData.id == it.id }
         ls.removeAt(pos)

@@ -105,7 +105,7 @@ class CreateQuickIdeaFragment : Fragment() {
     }
 
     private val updateQuickIdeaObserver = Observer<UpdateIdeaItem> {
-        makeSuccessSnack("Muvaffaqqiyatli yangilandi")
+        makeSuccessSnack(getString(R.string.successfuly_updated))
         findNavController().popBackStack()
     }
 
@@ -253,8 +253,7 @@ class CreateQuickIdeaFragment : Fragment() {
     private val resultLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
-                binding.fileCount.text =
-                    (binding.fileCount.text.toString().toInt() + 1).toString()
+                binding.fileCount.text = (binding.fileCount.text.toString().ifEmpty { "0" }.toInt() + 1).toString()
                 CoroutineScope(Dispatchers.IO).launch {
                     val data: Intent? = result.data
                     val uri = data?.data!!

@@ -472,6 +472,8 @@
     <string name="delete_message">O\'chirish</string>
     <string name="select_message">Belgilash</string>
     <string name="created_toast">Muvaffaqqiyatli yaratildi</string>
+    <string name="successfuly_updated">Muvaffaqqiyatli yangilandi</string>
+    <string name="successfuly_deleted">Muvaffaqqiyatli o\'chirildi</string>
     <string name="edited_toast">Muvaffaqqiyatli o\'zartirildi</string>
     <string name="permiss">Ruxsatlar</string>
     <string name="buy_new">Yangi paket sotib olish</string>

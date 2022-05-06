@@ -84,11 +84,11 @@ fun Fragment.showStaticStatusDialog(onStatusSelected: SingleBlock<Pair<String, S
     dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
     binding.apply {
         newStatus.setOnClickListener {
-            onStatusSelected(Pair("new", R.string.new_uz.toString()))
+            onStatusSelected(Pair("new",getString( R.string.new_uz)))
             dialog.dismiss()
         }
         beingDone.setOnClickListener {
-            onStatusSelected(Pair("in_progress", R.string.in_progress.toString()))
+            onStatusSelected(Pair("in_progress", getString(R.string.in_progress)))
             dialog.dismiss()
         }
         done.setOnClickListener {

@@ -287,7 +287,7 @@ class DatingDetailUpdateFragment : DetailUpdateBaseFragment<DatingDetails>() {
                 this@DatingDetailUpdateFragment,
                 binding.progressLayout.progressLoader
             ) {
-                makeSuccessSnack(R.string.edited_toast.toString())
+                makeSuccessSnack(getString(R.string.edited_toast))
                 deletedFiles.clear()
                 newFiles.clear()
                 dataHolder.clear()

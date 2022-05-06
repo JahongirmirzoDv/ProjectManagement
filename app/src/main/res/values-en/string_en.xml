@@ -28,6 +28,8 @@
     <string name="ended">completed</string>
     <string name="boshlandi">started</string>
     <string name="yangilandi">updated</string>
+    <string name="successfuly_updated">Successfully updated</string>
+    <string name="successfuly_deleted">Successfully deleted</string>
 
     <string name="internet_error">There is no internet connection</string>
     <string name="registration_error">An error occurred in the registration information</string>

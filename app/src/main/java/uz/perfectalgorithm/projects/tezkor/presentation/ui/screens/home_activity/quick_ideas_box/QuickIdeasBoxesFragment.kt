@@ -162,11 +162,11 @@ class QuickIdeasBoxesFragment : Fragment() {
         ls[pos].title = ideaBoxData.title
         quickIdeasBoxAdapter.submitList(ls)
         quickIdeasBoxAdapter.notifyItemChanged(pos)
-        makeSuccessSnack("Muvaffaqqiyatli yangilandi")
+        makeSuccessSnack(getString(R.string.successfuly_updated))
     }
 
     private val deleteIdeasBoxObserver = Observer<IdeasBoxData> { ideaBoxData ->
-        makeSuccessSnack("Muvaffaqqiyatli o'chirildi")
+        makeSuccessSnack(getString(R.string.successfuly_deleted))
         val ls = quickIdeasBoxAdapter.currentList.toMutableList()
         val pos = ls.indexOfFirst { ideaBoxData.id == it.id }
         ls.removeAt(pos)
@@ -179,7 +179,7 @@ class QuickIdeasBoxesFragment : Fragment() {
         quickIdeasBoxAdapter.submitList(ls)
         binding.quickIdeasBoxList.smoothScrollToPosition(ls.size - 1)
         binding.tvError.gone()
-        makeSuccessSnack(R.string.created_toast.toString())
+        makeSuccessSnack(getString(R.string.created_toast))
 
     }
 

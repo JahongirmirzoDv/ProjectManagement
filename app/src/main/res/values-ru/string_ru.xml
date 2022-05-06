@@ -45,6 +45,8 @@
     <string name="ended">выполнена</string>
     <string name="boshlandi">началось</string>
     <string name="yangilandi">обновлен</string>
+    <string name="successfuly_updated">Успешно обновлено</string>
+    <string name="successfuly_deleted">Успешно удалено</string>
 
     <string name="internet_error">Нет подключения к интернету</string>
     <string name="registration_error">Произошла ошибка в регистрационных данных</string>

@@ -65,6 +65,7 @@
             android:layout_marginTop="0dp"
             android:drawableEnd="@drawable/ic_help"
             android:hint="@string/idea_nomi"
+            android:inputType="textCapSentences|textMultiLine"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -121,7 +122,7 @@
             app:layout_constraintTop_toTopOf="@+id/fileTitle"
             app:srcCompat="@drawable/ic_file_count_or_select" />
 
-        <com.google.android.material.textview.MaterialTextView
+        <TextView
             android:id="@+id/fileCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

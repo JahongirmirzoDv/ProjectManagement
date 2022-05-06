@@ -30,7 +30,7 @@
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_create_meeting.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_create_note.xml" value="0.1234866828087167" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_create_project.xml" value="0.33" />
-        <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_create_quick_idea.xml" value="0.1" />
+        <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_create_quick_idea.xml" value="0.33" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_create_task.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_create_worker.xml" value="0.1" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_datings.xml" value="0.1" />
@@ -59,6 +59,7 @@
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_performer_selected.xml" value="0.1" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_personal_conversation.xml" value="0.16" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_projects.xml" value="0.1" />
+        <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_quick_ideas.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_quick_plan_detail_update.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_quick_plans.xml" value="0.1" />
         <entry key="..\:/Users/jahon/Ishchi stol/ProjectManagement-develop/app/src/main/res/layout/fragment_select_favorites_below.xml" value="0.22447916666666667" />
