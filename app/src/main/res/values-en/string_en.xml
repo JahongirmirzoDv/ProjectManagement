@@ -30,6 +30,10 @@
     <string name="yangilandi">updated</string>
     <string name="successfuly_updated">Successfully updated</string>
     <string name="successfuly_deleted">Successfully deleted</string>
+    <string name="meeting_added">The meeting was added</string>
+    <string name="downloading">Loading</string>
+    <string name="employe_status_changed">Employee status changed</string>
+    <string name="file_uploaded">The file was uploaded</string>
 
     <string name="internet_error">There is no internet connection</string>
     <string name="registration_error">An error occurred in the registration information</string>

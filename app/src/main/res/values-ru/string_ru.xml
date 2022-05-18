@@ -47,6 +47,10 @@
     <string name="yangilandi">обновлен</string>
     <string name="successfuly_updated">Успешно обновлено</string>
     <string name="successfuly_deleted">Успешно удалено</string>
+    <string name="meeting_added">Встреча была добавлена</string>
+    <string name="downloading">Загрузка</string>
+    <string name="employe_status_changed">Статус сотрудника изменился</string>
+    <string name="file_uploaded">Файл был загружен</string>
 
     <string name="internet_error">Нет подключения к интернету</string>
     <string name="registration_error">Произошла ошибка в регистрационных данных</string>

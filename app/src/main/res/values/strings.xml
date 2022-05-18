@@ -46,6 +46,9 @@
     <string name="employe_limit_error">Xodimlar limiti tugadi. Yangi paket sotib oling.</string>
     <string name="error_error">Xatolik ro\'y berdi. Birozdan so\'ng urinib ko\'ring</string>
     <string name="sucsess_sucsess">Muvaffaqiyatli bajarildi</string>
+    <string name="downloading">Yuklanmoqda</string>
+    <string name="employe_status_changed">Xodim holati o\'zgartirildi</string>
+    <string name="file_uploaded">Fayl yuklandi</string>
 
 
 
@@ -490,6 +493,7 @@
     <string name="error_employe">Xodimlar soni 1 dan katta bo\'lishi lozim</string>
     <string name="error_company">Kompaniyangiz paketi topilmadi. Paket sotib oling</string>
     <string name="plan">Rejalar</string>
+    <string name="meeting_added">Uchrashuv qo\'shildi</string>
 
     <string name="delete_messages_report">Xabar muvaffaqiyatli o\'chirildi</string>
     <string name="delete_message_title_dialog">Xabarni o\'chirish</string>

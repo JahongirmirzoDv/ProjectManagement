@@ -131,16 +131,16 @@ class SelectedFilesFragment : Fragment(), SelectedFileAdapterListener {
     override fun onRemoteFileClick(item: FilesItem) {
         try {
             when {
-                item.isDownloading -> makeSuccessSnack("Yuklanmoqda...")
+                item.isDownloading -> makeSuccessSnack("${R.string.downloading}...")
                 item.file.exists() -> requireActivity().openFile(item.file)
                 else -> try {
                     beginDownload(item)
                 } catch (e: Exception) {
-                    makeErrorSnack("Xatolik: ${e.message}")
+                    makeErrorSnack("${getString(R.string.xatolik)}: ${e.message}")
                 }
             }
         } catch (e: Exception) {
-            makeErrorSnack("Xatolik: ${e.message}")
+            makeErrorSnack("${getString(R.string.xatolik)}: ${e.message}")
         }
     }
 
@@ -248,7 +248,7 @@ class SelectedFilesFragment : Fragment(), SelectedFileAdapterListener {
                             finishDownload = true
                             withContext(Dispatchers.Main) {
                                 selectedFileAdapter.setDownloading(filesItem, false)
-                                makeSuccessSnack("Fayl yuklandi")
+                                makeSuccessSnack(getString(R.string.file_uploaded))
                             }
                         }
                     }

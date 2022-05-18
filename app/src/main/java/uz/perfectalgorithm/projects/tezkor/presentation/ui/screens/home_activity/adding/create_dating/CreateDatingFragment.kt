@@ -284,7 +284,7 @@ class CreateDatingFragment : Fragment(), CoroutineScope {
             }
             binding.progressLayout.progressLoader.isVisible = false
             sharedViewModel.setDatingNeedsRefresh(true)
-            makeSuccessSnack("Uchrashuv qo'shildi")
+            makeSuccessSnack(getString(R.string.meeting_added))
             navController.navigateUp()
         }
 

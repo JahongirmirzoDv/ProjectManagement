@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
+import uz.perfectalgorithm.projects.tezkor.R
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.payment.company_package.PackageItem
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.payment.company_package.StaffItem
 import uz.perfectalgorithm.projects.tezkor.data.sources.remote.response.payment.company_package.UserActivateResponse
@@ -106,7 +107,7 @@ class CompanyPaymentStaffFragment : Fragment() {
 
     private val userActivateObserver = Observer<UserActivateResponse> {
         if (it.success!!) {
-            makeSuccessSnack("Xodim holati o'zgartirildi")
+            makeSuccessSnack(getString(R.string.employe_status_changed))
         }
     }
 

@@ -105,7 +105,7 @@ class DetailNoteFragment : BaseFragment(), EventDeleteClickListener {
     }
 
     private val postNoteResponse = Observer<NoteData> {
-        makeSuccessSnack("Saqlandi...")
+        makeSuccessSnack("${getString(R.string.saving)}...")
         findNavController().navigateUp()
     }
 

@@ -89,7 +89,7 @@ class AddOffersFragment : BaseFragment(), ComplaintItemClickListener {
         }
     }
     private val postOfferResponse = EventObserver<BasePostOfferResponse.DataResult> { it ->
-        makeSuccessSnack("Saqlandi...")
+        makeSuccessSnack("${getString(R.string.saving)}...")
         loadingDialog?.dismiss()
         loadingAskDialog?.dismiss()
         findNavController().navigateUp()
@@ -110,7 +110,7 @@ class AddOffersFragment : BaseFragment(), ComplaintItemClickListener {
 
 
     private val postComplaintResponse = EventObserver<BasePostOfferResponse.DataResult> { it ->
-        makeSuccessSnack("Saqlandi...")
+        makeSuccessSnack("${getString(R.string.saving)}...")
         findNavController().navigateUp()
     }
 

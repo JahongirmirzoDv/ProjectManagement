@@ -467,6 +467,10 @@
     <string name="app_bar_ideas_rating">Idealar reytingi</string>
     <string name="app_bar_create_meeting">Majlis yaratish</string>
     <string name="app_bar_create_dating">Uchrashuv yaratish</string>
+    <string name="meeting_added">Uchrashuv qo\'shildi</string>
+    <string name="downloading">Yuklanmoqda</string>
+    <string name="employe_status_changed">Xodim holati o\'zgartirildi</string>
+    <string name="file_uploaded">Fayl yuklandi</string>
 
     <!--IdeaBox-->
     <string name="alert">Diqqat!</string>

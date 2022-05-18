@@ -139,7 +139,7 @@ class DeleteDialogFragment : DialogFragment() {
                             DeleteDialogEnum.TASK_FOLDER ->
                                 sharedViewModel.setFunctionalGroupNeedsRefresh(true)
                         }
-                        makeSuccessSnack("Muvaffaqiyatli o'chirildi")
+                        makeSuccessSnack(getString(R.string.successfuly_deleted))
                         viewModel.clearResponse()
                         dismiss()
                     }

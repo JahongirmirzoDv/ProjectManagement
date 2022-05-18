@@ -1,13 +1,9 @@
 package uz.perfectalgorithm.projects.tezkor.utils
 
-/**
- *Created by Davronbek Raximjanov on 17.06.2021
- **/
-
 
 //const val BASE_URL = "http://167.172.175.96"   // new dm
-const val BASE_URL = "http://165.232.70.187:8000/"    // original dm
-//const val BASE_URL = "http://188.166.215.20"   // original dm
+const val BASE_URL = "http://206.81.18.163:8070/"    // original dm
+//const val BASE_URL = "http://165.232.70.187:8000/"   // original dm
 //const val BASE_URL = "http://128.199.192.187"  // dm for test
 
 

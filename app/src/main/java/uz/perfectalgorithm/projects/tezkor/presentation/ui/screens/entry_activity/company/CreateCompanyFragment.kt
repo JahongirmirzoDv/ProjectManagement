@@ -91,7 +91,7 @@ class CreateCompanyFragment : Fragment() {
                         binding.progressLayout.progressLoader.gone()
                         binding.btnBack.isEnabled = true
                         binding.btnSave.isEnabled = true
-                        makeSuccessSnack("Saqlandi...")
+                        makeSuccessSnack("${getString(R.string.saving)}...")
                         findNavController().navigateUp()
                     }
                 }
